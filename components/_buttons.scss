@@ -1,0 +1,91 @@
+button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Roboto;
+    color: rgb(255, 255, 255);
+    background-color: rgb(255, 108, 0);
+    padding: 6px 17px;
+    box-sizing: border-box;
+    border: 1px solid;
+    border-color: rgb(255, 108, 0);
+
+    &:disabled {
+        background-color: rgb(216, 216, 216);
+        color: rgb(255, 255, 255);
+        border-color: rgba(0, 0, 0, 0);
+    }
+
+    &.regentGray {
+        color: rgb(255, 255, 255);
+        background-color: rgb(137, 149, 156);
+        border-color: rgb(137, 149, 156);
+
+        &:hover {
+            background-color: rgb(58, 72, 80);
+        }
+    }
+
+    &.towerGray {
+        color: rgb(255, 255, 255);
+        background-color: rgb(176, 189, 197);
+        border-color: rgb(176, 189, 197);
+
+        &:hover {
+            background-color: rgb(137, 149, 156);
+        }
+    }
+
+    &.codGray {
+        color: rgb(255, 255, 255);
+        background-color: rgb(15, 15, 15);
+        border-color: rgb(15, 15, 15);
+
+        &:hover {
+            background-color: rgb(45, 45, 45);
+        }
+    }
+
+
+    &.white {
+        color: rgb(58, 72, 80);
+        background-color: rgb(255, 255, 255);
+        border-color: rgb(255, 255, 255);
+
+        &:hover {
+            background-color: rgb(241, 243, 244);
+        }
+    }
+
+
+    &.ghost {
+        background-color: transparent;
+
+        &:hover {
+            background-color: rgb(227, 96, 0);
+        }
+    }
+
+    &.secondary {
+        background-color: rgb(33, 150, 243);
+        border-color: rgb(33, 150, 243);
+
+        &:hover {
+            background-color: rgb(28, 134, 218);
+        }
+    }
+
+    &.round {
+        border-radius: 24px;
+    }
+
+    &.porcelain {
+        color: rgb(58, 72, 80);
+        background-color: rgb(231, 235, 237);
+        border-color: rgb(231, 235, 237);
+
+        &:hover {
+            background-color: rgb(225, 225, 225);
+        }
+    }
+}
