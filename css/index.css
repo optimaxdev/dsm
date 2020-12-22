@@ -3,20 +3,21 @@ button {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   font-family: Roboto;
   color: white;
   background-color: #ff6c00;
   padding: 6px 17px;
+  cursor: pointer;
   outline: none;
   -webkit-transition: 0.2s all;
   transition: 0.2s all;
   -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
   border: 1px solid;
   border-color: #ff6c00;
 }
