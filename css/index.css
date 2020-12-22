@@ -10,6 +10,7 @@ button {
           align-items: center;
   font-family: Roboto;
   color: white;
+  pointer: cursor;
   background-color: #ff6c00;
   padding: 6px 17px;
   outline: none;
