@@ -12,6 +12,9 @@ button {
   color: white;
   background-color: #ff6c00;
   padding: 6px 17px;
+  outline: none;
+  -webkit-transition: 0.2s all;
+  transition: 0.2s all;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   border: 1px solid;
