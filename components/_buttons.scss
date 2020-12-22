@@ -6,6 +6,8 @@ button {
     color: rgb(255, 255, 255);
     background-color: rgb(255, 108, 0);
     padding: 6px 17px;
+    outline: none;
+    transition: 0.2s all;
     box-sizing: border-box;
     border: 1px solid;
     border-color: rgb(255, 108, 0);
