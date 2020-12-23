@@ -2,7 +2,9 @@
 <style>
     .grid {
         display: grid;
-        grid-template-columns: 1fr 1fr 1fr;
+        grid-auto-flow: column;
+        grid-auto-columns: max-content;
+        max-width: 100%;
         justify-content: flex-start;
         font-family: Roboto;
     }
@@ -22,10 +24,13 @@
     <div class="row">
         <h1>Button Sizes</h1>
         <button class="dsmButton regular">regular button</button>
+        <p></p>
         <button class="dsmButton medium">medium button</button>
+        <p></p>
         <button class="dsmButton small">Small button</button>
         <p></p>
         <button class="dsmButton extralarge">Extra large button</button>
+        <p></p>
         <button class="dsmButton large">Large button</button>
     </div>
     <div class="row">
@@ -33,10 +38,7 @@
         <button class="dsmButton ghost">Ghost button</button>
         <button class="dsmButton secondary ghost">Secondary ghost button</button>
     </div>
-</div>
 
-
-<div class="grid">
     <div class="row">
         <h1>Round Buttons</h1>
 

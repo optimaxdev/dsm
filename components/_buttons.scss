@@ -18,10 +18,10 @@
     border-color: #ff6c00;
     color: rgb(255, 255, 255);
     font-weight: 700;
-    border: none;
     transition: background-color 0.3s ease 0s, color 0.3s ease 0s, border-color 0.3s ease 0s;
     box-sizing: border-box;
     white-space: nowrap;
+    -webkit-tap-highlight-color: transparent;
     overflow: hidden;
     height: 40px;
     padding: 6px 17px;
