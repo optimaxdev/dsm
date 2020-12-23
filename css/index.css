@@ -1,25 +1,74 @@
 button {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  justify-content: center;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
   -webkit-box-align: center;
   -ms-flex-align: center;
-  align-items: center;
-  font-family: Roboto;
-  color: white;
+      align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+      justify-content: center;
+  position: relative;
+  min-width: 100px;
+  border-radius: 4px;
+  outline: 0px;
   cursor: pointer;
-  background-color: #ff6c00;
-  padding: 6px 17px;
-  outline: none;
-  -webkit-transition: 0.2s all;
-  transition: 0.2s all;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  vertical-align: middle;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  text-decoration: none;
+  color: white;
+  font-weight: 700;
+  border: none;
+  -webkit-transition: background-color 0.3s ease 0s, color 0.3s ease 0s, border-color 0.3s ease 0s;
+  transition: background-color 0.3s ease 0s, color 0.3s ease 0s, border-color 0.3s ease 0s;
   -webkit-box-sizing: border-box;
-  box-sizing: border-box;
-  border: 1px solid;
+          box-sizing: border-box;
+  white-space: nowrap;
+  overflow: hidden;
+  height: 40px;
+  padding: 6px 17px;
+  background-color: #ff6c00;
   border-color: #ff6c00;
+  font-size: 16px;
+  border: 2px solid;
+}
+
+button.small {
+  font-size: 14px;
+  height: 32px;
+  padding-left: 19px;
+  padding-right: 19px;
+}
+
+button.regular {
+  height: 48px;
+  padding-left: 35px;
+  padding-right: 35px;
+  font-size: 18px;
+}
+
+button.large {
+  height: 64px;
+  padding-left: 60px;
+  padding-right: 60px;
+  font-size: 20px;
+}
+
+button.extralarge {
+  height: 70px;
+  padding-left: 60px;
+  padding-right: 60px;
+  font-size: 22px;
+}
+
+button:hover {
+  background-color: #e36000;
 }
 
 button:disabled {
@@ -69,11 +118,22 @@ button.white:hover {
 }
 
 button.ghost {
-  background-color: transparent;
+  background-color: transparent !important;
+  color: #ff6c00;
 }
 
 button.ghost:hover {
-  background-color: #e36000;
+  color: white;
+  background-color: #e36000 !important;
+}
+
+button.ghost.secondary {
+  color: #2196f3;
+}
+
+button.ghost.secondary:hover {
+  background-color: #2196f3 !important;
+  color: white;
 }
 
 button.secondary {
