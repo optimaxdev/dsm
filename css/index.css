@@ -1,4 +1,4 @@
-button {
+.dsmButton {
   display: -webkit-inline-box;
   display: -ms-inline-flexbox;
   display: inline-flex;
@@ -22,6 +22,9 @@ button {
      -moz-appearance: none;
           appearance: none;
   text-decoration: none;
+  border: 2px solid;
+  background-color: #ff6c00;
+  border-color: #ff6c00;
   color: white;
   font-weight: 700;
   border: none;
@@ -33,128 +36,142 @@ button {
   overflow: hidden;
   height: 40px;
   padding: 6px 17px;
-  background-color: #ff6c00;
-  border-color: #ff6c00;
   font-size: 16px;
-  border: 2px solid;
 }
 
-button.small {
+.dsmButton.small {
   font-size: 14px;
   height: 32px;
   padding-left: 19px;
   padding-right: 19px;
 }
 
-button.regular {
+.dsmButton.small.round {
+  padding: 2px 11px;
+}
+
+.dsmButton.regular {
   height: 48px;
   padding-left: 35px;
   padding-right: 35px;
   font-size: 18px;
 }
 
-button.large {
+.dsmButton.regular.round {
+  padding: 10px 20px;
+}
+
+.dsmButton.medium {
+  height: 40px;
+  font-size: 16px;
+}
+
+.dsmButton.medium.round {
+  padding: 6px 17px;
+}
+
+.dsmButton.large {
   height: 64px;
   padding-left: 60px;
   padding-right: 60px;
   font-size: 20px;
 }
 
-button.extralarge {
+.dsmButton.extralarge {
   height: 70px;
   padding-left: 60px;
   padding-right: 60px;
   font-size: 22px;
 }
 
-button:hover {
+.dsmButton:hover {
   background-color: #e36000;
 }
 
-button:disabled {
+.dsmButton:disabled {
   background-color: #d8d8d8;
   color: white;
   border-color: rgba(0, 0, 0, 0);
 }
 
-button.regentGray {
+.dsmButton.regentGray {
   color: white;
   background-color: #89959c;
   border-color: #89959c;
 }
 
-button.regentGray:hover {
+.dsmButton.regentGray:hover {
   background-color: #3a4850;
 }
 
-button.towerGray {
+.dsmButton.towerGray {
   color: white;
   background-color: #b0bdc5;
   border-color: #b0bdc5;
 }
 
-button.towerGray:hover {
+.dsmButton.towerGray:hover {
   background-color: #89959c;
 }
 
-button.codGray {
+.dsmButton.codGray {
   color: white;
   background-color: #0f0f0f;
   border-color: #0f0f0f;
 }
 
-button.codGray:hover {
+.dsmButton.codGray:hover {
   background-color: #2d2d2d;
 }
 
-button.white {
+.dsmButton.white {
   color: #3a4850;
   background-color: white;
   border-color: white;
 }
 
-button.white:hover {
+.dsmButton.white:hover {
   background-color: #f1f3f4;
 }
 
-button.ghost {
+.dsmButton.ghost {
   background-color: transparent !important;
   color: #ff6c00;
 }
 
-button.ghost:hover {
+.dsmButton.ghost:hover {
   color: white;
   background-color: #e36000 !important;
 }
 
-button.ghost.secondary {
+.dsmButton.ghost.secondary {
   color: #2196f3;
 }
 
-button.ghost.secondary:hover {
+.dsmButton.ghost.secondary:hover {
   background-color: #2196f3 !important;
   color: white;
 }
 
-button.secondary {
+.dsmButton.secondary {
   background-color: #2196f3;
   border-color: #2196f3;
 }
 
-button.secondary:hover {
+.dsmButton.secondary:hover {
   background-color: #1c86da;
 }
 
-button.round {
+.dsmButton.round {
   border-radius: 24px;
 }
 
-button.porcelain {
+.dsmButton.porcelain {
   color: #3a4850;
   background-color: #e7ebed;
   border-color: #e7ebed;
 }
 
-button.porcelain:hover {
+.dsmButton.porcelain:hover {
   background-color: #e1e1e1;
 }
