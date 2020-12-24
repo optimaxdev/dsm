@@ -1,6 +1,11 @@
 # Components
 
 ## Buttons
+Every button requires you to have the class `dsmButton` for the styling to work.
 
-To start using the button styling use the button tag:
-`<button></button>`
+
+### Colours
+
+Primary
+![Primary(/documentation/images/primary.png)]
+`<button class="dsmButton"></button>`

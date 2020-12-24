@@ -39,6 +39,10 @@
   font-size: 16px;
 }
 
+.dsmButton:hover {
+  border-width: 0;
+}
+
 .dsmButton.small {
   font-size: 14px;
   height: 32px;
@@ -140,8 +144,10 @@
 }
 
 .dsmButton.ghost:hover {
+  border-width: 2px;
   color: white;
-  background-color: #e36000 !important;
+  border-color: #ff6c00;
+  background-color: #ff6c00 !important;
 }
 
 .dsmButton.ghost.secondary {
@@ -149,7 +155,8 @@
 }
 
 .dsmButton.ghost.secondary:hover {
-  background-color: #2196f3 !important;
+  border-color: #2196f3;
+  background-color: #1c86da !important;
   color: white;
 }
 
@@ -163,7 +170,13 @@
 }
 
 .dsmButton.round {
+  background-color: #2196f3;
+  border-color: #2196f3;
   border-radius: 24px;
+}
+
+.dsmButton.round:hover {
+  background-color: #1c86da;
 }
 
 .dsmButton.porcelain {
