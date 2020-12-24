@@ -18,6 +18,11 @@ Every button requires you to have the class `dsmButton` for the styling to work.
 
 ### Round Colours
 
+#### Default
+![towerGray](/documentation/images/defaultRound.png)
+
+`<button class="dsmButton round"></button>`
+
 #### Cod Gray
 ![codGray](/documentation/images/codGray.png)
 
@@ -27,3 +32,13 @@ Every button requires you to have the class `dsmButton` for the styling to work.
 ![towerGray](/documentation/images/towerGray.png)
 
 `<button class="dsmButton round towerGray"></button>`
+
+#### Regent Gray
+![regentGray](/documentation/images/regentGray.png)
+
+`<button class="dsmButton round regentGray"></button>`
+
+#### White
+
+`<button class="dsmButton round white"></button>`
+

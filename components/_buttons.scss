@@ -88,7 +88,7 @@
 
     &.regentGray {
         color: rgb(255, 255, 255);
-        background-color: rgb(137, 149, 156);
+        background-color: rgb(137, 149, 156) !important;
         border-color: rgb(137, 149, 156);
 
         &:hover {
@@ -98,7 +98,7 @@
 
     &.towerGray {
         color: rgb(255, 255, 255);
-        background-color: rgb(176, 189, 197);
+        background-color: rgb(176, 189, 197) !important;
         border-color: rgb(176, 189, 197);
 
         &:hover {
@@ -108,7 +108,7 @@
 
     &.codGray {
         color: rgb(255, 255, 255);
-        background-color: rgb(15, 15, 15);
+        background-color: rgb(15, 15, 15) !important;
         border-color: rgb(15, 15, 15);
 
         &:hover {

@@ -100,7 +100,7 @@
 
 .dsmButton.regentGray {
   color: white;
-  background-color: #89959c;
+  background-color: #89959c !important;
   border-color: #89959c;
 }
 
@@ -110,7 +110,7 @@
 
 .dsmButton.towerGray {
   color: white;
-  background-color: #b0bdc5;
+  background-color: #b0bdc5 !important;
   border-color: #b0bdc5;
 }
 
@@ -120,7 +120,7 @@
 
 .dsmButton.codGray {
   color: white;
-  background-color: #0f0f0f;
+  background-color: #0f0f0f !important;
   border-color: #0f0f0f;
 }
 
