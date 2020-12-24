@@ -1,5 +1,10 @@
 # Components
 
+1. [Buttons](#buttons)
+  - [Colours](#colours)
+  - [Round Colours](#round-colours)
+  - [Styles](#styles)
+
 ## Buttons
 Every button requires you to have the class `dsmButton` for the styling to work.
 
