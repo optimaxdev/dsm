@@ -7,5 +7,5 @@ Every button requires you to have the class `dsmButton` for the styling to work.
 ### Colours
 
 Primary
-![Primary(/documentation/images/primary.png)]
+![Primary](/documentation/images/primary.png)
 `<button class="dsmButton"></button>`
