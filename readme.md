@@ -38,6 +38,11 @@ Every button requires you to have the class `dsmButton` for the styling to work.
 
 `<button class="dsmButton round regentGray"></button>`
 
+#### Porcelain
+![porcelain](/documentation/images/porcelain.png)
+
+`<button class="dsmButton round porcelain"></button>`
+
 #### White
 
 `<button class="dsmButton round white"></button>`
