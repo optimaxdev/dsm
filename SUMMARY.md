@@ -2,5 +2,6 @@
 
 * [HTML/CSS Design System](README.md)
 * [Buttons](butttons/README.md)
-  * [Untitled](butttons/untitled.md)
+  * [Colours](butttons/untitled.md)
+  * [Sizes](butttons/sizes.md)
 
