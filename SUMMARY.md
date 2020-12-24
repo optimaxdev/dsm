@@ -5,4 +5,5 @@
   * [Colours](butttons/untitled.md)
   * [Sizes](butttons/sizes.md)
   * [Styles](butttons/styles.md)
+* [Icons](icons.md)
 
