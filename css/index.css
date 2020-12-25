@@ -39,10 +39,6 @@
   font-size: 16px;
 }
 
-.dsmButton:hover {
-  border-width: 0;
-}
-
 .dsmButton.round {
   background-color: #2196f3;
   border-color: #2196f3;
