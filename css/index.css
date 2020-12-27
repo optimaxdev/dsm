@@ -47,6 +47,7 @@
 
 .dsmButton.round:hover {
   background-color: #1c86da;
+  border-color: #1c86da;
 }
 
 .dsmButton.small {

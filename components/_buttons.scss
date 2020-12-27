@@ -27,9 +27,7 @@
     padding: 6px 17px;
     font-size: 16px;
 
-    &:hover {
-        border-width: 0;
-    }
+
 
     &.round {
         background-color: rgb(33, 150, 243);
@@ -38,6 +36,7 @@
 
         &:hover {
             background-color: rgb(28, 134, 218);
+            border-color: rgb(28, 134, 218);
         }
     }
 
