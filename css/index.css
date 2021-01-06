@@ -1055,7 +1055,12 @@
   color: #d8d8d8;
 }
 
+.selectContainer button:hover {
+  text-decoration: none !important;
+}
+
 .selectContainer button.active {
+  text-decoration: none !important;
   border: 1px solid #2196f3;
   border-radius: 4px 4px 0px 0px;
   cursor: pointer;
@@ -1117,6 +1122,7 @@
   outline: none;
   height: 24px;
   font-size: 16px;
+  margin: 0;
 }
 
 .selectContainer li:hover {

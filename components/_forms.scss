@@ -384,7 +384,12 @@
             color: rgb(216, 216, 216);
         }
 
+        &:hover {
+            text-decoration: none !important;
+        }
+
         &.active {
+            text-decoration: none !important;
             border: 1px solid rgb(33, 150, 243);
             border-radius: 4px 4px 0px 0px;
             cursor: pointer;
@@ -443,6 +448,7 @@
         outline: none;
         height: 24px;
         font-size: 16px;
+        margin: 0;
 
         &:hover {
             background-color: rgb(247, 248, 249);
