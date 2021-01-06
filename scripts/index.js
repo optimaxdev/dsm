@@ -39,7 +39,7 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }))
 
-    document.querySelectorAll('.dsmForm .selectContainer button').forEach(e => {
+    document.querySelectorAll('.selectContainer button').forEach(e => {
         e.innerHTML = e.innerHTML + `<svg xmlns="http://www.w3.org/2000/svg" stroke="rgb(137, 149, 156)" width="12px" height="10px">
                     <path d="M1 1l5 6 5-6" stroke-width="2" fill="none" fill-rule="evenodd" stroke-linecap="round"
                         stroke-linejoin="round"></path>
