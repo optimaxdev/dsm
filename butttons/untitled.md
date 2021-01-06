@@ -28,7 +28,7 @@ Colour isn't working? Make sure you have capitalised it correctly!
     <button class="dsmButton round"></button>
 ```
 
-![](../.gitbook/assets/defaultround.png)
+![](../.gitbook/assets/defaultRound.png)
 
 #### Cod Gray
 
@@ -44,7 +44,7 @@ Colour isn't working? Make sure you have capitalised it correctly!
     <button class="dsmButton round towerGray"></button>
 ```
 
-![](../.gitbook/assets/towergray.png)
+![](../.gitbook/assets/towerGray.png)
 
 #### Regent Gray
 
@@ -52,7 +52,7 @@ Colour isn't working? Make sure you have capitalised it correctly!
     <button class="dsmButton round regentGray"></button>
 ```
 
-![](../.gitbook/assets/regentgray.png)
+![](../.gitbook/assets/regentGray.png)
 
 #### Porcelain
 
