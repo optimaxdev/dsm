@@ -58,15 +58,15 @@ document.addEventListener("DOMContentLoaded", function () {
 
     document.body.addEventListener("click", (e) => {
         e.stopPropagation();
-        document.querySelectorAll('.dsmForm .selectContainer ul').forEach(e => {
+        document.querySelectorAll('.selectContainer ul').forEach(e => {
             if (e.getAttribute("style") == null) return;
             e.style.display = "none";
             let el = e.closest('.selectContainer');
             el.querySelector('button').classList.remove("active");
         });
     })
-    document.querySelectorAll('.dsmForm .selectContainer li').forEach(e => e.addEventListener("click", (e) => {
-        document.querySelectorAll('.dsmForm .selectContainer li').forEach(e => e.classList.remove('selected'));
+    document.querySelectorAll('.selectContainer li').forEach(e => e.addEventListener("click", (e) => {
+        document.querySelectorAll('.selectContainer li').forEach(e => e.classList.remove('selected'));
         e.target.classList.add("selected");
         e.target.parentNode.style.display = "none";
         e.target.parentNode.parentNode.querySelector('button .selectedItem').innerHTML = e.target.innerText;
