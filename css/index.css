@@ -22,7 +22,6 @@
      -moz-appearance: none;
           appearance: none;
   text-decoration: none;
-  border: 2px solid;
   background-color: #ff6c00;
   border-color: #ff6c00;
   color: white;
@@ -37,9 +36,11 @@
   height: 40px;
   padding: 6px 17px;
   font-size: 16px;
+  border: none;
 }
 
 .dsmButton.round {
+  border: 2px solid;
   background-color: #2196f3;
   border-color: #2196f3;
   border-radius: 24px;
@@ -48,6 +49,66 @@
 .dsmButton.round:hover {
   background-color: #1c86da;
   border-color: #1c86da;
+}
+
+.dsmButton.round.disabled {
+  background-color: #1c86da;
+  border-color: transparent;
+  cursor: default;
+}
+
+.dsmButton.round.disabled.porcelain {
+  background-color: #e1e1e1;
+}
+
+.dsmButton.round.disabled.porcelain svg path {
+  fill: #b0bdc5;
+}
+
+.dsmButton.round.disabled.regentGray {
+  background-color: #3a4850;
+}
+
+.dsmButton.round.disabled.regentGray svg path {
+  fill: #89959c;
+}
+
+.dsmButton.round.disabled.towerGray {
+  background-color: #89959c;
+}
+
+.dsmButton.round.disabled.towerGray svg path {
+  fill: #b0bdc5;
+}
+
+.dsmButton.round.disabled.codGray {
+  background-color: #2d2d2d;
+}
+
+.dsmButton.round.disabled.codGray svg path {
+  fill: #898989;
+}
+
+.dsmButton.round.disabled.white {
+  background-color: #f1f3f4;
+}
+
+.dsmButton.round.disabled.white svg path {
+  fill: #b0bdc5;
+}
+
+.dsmButton.round svg {
+  height: 100%;
+  -webkit-transform-origin: center center;
+          transform-origin: center center;
+  width: 100%;
+  position: absolute;
+  inset: 0px;
+  margin: auto;
+}
+
+.dsmButton.round svg path {
+  fill: #57b5ff;
 }
 
 .dsmButton.small {
@@ -97,9 +158,12 @@
 
 .dsmButton:hover {
   background-color: #e36000;
+  border-color: #e36000;
 }
 
 .dsmButton:disabled {
+  cursor: default;
+  pointer-events: none;
   background-color: #d8d8d8;
   color: white;
   border-color: rgba(0, 0, 0, 0);
@@ -152,6 +216,7 @@
 .dsmButton.ghost {
   background-color: transparent !important;
   color: #ff6c00;
+  border: 2px solid;
 }
 
 .dsmButton.ghost:hover {
@@ -192,6 +257,133 @@
   border-color: #e1e1e1;
 }
 
+.dsmButton:disabled .progress + * {
+  opacity: 0.5;
+}
+
+.dsmButton.ghost.disabled {
+  background-color: #e36000 !important;
+  color: white;
+}
+
+.dsmButton.disabled {
+  background-color: #e36000;
+  border: none;
+}
+
+.dsmButton.disabled.secondary {
+  background-color: #1c86da;
+}
+
+.dsmButton.secondary .progress {
+  background-color: #3fabe6;
+}
+
+.dsmButton.secondary .progress .indeterminate {
+  background-color: #1b467e;
+}
+
+.dsmButton .progress {
+  position: absolute;
+  height: 4px;
+  display: block;
+  width: 100%;
+  background-color: #f59a34;
+  top: 0px;
+  background-clip: padding-box;
+  overflow: hidden;
+}
+
+.dsmButton .progress .indeterminate {
+  background-color: #d2431e;
+}
+
+.dsmButton .progress .indeterminate:before {
+  content: '';
+  position: absolute;
+  background-color: inherit;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  will-change: left, right;
+  -webkit-animation: indeterminate 2.1s cubic-bezier(0.65, 0.815, 0.735, 0.395) infinite;
+          animation: indeterminate 2.1s cubic-bezier(0.65, 0.815, 0.735, 0.395) infinite;
+}
+
+.dsmButton .progress .indeterminate:after {
+  content: '';
+  position: absolute;
+  background-color: inherit;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  will-change: left, right;
+  -webkit-animation: indeterminate-short 2.1s cubic-bezier(0.165, 0.84, 0.44, 1) infinite;
+          animation: indeterminate-short 2.1s cubic-bezier(0.165, 0.84, 0.44, 1) infinite;
+  -webkit-animation-delay: 1.15s;
+          animation-delay: 1.15s;
+}
+
+@-webkit-keyframes indeterminate {
+  0% {
+    left: -35%;
+    right: 100%;
+  }
+  60% {
+    left: 100%;
+    right: -90%;
+  }
+  100% {
+    left: 100%;
+    right: -90%;
+  }
+}
+
+@keyframes indeterminate {
+  0% {
+    left: -35%;
+    right: 100%;
+  }
+  60% {
+    left: 100%;
+    right: -90%;
+  }
+  100% {
+    left: 100%;
+    right: -90%;
+  }
+}
+
+@-webkit-keyframes indeterminate-short {
+  0% {
+    left: -200%;
+    right: 100%;
+  }
+  60% {
+    left: 107%;
+    right: -8%;
+  }
+  100% {
+    left: 107%;
+    right: -8%;
+  }
+}
+
+@keyframes indeterminate-short {
+  0% {
+    left: -200%;
+    right: 100%;
+  }
+  60% {
+    left: 107%;
+    right: -8%;
+  }
+  100% {
+    left: 107%;
+    right: -8%;
+  }
+}
+
 @font-face {
   font-family: 'icomoon';
   src: url("../fonts/icomoon.eot?tipphm");
@@ -205,6 +397,8 @@
   font-family: 'icomoon' !important;
   font-style: normal;
   font-weight: normal;
+  font-size: 16px;
+  color: white;
   font-variant: normal;
   text-transform: none;
   line-height: 1;
@@ -212,26 +406,723 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-.arrow-up:before {
+.dsmIcons.gift:before {
+  content: "\e906";
+}
+
+.dsmIcons.call:before {
+  content: "\e907";
+}
+
+.dsmIcons.truck:before {
+  content: "\e908";
+}
+
+.dsmIcons.chat:before {
+  content: "\e909";
+}
+
+.dsmIcons.money:before {
+  content: "\e90a";
+}
+
+.dsmIcons.help:before {
+  content: "\e90b";
+}
+
+.dsmIcons.money_round:before {
+  content: "\e90d";
+}
+
+.dsmIcons.approve:before {
+  content: "\e90f";
+}
+
+.dsmIcons.reply:before {
+  content: "\e910";
+}
+
+.dsmIcons.anti-reflect:before {
+  content: "\e911";
+}
+
+.dsmIcons.eyestrain-relief .path1:before {
+  content: "\e912";
+}
+
+.dsmIcons.form:before {
+  content: "\e917";
+}
+
+.dsmIcons.lenses:before {
+  content: "\e918";
+}
+
+.dsmIcons.computer:before {
+  content: "\e919";
+}
+
+.dsmIcons.calendar:before {
+  content: "\e91a";
+}
+
+.dsmIcons.uv_protection:before {
+  content: "\e91b";
+}
+
+.dsmIcons.rx:before {
+  content: "\e91c";
+}
+
+.dsmIcons.lock:before {
+  content: "\e91d";
+}
+
+.dsmIcons.glasses:before {
+  content: "\e91e";
+}
+
+.dsmIcons.camera:before {
+  content: "\e91f";
+}
+
+.dsmIcons.visual-comfort:before {
+  content: "\e920";
+}
+
+.dsmIcons.mobile:before {
+  content: "\e921";
+}
+
+.dsmIcons.choose-frame:before {
+  content: "\e922";
+}
+
+.dsmIcons.try_online:before {
+  content: "\e923";
+}
+
+.dsmIcons.upload:before {
+  content: "\e924";
+}
+
+.dsmIcons.credit_card:before {
+  content: "\e925";
+}
+
+.dsmIcons.arrow-up:before {
   content: "\e900";
 }
 
-.arrow-right:before {
+.dsmIcons.arrow-right:before {
   content: "\e901";
 }
 
-.arrow-left:before {
+.dsmIcons.arrow-left:before {
   content: "\e902";
 }
 
-.arrow-down:before {
+.dsmIcons.arrow-down:before {
   content: "\e903";
 }
 
-.location:before {
+.dsmIcons.map:before {
   content: "\e904";
 }
 
-.clock:before {
+.dsmIcons.clock:before {
   content: "\e905";
+}
+
+.dsmSlider {
+  position: relative;
+  display: inline-block;
+  width: 36px;
+  height: 20px;
+}
+
+.dsmSlider input[type=checkbox] {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.dsmSlider input[type=checkbox]:checked + .slider {
+  background-color: #2196F3;
+}
+
+.dsmSlider input[type=checkbox]:focus + .slider {
+  -webkit-box-shadow: 0 0 1px #2196F3;
+          box-shadow: 0 0 1px #2196F3;
+}
+
+.dsmSlider input[type=checkbox]:checked + .slider:before {
+  -webkit-transform: translateX(16px);
+          transform: translateX(16px);
+}
+
+.dsmSlider input[type=checkbox]:disabled + .slider {
+  cursor: default;
+  background-color: #F1F1F1;
+}
+
+.dsmSlider .slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #B0BDC5;
+  -webkit-transition: .4s;
+  border-radius: 34px;
+  transition: .4s;
+}
+
+.dsmSlider .slider:before {
+  position: absolute;
+  content: "";
+  border-radius: 50%;
+  height: 16px;
+  width: 16px;
+  -webkit-box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.1);
+          box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.1);
+  left: 2px;
+  bottom: 2px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.dsmForm {
+  font-family: Roboto;
+}
+
+.dsmForm textarea {
+  resize: none;
+  border: 1px solid #d8d8d8;
+  border-radius: 4px;
+  padding: 14px 18px;
+  width: 100%;
+  outline: none;
+  color: black;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: Roboto;
+  -webkit-transition: 0.2s border-color;
+  transition: 0.2s border-color;
+  font-size: 15px;
+  background: white;
+}
+
+.dsmForm textarea:focus {
+  border: 1px solid #3fabe6;
+}
+
+.dsmForm textarea.error {
+  color: #000;
+  border: 1px solid #d2431e;
+  background: #fff7f7;
+}
+
+.dsmForm textarea::-webkit-input-placeholder {
+  color: #6b6b6b;
+}
+
+.dsmForm textarea:-ms-input-placeholder {
+  color: #6b6b6b;
+}
+
+.dsmForm textarea::-ms-input-placeholder {
+  color: #6b6b6b;
+}
+
+.dsmForm textarea::placeholder {
+  color: #6b6b6b;
+}
+
+.dsmForm textarea:disabled {
+  border-color: #dedede;
+  pointer-events: none;
+}
+
+.dsmForm textarea:disabled::-webkit-input-placeholder {
+  color: #c8c8c8;
+}
+
+.dsmForm textarea:disabled:-ms-input-placeholder {
+  color: #c8c8c8;
+}
+
+.dsmForm textarea:disabled::-ms-input-placeholder {
+  color: #c8c8c8;
+}
+
+.dsmForm textarea:disabled::placeholder {
+  color: #c8c8c8;
+}
+
+.dsmForm textarea::-webkit-scrollbar {
+  cursor: pointer;
+  width: 16px;
+}
+
+.dsmForm textarea::-webkit-scrollbar-thumb {
+  cursor: pointer;
+  background: #e7ebed;
+  border-radius: 16px;
+  border: 5px solid white;
+}
+
+.dsmForm textarea::-webkit-scrollbar-track {
+  cursor: pointer;
+  background: white;
+  border-radius: 16px;
+}
+
+.dsmForm .inputLabel {
+  position: relative;
+  color: #6b6b6b;
+}
+
+.dsmForm .inputLabel input[type=text] {
+  padding-top: 20px;
+}
+
+.dsmForm .inputLabel input[type=text]::-webkit-input-placeholder {
+  opacity: 0;
+  color: #dedede;
+}
+
+.dsmForm .inputLabel input[type=text]:-ms-input-placeholder {
+  opacity: 0;
+  color: #dedede;
+}
+
+.dsmForm .inputLabel input[type=text]::-ms-input-placeholder {
+  opacity: 0;
+  color: #dedede;
+}
+
+.dsmForm .inputLabel input[type=text]::placeholder {
+  opacity: 0;
+  color: #dedede;
+}
+
+.dsmForm .inputLabel input[type=text]:focus-within::-webkit-input-placeholder {
+  opacity: 1;
+}
+
+.dsmForm .inputLabel input[type=text]:focus-within:-ms-input-placeholder {
+  opacity: 1;
+}
+
+.dsmForm .inputLabel input[type=text]:focus-within::-ms-input-placeholder {
+  opacity: 1;
+}
+
+.dsmForm .inputLabel input[type=text]:focus-within::placeholder {
+  opacity: 1;
+}
+
+.dsmForm .inputLabel:focus-within label {
+  -webkit-transform: translateY(-13px);
+          transform: translateY(-13px);
+  color: #aaaaaa;
+  font-size: 11px;
+  line-height: 19px;
+  letter-spacing: 0.16px;
+}
+
+.dsmForm .inputLabel label {
+  position: absolute;
+  left: 15px;
+  top: 50%;
+  margin-top: -9px;
+  color: #6b6b6b;
+  font-size: 15px;
+  line-height: 19px;
+  letter-spacing: 0.21px;
+  pointer-events: none;
+  -webkit-transition: all 0.2s ease 0s;
+  transition: all 0.2s ease 0s;
+  text-align: left;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  width: calc(100% - 30px);
+}
+
+.dsmForm input[type=text] {
+  color: #6b6b6b;
+  font-size: 16px;
+  font-weight: 400;
+  width: 100%;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  display: block;
+  border: 1px solid #d8d8d8;
+  border-radius: 4px;
+  padding: 8px 15px;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  outline: none;
+}
+
+.dsmForm input[type=text]:focus {
+  color: black;
+  border-color: #3fabe6;
+}
+
+.dsmForm input[type=text].error {
+  border: 1px solid #e02020;
+  background-color: #fff7f7;
+  color: #e02020;
+  font-weight: bold;
+}
+
+.dsmForm input[type=text]:disabled {
+  border-color: #dedede;
+  background: white;
+  cursor: not-allowed;
+}
+
+.dsmForm input[type=text]:disabled + label {
+  color: #c8c8c8;
+}
+
+.dsmForm span.error {
+  margin-top: 4px;
+  color: #d2431e;
+  font-size: 12px;
+  line-height: 12px;
+  display: block;
+  text-align: left;
+}
+
+.dsmForm label {
+  font-size: 14px;
+  display: block;
+  text-align: left;
+  margin-bottom: 5px;
+}
+
+.dsmForm input[type=radio] {
+  position: absolute;
+  top: 0px;
+  display: block;
+  width: 100%;
+  left: 0px;
+  height: 100%;
+  cursor: pointer;
+  margin: 0px;
+  padding: 0px;
+  opacity: 0;
+  z-index: 1;
+}
+
+.dsmForm input[type=radio]:disabled {
+  cursor: default;
+}
+
+.dsmForm input[type=radio]:disabled + .radioStyling {
+  border: 1px solid #dedede !important;
+  border-color: #dedede !important;
+}
+
+.dsmForm input[type=radio]:disabled:checked + .radioStyling::before {
+  background-color: #dedede;
+}
+
+.dsmForm .radioContainer {
+  position: relative;
+  cursor: pointer;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+      align-items: center;
+}
+
+.dsmForm .radioContainer:hover .radioStyling {
+  border: 1px solid #6B6B6B;
+}
+
+.dsmForm .radioStyling {
+  display: block;
+  position: relative;
+  border-radius: 100%;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  -webkit-transition: border-color 0.15s linear 0s;
+  transition: border-color 0.15s linear 0s;
+  width: 12px;
+  background-color: #fff;
+  height: 12px;
+  border: 1px solid #AAAAAA;
+}
+
+.dsmForm .radioStyling::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 6px;
+  height: 6px;
+  -webkit-transform: translate3d(-50%, -50%, 0px);
+          transform: translate3d(-50%, -50%, 0px);
+  border-radius: 50%;
+  background-color: transparent;
+  -webkit-transition: background-color 0.15s linear 0s;
+  transition: background-color 0.15s linear 0s;
+}
+
+.dsmForm .radioStyling.medium {
+  width: 20px;
+  height: 20px;
+}
+
+.dsmForm .radioStyling.medium::before {
+  width: 10px;
+  height: 10px;
+}
+
+.dsmForm .radioStyling.large {
+  width: 28px;
+  height: 28px;
+}
+
+.dsmForm .radioStyling.large::before {
+  width: 14px;
+  height: 14px;
+}
+
+.dsmForm .radioStyling.error {
+  border: 1px solid #d2431e;
+  background-color: #FFF7F7;
+}
+
+.dsmForm .radioStyling input[type=radio]:checked + .radioStyling {
+  border: 2px solid #2196F3;
+}
+
+.dsmForm .radioStyling input[type=radio]:checked + .radioStyling::before {
+  background-color: #2196f3;
+}
+
+.dsmForm .radioStyling input[type=radio]:checked + .radioStyling.error {
+  background-color: #fff;
+}
+
+.dsmForm input[type=checkbox] {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+.dsmForm input[type=checkbox]:checked ~ .checkbox::after {
+  display: block;
+}
+
+.dsmForm input[type=checkbox]:checked ~ .checkbox {
+  border: 1px solid #3a4850;
+  background-color: #fff;
+}
+
+.dsmForm .checkboxContainer {
+  display: inline-block;
+  position: relative;
+  cursor: pointer;
+  font-size: 22px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  height: 16px;
+  margin-bottom: 0;
+  width: 16px;
+}
+
+.dsmForm .checkboxContainer .checkbox:after {
+  left: 5px;
+  top: 2px;
+  height: 8px;
+  width: 4px;
+  border: solid #2196f3;
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+.dsmForm .checkbox {
+  position: absolute;
+  top: 0;
+  left: 0;
+  border: 1px solid #aaaaaa;
+  height: 16px;
+  width: 16px;
+  -webkit-transition: 0.2s border-color;
+  transition: 0.2s border-color;
+  background-color: white;
+}
+
+.dsmForm .checkbox:hover {
+  border: 1px solid #6b6b6b;
+}
+
+.dsmForm .checkbox::after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+.dsmForm .checkbox.error {
+  margin-top: 0;
+  background-color: #fff7f7;
+  border: 1px solid #d2431e;
+}
+
+.dsmForm .selectContainer {
+  width: 280px;
+}
+
+.dsmForm .selectContainer.small button {
+  height: 32px;
+}
+
+.dsmForm .selectContainer.large button {
+  height: 56px;
+}
+
+.dsmForm .selectContainer.error button {
+  border: 1px solid #d2431e;
+  background-color: #fff7f7;
+  color: #b0bdc5;
+}
+
+.dsmForm .selectContainer.error button.filled {
+  color: #b0bdc5;
+}
+
+.dsmForm .selectContainer button {
+  background-color: white;
+  border: 1px solid #d8d8d8;
+  color: #0f0f0f;
+  font-size: inherit;
+  font-family: Roboto;
+  border-radius: 4px;
+  cursor: pointer;
+  width: 280px;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  padding: 0px 20px 0px 20px;
+  background-repeat: no-repeat;
+  background-position: right 18px center;
+  position: relative;
+  text-align: left;
+  outline: none;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr auto;
+      grid-template-columns: 1fr auto;
+  -webkit-column-gap: 10px;
+          column-gap: 10px;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 48px;
+  -webkit-transition: 0.2s all;
+  transition: 0.2s all;
+}
+
+.dsmForm .selectContainer button:disabled {
+  border: 1px solid #d8d8d8;
+  cursor: default;
+  pointer-events: none;
+  color: #d8d8d8;
+}
+
+.dsmForm .selectContainer button.active {
+  border: 1px solid #2196f3;
+  border-radius: 4px 4px 0px 0px;
+  cursor: pointer;
+  color: #89959c;
+  z-index: 3;
+}
+
+.dsmForm .selectContainer button.active svg {
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
+}
+
+.dsmForm .selectContainer button.filled {
+  color: #0f0f0f;
+}
+
+.dsmForm .selectContainer button svg {
+  width: 12px;
+  -webkit-transition: ease-in-out .2s all;
+  transition: ease-in-out .2s all;
+  -webkit-transform: rotate(0deg);
+          transform: rotate(0deg);
+}
+
+.dsmForm .selectContainer button .selectedItem {
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.dsmForm .selectContainer ul {
+  display: none;
+  background-color: white;
+  border-radius: 0px 0px 4px 4px;
+  border-top: 1px solid #2196f3;
+  position: absolute;
+  width: 280px;
+  z-index: 5;
+  overflow: overlay;
+  -webkit-box-shadow: rgba(58, 72, 80, 0.24) 0px 1px 1px 0px, rgba(176, 189, 197, 0.12) 1px 2px 11px -1px;
+          box-shadow: rgba(58, 72, 80, 0.24) 0px 1px 1px 0px, rgba(176, 189, 197, 0.12) 1px 2px 11px -1px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 0px;
+  padding: 10px 0px;
+  max-height: 309px;
+}
+
+.dsmForm .selectContainer li {
+  position: relative;
+  font-family: Roboto;
+  color: #2d2d2d;
+  cursor: pointer;
+  display: block;
+  padding: 0px 20px;
+  line-height: 25px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  outline: none;
+  height: 24px;
+  font-size: 16px;
+}
+
+.dsmForm .selectContainer li:hover {
+  background-color: #f7f8f9;
+}
+
+.dsmForm .selectContainer li.selected {
+  background-color: #f2f2f2;
 }
