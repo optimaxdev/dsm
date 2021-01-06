@@ -75,4 +75,22 @@ document.addEventListener("DOMContentLoaded", function () {
 
     }))
 
+
+    document.querySelectorAll('.dsmTooltip').forEach(e => {
+        const el = e.querySelector('.container');
+        console.log(el);
+        const containerHeight = el.clientHeight;
+        const containerWidth = el.clientWidth;
+
+        e.style.height = `${containerHeight + 28}px`;
+
+        // el.style.top = `-${containerHeight + 10}px`;
+        el.style.left = `-${containerWidth/2 - 10}px`;
+
+        e.querySelector('.item').addEventListener("mouseover", e => {
+            const el = e.target.closest('.container');
+            console.log(el);
+            el.style.visibilty = "visible";
+        })
+    })
 })

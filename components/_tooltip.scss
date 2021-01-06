@@ -1,0 +1,78 @@
+.dsmTooltip {
+    position: relative;
+
+    .item {
+        position: absolute;
+        bottom: 0;
+        height: 18px;
+        width: 18px;
+        line-height: 16px;
+        display: inline-block;
+        border-radius: 50%;
+        text-align: center;
+        font-size: 11px;
+        vertical-align: middle;
+        color: rgb(63, 171, 230);
+        background-color: rgb(255, 255, 255);
+        border: 1px solid;
+    }
+
+    .container {
+        overflow: visible;
+        z-index: 8;
+        min-width: 245px;
+        max-width: 100%;
+        margin: 0px;
+        position: absolute;
+        top: 0;
+        visibility: hidden;
+        left: 49px;
+        padding-bottom: 8px;
+        opacity: 1;
+        transition: opacity 0.35s ease 0s;
+    }
+
+
+    .arrow {
+        position: absolute;
+        border-width: 0px;
+        border-style: initial;
+        border-color: initial;
+        bottom: 0px;
+        left: 137.322px;
+        z-index: 1;
+        width: 16px;
+        height: 16px;
+        background-color: rgb(255, 255, 255);
+        transform: rotate(45deg);
+        box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 8px;
+    }
+
+    .infoBox {
+        position: relative;
+        background-color: rgb(255, 255, 255);
+        font-size: 14px;
+        border-radius: 12px;
+        overflow: hidden;
+        box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 8px;
+
+        &:before {
+            content: "";
+            z-index: 2;
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            width: 100%;
+            height: 100%;
+            background-color: rgb(255, 255, 255);
+        }
+
+        .textArea {
+            color: black;
+            width: 250px;
+            padding: 20px;
+            z-index: 3;
+            position: relative;
+        }
+    }
+}

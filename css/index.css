@@ -986,29 +986,29 @@
   border: 1px solid #d2431e;
 }
 
-.dsmForm .selectContainer {
+.selectContainer {
   width: 280px;
 }
 
-.dsmForm .selectContainer.small button {
+.selectContainer.small button {
   height: 32px;
 }
 
-.dsmForm .selectContainer.large button {
+.selectContainer.large button {
   height: 56px;
 }
 
-.dsmForm .selectContainer.error button {
+.selectContainer.error button {
   border: 1px solid #d2431e;
   background-color: #fff7f7;
   color: #b0bdc5;
 }
 
-.dsmForm .selectContainer.error button.filled {
+.selectContainer.error button.filled {
   color: #b0bdc5;
 }
 
-.dsmForm .selectContainer button {
+.selectContainer button {
   background-color: white;
   border: 1px solid #d8d8d8;
   color: #0f0f0f;
@@ -1048,14 +1048,14 @@
   transition: 0.2s all;
 }
 
-.dsmForm .selectContainer button:disabled {
+.selectContainer button:disabled {
   border: 1px solid #d8d8d8;
   cursor: default;
   pointer-events: none;
   color: #d8d8d8;
 }
 
-.dsmForm .selectContainer button.active {
+.selectContainer button.active {
   border: 1px solid #2196f3;
   border-radius: 4px 4px 0px 0px;
   cursor: pointer;
@@ -1063,16 +1063,16 @@
   z-index: 3;
 }
 
-.dsmForm .selectContainer button.active svg {
+.selectContainer button.active svg {
   -webkit-transform: rotate(180deg);
           transform: rotate(180deg);
 }
 
-.dsmForm .selectContainer button.filled {
+.selectContainer button.filled {
   color: #0f0f0f;
 }
 
-.dsmForm .selectContainer button svg {
+.selectContainer button svg {
   width: 12px;
   -webkit-transition: ease-in-out .2s all;
   transition: ease-in-out .2s all;
@@ -1080,12 +1080,12 @@
           transform: rotate(0deg);
 }
 
-.dsmForm .selectContainer button .selectedItem {
+.selectContainer button .selectedItem {
   overflow: hidden;
   text-overflow: ellipsis;
 }
 
-.dsmForm .selectContainer ul {
+.selectContainer ul {
   display: none;
   background-color: white;
   border-radius: 0px 0px 4px 4px;
@@ -1103,7 +1103,7 @@
   max-height: 309px;
 }
 
-.dsmForm .selectContainer li {
+.selectContainer li {
   position: relative;
   font-family: Roboto;
   color: #2d2d2d;
@@ -1119,10 +1119,92 @@
   font-size: 16px;
 }
 
-.dsmForm .selectContainer li:hover {
+.selectContainer li:hover {
   background-color: #f7f8f9;
 }
 
-.dsmForm .selectContainer li.selected {
+.selectContainer li.selected {
   background-color: #f2f2f2;
+}
+
+.dsmTooltip {
+  position: relative;
+}
+
+.dsmTooltip .item {
+  position: absolute;
+  bottom: 0;
+  height: 18px;
+  width: 18px;
+  line-height: 16px;
+  display: inline-block;
+  border-radius: 50%;
+  text-align: center;
+  font-size: 11px;
+  vertical-align: middle;
+  color: #3fabe6;
+  background-color: white;
+  border: 1px solid;
+}
+
+.dsmTooltip .container {
+  overflow: visible;
+  z-index: 8;
+  min-width: 245px;
+  max-width: 100%;
+  margin: 0px;
+  position: absolute;
+  top: 0;
+  visibility: hidden;
+  left: 49px;
+  padding-bottom: 8px;
+  opacity: 1;
+  -webkit-transition: opacity 0.35s ease 0s;
+  transition: opacity 0.35s ease 0s;
+}
+
+.dsmTooltip .arrow {
+  position: absolute;
+  border-width: 0px;
+  border-style: initial;
+  border-color: initial;
+  bottom: 0px;
+  left: 137.322px;
+  z-index: 1;
+  width: 16px;
+  height: 16px;
+  background-color: white;
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+  -webkit-box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 8px;
+          box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 8px;
+}
+
+.dsmTooltip .infoBox {
+  position: relative;
+  background-color: white;
+  font-size: 14px;
+  border-radius: 12px;
+  overflow: hidden;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 8px;
+          box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 8px;
+}
+
+.dsmTooltip .infoBox:before {
+  content: "";
+  z-index: 2;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  background-color: white;
+}
+
+.dsmTooltip .infoBox .textArea {
+  color: black;
+  width: 250px;
+  padding: 20px;
+  z-index: 3;
+  position: relative;
 }

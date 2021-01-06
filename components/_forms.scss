@@ -326,131 +326,131 @@
             border: 1px solid rgb(210, 67, 30);
         }
     }
+}
 
-    .selectContainer {
+.selectContainer {
+    width: 280px;
+
+    &.small button {
+        height: 32px;
+    }
+
+    &.large button {
+        height: 56px;
+    }
+
+    &.error button {
+        border: 1px solid rgb(210, 67, 30);
+        background-color: rgb(255, 247, 247);
+        color: rgb(176, 189, 197);
+    }
+
+    &.error button.filled {
+        color: rgb(176, 189, 197);
+    }
+
+    button {
+        background-color: white;
+        border: 1px solid rgb(216, 216, 216);
+        color: rgb(15, 15, 15);
+        font-size: inherit;
+        font-family: Roboto;
+        border-radius: 4px;
+        cursor: pointer;
         width: 280px;
+        appearance: none;
+        padding: 0px 20px 0px 20px;
+        background-repeat: no-repeat;
+        background-position: right 18px center;
+        position: relative;
+        text-align: left;
+        outline: none;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        display: grid;
+        grid-template-columns: 1fr auto;
+        column-gap: 10px;
+        justify-content: space-between;
+        align-content: center;
+        align-items: center;
+        height: 48px;
+        transition: 0.2s all;
 
-        &.small button {
-            height: 32px;
-        }
-
-        &.large button {
-            height: 56px;
-        }
-
-        &.error button {
-            border: 1px solid rgb(210, 67, 30);
-            background-color: rgb(255, 247, 247);
-            color: rgb(176, 189, 197);
-        }
-
-        &.error button.filled {
-            color: rgb(176, 189, 197);
-        }
-
-        button {
-            background-color: white;
+        &:disabled {
             border: 1px solid rgb(216, 216, 216);
-            color: rgb(15, 15, 15);
-            font-size: inherit;
-            font-family: Roboto;
-            border-radius: 4px;
+            cursor: default;
+            pointer-events: none;
+            color: rgb(216, 216, 216);
+        }
+
+        &.active {
+            border: 1px solid rgb(33, 150, 243);
+            border-radius: 4px 4px 0px 0px;
             cursor: pointer;
-            width: 280px;
-            appearance: none;
-            padding: 0px 20px 0px 20px;
-            background-repeat: no-repeat;
-            background-position: right 18px center;
-            position: relative;
-            text-align: left;
-            outline: none;
-            white-space: nowrap;
-            text-overflow: ellipsis;
-            overflow: hidden;
-            display: grid;
-            grid-template-columns: 1fr auto;
-            column-gap: 10px;
-            justify-content: space-between;
-            align-content: center;
-            align-items: center;
-            height: 48px;
-            transition: 0.2s all;
-
-            &:disabled {
-                border: 1px solid rgb(216, 216, 216);
-                cursor: default;
-                pointer-events: none;
-                color: rgb(216, 216, 216);
-            }
-
-            &.active {
-                border: 1px solid rgb(33, 150, 243);
-                border-radius: 4px 4px 0px 0px;
-                cursor: pointer;
-                color: rgb(137, 149, 156);
-                z-index: 3;
-
-                svg {
-                    transform: rotate(180deg);
-                }
-            }
-
-            &.filled {
-                color: rgb(15, 15, 15);
-            }
+            color: rgb(137, 149, 156);
+            z-index: 3;
 
             svg {
-                width: 12px;
-                transition: ease-in-out .2s all;
-                transform: rotate(0deg);
-            }
-
-            .selectedItem {
-                overflow: hidden;
-                text-overflow: ellipsis;
+                transform: rotate(180deg);
             }
         }
 
-        ul {
-            display: none;
-            background-color: rgb(255, 255, 255);
-            border-radius: 0px 0px 4px 4px;
-            border-top: 1px solid rgb(33, 150, 243);
-            position: absolute;
-            width: 280px;
-            z-index: 5;
-            overflow: overlay;
-            box-shadow: rgba(58, 72, 80, 0.24) 0px 1px 1px 0px,
-                rgba(176, 189, 197, 0.12) 1px 2px 11px -1px;
-            box-sizing: border-box;
-            margin: 0px;
-            padding: 10px 0px;
-            max-height: 309px;
+        &.filled {
+            color: rgb(15, 15, 15);
         }
 
-        li {
-            position: relative;
-            font-family: Roboto;
-            color: rgb(45, 45, 45);
-            cursor: pointer;
-            display: block;
-            padding: 0px 20px;
-            line-height: 25px;
-            white-space: nowrap;
+        svg {
+            width: 12px;
+            transition: ease-in-out .2s all;
+            transform: rotate(0deg);
+        }
+
+        .selectedItem {
             overflow: hidden;
             text-overflow: ellipsis;
-            outline: none;
-            height: 24px;
-            font-size: 16px;
+        }
+    }
 
-            &:hover {
-                background-color: rgb(247, 248, 249);
-            }
+    ul {
+        display: none;
+        background-color: rgb(255, 255, 255);
+        border-radius: 0px 0px 4px 4px;
+        border-top: 1px solid rgb(33, 150, 243);
+        position: absolute;
+        width: 280px;
+        z-index: 5;
+        overflow: overlay;
+        box-shadow: rgba(58, 72, 80, 0.24) 0px 1px 1px 0px,
+            rgba(176, 189, 197, 0.12) 1px 2px 11px -1px;
+        box-sizing: border-box;
+        margin: 0px;
+        padding: 10px 0px;
+        max-height: 309px;
+    }
 
-            &.selected {
-                background-color: rgb(242, 242, 242);
+    li {
+        position: relative;
+        font-family: Roboto;
+        color: rgb(45, 45, 45);
+        cursor: pointer;
+        display: block;
+        padding: 0px 20px;
+        line-height: 25px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        outline: none;
+        height: 24px;
+        font-size: 16px;
 
-            }
+        &:hover {
+            background-color: rgb(247, 248, 249);
+        }
+
+        &.selected {
+            background-color: rgb(242, 242, 242);
+
         }
     }
 }
