@@ -2,6 +2,8 @@
     position: relative;
     display: inline-block;
     height: 16px;
+    width: 16px;
+    margin-right: 10px;
 
     .item {
         position: absolute;
@@ -44,6 +46,44 @@
         .container {
             padding-bottom: 0;
             padding-right: 8px;
+        }
+    }
+
+    &.bottom {
+
+        .arrow {
+            left: 50%;
+            bottom: unset;
+            top: 0;
+        }
+
+        .container {
+            padding-bottom: 0;
+            padding-top: 8px;
+        }
+    }
+
+    &.close svg {
+        position: absolute;
+        top: 22px;
+        right: 12px;
+        cursor: pointer;
+        height: 12px;
+        width: 12px;
+        z-index: 3;
+    }
+
+    &.left {
+
+        .arrow {
+            left: 0;
+            right: unset;
+            top: 50%;
+        }
+
+        .container {
+            padding-bottom: 0;
+            padding-left: 8px;
         }
     }
 

@@ -1,6 +1,7 @@
 document.addEventListener("DOMContentLoaded", function () {
     document.querySelectorAll('.dsmForm .inputLabel input[type=text]').forEach(e => e.addEventListener("change", (
         e) => {
+        // Text input styling including effects on change values
         if (e.target.value != "") {
             e.target.parentNode.querySelector('label').style.fontSize = "11px";
             e.target.parentNode.querySelector('label').style.lineHeight = "19px";
@@ -54,7 +55,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
     document.body.addEventListener("click", (e) => {
-        e.preventDefault();
         e.stopPropagation();
         document.querySelectorAll('.selectContainer ul').forEach(e => {
             if (e.getAttribute("style") == null) return;
@@ -66,9 +66,9 @@ document.addEventListener("DOMContentLoaded", function () {
         document.querySelectorAll('.dsmTooltip.click').forEach(el => {
             el = el.querySelector('.container');
             if (el.style.opacity < 1) return;
-            e.stopPropagation;
-
-            e.stopImmediatePropagation;
+            e.stopPropagation();
+            e.preventDefault();
+            e.stopImmediatePropagation();
             clearInterval(fadeInterval);
             let opacity = 1;
             el.style.opacity = opacity;
@@ -93,30 +93,46 @@ document.addEventListener("DOMContentLoaded", function () {
 
     }))
 
-    function selectItem(value) {
-        null;
-    }
-
     let fadeInterval, exitInterval;
 
 
     document.querySelectorAll('.dsmTooltip').forEach(e => {
+        e.innerHTML = `<div class="container">
+            <div class="arrow"></div>
+            <div class="infoBox">
+                <div class="textArea">${e.innerText}</div>
+            </div>
+        </div>
+        <div class="item">?</div>`
         const el = e.querySelector('.container');
         const containerHeight = el.clientHeight;
         const containerWidth = el.clientWidth;
 
+        switch (true) {
+            case e.classList.contains('right'):
+                el.style.top = `-${containerHeight /2}px`;
+                el.style.left = `-${containerWidth + 10}px`;
+                e.style.marginLeft = `${containerWidth + 10}px`;
+                break;
+            case e.classList.contains('left'):
+                el.style.top = `-${containerHeight /2}px`;
+                el.style.right = `-${containerWidth + 10}px`;
+                e.style.marginRight = `${containerWidth + 10}px`;
+                break;
+            case e.classList.contains('bottom'):
+                el.style.top = `30px`;
+                el.style.left = `-${containerWidth /2}px`;
+                break;
+            default:
+                el.style.left = `-${containerWidth /2}px`;
+                el.style.top = `-${containerHeight + 20}px`;
+                e.style.marginTop = `${containerHeight + 20}px`;
+                e.style.marginLeft = `${containerWidth /2}px`;
+                break;
+        }
 
-
-        if (e.classList.contains('right')) {
-            el.style.left = `-${containerHeight + 20}px`;
-            el.style.top = `-${containerHeight /2}px`;
-            e.style.width = containerWidth;
-            e.querySelector('.item').style.left = `${containerWidth/2}px`;
-        } else {
-            el.style.left = `0px`;
-            el.style.top = `-${containerHeight + 20}px`;
-            e.style.width = containerWidth;
-            e.querySelector('.item').style.left = `${containerWidth/2}px`;
+        if (e.classList.contains('close')) {
+            el.innerHTML = el.innerHTML + `<svg onclick="closeTooltip(this)" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 13 13" width="100%" height="100%"><g fill="none" stroke="#b0bdc5"><path d="M12.3.7L.6 12.3M.7.7l11.7 11.6"></path></g></svg>`
         }
 
         if (e.classList.contains('click')) {
@@ -124,8 +140,12 @@ document.addEventListener("DOMContentLoaded", function () {
                 e.preventDefault();
                 e.stopImmediatePropagation();
                 e.stopPropagation();
-                clearInterval(exitInterval);
-                const el = e.target.closest('.dsmTooltip').querySelector('.container');
+                if (e.target.classList.contains("textArea") == true | e.target.tagName == 'svg') return;
+                document.querySelectorAll('.dsmTooltip.click .container').forEach(e => {
+                    e.style.opacity = 0;
+                    e.style.visibility = "none";
+                })
+                const el = e.target.closest('.dsmTooltip.click').querySelector('.container');
                 if (el.style.opacity > 0.9) return;
                 el.style.visibility = "visible";
                 let opacity = 0;
@@ -174,3 +194,21 @@ document.addEventListener("DOMContentLoaded", function () {
     })
 
 })
+
+function closeTooltip(el) {
+    el = el.closest('.dsmTooltip.click').querySelector('.container');
+    let opacity = 1;
+    el.style.opacity = opacity;
+    exitInterval = setInterval(() => {
+        if (opacity < 0.1) {
+            clearInterval(exitInterval)
+            return el.style.visibility = "hidden";
+        };
+        opacity = opacity - 0.1
+        el.style.opacity = opacity;
+    }, 20);
+}
+
+function selectItem(value) {
+    null;
+}

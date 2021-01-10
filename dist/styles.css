@@ -846,6 +846,18 @@
   background-color: #dedede;
 }
 
+.radioContainer input[type=radio]:checked + .radioStyling {
+  border: 2px solid #2196F3;
+}
+
+.radioContainer input[type=radio]:checked + .radioStyling::before {
+  background-color: #2196f3;
+}
+
+.radioContainer input[type=radio]:checked + .radioStyling.error {
+  background-color: #fff;
+}
+
 .radioContainer:hover .radioStyling {
   border: 1px solid #6B6B6B;
 }
@@ -902,18 +914,6 @@
 .radioContainer .radioStyling.error {
   border: 1px solid #d2431e;
   background-color: #FFF7F7;
-}
-
-.radioContainer input[type=radio]:checked + .radioStyling {
-  border: 2px solid #2196F3;
-}
-
-.radioContainer input[type=radio]:checked + .radioStyling::before {
-  background-color: #2196f3;
-}
-
-.radioContainer input[type=radio]:checked + .radioStyling.error {
-  background-color: #fff;
 }
 
 .checkboxContainer {
@@ -1137,6 +1137,8 @@
   position: relative;
   display: inline-block;
   height: 16px;
+  width: 16px;
+  margin-right: 10px;
 }
 
 .dsmTooltip .item {
@@ -1178,6 +1180,38 @@
 .dsmTooltip.right .container {
   padding-bottom: 0;
   padding-right: 8px;
+}
+
+.dsmTooltip.bottom .arrow {
+  left: 50%;
+  bottom: unset;
+  top: 0;
+}
+
+.dsmTooltip.bottom .container {
+  padding-bottom: 0;
+  padding-top: 8px;
+}
+
+.dsmTooltip.close svg {
+  position: absolute;
+  top: 22px;
+  right: 12px;
+  cursor: pointer;
+  height: 12px;
+  width: 12px;
+  z-index: 3;
+}
+
+.dsmTooltip.left .arrow {
+  left: 0;
+  right: unset;
+  top: 50%;
+}
+
+.dsmTooltip.left .container {
+  padding-bottom: 0;
+  padding-left: 8px;
 }
 
 .dsmTooltip .arrow {
@@ -1223,4 +1257,56 @@
   padding: 20px;
   z-index: 3;
   position: relative;
+}
+
+.dsmBadge {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  border-radius: 2px;
+  line-height: 12px;
+  padding: 4.5px 8px 4.5px 10px;
+  font-size: 13px;
+  white-space: nowrap;
+}
+
+.dsmBadge.premium {
+  background-color: #fef8ed;
+  color: #c08c17;
+}
+
+.dsmBadge.sales {
+  background-color: #feeef0;
+  color: #f02f41;
+}
+
+.dsmBadge.misc {
+  background-color: #e7f4fe;
+  color: #2c9cf4;
+}
+
+.dsmBadge.sellingFast {
+  background-color: #fff1e0;
+  color: #f57700;
+}
+
+.dsmBadge.small {
+  border-radius: 4px 2px;
+  padding: 5px 6px 3px;
+  font-size: 11px;
+}
+
+.dsmBadge.big {
+  border-radius: 4px 2px;
+  padding: 6px 8px 5px 10px;
+  font-size: 13px;
+}
+
+.dsmBadge.large {
+  border-radius: 2px;
+  padding: 9px 10px;
+  font-size: 14px;
 }

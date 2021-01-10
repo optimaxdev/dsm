@@ -1,0 +1,47 @@
+.dsmBadge {
+    display: inline-flex;
+    align-items: flex-end;
+    border-radius: 2px;
+    line-height: 12px;
+    padding: 4.5px 8px 4.5px 10px;
+    font-size: 13px;
+    white-space: nowrap;
+
+    &.premium {
+        background-color: rgb(254, 248, 237);
+        color: rgb(192, 140, 23);
+    }
+
+    &.sales {
+        background-color: rgb(254, 238, 240);
+        color: rgb(240, 47, 65);
+    }
+
+    &.misc {
+        background-color: rgb(231, 244, 254);
+        color: rgb(44, 156, 244);
+    }
+
+    &.sellingFast {
+        background-color: rgb(255, 241, 224);
+        color: rgb(245, 119, 0);
+    }
+
+    &.small {
+        border-radius: 4px 2px;
+        padding: 5px 6px 3px;
+        font-size: 11px;
+    }
+
+    &.big {
+        border-radius: 4px 2px;
+        padding: 6px 8px 5px 10px;
+        font-size: 13px;
+    }
+
+    &.large {
+        border-radius: 2px;
+        padding: 9px 10px;
+        font-size: 14px;
+    }
+}
