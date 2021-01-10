@@ -808,7 +808,18 @@
   margin-bottom: 5px;
 }
 
-.dsmForm input[type=radio] {
+.radioContainer {
+  position: relative;
+  cursor: pointer;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+      align-items: center;
+}
+
+.radioContainer input[type=radio] {
   position: absolute;
   top: 0px;
   display: block;
@@ -822,35 +833,24 @@
   z-index: 1;
 }
 
-.dsmForm input[type=radio]:disabled {
+.radioContainer input[type=radio]:disabled {
   cursor: default;
 }
 
-.dsmForm input[type=radio]:disabled + .radioStyling {
+.radioContainer input[type=radio]:disabled + .radioStyling {
   border: 1px solid #dedede !important;
   border-color: #dedede !important;
 }
 
-.dsmForm input[type=radio]:disabled:checked + .radioStyling::before {
+.radioContainer input[type=radio]:disabled:checked + .radioStyling::before {
   background-color: #dedede;
 }
 
-.dsmForm .radioContainer {
-  position: relative;
-  cursor: pointer;
-  display: -webkit-inline-box;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-      align-items: center;
-}
-
-.dsmForm .radioContainer:hover .radioStyling {
+.radioContainer:hover .radioStyling {
   border: 1px solid #6B6B6B;
 }
 
-.dsmForm .radioStyling {
+.radioContainer .radioStyling {
   display: block;
   position: relative;
   border-radius: 100%;
@@ -864,7 +864,7 @@
   border: 1px solid #AAAAAA;
 }
 
-.dsmForm .radioStyling::before {
+.radioContainer .radioStyling::before {
   content: "";
   position: absolute;
   top: 50%;
@@ -879,62 +879,45 @@
   transition: background-color 0.15s linear 0s;
 }
 
-.dsmForm .radioStyling.medium {
+.radioContainer .radioStyling.medium {
   width: 20px;
   height: 20px;
 }
 
-.dsmForm .radioStyling.medium::before {
+.radioContainer .radioStyling.medium::before {
   width: 10px;
   height: 10px;
 }
 
-.dsmForm .radioStyling.large {
+.radioContainer .radioStyling.large {
   width: 28px;
   height: 28px;
 }
 
-.dsmForm .radioStyling.large::before {
+.radioContainer .radioStyling.large::before {
   width: 14px;
   height: 14px;
 }
 
-.dsmForm .radioStyling.error {
+.radioContainer .radioStyling.error {
   border: 1px solid #d2431e;
   background-color: #FFF7F7;
 }
 
-.dsmForm .radioStyling input[type=radio]:checked + .radioStyling {
+.radioContainer input[type=radio]:checked + .radioStyling {
   border: 2px solid #2196F3;
 }
 
-.dsmForm .radioStyling input[type=radio]:checked + .radioStyling::before {
+.radioContainer input[type=radio]:checked + .radioStyling::before {
   background-color: #2196f3;
 }
 
-.dsmForm .radioStyling input[type=radio]:checked + .radioStyling.error {
+.radioContainer input[type=radio]:checked + .radioStyling.error {
   background-color: #fff;
 }
 
-.dsmForm input[type=checkbox] {
-  position: absolute;
-  opacity: 0;
-  cursor: pointer;
-  height: 0;
-  width: 0;
-}
-
-.dsmForm input[type=checkbox]:checked ~ .checkbox::after {
-  display: block;
-}
-
-.dsmForm input[type=checkbox]:checked ~ .checkbox {
-  border: 1px solid #3a4850;
-  background-color: #fff;
-}
-
-.dsmForm .checkboxContainer {
-  display: inline-block;
+.checkboxContainer {
+  display: inline-block !important;
   position: relative;
   cursor: pointer;
   font-size: 22px;
@@ -947,7 +930,24 @@
   width: 16px;
 }
 
-.dsmForm .checkboxContainer .checkbox:after {
+.checkboxContainer input[type=checkbox] {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+.checkboxContainer input[type=checkbox]:checked ~ .checkbox::after {
+  display: block;
+}
+
+.checkboxContainer input[type=checkbox]:checked ~ .checkbox {
+  border: 1px solid #3a4850;
+  background-color: #fff;
+}
+
+.checkboxContainer .checkbox:after {
   left: 5px;
   top: 2px;
   height: 8px;
@@ -958,7 +958,7 @@
   transform: rotate(45deg);
 }
 
-.dsmForm .checkbox {
+.checkboxContainer .checkbox {
   position: absolute;
   top: 0;
   left: 0;
@@ -970,17 +970,17 @@
   background-color: white;
 }
 
-.dsmForm .checkbox:hover {
+.checkboxContainer .checkbox:hover {
   border: 1px solid #6b6b6b;
 }
 
-.dsmForm .checkbox::after {
+.checkboxContainer .checkbox::after {
   content: "";
   position: absolute;
   display: none;
 }
 
-.dsmForm .checkbox.error {
+.checkboxContainer .checkbox.error {
   margin-top: 0;
   background-color: #fff7f7;
   border: 1px solid #d2431e;
@@ -1135,6 +1135,8 @@
 
 .dsmTooltip {
   position: relative;
+  display: inline-block;
+  height: 16px;
 }
 
 .dsmTooltip .item {
@@ -1151,22 +1153,31 @@
   color: #3fabe6;
   background-color: white;
   border: 1px solid;
+  cursor: pointer;
 }
 
 .dsmTooltip .container {
   overflow: visible;
+  opacity: 0;
   z-index: 8;
-  min-width: 245px;
-  max-width: 100%;
+  width: 245px;
   margin: 0px;
   position: absolute;
   top: 0;
   visibility: hidden;
   left: 49px;
   padding-bottom: 8px;
-  opacity: 1;
-  -webkit-transition: opacity 0.35s ease 0s;
-  transition: opacity 0.35s ease 0s;
+}
+
+.dsmTooltip.right .arrow {
+  left: unset;
+  right: 0;
+  top: 50%;
+}
+
+.dsmTooltip.right .container {
+  padding-bottom: 0;
+  padding-right: 8px;
 }
 
 .dsmTooltip .arrow {
@@ -1175,7 +1186,7 @@
   border-style: initial;
   border-color: initial;
   bottom: 0px;
-  left: 137.322px;
+  left: 122.5px;
   z-index: 1;
   width: 16px;
   height: 16px;
@@ -1209,7 +1220,6 @@
 
 .dsmTooltip .infoBox .textArea {
   color: black;
-  width: 250px;
   padding: 20px;
   z-index: 3;
   position: relative;

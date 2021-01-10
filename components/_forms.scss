@@ -153,6 +153,14 @@
         text-align: left;
         margin-bottom: 5px;
     }
+}
+
+.radioContainer {
+    position: relative;
+    cursor: pointer;
+    display: inline-flex;
+    -webkit-box-align: center;
+    align-items: center;
 
     input[type=radio] {
         position: absolute;
@@ -181,16 +189,8 @@
         }
     }
 
-    .radioContainer {
-        position: relative;
-        cursor: pointer;
-        display: inline-flex;
-        -webkit-box-align: center;
-        align-items: center;
-
-        &:hover .radioStyling {
-            border: 1px solid #6B6B6B;
-        }
+    &:hover .radioStyling {
+        border: 1px solid #6B6B6B;
     }
 
     .radioStyling {
@@ -241,20 +241,34 @@
             border: 1px solid rgb(210, 67, 30);
             background-color: #FFF7F7;
         }
-
-
-        input[type=radio]:checked+.radioStyling {
-            border: 2px solid #2196F3;
-        }
-
-        input[type=radio]:checked+.radioStyling::before {
-            background-color: rgb(33, 150, 243);
-        }
-
-        input[type=radio]:checked+.radioStyling.error {
-            background-color: #fff;
-        }
     }
+
+    input[type=radio]:checked+.radioStyling {
+        border: 2px solid #2196F3;
+    }
+
+    input[type=radio]:checked+.radioStyling::before {
+        background-color: rgb(33, 150, 243);
+    }
+
+    input[type=radio]:checked+.radioStyling.error {
+        background-color: #fff;
+    }
+
+}
+
+.checkboxContainer {
+    display: inline-block !important;
+    position: relative;
+    cursor: pointer;
+    font-size: 22px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    height: 16px;
+    margin-bottom: 0;
+    width: 16px;
 
     input[type=checkbox] {
         position: absolute;
@@ -273,31 +287,16 @@
         }
     }
 
-    .checkboxContainer {
-        display: inline-block;
-        position: relative;
-        cursor: pointer;
-        font-size: 22px;
-        -webkit-user-select: none;
-        -moz-user-select: none;
-        -ms-user-select: none;
-        user-select: none;
-        height: 16px;
-        margin-bottom: 0;
-        width: 16px;
-
-        .checkbox:after {
-            left: 5px;
-            top: 2px;
-            height: 8px;
-            width: 4px;
-            border: solid rgb(33, 150, 243);
-            border-width: 0 3px 3px 0;
-            -webkit-transform: rotate(45deg);
-            -ms-transform: rotate(45deg);
-            transform: rotate(45deg);
-        }
-
+    .checkbox:after {
+        left: 5px;
+        top: 2px;
+        height: 8px;
+        width: 4px;
+        border: solid rgb(33, 150, 243);
+        border-width: 0 3px 3px 0;
+        -webkit-transform: rotate(45deg);
+        -ms-transform: rotate(45deg);
+        transform: rotate(45deg);
     }
 
     .checkbox {

@@ -12,9 +12,8 @@ document.addEventListener("DOMContentLoaded", function () {
     }))
 
     document.querySelectorAll('.dsmButton').forEach(e => e.addEventListener("click", (e) => {
-        if (e.target.classList.contains('round')) {
-            let el = e.target;
-            if (e.target.tagName == 'SPAN') el = e.target.parentNode;
+        let el = e.target.closest("button");
+        if (el.classList.contains('round')) {
             el.classList.add("disabled");
 
             el.innerHTML = `<svg version="1.1" id="L9" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
@@ -31,8 +30,6 @@ document.addEventListener("DOMContentLoaded", function () {
                 </path>
                 </svg>`
         } else {
-            let el = e.target;
-            if (e.target.tagName == 'SPAN') el = e.target.parentNode;
             el.classList.add("disabled");
             el.innerHTML = (`<div class="progress"><div class="indeterminate"></div></div>` + el.innerHTML);
             el.setAttribute("disabled", true);
@@ -57,6 +54,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
     document.body.addEventListener("click", (e) => {
+        e.preventDefault();
         e.stopPropagation();
         document.querySelectorAll('.selectContainer ul').forEach(e => {
             if (e.getAttribute("style") == null) return;
@@ -64,10 +62,30 @@ document.addEventListener("DOMContentLoaded", function () {
             let el = e.closest('.selectContainer');
             el.querySelector('button').classList.remove("active");
         });
+
+        document.querySelectorAll('.dsmTooltip.click').forEach(el => {
+            el = el.querySelector('.container');
+            if (el.style.opacity < 1) return;
+            e.stopPropagation;
+
+            e.stopImmediatePropagation;
+            clearInterval(fadeInterval);
+            let opacity = 1;
+            el.style.opacity = opacity;
+            exitInterval = setInterval(() => {
+                if (opacity < 0.1) {
+                    clearInterval(exitInterval)
+                    return el.style.visibility = "hidden";
+                };
+                opacity = opacity - 0.1
+                el.style.opacity = opacity;
+            }, 20);
+        })
     })
     document.querySelectorAll('.selectContainer li').forEach(e => e.addEventListener("click", (e) => {
         document.querySelectorAll('.selectContainer li').forEach(e => e.classList.remove('selected'));
         e.target.classList.add("selected");
+        selectItem(e.target.innerText);
         e.target.parentNode.style.display = "none";
         e.target.parentNode.parentNode.querySelector('button .selectedItem').innerHTML = e.target.innerText;
         e.target.parentNode.parentNode.querySelector('button').classList.add('filled');
@@ -75,22 +93,84 @@ document.addEventListener("DOMContentLoaded", function () {
 
     }))
 
+    function selectItem(value) {
+        null;
+    }
+
+    let fadeInterval, exitInterval;
+
 
     document.querySelectorAll('.dsmTooltip').forEach(e => {
         const el = e.querySelector('.container');
-        console.log(el);
         const containerHeight = el.clientHeight;
         const containerWidth = el.clientWidth;
 
-        e.style.height = `${containerHeight + 28}px`;
 
-        // el.style.top = `-${containerHeight + 10}px`;
-        el.style.left = `-${containerWidth/2 - 10}px`;
 
-        e.querySelector('.item').addEventListener("mouseover", e => {
-            const el = e.target.closest('.container');
-            console.log(el);
-            el.style.visibilty = "visible";
-        })
+        if (e.classList.contains('right')) {
+            el.style.left = `-${containerHeight + 20}px`;
+            el.style.top = `-${containerHeight /2}px`;
+            e.style.width = containerWidth;
+            e.querySelector('.item').style.left = `${containerWidth/2}px`;
+        } else {
+            el.style.left = `0px`;
+            el.style.top = `-${containerHeight + 20}px`;
+            e.style.width = containerWidth;
+            e.querySelector('.item').style.left = `${containerWidth/2}px`;
+        }
+
+        if (e.classList.contains('click')) {
+            e.addEventListener("click", e => {
+                e.preventDefault();
+                e.stopImmediatePropagation();
+                e.stopPropagation();
+                clearInterval(exitInterval);
+                const el = e.target.closest('.dsmTooltip').querySelector('.container');
+                if (el.style.opacity > 0.9) return;
+                el.style.visibility = "visible";
+                let opacity = 0;
+                el.style.opacity = opacity;
+
+                fadeInterval = setInterval(() => {
+                    if (opacity > 0.9) return clearInterval(fadeInterval);
+                    opacity = opacity + 0.1
+                    el.style.opacity = opacity;
+                }, 20);
+            })
+        } else {
+
+            e.addEventListener("mouseenter", e => {
+                e.stopImmediatePropagation;
+                e.stopPropagation;
+                clearInterval(exitInterval);
+                const el = e.target.closest('.dsmTooltip').querySelector('.container');
+                el.style.visibility = "visible";
+                let opacity = 0;
+                el.style.opacity = opacity;
+
+                fadeInterval = setInterval(() => {
+                    if (opacity > 0.9) return clearInterval(fadeInterval);
+                    opacity = opacity + 0.1
+                    el.style.opacity = opacity;
+                }, 20);
+            })
+            e.addEventListener("mouseleave", e => {
+                e.stopPropagation;
+                e.stopImmediatePropagation;
+                clearInterval(fadeInterval);
+                const el = e.target.closest('.dsmTooltip').querySelector('.container');
+                let opacity = 1;
+                el.style.opacity = opacity;
+                exitInterval = setInterval(() => {
+                    if (opacity < 0.1) {
+                        clearInterval(exitInterval)
+                        return el.style.visibility = "hidden";
+                    };
+                    opacity = opacity - 0.1
+                    el.style.opacity = opacity;
+                }, 20);
+            })
+        }
     })
+
 })

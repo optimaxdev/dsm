@@ -1,5 +1,7 @@
 .dsmTooltip {
     position: relative;
+    display: inline-block;
+    height: 16px;
 
     .item {
         position: absolute;
@@ -15,23 +17,35 @@
         color: rgb(63, 171, 230);
         background-color: rgb(255, 255, 255);
         border: 1px solid;
+        cursor: pointer;
     }
 
     .container {
         overflow: visible;
+        opacity: 0;
         z-index: 8;
-        min-width: 245px;
-        max-width: 100%;
+        width: 245px;
         margin: 0px;
         position: absolute;
         top: 0;
         visibility: hidden;
         left: 49px;
         padding-bottom: 8px;
-        opacity: 1;
-        transition: opacity 0.35s ease 0s;
     }
 
+    &.right {
+
+        .arrow {
+            left: unset;
+            right: 0;
+            top: 50%;
+        }
+
+        .container {
+            padding-bottom: 0;
+            padding-right: 8px;
+        }
+    }
 
     .arrow {
         position: absolute;
@@ -39,7 +53,7 @@
         border-style: initial;
         border-color: initial;
         bottom: 0px;
-        left: 137.322px;
+        left: 122.5px;
         z-index: 1;
         width: 16px;
         height: 16px;
@@ -69,7 +83,6 @@
 
         .textArea {
             color: black;
-            width: 250px;
             padding: 20px;
             z-index: 3;
             position: relative;
