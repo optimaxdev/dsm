@@ -5,8 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GlassesUSA - DSM4DEVS</title>
-    <link rel="stylesheet" href="../css/index.css">
-    <script src="../scripts/index.js"></script>
+    <link rel="stylesheet" href="../../dist/styles.css">
+    <script src="../../dist/dsm-effects.js"></script>
     <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css">
     <script src="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
     <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -17,24 +17,38 @@
 
     <style>
         .hljs {
-            padding: 20px;
+            margin-top: 16px;
+            padding: 25px 30px;
             box-sizing: border-box;
             white-space: normal;
         }
 
         .inlineStyling {
+            margin-top: 0 !important;
             display: inline-flex;
             white-space: normal;
         }
 
         .inlineStyling .hljs {
             padding: 0;
+            margin-top: 0;
+        }
+
+        pre {
+            margin: 0;
         }
 
         nav {
-            background-color: #3cb4e5;
-            color: white;
-            padding: 20px 40px;
+            height: 63px;
+            border: 1px solid #F1F1F1;
+            background-color: #FFFFFF;
+            box-shadow: 0 1px 1px 0 rgba(58, 72, 80, 0.07), 0 4px 12px -1px rgba(176, 189, 197, 0.13);
+            padding: 16px 42px;
+            color: #2D2D2D;
+            font-size: 22px;
+            font-weight: 300;
+            letter-spacing: 0;
+            line-height: 25px;
         }
 
         body {
@@ -42,57 +56,139 @@
             font-family: Roboto;
         }
 
+        * {
+            box-sizing: border-box;
+        }
+
         .page-layout {
             display: grid;
             grid-template-columns: auto 1fr;
             column-gap: 100px;
+            align-items: flex-start;
+            justify-content: flex-start;
+            align-content: flex-start;
         }
 
         .content {
-            max-width: 1000px;
-            margin: auto;
-            font-size: 14px;
+            font-size: 12px;
             padding: 40px;
+            color: #2D2D2D;
         }
 
         h2 {
-            font-size: 38px;
-            font-weight: 400;
-            margin-bottom: 10px;
+            color: #2196F3;
+            font-size: 22px;
+            font-weight: 300;
+            letter-spacing: 0;
+            line-height: 25px;
+            margin-bottom: 31px;
+        }
+
+        h3 {
+            color: #2D2D2D;
+            font-size: 16px;
+            font-weight: 300;
+            letter-spacing: 0;
+            line-height: 25px;
+            margin-bottom: 55px;
         }
 
         h4 {
-            font-size: 20px;
-            margin-bottom: 0;
-            font-weight: 200;
+            margin: 0;
+            color: #2D2D2D;
+            font-size: 16px;
+            font-weight: 300;
+            letter-spacing: 0;
+            line-height: 25px;
+            margin-bottom: 16px;
+        }
+
+        .innerWidth {
+            max-width: 1024px;
+            margin: auto;
+        }
+
+        .sidebar {
+            padding: 41px 30px;
+            border-right: 0.5px solid #AAAAAA;
+        }
+
+        .sidebar ul {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        .sidebar ul li ul {
+            margin-top: 29px;
+            margin-left: 25px;
+        }
+
+        .sidebar ul li ul li {
+            font-size: 12px;
+            line-height: 14px;
+            font-weight: 300;
+        }
+
+        .sidebar li {
+            color: #898989;
+            cursor: default;
+            font-size: 16px;
+            font-weight: 300;
+            letter-spacing: 0;
+            line-height: 19px;
+            padding-bottom: 33px;
+        }
+
+        .sidebar li.active {
+            color: #2D2D2D;
+            font-weight: 500;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: inherit;
         }
     </style>
 </head>
 
 <body>
-    <nav>
-        <h1>DSM4DEVS</h1>
-    </nav>
-    <div class="page-layout">
+
+    <div class="page-layout innerWidth">
         <div class="sidebar">
-            ...
+            <ul>
+                <li class="active"><a href="./">Installation</a></li>
+                <li>Components
+                    <ul>
+                        <li><a href="#">CTA Buttons</a></li>
+                        <li><a href="#">Round Buttons</a></li>
+                        <li><a href="#">Toggles</a></li>
+                        <li><a href="#">Form</a></li>
+                        <li><a href="#">Tooltips</a></li>
+                        <li><a href="#">Badges</a></li>
+                        <li><a href="#">Shadows</a></li>
+                        <li><a href="#">Colours</a></li>
+                        <li><a href="#">Icons Library</a></li>
+                    </ul>
+                </li>
+            </ul>
         </div>
         <div class="content">
             <h2>Installation</h2>
-            <h4>Learn how to include the styling in your project.</h4>
-
+            <h3>Learn how to include the styling in your project.</h3>
+            <h4># Usage</h4>
             To install the styling and scripts, include the following code in the
-            <pre class="inlineStyling"><code>&lt;head>&#8249;/head></code></pre>
+            <pre class="inlineStyling"><code>&lt;head>&lt;/head></code></pre>
             section of your project
             <pre>
                 <code>
                     &lt;!-- CSS Styling --><br>
                     &lt;link rel="stylesheet"
-                    href="https://cdn.jsdelivr.net/gh/TheoFreud/glassesUSA@latest/css/index.css">
+                    href="https://cdn.jsdelivr.net/gh/glassesUSA/dsm@latest/dist/styles.css">
                     <p></p>
                     &lt;!-- Scripts - Required if you are using any form elements/buttons --><br>
                     &lt;script
-                    src="https://cdn.jsdelivr.net/gh/TheoFreud/glassesUSA@latest/scripts/index.js">&lt;/script>
+                    src="https://cdn.jsdelivr.net/gh/glassesUSA/dsm@latest/dist/dsm-effects.js">&lt;/script>
                  </code>
              </pre>
         </div>

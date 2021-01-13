@@ -1,0 +1,46 @@
+       .sidebar {
+           padding: 41px 33px;
+           padding-right: 60px;
+           border-right: 0.5px solid #dcdcdc;
+           display: flex;
+           row-gap: 37px;
+           flex-direction: column;
+       }
+
+       .subMenu {
+           margin-left: 26px;
+           display: flex;
+           flex-direction: column;
+           row-gap: 37px;
+           white-space: nowrap;
+       }
+
+       .subMenu a {
+           position: relative;
+       }
+
+       .subMenu a.active::before {
+           position: absolute;
+           left: -33px;
+           content: "";
+           height: 4px;
+           width: 13px;
+           border-radius: 2px;
+           background-color: #2196F3;
+           top: 50%;
+           transform: translate(0, -50%);
+       }
+
+       .sidebar a {
+           display: inline-block;
+           color: #898989;
+           font-size: 16px;
+           font-weight: 300;
+           letter-spacing: 0;
+           line-height: 19px;
+       }
+
+       .sidebar .active {
+           color: #2D2D2D;
+           font-weight: 500;
+       }
