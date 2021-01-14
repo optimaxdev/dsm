@@ -1,87 +1,118 @@
 import React, { Component } from 'react'
 import Code from './common/code.jsx'
+import Section from './common/section.jsx'
+import Scrollspy from 'react-scrollspy'
 
 class CtaButtons extends Component {
   state = {}
 
   render() {
     return (
-      <React.Fragment>
-        <div className="pageTitle">CTA Buttons</div>
-        <div className="pageSubTitle">
-          The CTA buttons are the most important buttons on the site and are
-          designed for the central reference on the page.
-        </div>
-        <div className="sectionTitle" id="usage">
-          # Usage
-        </div>
-        To apply this component, add the{' '}
-        <Code styling="inline" content=".dsmButton" /> class to a{' '}
-        <Code styling="inline" content="<button></button>" /> element. Add the{' '}
-        <Code styling="inline" content="disabled" /> attribute to a{' '}
-        <Code styling="inline" content="<button></button>" /> element to disable
-        the button. Further styling options can be seen below.{' '}
-        <div className="exampleContainer">
-          <button class="dsmButton">Lorem Ipsum</button>
-          <button class="dsmButton" disabled>
-            Lorem Ipsum
-          </button>
-        </div>
-        <Code
-          content={`<button class="dsmButton"></button>
+      <div>
+        <div className="pageTitle contentMaxWidth">CTA Buttons</div>
+        <div className="splitColumn contentMaxWidth">
+          <div id="content">
+            <div className="pageSubTitle">
+              The CTA buttons are the most important buttons on the site and are
+              designed for the central reference on the page.
+            </div>
+            {/* Usage */}
+            <Section title="Usage" id="usage">
+              To apply this component, add the
+              <Code styling="inline">.dsmButton</Code> class to a
+              <Code styling="inline">{`<button></button>`}</Code> element. Add
+              the <Code styling="inline">disabled</Code> attribute to a{' '}
+              <Code styling="inline">{`<button></button>`}</Code> element to
+              disable the button. Further styling options can be seen below.{' '}
+              <div className="exampleContainer">
+                <button className="dsmButton">Lorem Ipsum</button>
+                <button className="dsmButton" disabled>
+                  Lorem Ipsum
+                </button>
+              </div>
+              <Code>
+                {`<button class="dsmButton"></button>`}
+                <br />
+                <br />
+                {`<button class="dsmButton" disabled></button>`}
+              </Code>
+            </Section>
 
-<button class="dsmButton" disabled></button>`}
-        />
-        <div className="sectionTitle" id="colours">
-          # Colours
-        </div>
-        There are two different colours to choose from, either the default
-        primary styling or the secondary styling. To add the secondary styling
-        add <Code styling="inline" content=".secondary" language="css" />
-        to the button element classlist. For the default styling there is no
-        need to add an extra class.
-        <div className="exampleContainer">
-          <button class="dsmButton secondary">Lorem Ipsum</button>
-        </div>
-        <Code content='<button class="dsmButton secondary"></button>'></Code>
-        <div className="sectionTitle" id="sizes">
-          # Sizes
-        </div>
-        There are several size modifiers available. Just add one of the
-        following classes to apply a different size
-        <div class="gridTable">
-          <span class="previewTitle">Class</span>
-          <span class="previewTitle">Preview</span>
+            <Section title="Colours" id="colours">
+              There are two different colours to choose from, either the default
+              primary styling or the secondary styling. To add the secondary
+              styling add{' '}
+              <Code styling="inline" language="css">
+                .secondary
+              </Code>
+              to the button element classlist. For the default styling there is
+              no need to add an extra class.
+              <div className="exampleContainer">
+                <button className="dsmButton secondary">Lorem Ipsum</button>
+              </div>
+              <Code>{'<button class="dsmButton secondary"></button>'}</Code>
+            </Section>
 
-          <Code content=".extralarge" styling="inline" />
-          <button class="dsmButton extralarge">Lorem Ipsum</button>
-          <Code content=".large" styling="inline" />
-          <button class="dsmButton large">Lorem Ipsum</button>
-          <Code content=".regular" styling="inline" />
-          <button class="dsmButton regular">Lorem Ipsum</button>
-          <Code content=".medium" styling="inline" />
-          <button class="dsmButton medium">Lorem Ipsum</button>
-          <Code content=".small" styling="inline" />
-          <button class="dsmButton small">Lorem Ipsum</button>
+            <Section title="Sizes" id="sizes">
+              There are several size modifiers available. Just add one of the
+              following classes to apply a different size
+              <div className="gridTable">
+                <span className="previewTitle">Class</span>
+                <span className="previewTitle">Preview</span>
+
+                <Code styling="inline">.extralarge</Code>
+                <button className="dsmButton extralarge">Lorem Ipsum</button>
+                <Code styling="inline">.large</Code>
+                <button className="dsmButton large">Lorem Ipsum</button>
+                <Code styling="inline">.regular</Code>
+                <button className="dsmButton regular">Lorem Ipsum</button>
+                <Code styling="inline">.medium</Code>
+                <button className="dsmButton medium">Lorem Ipsum</button>
+                <Code styling="inline">.small</Code>
+                <button className="dsmButton small">Lorem Ipsum</button>
+              </div>
+              <Code>
+                {`<button class='dsmButton extralarge'></button>`}
+                <br />
+                {`<button class='dsmButton large'></button>`}
+                <br />
+                {`<button class='dsmButton regular'></button>`}
+                <br />
+                {`<button class='dsmButton medium'></button>`}
+                <br />
+                {`<button class='dsmButton small'></button>`}
+              </Code>
+            </Section>
+
+            <Section title="Styles" id="styles">
+              If you want the button to have a “ghost” outline add
+              <Code styling="inline" language="css">
+                .ghost
+              </Code>
+              to the button element classlist.
+              <div className="exampleContainer">
+                <button className="dsmButton ghost">Lorem Ipsum</button>
+              </div>
+              <Code>{`<button class='dsmButton ghost'></button>`}</Code>
+            </Section>
+          </div>
+
+          <Scrollspy
+            items={['colours', 'sizes', 'styles']}
+            componentTag="div"
+            className="sideNav"
+            offset={-50}
+            currentClassName="active"
+          >
+            <a href="#usage" className="active">
+              Usage
+            </a>
+            <a href="#colours">Colours</a>
+            <a href="#sizes">Sizes</a>
+            <a href="#styles">Styles</a>
+          </Scrollspy>
         </div>
-        <Code
-          content={`<button class='dsmButton extralarge'></button>
-<button class='dsmButton large'></button>
-<button class='dsmButton regular'></button>
-<button class='dsmButton medium'></button>
-<button class='dsmButton small'></button>`}
-        />
-        <div className="sectionTitle" id="styles">
-          # Styles
-        </div>
-        If you want the button to have a “ghost” outline add
-        <Code content=".ghost" styling="inline" language="css" />
-        to the button element classlist.
-        <div className="exampleContainer">
-          <button class="dsmButton ghost">Lorem Ipsum</button>
-        </div>
-        <Code content="<button class='dsmButton ghost'></button>" />
-      </React.Fragment>
+      </div>
     )
   }
 }

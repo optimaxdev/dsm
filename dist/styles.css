@@ -226,14 +226,14 @@
   background-color: #ff6c00 !important;
 }
 
-.dsmButton.ghost.secondary {
-  color: #2196f3;
+.dsmButton.ghost.secondary, .dsmButton.ghost.round {
+  color: #2196f3 !important;
 }
 
-.dsmButton.ghost.secondary:hover {
-  border-color: #1c86da;
+.dsmButton.ghost.secondary:hover, .dsmButton.ghost.round:hover {
+  border-color: #1c86da !important;
   background-color: #1c86da !important;
-  color: white;
+  color: white !important;
 }
 
 .dsmButton.secondary {

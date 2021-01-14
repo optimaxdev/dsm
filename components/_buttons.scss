@@ -216,13 +216,14 @@
             background-color: rgb(255, 108, 0) !important;
         }
 
-        &.secondary {
-            color: rgb(33, 150, 243);
+        &.secondary,
+        &.round {
+            color: rgb(33, 150, 243) !important;
 
             &:hover {
-                border-color: rgb(28, 134, 218);
+                border-color: rgb(28, 134, 218) !important;
                 background-color: rgb(28, 134, 218) !important;
-                color: white;
+                color: white !important;
             }
         }
     }

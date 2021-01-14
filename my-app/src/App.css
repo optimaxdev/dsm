@@ -3,6 +3,11 @@
           margin: auto;
         }
 
+        html {
+          scroll-behavior: smooth;
+
+        }
+
         body {
           min-height: 100vh;
           margin: 0;
@@ -11,6 +16,7 @@
 
         * {
           box-sizing: border-box;
+          outline: 0;
         }
 
         .inlineStyling {
@@ -40,7 +46,43 @@
           display: grid;
           grid-template-columns: auto 1fr;
           column-gap: 100px;
-          min-height: calc(100vh - 63px);
+          align-items: flex-start;
+        }
+
+        .hoverTooltip {
+          display: block !important;
+          visibility: visible;
+          background-color: white !important;
+          color: black !important;
+          border-color: white !important;
+          color: #3A4850;
+          font-family: Roboto;
+          font-size: 12px;
+          letter-spacing: 0;
+          line-height: 14px;
+          box-shadow: 0 1px 2px 0 rgba(58, 72, 80, 0.07),
+            0 6px 13px 0 rgba(176, 189, 197, 0.14) !important;
+        }
+
+        .hoverTooltip .tippy-arrow {
+          color: white !important;
+        }
+
+        #iconStroke,
+        #iconFill {
+          transition: 0.2s all;
+        }
+
+        .copyIcon:hover #iconStroke {
+          stroke: black;
+        }
+
+        .copyIcon * {
+          cursor: pointer !important;
+        }
+
+        .copyIcon:hover #iconFill {
+          fill: black;
         }
 
         .content {
@@ -55,7 +97,7 @@
           font-size: 22px;
           font-weight: 300;
           letter-spacing: 0;
-          margin-bottom: 26px;
+          padding-bottom: 26px;
         }
 
         .pageSubTitle {
@@ -64,6 +106,40 @@
           font-weight: 300;
           letter-spacing: 0;
           margin-bottom: 51px;
+        }
+
+        .sideNav {
+          top: 50px;
+          position: sticky;
+          color: #898989;
+          font-size: 12px;
+          display: flex;
+          flex-direction: column;
+          gap: 30px;
+          font-weight: 300;
+          padding-left: 34px;
+          border-left: 0.5px solid #dcdcdc;
+          letter-spacing: 0;
+          line-height: 14px;
+        }
+
+        .sideNav .active {
+          color: #2D2D2D;
+          font-weight: 300;
+        }
+
+        .splitColumn {
+          display: grid;
+          max-width: 1100px;
+          margin: auto;
+          grid-template-columns: 1fr max-content;
+          gap: 69px;
+          align-items: flex-start;
+        }
+
+        .contentMaxWidth {
+          max-width: 1100px;
+          margin: auto;
         }
 
         .sectionTitle {

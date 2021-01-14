@@ -1,16 +1,22 @@
 import React, { Component } from 'react'
 import { NavLink } from 'react-router-dom'
 import './css/sidebar.css'
+import Logo from '../images/logo.svg'
 
 class Sidebar extends Component {
   state = {}
   render() {
     return (
       <div className="sidebar">
+        <img src={Logo} className="logo" alt="Logo" />
         <NavLink to="/" exact activeClassName="active">
           Installation
         </NavLink>
-        <NavLink to="/components/" activeClassName="active">
+        <NavLink
+          to="/components/"
+          activeClassName="active"
+          style={{ pointerEvents: 'none' }}
+        >
           Components
         </NavLink>
         <div className="subMenu">

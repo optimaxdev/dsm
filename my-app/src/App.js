@@ -1,15 +1,14 @@
 import './App.css'
 import './components/navbar'
-import Navbar from './components/navbar'
 import Sidebar from './components/sidebar'
 import { Switch, Route } from 'react-router-dom'
 import Index from './components'
 import CtaButtons from './components/cta-buttons'
+import RoundButtons from './components/round-buttons'
 
 function App() {
   return (
     <div className="App">
-      <Navbar />
       <div className="page-layout">
         <Sidebar />
         <div className="content">
@@ -18,6 +17,10 @@ function App() {
               <Switch location={location}>
                 <Route path="/" exact component={Index} />
                 <Route path="/components/cta-buttons" component={CtaButtons} />
+                <Route
+                  path="/components/round-buttons"
+                  component={RoundButtons}
+                />
               </Switch>
             )}
           />

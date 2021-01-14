@@ -6,23 +6,31 @@ class Index extends Component {
 
   render() {
     return (
-      <React.Fragment>
+      <div className="contentMaxWidth">
         <div className="pageTitle">Installation</div>
         <div className="pageSubTitle">
           Learn how to include the styling in your project.
         </div>
         <div className="sectionTitle"># Usage</div>
         To install the styling and scripts, include the following code in the
-        <Code content="<head></head>" styling="inline"></Code>
+        <Code styling="inline">&lt;head&gt;&lt;/head&gt;</Code>
         section of your project.
-        <Code
-          content={`<!-- CSS Styling -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/glassesUSA/dsm@latest/dist/styles.css">
-
-<!-- Scripts - Required if you are using any form elements/buttons-->
-<script src="https://cdn.jsdelivr.net/gh/glassesUSA/dsm@latest/dist/dsm-effects.js"></script>`}
-        />
-      </React.Fragment>
+        <Code>
+          {'<!-- CSS Styling -->'} <br />
+          {
+            '<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/glassesUSA/dsm@latest/dist/styles.css">'
+          }
+          <br />
+          <br />
+          {
+            '<!-- Scripts - Required if you are using any form elements/buttons-->'
+          }
+          <br />
+          {
+            '<script src="https://cdn.jsdelivr.net/gh/glassesUSA/dsm@latest/dist/dsm-effects.js"></script>'
+          }
+        </Code>
+      </div>
     )
   }
 }
