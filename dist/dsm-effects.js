@@ -48,7 +48,7 @@ document.addEventListener("DOMContentLoaded", function () {
         let el = e.target;
         if (el.closest('.dsmButton')) buttonClick(e);
         if (el.closest('.selectContainer li')) selectClick(e);
-
+        if (el.closest('.selectContainer button')) selectButtonClick(e);
     }
 
 
@@ -97,20 +97,22 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     document.querySelectorAll('.selectContainer button').forEach(e => {
+        if (e.querySelector('svg') == true) return;
         e.innerHTML = e.innerHTML + `<svg xmlns="http://www.w3.org/2000/svg" stroke="rgb(137, 149, 156)" width="12px" height="10px">
                     <path d="M1 1l5 6 5-6" stroke-width="2" fill="none" fill-rule="evenodd" stroke-linecap="round"
                         stroke-linejoin="round"></path>
                 </svg>`;
-        e.addEventListener("click", (e) => {
-            e.preventDefault();
-            e.stopPropagation();
-            let el = e.target.closest('.selectContainer');
-            el.querySelector('button').classList.remove("active");
-            if (el.querySelector('ul').getAttribute("style") != null & el.querySelector('ul').style.display == "block") return el.querySelector('ul').style.display = "none"
-            el.querySelector('ul').style.display = "block";
-            el.querySelector('button').classList.add("active");
-        })
     })
+
+    function selectButtonClick(e) {
+        e.preventDefault();
+        e.stopPropagation();
+        let el = e.target.closest('.selectContainer');
+        el.querySelector('button').classList.remove("active");
+        if (el.querySelector('ul').getAttribute("style") != null & el.querySelector('ul').style.display == "block") return el.querySelector('ul').style.display = "none"
+        el.querySelector('ul').style.display = "block";
+        el.querySelector('button').classList.add("active");
+    }
 
     document.querySelectorAll('label.dsmSlider').forEach(e => {
         e.innerHTML = ` <input type="checkbox"><span class="slider"></span> `;
