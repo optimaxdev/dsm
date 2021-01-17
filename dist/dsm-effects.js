@@ -111,6 +111,12 @@ document.addEventListener("DOMContentLoaded", function () {
         })
     })
 
+    document.querySelectorAll('label.dsmSlider').forEach(e => {
+        e.innerHTML = ` <input type="checkbox"><span class="slider"></span> `;
+        if (e.dataset.disabled) e.innerHTML = `<input type="checkbox" disabled><span class="slider"></span> `;
+    })
+
+
     document.querySelectorAll('.selectContainer li').forEach(e => e.addEventListener("click", (e) => {
         document.querySelectorAll('.selectContainer li').forEach(e => e.classList.remove('selected'));
         e.target.classList.add("selected");
