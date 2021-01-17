@@ -47,6 +47,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
         let el = e.target;
         if (el.closest('.dsmButton')) buttonClick(e);
+        if (el.closest('.selectContainer li')) selectClick(e);
 
     }
 
@@ -117,7 +118,7 @@ document.addEventListener("DOMContentLoaded", function () {
     })
 
 
-    document.querySelectorAll('.selectContainer li').forEach(e => e.addEventListener("click", (e) => {
+    function selectClick(e) {
         document.querySelectorAll('.selectContainer li').forEach(e => e.classList.remove('selected'));
         e.target.classList.add("selected");
         selectItem(e.target.innerText);
@@ -125,8 +126,7 @@ document.addEventListener("DOMContentLoaded", function () {
         e.target.parentNode.parentNode.querySelector('button .selectedItem').innerHTML = e.target.innerText;
         e.target.parentNode.parentNode.querySelector('button').classList.add('filled');
         e.target.parentNode.parentNode.querySelector('button').classList.remove("active");
-
-    }))
+    }
 
     let fadeInterval, exitInterval;
 
