@@ -1,3 +1,4 @@
+document.addEventListener("DOMContentLoaded", function () {
     document.querySelectorAll('.dsmForm .inputLabel input[type=text]').forEach(e => e.addEventListener("change", (
         e) => {
         // Text input styling including effects on change values
@@ -48,6 +49,7 @@
         if (el.closest('.dsmButton')) buttonClick(e);
 
     }
+
 
     function closeTooltip(el) {
         el = el.closest('.dsmTooltip.click').querySelector('.container');
@@ -219,3 +221,4 @@
             })
         }
     })
+})
