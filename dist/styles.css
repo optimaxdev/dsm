@@ -1157,13 +1157,21 @@
 .dsmTooltip {
   position: relative;
   display: inline-block;
-  height: 16px;
-  width: 16px;
   margin-right: 10px;
+  padding-top: 20px;
+}
+
+.dsmTooltip.click .item:hover + .container {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.dsmTooltip:hover .container {
+  opacity: 1;
+  visibility: visible;
 }
 
 .dsmTooltip .item {
-  position: absolute;
   bottom: 0;
   height: 18px;
   width: 18px;
@@ -1192,6 +1200,11 @@
   padding-bottom: 8px;
 }
 
+.dsmTooltip.right {
+  padding-top: 0;
+  padding-left: 20px;
+}
+
 .dsmTooltip.right .arrow {
   left: unset;
   right: 0;
@@ -1201,6 +1214,11 @@
 .dsmTooltip.right .container {
   padding-bottom: 0;
   padding-right: 8px;
+}
+
+.dsmTooltip.bottom {
+  padding-top: 0;
+  padding-bottom: 20px;
 }
 
 .dsmTooltip.bottom .arrow {
@@ -1222,6 +1240,11 @@
   height: 12px;
   width: 12px;
   z-index: 3;
+}
+
+.dsmTooltip.left {
+  padding-top: 0;
+  padding-right: 20px;
 }
 
 .dsmTooltip.left .arrow {
