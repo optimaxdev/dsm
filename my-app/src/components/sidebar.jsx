@@ -29,7 +29,7 @@ class Sidebar extends Component {
           <NavLink to="/components/toggles" activeClassName="active">
             Toggles
           </NavLink>
-          <NavLink to="/components/form" activeClassName="active">
+          <NavLink to="/components/forms" activeClassName="active">
             Forms
           </NavLink>
           <NavLink to="/components/tooltips" activeClassName="active">

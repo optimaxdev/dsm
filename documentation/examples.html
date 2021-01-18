@@ -169,6 +169,10 @@
         <div class="selectContainer error">
             <button>
                 <span class="selectedItem">Placeholder</span>
+                <svg xmlns="http://www.w3.org/2000/svg" stroke="rgb(137, 149, 156)" width="12px" height="10px">
+                    <path d="M1 1l5 6 5-6" stroke-width="2" fill="none" fill-rule="evenodd" stroke-linecap="round"
+                        stroke-linejoin="round"></path>
+                </svg>
             </button>
             <ul>
                 <li>Item 1</li>
@@ -193,8 +197,7 @@
             <input type="text" name="" id="" placeholder="Hello">
         </div>
         <div class="inputLabel">
-            <label>Error</label>
-            <input type="text" name="" class="error" id="" placeholder="Hello">
+            <label>Error</label <input type="text" name="" class="error" id="" placeholder="Hello">
         </div>
         <div class="inputLabel">
             <input type="text" name="" id="" placeholder="Hello" disabled>
@@ -266,7 +269,7 @@
         <input type="checkbox">
         <span class="slider"></span>
     </label>
-    <label class="dsmSlider">
+    <label class="dsmSlider" data-disabled=true>
         <input type="checkbox" disabled>
         <span class="slider"></span>
     </label>
@@ -540,3 +543,5 @@
         </div>
     </div>
 </div>
+
+<button class="dsmButton round"><span>Lorem Ipsum</span></button>

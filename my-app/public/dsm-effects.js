@@ -1,17 +1,16 @@
 document.addEventListener("DOMContentLoaded", function () {
-    document.addEventListener("change", e => {
-        if (e.target.type == 'text' && e.target.closest('.dsmForm')) {
-            // Text input styling including effects on change values
-            if (e.target.value != "") {
-                e.target.parentNode.querySelector('label').style.fontSize = "11px";
-                e.target.parentNode.querySelector('label').style.lineHeight = "19px";
-                e.target.parentNode.querySelector('label').style.transform = "translateY(-13px)";
-                e.target.parentNode.querySelector('label').style.color = "rgb(170, 170, 170)";
-            } else {
-                e.target.parentNode.querySelector('label').removeAttribute("style");
-            }
+    document.querySelectorAll('.dsmForm .inputLabel input[type=text]').forEach(e => e.addEventListener("change", (
+        e) => {
+        // Text input styling including effects on change values
+        if (e.target.value != "") {
+            e.target.parentNode.querySelector('label').style.fontSize = "11px";
+            e.target.parentNode.querySelector('label').style.lineHeight = "19px";
+            e.target.parentNode.querySelector('label').style.transform = "translateY(-13px)";
+            e.target.parentNode.querySelector('label').style.color = "rgb(170, 170, 170)";
+        } else {
+            e.target.parentNode.querySelector('label').removeAttribute("style");
         }
-    })
+    }))
 
     document.body.addEventListener("click", function (e) {
         clickHandler(e);
@@ -48,10 +47,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
         let el = e.target;
         if (el.closest('.dsmButton')) buttonClick(e);
-        if (el.closest('.selectContainer li')) selectClick(e);
-        if (el.closest('.selectContainer button')) selectButtonClick(e);
-    }
 
+    }
 
     function closeTooltip(el) {
         el = el.closest('.dsmTooltip.click').querySelector('.container');
@@ -98,30 +95,22 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     document.querySelectorAll('.selectContainer button').forEach(e => {
-        if (e.querySelector('svg') != null) return;
         e.innerHTML = e.innerHTML + `<svg xmlns="http://www.w3.org/2000/svg" stroke="rgb(137, 149, 156)" width="12px" height="10px">
                     <path d="M1 1l5 6 5-6" stroke-width="2" fill="none" fill-rule="evenodd" stroke-linecap="round"
                         stroke-linejoin="round"></path>
                 </svg>`;
+        e.addEventListener("click", (e) => {
+            e.preventDefault();
+            e.stopPropagation();
+            let el = e.target.closest('.selectContainer');
+            el.querySelector('button').classList.remove("active");
+            if (el.querySelector('ul').getAttribute("style") != null & el.querySelector('ul').style.display == "block") return el.querySelector('ul').style.display = "none"
+            el.querySelector('ul').style.display = "block";
+            el.querySelector('button').classList.add("active");
+        })
     })
 
-    function selectButtonClick(e) {
-        e.preventDefault();
-        e.stopPropagation();
-        let el = e.target.closest('.selectContainer');
-        el.querySelector('button').classList.remove("active");
-        if (el.querySelector('ul').getAttribute("style") != null & el.querySelector('ul').style.display == "block") return el.querySelector('ul').style.display = "none"
-        el.querySelector('ul').style.display = "block";
-        el.querySelector('button').classList.add("active");
-    }
-
-    document.querySelectorAll('label.dsmSlider').forEach(e => {
-        e.innerHTML = ` <input type="checkbox"><span class="slider"></span> `;
-        if (e.dataset.disabled) e.innerHTML = `<input type="checkbox" disabled><span class="slider"></span> `;
-    })
-
-
-    function selectClick(e) {
+    document.querySelectorAll('.selectContainer li').forEach(e => e.addEventListener("click", (e) => {
         document.querySelectorAll('.selectContainer li').forEach(e => e.classList.remove('selected'));
         e.target.classList.add("selected");
         selectItem(e.target.innerText);
@@ -129,7 +118,8 @@ document.addEventListener("DOMContentLoaded", function () {
         e.target.parentNode.parentNode.querySelector('button .selectedItem').innerHTML = e.target.innerText;
         e.target.parentNode.parentNode.querySelector('button').classList.add('filled');
         e.target.parentNode.parentNode.querySelector('button').classList.remove("active");
-    }
+
+    }))
 
     let fadeInterval, exitInterval;
 
