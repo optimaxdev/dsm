@@ -983,6 +983,8 @@
   left: 0;
   border: 1px solid #aaaaaa;
   height: 16px;
+  -webkit-box-sizing: content-box;
+          box-sizing: content-box;
   width: 16px;
   -webkit-transition: 0.2s border-color;
   transition: 0.2s border-color;
