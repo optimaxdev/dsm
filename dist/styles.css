@@ -97,6 +97,14 @@
   fill: #b0bdc5;
 }
 
+.dsmButton.round.disabled.ghost {
+  background-color: #1c86da !important;
+}
+
+.dsmButton.round.disabled.ghost svg path {
+  fill: #57b5ff;
+}
+
 .dsmButton.round svg {
   height: 100%;
   -webkit-transform-origin: center center;
@@ -870,6 +878,7 @@
   display: block;
   position: relative;
   border-radius: 100%;
+  margin-right: 10px;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   -webkit-transition: border-color 0.15s linear 0s;
@@ -923,6 +932,8 @@
 .checkboxContainer {
   display: inline-block !important;
   position: relative;
+  -webkit-box-sizing: content-box;
+          box-sizing: content-box;
   cursor: pointer;
   font-size: 22px;
   -webkit-user-select: none;
@@ -949,6 +960,10 @@
 .checkboxContainer input[type=checkbox]:checked ~ .checkbox {
   border: 1px solid #3a4850;
   background-color: #fff;
+}
+
+.checkboxContainer input[type=checkbox]:disabled + .checkbox:hover {
+  border: 1px solid #aaaaaa;
 }
 
 .checkboxContainer .checkbox:after {

@@ -209,6 +209,7 @@
         display: block;
         position: relative;
         border-radius: 100%;
+        margin-right: 10px;
         box-sizing: border-box;
         transition: border-color 0.15s linear 0s;
         width: 12px;
@@ -260,6 +261,7 @@
 .checkboxContainer {
     display: inline-block !important;
     position: relative;
+    box-sizing: content-box;
     cursor: pointer;
     font-size: 22px;
     -webkit-user-select: none;
@@ -284,6 +286,10 @@
         &:checked~.checkbox {
             border: 1px solid rgb(58, 72, 80);
             background-color: #fff;
+        }
+
+        &:disabled+.checkbox:hover {
+            border: 1px solid rgb(170, 170, 170);
         }
     }
 

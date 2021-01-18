@@ -84,6 +84,14 @@
                     fill: rgb(176, 189, 197);
                 }
             }
+
+            &.ghost {
+                background-color: rgb(28, 134, 218) !important;
+
+                svg path {
+                    fill: rgb(87, 181, 255);
+                }
+            }
         }
 
         svg {

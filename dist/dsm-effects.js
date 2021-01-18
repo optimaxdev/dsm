@@ -20,12 +20,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
     function clickHandler(e) {
         e.stopPropagation();
-        document.querySelectorAll('.selectContainer ul').forEach(e => {
-            if (e.getAttribute("style") == null) return;
-            e.style.display = "none";
-            let el = e.closest('.selectContainer');
-            el.querySelector('button').classList.remove("active");
-        });
 
         document.querySelectorAll('.dsmTooltip.click').forEach(el => {
             el = el.querySelector('.container');
@@ -97,20 +91,32 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }
 
-    document.querySelectorAll('.selectContainer button').forEach(e => {
-        if (e.querySelector('svg') != null) return;
-        e.innerHTML = e.innerHTML + `<svg xmlns="http://www.w3.org/2000/svg" stroke="rgb(137, 149, 156)" width="12px" height="10px">
+    document.querySelectorAll('.selectContainer').forEach(e => {
+        if (e.querySelector('button')) return;
+        e.innerHTML = `<button ${(e.dataset.disabled) ? 'disabled' : ''}>
+                <span class = "selectedItem" > ${
+                    (e.dataset.placeholder != null) ? e.dataset.placeholder : 'Placeholder'} </span>  
+                    <svg xmlns="http://www.w3.org/2000/svg" stroke="rgb(137, 149, 156)" width="12px" height="10px">
                     <path d="M1 1l5 6 5-6" stroke-width="2" fill="none" fill-rule="evenodd" stroke-linecap="round"
                         stroke-linejoin="round"></path>
-                </svg>`;
+                    </svg>
+                </button>` + e.innerHTML;
+    })
+    document.querySelectorAll('.checkboxContainer').forEach(e => {
+        e.innerHTML = `<input type="checkbox" ${(e.dataset.disabled) ? 'disabled' : ''}>
+            <span class="checkbox${(e.dataset.error) ? ' error' : ''}"></span>`
     })
 
     function selectButtonClick(e) {
         e.preventDefault();
         e.stopPropagation();
         let el = e.target.closest('.selectContainer');
-        el.querySelector('button').classList.remove("active");
-        if (el.querySelector('ul').getAttribute("style") != null & el.querySelector('ul').style.display == "block") return el.querySelector('ul').style.display = "none"
+
+        if (el.querySelector('button').classList.contains('active')) {
+            el.querySelector('button').classList.remove("active");
+            return el.querySelector('ul').style.display = "none";
+        }
+
         el.querySelector('ul').style.display = "block";
         el.querySelector('button').classList.add("active");
     }
@@ -118,6 +124,11 @@ document.addEventListener("DOMContentLoaded", function () {
     document.querySelectorAll('label.dsmSlider').forEach(e => {
         e.innerHTML = ` <input type="checkbox"><span class="slider"></span> `;
         if (e.dataset.disabled) e.innerHTML = `<input type="checkbox" disabled><span class="slider"></span> `;
+    })
+    document.querySelectorAll('.dsmForm .inputLabel').forEach(e => {
+        if (!e.querySelector('label')) e.innerHTML = `<label>${e.querySelector('input').placeholder}</label>${e.innerHTML}`;
+        console.log(e.querySelector('label').innerText);
+        if (e.querySelector('label').innerText == "") e.querySelector('label').innerText = "Please insert a placeholder";
     })
 
 
