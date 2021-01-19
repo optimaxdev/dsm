@@ -30,9 +30,14 @@
         cursor: pointer;
     }
 
+    &.click .container {
+        transition: none;
+    }
+
     .container {
         overflow: visible;
         opacity: 0;
+        transition: 0.2s all;
         z-index: 8;
         width: 250px;
         margin: 0px;
@@ -61,7 +66,6 @@
 
     &.bottom {
         padding-top: 0;
-        padding-bottom: 20px;
 
         .arrow {
             left: 50%;
