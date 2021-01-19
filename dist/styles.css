@@ -1157,8 +1157,7 @@
 .dsmTooltip {
   position: relative;
   display: inline-block;
-  margin-right: 10px;
-  padding: 0;
+  padding: 0 10px;
   padding-top: 20px;
 }
 
@@ -1203,7 +1202,7 @@
 
 .dsmTooltip.right {
   padding-top: 0;
-  padding-left: 20px;
+  padding-left: 10px;
 }
 
 .dsmTooltip.right .arrow {
@@ -1245,7 +1244,7 @@
 
 .dsmTooltip.left {
   padding-top: 0;
-  padding-right: 20px;
+  padding-right: 10px;
 }
 
 .dsmTooltip.left .arrow {
