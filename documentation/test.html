@@ -6,14 +6,116 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <!-- CSS Styling -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/glassesUSA/dsm@latest/dist/styles.css">
+    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/glassesUSA/dsm@latest/dist/styles.css"> -->
 
-    <!-- Scripts - Required if you are using any form elements/buttons-->
-    <script src="../dist/dsm-effects.js"></script>
+    <!-- Scripts - Required if you are using any form elements/buttons
+    <script src="../dist/dsm-effects.js"></script>-->
 </head>
 
 <body>
-    <button class="dsmButton round"><span>Lorem Ipsum</span></button>
+    <style>
+        .dsmTooltip {
+            position: relative;
+            display: inline-block;
+            min-width: 245px;
+            margin-top: 300px;
+            padding: 0;
+        }
+
+        .dsmTooltip.click .item:hover+.container {
+            opacity: 0;
+            visibility: hidden;
+        }
+
+        .dsmTooltip:hover .container {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .dsmTooltip .item {
+            bottom: 0;
+            height: 18px;
+            width: 18px;
+            position: relative;
+            left: 50%;
+            line-height: 16px;
+            display: inline-block;
+            border-radius: 50%;
+            margin: 0 auto;
+            text-align: center;
+            font-size: 11px;
+            vertical-align: middle;
+            color: #3fabe6;
+            background-color: #fff;
+            border: 1px solid;
+            cursor: pointer;
+        }
+
+        .dsmTooltip .container {
+            overflow: visible;
+            opacity: 0;
+            z-index: 8;
+            width: 245px;
+            margin: 0px;
+            position: absolute;
+            bottom: 125%;
+            left: 50%;
+            transform: translate(-50%, 0);
+            visibility: hidden;
+            padding-bottom: 8px;
+        }
+
+        .dsmTooltip .arrow {
+            position: absolute;
+            border-width: 0px;
+            border-style: initial;
+            border-color: initial;
+            bottom: 0px;
+            left: 50%;
+            z-index: 1;
+            width: 16px;
+            height: 16px;
+            background-color: #fff;
+            transform: rotate(45deg);
+            box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 8px;
+        }
+
+        .dsmTooltip .infoBox {
+            position: relative;
+            background-color: #fff;
+            font-size: 14px;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 8px;
+        }
+
+        .dsmTooltip .infoBox:before {
+            content: "";
+            z-index: 2;
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            width: 100%;
+            height: 100%;
+            background-color: #fff;
+        }
+
+        .dsmTooltip .infoBox .textArea {
+            color: black;
+            padding: 20px;
+            z-index: 3;
+            position: relative;
+        }
+    </style>
+    <div class="dsmTooltip">
+        <div class="item">?</div>
+        <div class="container">
+            <div class="arrow"></div>
+            <div class="infoBox">
+                <div class="textArea">Hello world</div>
+            </div>
+        </div>
+    </div>
 </body>
 
 </html>

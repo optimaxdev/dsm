@@ -56,13 +56,15 @@ document.addEventListener("DOMContentLoaded", function () {
 
         switch (true) {
             case e.classList.contains('right'):
-                el.style.top = `-${containerHeight /2}px`;
+                el.style.top = `-${containerHeight /2 - 5 }px`;
                 el.style.left = `-${containerWidth}px`;
+                el.querySelector('.arrow').style.top = `${containerHeight /2 - 4}px`
                 e.style.marginLeft = `${containerWidth}px`;
                 break;
             case e.classList.contains('left'):
-                el.style.top = `-${containerHeight /2}px`;
+                el.style.top = `-${containerHeight /2 - 5}px`;
                 el.style.right = `-${containerWidth}px`;
+                el.querySelector('.arrow').style.top = `${containerHeight /2 - 4}px`
                 el.style.left = `30px`;
                 break;
             case e.classList.contains('bottom'):
@@ -70,7 +72,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 el.style.left = `-${containerWidth /2}px`;
                 break;
             default:
-                el.style.left = `-${containerWidth /2}px`;
+                el.style.left = `-${containerWidth /2 - 5}px`;
                 el.style.top = `unset`;
                 el.style.bottom = `30px`;
                 e.style.marginTop = `${containerHeight}px`;

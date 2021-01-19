@@ -1158,10 +1158,11 @@
   position: relative;
   display: inline-block;
   margin-right: 10px;
+  padding: 0;
   padding-top: 20px;
 }
 
-.dsmTooltip.click .item:hover + .container {
+.dsmTooltip.click:hover .container {
   opacity: 0;
   visibility: hidden;
 }
@@ -1191,7 +1192,7 @@
   overflow: visible;
   opacity: 0;
   z-index: 8;
-  width: 245px;
+  width: 250px;
   margin: 0px;
   position: absolute;
   top: 0;
