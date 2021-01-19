@@ -122,6 +122,7 @@ function openTooltip(e) {
 
 function closeTooltip(el) {
     el = el.closest('.dsmTooltip.click').querySelector('.container');
+    if (!el) return;
     let opacity = 1;
     el.style.opacity = opacity;
     let exitInterval;
