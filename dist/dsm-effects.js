@@ -168,7 +168,6 @@ function clickHandler(e) {
     let el = e.target;
 
     if (!el.closest('.dsmTooltip.click')) {
-        e.stopPropagation();
         document.querySelectorAll('.dsmTooltip.click').forEach(el => {
             closeTooltip(el);
         })
