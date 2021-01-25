@@ -140,6 +140,7 @@ function closeTooltip(el) {
 }
 
 function selectClick(e) {
+    e.stopPropagation();
     document.querySelectorAll('.selectContainer li').forEach(e => e.classList.remove('selected'));
     e.target.classList.add("selected");
     selectItem(e.target.innerText);
@@ -164,10 +165,10 @@ function selectButtonClick(e) {
 }
 
 function clickHandler(e) {
-    e.stopPropagation();
     let el = e.target;
 
     if (!el.closest('.dsmTooltip.click')) {
+        e.stopPropagation();
         document.querySelectorAll('.dsmTooltip.click').forEach(el => {
             closeTooltip(el);
         })
@@ -185,6 +186,7 @@ function selectItem(value) {
 
 function buttonClick(e) {
     e.preventDefault();
+    e.stopPropagation();
     let el = e.target.closest("button");
     if (el.classList.contains('round')) {
         el.classList.add("disabled");
