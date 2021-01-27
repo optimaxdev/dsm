@@ -173,6 +173,15 @@ function clickHandler(e) {
         })
     }
 
+    if (!el.closest('.selectContainer')) {
+        document.querySelectorAll('.selectContainer').forEach(e => {
+            e.classList.remove('selected');
+            e.querySelector('ul').style.display = "none";
+            e.querySelector('button').classList.add('filled');
+            e.querySelector('button').classList.remove("active");
+        })
+    }
+
     if (el.closest('.dsmTooltip.click')) openTooltip(e);
     if (el.closest('.dsmButton')) buttonClick(e);
     if (el.closest('.selectContainer li')) selectClick(e);
