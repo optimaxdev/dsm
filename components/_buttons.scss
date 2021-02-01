@@ -43,6 +43,10 @@
             border-color: rgb(28, 134, 218);
         }
 
+        &:disabled span {
+            display: block !important;
+        }
+
         &.disabled {
             background-color: rgb(28, 134, 218);
             border-color: transparent;

@@ -55,6 +55,10 @@
   border-color: #1c86da;
 }
 
+.dsmButton.round:disabled span {
+  display: block !important;
+}
+
 .dsmButton.round.disabled {
   background-color: #1c86da;
   border-color: transparent;
