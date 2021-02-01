@@ -224,8 +224,8 @@ function buttonClick(e) {
   e.stopPropagation()
   let el = e.target.closest('button')
   if (el.classList.contains('round')) {
-    el.classList.add('disabled')
     el.style.width = el.clientWidth + 'px'
+    el.classList.add('disabled')
 
     el.innerHTML = `<svg version="1.1" id="L9" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
                 viewBox="0 0 100 100" enable-background="new 0 0 0 0" xml:space="preserve">
@@ -239,7 +239,7 @@ function buttonClick(e) {
                         to="360 50 50" 
                         repeatCount="indefinite" />
                 </path>
-                </svg>`
+                </svg>${el.innerHTML}`
   } else {
     el.classList.add('disabled')
     el.innerHTML =

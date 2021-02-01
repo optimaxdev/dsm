@@ -48,6 +48,10 @@
             border-color: transparent;
             cursor: default;
 
+            span {
+                display: none;
+            }
+
             &.ghost {
                 background-color: rgb(28, 134, 218);
                 border-color: rgb(28, 134, 218);

@@ -61,6 +61,10 @@
   cursor: default;
 }
 
+.dsmButton.round.disabled span {
+  display: none;
+}
+
 .dsmButton.round.disabled.ghost {
   background-color: #1c86da;
   border-color: #1c86da;
