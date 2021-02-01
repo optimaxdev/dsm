@@ -61,12 +61,21 @@
   cursor: default;
 }
 
+.dsmButton.round.disabled.ghost {
+  background-color: #1c86da;
+  border-color: #1c86da;
+}
+
+.dsmButton.round.disabled.ghost svg path {
+  fill: #57b5ff !important;
+}
+
 .dsmButton.round.disabled.porcelain {
   background-color: #e1e1e1;
 }
 
 .dsmButton.round.disabled.porcelain svg path {
-  fill: #b0bdc5;
+  fill: #b0bdc5 !important;
 }
 
 .dsmButton.round.disabled.regentGray {
@@ -74,7 +83,7 @@
 }
 
 .dsmButton.round.disabled.regentGray svg path {
-  fill: #89959c;
+  fill: #89959c !important;
 }
 
 .dsmButton.round.disabled.towerGray {
@@ -82,7 +91,7 @@
 }
 
 .dsmButton.round.disabled.towerGray svg path {
-  fill: #b0bdc5;
+  fill: #b0bdc5 !important;
 }
 
 .dsmButton.round.disabled.codGray {
@@ -90,7 +99,7 @@
 }
 
 .dsmButton.round.disabled.codGray svg path {
-  fill: #898989;
+  fill: #898989 !important;
 }
 
 .dsmButton.round.disabled.white {
@@ -98,15 +107,7 @@
 }
 
 .dsmButton.round.disabled.white svg path {
-  fill: #b0bdc5;
-}
-
-.dsmButton.round.disabled.ghost {
-  background-color: #1c86da !important;
-}
-
-.dsmButton.round.disabled.ghost svg path {
-  fill: #57b5ff;
+  fill: #b0bdc5 !important;
 }
 
 .dsmButton.round svg {
@@ -121,6 +122,16 @@
 
 .dsmButton.round svg path {
   fill: #57b5ff;
+}
+
+.dsmButton.round:disabled, .dsmButton.round.ghost.round:disabled {
+  border-color: transparent;
+  background-color: #d8d8d8 !important;
+  color: white !important;
+}
+
+.dsmButton.round:disabled span, .dsmButton.round.ghost.round:disabled span {
+  opacity: 1;
 }
 
 .dsmButton.small {
@@ -226,26 +237,71 @@
 }
 
 .dsmButton.ghost {
-  background-color: transparent !important;
+  background-color: transparent;
   color: #ff6c00;
-  border: 2px solid;
+  border: 1px solid;
 }
 
 .dsmButton.ghost:hover {
-  border-width: 2px;
+  border-width: 1px;
   color: white;
   border-color: #ff6c00;
-  background-color: #ff6c00 !important;
+  background-color: #ff6c00;
 }
 
 .dsmButton.ghost.secondary, .dsmButton.ghost.round {
-  color: #2196f3 !important;
+  color: #2196f3;
+  background-color: transparent;
 }
 
 .dsmButton.ghost.secondary:hover, .dsmButton.ghost.round:hover {
-  border-color: #1c86da !important;
-  background-color: #1c86da !important;
-  color: white !important;
+  border-color: #1c86da;
+  background-color: #1c86da;
+  color: white;
+}
+
+.dsmButton.ghost.round.porcelain {
+  border-color: #e7ebed;
+  color: #e7ebed;
+}
+
+.dsmButton.ghost.round.porcelain:hover {
+  background-color: #e1e1e1;
+  border-color: #e1e1e1;
+  color: #3a4850;
+}
+
+.dsmButton.ghost.round.regentGray {
+  color: #89959c;
+  border-color: #89959c;
+}
+
+.dsmButton.ghost.round.regentGray:hover {
+  background-color: #3a4850;
+  border-color: #3a4850;
+  color: white;
+}
+
+.dsmButton.ghost.round.towerGray {
+  color: #b0bdc5;
+  border-color: #b0bdc5;
+}
+
+.dsmButton.ghost.round.towerGray:hover {
+  background-color: #89959c;
+  border-color: #89959c;
+  color: white;
+}
+
+.dsmButton.ghost.round.codGray {
+  border-color: #0f0f0f;
+  color: #0f0f0f;
+}
+
+.dsmButton.ghost.round.codGray:hover {
+  background-color: #2d2d2d;
+  border-color: #2d2d2d;
+  color: white;
 }
 
 .dsmButton.secondary {
@@ -274,7 +330,7 @@
 }
 
 .dsmButton.ghost.disabled {
-  background-color: #e36000 !important;
+  background-color: #e36000;
   color: white;
 }
 
