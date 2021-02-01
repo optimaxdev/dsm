@@ -16,7 +16,6 @@
     background-color: #ff6c00;
     border-color: #ff6c00;
     color: rgb(255, 255, 255);
-    font-weight: 700;
     transition: 0.3s all;
     box-sizing: border-box;
     white-space: nowrap;
@@ -26,7 +25,11 @@
     padding: 6px 17px;
     font-size: 16px;
     border: none;
+    text-transform: none;
 
+    &:hover {
+        text-decoration: none;
+    }
 
 
     &.round {
@@ -271,8 +274,12 @@
         border: none;
     }
 
-    &.disabled.secondary {
+    &.disabled.secondary, &.secondary:disabled {
         background-color: rgb(28, 134, 218);
+
+        span {
+            opacity: 0.5;
+        }
     }
 
     &.secondary .progress {

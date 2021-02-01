@@ -25,7 +25,6 @@
   background-color: #ff6c00;
   border-color: #ff6c00;
   color: white;
-  font-weight: 700;
   -webkit-transition: 0.3s all;
   transition: 0.3s all;
   -webkit-box-sizing: border-box;
@@ -37,6 +36,11 @@
   padding: 6px 17px;
   font-size: 16px;
   border: none;
+  text-transform: none;
+}
+
+.dsmButton:hover {
+  text-decoration: none;
 }
 
 .dsmButton.round {
@@ -279,8 +283,12 @@
   border: none;
 }
 
-.dsmButton.disabled.secondary {
+.dsmButton.disabled.secondary, .dsmButton.secondary:disabled {
   background-color: #1c86da;
+}
+
+.dsmButton.disabled.secondary span, .dsmButton.secondary:disabled span {
+  opacity: 0.5;
 }
 
 .dsmButton.secondary .progress {
