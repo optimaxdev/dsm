@@ -39,7 +39,7 @@
   text-transform: none;
 }
 
-.dsmButton:hover {
+.dsmButton:hover, .dsmButton:focus {
   text-decoration: none;
 }
 
@@ -1461,4 +1461,282 @@
 .dsmShadow.shadow-6 {
   -webkit-box-shadow: 0 1px 5px 1px rgba(58, 72, 80, 0.07), 0 12px 16px 0 rgba(176, 189, 197, 0.17), 0 6px 12px 1px rgba(137, 149, 156, 0.15);
           box-shadow: 0 1px 5px 1px rgba(58, 72, 80, 0.07), 0 12px 16px 0 rgba(176, 189, 197, 0.17), 0 6px 12px 1px rgba(137, 149, 156, 0.15);
+}
+
+@font-face {
+  font-family: 'brands';
+  src: url("../fonts/brands.eot?y0faqm");
+  src: url("../fonts/brands.eot?y0faqm#iefix") format("embedded-opentype"), url("../fonts/brands.ttf?y0faqm") format("truetype"), url("../fonts/brands.woff?y0faqm") format("woff"), url("../fonts/brands.svg?y0faqm#icomoon") format("svg");
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+.dsmLogo {
+  font-family: 'brands' !important;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 25px;
+  color: black;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.dsmLogo.adidas:before {
+  content: "\e900";
+}
+
+.dsmLogo.alain_mikli:before {
+  content: "\e901";
+}
+
+.dsmLogo.armani_exchange:before {
+  content: "\e902";
+}
+
+.dsmLogo.autoflex:before {
+  content: "\e903";
+}
+
+.dsmLogo.balenciaga:before {
+  content: "\e904";
+}
+
+.dsmLogo.blumarine:before {
+  content: "\e905";
+}
+
+.dsmLogo.burberry:before {
+  content: "\e906";
+}
+
+.dsmLogo.calvin_klein_ck:before {
+  content: "\e907";
+}
+
+.dsmLogo.calvin_klein_cosmetics:before {
+  content: "\e908";
+}
+
+.dsmLogo.calvin_klein:before {
+  content: "\e909";
+}
+
+.dsmLogo.celine:before {
+  content: "\e90a";
+}
+
+.dsmLogo.coach:before {
+  content: "\e90b";
+}
+
+.dsmLogo.converse:before {
+  content: "\e90c";
+}
+
+.dsmLogo.diva:before {
+  content: "\e90d";
+}
+
+.dsmLogo.dkny:before {
+  content: "\e90e";
+}
+
+.dsmLogo.dsquared2:before {
+  content: "\e90f";
+}
+
+.dsmLogo.emporio_armani:before {
+  content: "\e910";
+}
+
+.dsmLogo.ermenegildo_zenga:before {
+  content: "\e911";
+}
+
+.dsmLogo.flexon:before {
+  content: "\e912";
+}
+
+.dsmLogo.fossil:before {
+  content: "\e913";
+}
+
+.dsmLogo.gant:before {
+  content: "\e914";
+}
+
+.dsmLogo.giorgio_armani:before {
+  content: "\e915";
+}
+
+.dsmLogo.givenchy:before {
+  content: "\e916";
+}
+
+.dsmLogo.gucci:before {
+  content: "\e917";
+}
+
+.dsmLogo.guess:before {
+  content: "\e918";
+}
+
+.dsmLogo.hugo_boss:before {
+  content: "\e919";
+}
+
+.dsmLogo.jimmy_choo:before {
+  content: "\e91a";
+}
+
+.dsmLogo.kate_spade:before {
+  content: "\e91b";
+}
+
+.dsmLogo.lacoste:before {
+  content: "\e91c";
+}
+
+.dsmLogo.lanvim:before {
+  content: "\e91d";
+}
+
+.dsmLogo.marc_jacobs:before {
+  content: "\e91e";
+}
+
+.dsmLogo.michael_kors:before {
+  content: "\e91f";
+}
+
+.dsmLogo.miu_miu:before {
+  content: "\e920";
+}
+
+.dsmLogo.mont_blanc:before {
+  content: "\e921";
+}
+
+.dsmLogo.nike:before {
+  content: "\e922";
+}
+
+.dsmLogo.oakley:before {
+  content: "\e923";
+}
+
+.dsmLogo.oneill:before {
+  content: "\e924";
+}
+
+.dsmLogo.persol:before {
+  content: "\e925";
+}
+
+.dsmLogo.pierre_cardin:before {
+  content: "\e926";
+}
+
+.dsmLogo.polo_ralph_lauren:before {
+  content: "\e927";
+}
+
+.dsmLogo.prada:before {
+  content: "\e928";
+}
+
+.dsmLogo.puma:before {
+  content: "\e929";
+}
+
+.dsmLogo.ray_ban:before {
+  content: "\e92a";
+}
+
+.dsmLogo.saint_laurent:before {
+  content: "\e92b";
+}
+
+.dsmLogo.stella_mccartney:before {
+  content: "\e92c";
+}
+
+.dsmLogo.super_dry:before {
+  content: "\e92d";
+}
+
+.dsmLogo.swarovski:before {
+  content: "\e92e";
+}
+
+.dsmLogo.tom_ford:before {
+  content: "\e92f";
+}
+
+.dsmLogo.tory_burch:before {
+  content: "\e930";
+}
+
+.dsmLogo.versach:before {
+  content: "\e931";
+}
+
+.dsmLogo.viktor_and_rolf:before {
+  content: "\e932";
+}
+
+.dsmLogo.vogue:before {
+  content: "\e933";
+}
+
+.dsmLogo.revel_tune:before {
+  content: "\e934";
+}
+
+.dsmLogo.amelia_e:before {
+  content: "\e935";
+}
+
+.dsmLogo.gamespex:before {
+  content: "\e936";
+}
+
+.dsmLogo.gamespex2:before {
+  content: "\e937";
+}
+
+.dsmLogo.muse_symbol:before {
+  content: "\e938";
+}
+
+.dsmLogo.muse_x_hilary_duff:before {
+  content: "\e939";
+}
+
+.dsmLogo.muse:before {
+  content: "\e93a";
+}
+
+.dsmLogo.olos:before {
+  content: "\e93b";
+}
+
+.dsmLogo.ottoto:before {
+  content: "\e93c";
+}
+
+.dsmLogo.revel:before {
+  content: "\e93d";
+}
+
+.dsmLogo.seaclean:before {
+  content: "\e93e";
+}
+
+.dsmLogo.yoji:before {
+  content: "\e93f";
 }

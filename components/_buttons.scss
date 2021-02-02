@@ -27,7 +27,8 @@
     border: none;
     text-transform: none;
 
-    &:hover {
+    &:hover,
+    &:focus {
         text-decoration: none;
     }
 
