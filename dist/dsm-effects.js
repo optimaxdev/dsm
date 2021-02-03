@@ -68,7 +68,6 @@ document.addEventListener('DOMContentLoaded', function () {
       e.innerHTML = `<label>${e.querySelector('input').placeholder}</label>${
         e.innerHTML
       }`
-    console.log(e.querySelector('label').innerText)
     if (e.querySelector('label').innerText == '')
       e.querySelector('label').innerText = 'Please insert a placeholder'
   })
