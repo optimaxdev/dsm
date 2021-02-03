@@ -288,6 +288,17 @@
     margin-bottom: 0;
     width: 16px;
 
+    &.large,
+    &.large .checkbox {
+        height: 28px !important;
+        width: 28px !important;
+
+        svg {
+            height: 12px !important;
+            width: 14px !important;
+        }
+    }
+
     input[type=checkbox] {
         position: absolute;
         opacity: 0;
@@ -321,16 +332,7 @@
             }
 
             svg {
-                height: 10px;
-                width: 10px;
                 display: block;
-                stroke: white;
-            }
-
-            &.large {
-                svg {
-                    display: block;
-                }
             }
         }
     }
@@ -362,20 +364,15 @@
             border-radius: 50%;
 
             svg {
-                height: 12px;
-                width: 14px;
                 display: none;
                 stroke: white;
+                height: 10px;
+                width: 10px;
             }
         }
 
         &:hover {
             border: 1px solid rgb(107, 107, 107);
-        }
-
-        &.large {
-            height: 28px;
-            width: 28px;
         }
 
         &::after {

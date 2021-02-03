@@ -42,9 +42,10 @@ document.addEventListener('DOMContentLoaded', function () {
     if (e.querySelector('.checkbox')) return
 
     if (e.dataset.ticked) {
+      e.dataset.size ? e.classList.add(e.dataset.size) : ''
       e.innerHTML = `<input type="checkbox" ${
         e.dataset.disabled ? 'disabled' : ''
-      }><span class="checkbox ticked${e.dataset ? ' ' + e.dataset.size : ''}${
+      }><span class="checkbox ticked${
         e.dataset.error ? ' error' : ''
       }"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 14.4 12.4">
                 <path fill="none" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"

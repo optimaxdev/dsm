@@ -1036,6 +1036,18 @@
   width: 16px;
 }
 
+.checkboxContainer.large,
+.checkboxContainer.large .checkbox {
+  height: 28px !important;
+  width: 28px !important;
+}
+
+.checkboxContainer.large svg,
+.checkboxContainer.large .checkbox svg {
+  height: 12px !important;
+  width: 14px !important;
+}
+
 .checkboxContainer input[type=checkbox] {
   position: absolute;
   opacity: 0;
@@ -1078,13 +1090,6 @@
 }
 
 .checkboxContainer input[type=checkbox]:checked + .checkbox.ticked svg {
-  height: 10px;
-  width: 10px;
-  display: block;
-  stroke: white;
-}
-
-.checkboxContainer input[type=checkbox]:checked + .checkbox.ticked.large svg {
   display: block;
 }
 
@@ -1118,19 +1123,14 @@
 }
 
 .checkboxContainer .checkbox.ticked svg {
-  height: 12px;
-  width: 14px;
   display: none;
   stroke: white;
+  height: 10px;
+  width: 10px;
 }
 
 .checkboxContainer .checkbox:hover {
   border: 1px solid #6b6b6b;
-}
-
-.checkboxContainer .checkbox.large {
-  height: 28px;
-  width: 28px;
 }
 
 .checkboxContainer .checkbox::after {
