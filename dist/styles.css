@@ -976,6 +976,25 @@
   transition: background-color 0.15s linear 0s;
 }
 
+.radioContainer .radioStyling.ticked.medium, .radioContainer .radioStyling.ticked.large {
+  background-color: transparent;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.radioContainer .radioStyling.ticked svg {
+  display: none;
+}
+
 .radioContainer .radioStyling.medium {
   width: 20px;
   height: 20px;
@@ -1038,6 +1057,37 @@
   border: 1px solid #aaaaaa;
 }
 
+.checkboxContainer input[type=checkbox]:checked + .checkbox.ticked {
+  background-color: #2196F3;
+  border-color: #2196F3;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.checkboxContainer input[type=checkbox]:checked + .checkbox.ticked::after {
+  border: none;
+}
+
+.checkboxContainer input[type=checkbox]:checked + .checkbox.ticked svg {
+  height: 10px;
+  width: 10px;
+  display: block;
+  stroke: white;
+}
+
+.checkboxContainer input[type=checkbox]:checked + .checkbox.ticked.large svg {
+  display: block;
+}
+
 .checkboxContainer .checkbox:after {
   left: 5px;
   top: 2px;
@@ -1063,8 +1113,24 @@
   background-color: white;
 }
 
+.checkboxContainer .checkbox.ticked {
+  border-radius: 50%;
+}
+
+.checkboxContainer .checkbox.ticked svg {
+  height: 12px;
+  width: 14px;
+  display: none;
+  stroke: white;
+}
+
 .checkboxContainer .checkbox:hover {
   border: 1px solid #6b6b6b;
+}
+
+.checkboxContainer .checkbox.large {
+  height: 28px;
+  width: 28px;
 }
 
 .checkboxContainer .checkbox::after {

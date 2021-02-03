@@ -230,6 +230,22 @@
             transition: background-color 0.15s linear 0s;
         }
 
+        &.ticked {
+
+            &.medium,
+            &.large {
+                background-color: transparent;
+                display: flex;
+                justify-content: center;
+                align-content: center;
+                align-items: center;
+            }
+
+            svg {
+                display: none;
+            }
+        }
+
         &.medium {
             width: 20px;
             height: 20px;
@@ -291,6 +307,32 @@
         &:disabled+.checkbox:hover {
             border: 1px solid rgb(170, 170, 170);
         }
+
+        &:checked+.checkbox.ticked {
+            background-color: #2196F3;
+            border-color: #2196F3;
+            display: flex;
+            justify-content: center;
+            align-content: center;
+            align-items: center;
+
+            &::after {
+                border: none;
+            }
+
+            svg {
+                height: 10px;
+                width: 10px;
+                display: block;
+                stroke: white;
+            }
+
+            &.large {
+                svg {
+                    display: block;
+                }
+            }
+        }
     }
 
     .checkbox:after {
@@ -316,8 +358,24 @@
         transition: 0.2s border-color;
         background-color: white;
 
+        &.ticked {
+            border-radius: 50%;
+
+            svg {
+                height: 12px;
+                width: 14px;
+                display: none;
+                stroke: white;
+            }
+        }
+
         &:hover {
             border: 1px solid rgb(107, 107, 107);
+        }
+
+        &.large {
+            height: 28px;
+            width: 28px;
         }
 
         &::after {

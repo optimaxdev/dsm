@@ -39,10 +39,22 @@ document.addEventListener('DOMContentLoaded', function () {
                 </button>` + e.innerHTML
   })
   document.querySelectorAll('.checkboxContainer').forEach((e) => {
-    e.innerHTML = `<input type="checkbox" ${
-      e.dataset.disabled ? 'disabled' : ''
-    }>
-            <span class="checkbox${e.dataset.error ? ' error' : ''}"></span>`
+    if (e.querySelector('.checkbox')) return
+
+    if (e.dataset.ticked) {
+      e.innerHTML = `<input type="checkbox" ${
+        e.dataset.disabled ? 'disabled' : ''
+      }><span class="checkbox ticked${e.dataset ? ' ' + e.dataset.size : ''}${
+        e.dataset.error ? ' error' : ''
+      }"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 14.4 12.4">
+                <path fill="none" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"
+                    d="M1.2 6.3l4.7 4.9 7.3-10" />
+            </svg></span>`
+    } else {
+      e.innerHTML = `<input type="checkbox" ${
+        e.dataset.disabled ? 'disabled' : ''
+      }><span class="checkbox${e.dataset.error ? ' error' : ''}"></span>`
+    }
   })
 
   document.querySelectorAll('label.dsmSlider').forEach((e) => {
