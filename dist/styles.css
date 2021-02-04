@@ -74,7 +74,7 @@
   border-color: #1c86da;
 }
 
-.dsmButton.round.disabled.ghost svg path {
+.dsmButton.round.disabled.ghost > svg path {
   fill: #57b5ff !important;
 }
 
@@ -82,7 +82,7 @@
   background-color: #e1e1e1;
 }
 
-.dsmButton.round.disabled.porcelain svg path {
+.dsmButton.round.disabled.porcelain > svg path {
   fill: #b0bdc5 !important;
 }
 
@@ -90,7 +90,7 @@
   background-color: #3a4850;
 }
 
-.dsmButton.round.disabled.regentGray svg path {
+.dsmButton.round.disabled.regentGray > svg path {
   fill: #89959c !important;
 }
 
@@ -98,7 +98,7 @@
   background-color: #89959c;
 }
 
-.dsmButton.round.disabled.towerGray svg path {
+.dsmButton.round.disabled.towerGray > svg path {
   fill: #b0bdc5 !important;
 }
 
@@ -118,7 +118,7 @@
   fill: #b0bdc5 !important;
 }
 
-.dsmButton.round svg {
+.dsmButton.round > svg {
   height: 100%;
   -webkit-transform-origin: center center;
           transform-origin: center center;
@@ -128,7 +128,7 @@
   margin: auto;
 }
 
-.dsmButton.round svg path {
+.dsmButton.round > svg path {
   fill: #57b5ff;
 }
 
