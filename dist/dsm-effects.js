@@ -1,3 +1,34 @@
+import config from '../dist/svg-icons.js'
+
+document.querySelectorAll('.dsmIcons').forEach((a) => {
+  if (a.classList.length == 1) return
+
+  let classes = []
+  a.classList.forEach((c) => classes.push(c))
+  classes.splice(classes.indexOf('dsmIcons'), 1)
+  if (config[classes[0]]) {
+    let oldClasses = [classes[0], 'dsmIcons']
+    a.innerHTML = config[classes[0]]
+    a.querySelector('svg').classList.add(...oldClasses)
+    a.classList.add(...oldClasses)
+    a.outerHTML = a.innerHTML
+  }
+})
+document.querySelectorAll('.dsmLogo').forEach((a) => {
+  if (a.classList.length == 1) return
+
+  let classes = []
+  a.classList.forEach((c) => classes.push(c))
+  classes.splice(classes.indexOf('dsmLogo'), 1)
+  if (config[classes[0]]) {
+    let oldClasses = [classes[0], 'dsmLogo']
+    a.innerHTML = config[classes[0]]
+    a.querySelector('svg').classList.add(...oldClasses)
+    a.classList.add(...oldClasses)
+    a.outerHTML = a.innerHTML
+  }
+})
+
 document.addEventListener('DOMContentLoaded', function () {
   document.addEventListener('change', (e) => {
     if (e.target.type == 'text' && e.target.closest('.dsmForm')) {
