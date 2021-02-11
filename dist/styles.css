@@ -474,12 +474,12 @@
 }
 
 svg.dsmIcons {
-  height: 25px;
+  height: 16px;
   width: auto;
 }
 
 svg.dsmIcons * {
-  fill: black !important;
+  stroke: black !important;
 }
 
 .dsmIcons {
