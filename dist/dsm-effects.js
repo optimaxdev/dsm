@@ -261,13 +261,19 @@ function closeTooltip(el) {
   }, 20)
 }
 
+const selectEvent = new Event('select')
+
 function selectClick(e) {
   e.stopPropagation()
   document
     .querySelectorAll('.selectContainer li')
     .forEach((e) => e.classList.remove('selected'))
   e.target.classList.add('selected')
-  selectItem(e.target.innerText)
+  e.target.parentNode
+    .closest('.selectContainer')
+    .querySelector('.selectedItem')
+    .dispatchEvent(selectEvent)
+
   e.target.parentNode.style.display = 'none'
   e.target.parentNode.parentNode.querySelector(
     'button .selectedItem',
@@ -316,9 +322,7 @@ function clickHandler(e) {
   if (el.closest('.selectContainer button')) selectButtonClick(e)
 }
 
-function selectItem(value) {
-  null
-}
+let selectItem = function (value) {}
 
 function buttonClick(e) {
   e.preventDefault()
