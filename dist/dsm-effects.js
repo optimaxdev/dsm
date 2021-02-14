@@ -50,37 +50,35 @@ function onClassChange(a) {
 
   const callback = function (mutationsList, observer) {
     for (const mutation of mutationsList) {
-      if (mutation.type === 'attributes') {
-        if (
-          mutation.target.classList.length >=
-          mutation.oldValue.split(' ').length
+      if (mutation.type != 'attributes') return
+      if (
+        mutation.target.classList.length < mutation.oldValue.split(' ').length
+      )
+        return
+      observer.disconnect()
+      let a = mutation.target
+
+      if (a.classList.length == 1) return
+      let classes = []
+      a.classList.forEach((c) => classes.push(c))
+      if (classes.includes('dsmIcons')) {
+        classes.splice(classes.indexOf('dsmIcons'), 1)
+      } else {
+        classes.splice(classes.indexOf('dsmLogo'), 1)
+      }
+      if (config[classes[0]]) {
+        a.innerHTML = config[classes[0]]
+
+        for (
+          let index = a.querySelector('svg').attributes.length - 1;
+          index > -1;
+          --index
         ) {
-          observer.disconnect()
-          let a = mutation.target
-
-          if (a.classList.length == 1) return
-          let classes = []
-          a.classList.forEach((c) => classes.push(c))
-          if (classes.includes('dsmIcons')) {
-            classes.splice(classes.indexOf('dsmIcons'), 1)
-          } else {
-            classes.splice(classes.indexOf('dsmLogo'), 1)
-          }
-          if (config[classes[0]]) {
-            a.innerHTML = config[classes[0]]
-
-            for (
-              let index = a.querySelector('svg').attributes.length - 1;
-              index > -1;
-              --index
-            ) {
-              let attribute = a.querySelector('svg').attributes[index]
-              a.setAttribute(attribute.name, attribute.value)
-            }
-            a.innerHTML = a.querySelector('svg').innerHTML
-            observer.observe(a, observerConfig)
-          }
+          let attribute = a.querySelector('svg').attributes[index]
+          a.setAttribute(attribute.name, attribute.value)
         }
+        a.innerHTML = a.querySelector('svg').innerHTML
+        observer.observe(a, observerConfig)
       }
     }
   }
