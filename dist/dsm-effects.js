@@ -1,9 +1,8 @@
-import config from '../dist/svg-icons.js'
+import config from './svg-icons.js'
 
 function replaceIcons() {
-  document.querySelectorAll('.dsmIcons').forEach((a) => {
+  document.querySelectorAll('.dsmIcons').forEach((a, i) => {
     if (a.classList.length == 1) return
-
     let classes = []
     a.classList.forEach((c) => classes.push(c))
     classes.splice(classes.indexOf('dsmIcons'), 1)
@@ -14,8 +13,11 @@ function replaceIcons() {
       a.classList.add(...oldClasses)
       a.outerHTML = a.innerHTML
     }
+    a = document.querySelectorAll('.dsmIcons')[i]
+    onClassChange(a)
   })
-  document.querySelectorAll('.dsmLogo').forEach((a) => {
+
+  document.querySelectorAll('.dsmLogo').forEach((a, i) => {
     if (a.classList.length == 1) return
 
     let classes = []
@@ -28,10 +30,64 @@ function replaceIcons() {
       a.classList.add(...oldClasses)
       a.outerHTML = a.innerHTML
     }
+    a = document.querySelectorAll('.dsmIcons')[i]
+    onClassChange(a)
   })
 }
 
 replaceIcons()
+
+function onClassChange(a) {
+  // Options for the observer (which mutations to observe)
+  const observerConfig = {
+    attributes: true,
+    attributeFilter: ['class'],
+    attributeOldValue: true,
+    characterDataOldValue: true,
+    characterData: true,
+  }
+  // Create an observer instance linked to the callback function
+
+  const callback = function (mutationsList, observer) {
+    for (const mutation of mutationsList) {
+      if (mutation.type === 'attributes') {
+        if (
+          mutation.target.classList.length >=
+          mutation.oldValue.split(' ').length
+        ) {
+          observer.disconnect()
+          let a = mutation.target
+
+          if (a.classList.length == 1) return
+          let classes = []
+          a.classList.forEach((c) => classes.push(c))
+          if (classes.includes('dsmIcons')) {
+            classes.splice(classes.indexOf('dsmIcons'), 1)
+          } else {
+            classes.splice(classes.indexOf('dsmLogo'), 1)
+          }
+          if (config[classes[0]]) {
+            a.innerHTML = config[classes[0]]
+
+            for (
+              let index = a.querySelector('svg').attributes.length - 1;
+              index > -1;
+              --index
+            ) {
+              let attribute = a.querySelector('svg').attributes[index]
+              a.setAttribute(attribute.name, attribute.value)
+            }
+            a.innerHTML = a.querySelector('svg').innerHTML
+            observer.observe(a, observerConfig)
+          }
+        }
+      }
+    }
+  }
+
+  const observer = new MutationObserver(callback)
+  observer.observe(a, observerConfig)
+}
 
 document.addEventListener('DOMContentLoaded', function () {
   document.addEventListener('change', (e) => {
