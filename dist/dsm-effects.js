@@ -269,15 +269,14 @@ function selectClick(e) {
     .querySelectorAll('.selectContainer li')
     .forEach((e) => e.classList.remove('selected'))
   e.target.classList.add('selected')
-  e.target.parentNode
-    .closest('.selectContainer')
-    .querySelector('.selectedItem')
-    .dispatchEvent(selectEvent)
-
   e.target.parentNode.style.display = 'none'
   e.target.parentNode.parentNode.querySelector(
     'button .selectedItem',
   ).innerHTML = e.target.innerText
+  e.target.parentNode
+    .closest('.selectContainer')
+    .querySelector('.selectedItem')
+    .dispatchEvent(selectEvent)
   e.target.parentNode.parentNode.querySelector('button').classList.add('filled')
   e.target.parentNode.parentNode
     .querySelector('button')
