@@ -207,6 +207,46 @@ document.addEventListener('DOMContentLoaded', function () {
   adjustTooltip()
 })
 
+// Accordian Effects
+
+document.querySelectorAll('.dsmAccordian').forEach((a) => {
+  if (!a.querySelector('svg')) {
+    a.querySelector('summary').innerHTML = `${
+      a.querySelector('summary').innerText
+    } <i class="dsmIcons plus"></i>`
+    replaceIcons()
+  }
+  if (!a.querySelector('summary~*')) {
+    let splitElements = a.innerHTML.split('</summary>')
+    a.innerHTML = `${splitElements[0]}</summary><span class="accordianContent">${splitElements[1]}</span>`
+  }
+  a.addEventListener('click', (e) => {
+    e.preventDefault()
+    let el = e.target.closest('details')
+
+    if (window.innerWidth < 768) {
+      document.querySelectorAll('.dsmAccordian').forEach((a) => {
+        if (a.getAttribute('open') == null) return
+        a.classList.add('closeAccordian')
+        setTimeout(() => {
+          a.removeAttribute('open')
+          a.classList.remove('closeAccordian')
+        }, 50)
+      })
+    }
+
+    if (el.getAttribute('open') != null) {
+      el.classList.add('closeAccordian')
+      setTimeout(() => {
+        el.removeAttribute('open')
+        el.classList.remove('closeAccordian')
+      }, 50)
+    } else {
+      el.setAttribute('open', '')
+    }
+  })
+})
+
 function openTooltip(e) {
   e.preventDefault()
   e.stopImmediatePropagation()
@@ -321,12 +361,11 @@ function clickHandler(e) {
   if (el.closest('.selectContainer button')) selectButtonClick(e)
 }
 
-let selectItem = function (value) {}
-
 function buttonClick(e) {
   e.preventDefault()
   e.stopPropagation()
   let el = e.target.closest('button')
+  if (!el) return
   if (el.classList.contains('round')) {
     el.style.width = el.clientWidth + 'px'
     el.classList.add('disabled')

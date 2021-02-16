@@ -1,0 +1,111 @@
+.dsmAccordian {
+    outline: none;
+    border-top: 1px solid #E7EBED;
+    border-bottom: 1px solid #E7EBED;
+    padding: 20px;
+    transition: 0.2s background-color, height;
+    height: 100%;
+    cursor: pointer;
+
+    &:hover {
+        background-color: #F7F8F9;
+    }
+
+    .accordianContent {
+        display: block;
+        max-height: 0;
+        transition: 0.6s all;
+        overflow: hidden;
+    }
+
+    summary {
+        list-style: none;
+        outline: none;
+        color: #0F0F0F;
+        font-family: Roboto;
+        font-size: 16px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        letter-spacing: 0;
+        line-height: 30px;
+
+
+        >svg {
+            transition: 0.1s all;
+            height: 12px;
+            width: 13px;
+
+            * {
+                stroke: #5B6971 !important;
+            }
+
+            line:nth-child(2) {
+                transition: 0.2s all;
+            }
+        }
+    }
+
+    summary::-webkit-details-marker {
+        display: none;
+    }
+
+    &[open] summary~* {
+        animation: sweep .2s ease-in-out;
+    }
+
+    &.closeAccordian summary~* {
+        margin-top: -50px;
+        opacity: 0;
+        transition: 0.2s all;
+    }
+
+    @keyframes sweep {
+        0% {
+            opacity: 0;
+            margin-top: -50px
+        }
+
+        100% {
+            opacity: 1;
+            margin-top: 0px
+        }
+    }
+
+    &[open] {
+        background-color: #F7F8F9;
+
+        .accordianContent {
+            max-height: 1000000px;
+        }
+
+        summary {
+            font-weight: bold;
+            margin-bottom: 12px;
+
+            >svg line:first-child {
+                animation: scaleDown 0.1s ease-in-out;
+            }
+
+            >svg line:nth-child(2) {
+                transform: rotate(-90deg) translateX(-13px);
+            }
+        }
+
+        color: #232B30;
+        font-family: Roboto;
+        font-size: 16px;
+        letter-spacing: 0;
+        line-height: 24px;
+    }
+
+    @keyframes scaleDown {
+        from {
+            stroke-width: 1px;
+        }
+
+        to {
+            stroke-width: 0px;
+        }
+    }
+}

@@ -1824,3 +1824,145 @@ svg.dsmLogo * {
 .dsmLogo.yoji:before {
   content: "\e93f";
 }
+
+.dsmAccordian {
+  outline: none;
+  border-top: 1px solid #E7EBED;
+  border-bottom: 1px solid #E7EBED;
+  padding: 20px;
+  -webkit-transition: 0.2s background-color, height;
+  transition: 0.2s background-color, height;
+  height: 100%;
+  cursor: pointer;
+}
+
+.dsmAccordian:hover {
+  background-color: #F7F8F9;
+}
+
+.dsmAccordian .accordianContent {
+  display: block;
+  max-height: 0;
+  -webkit-transition: 0.6s all;
+  transition: 0.6s all;
+  overflow: hidden;
+}
+
+.dsmAccordian summary {
+  list-style: none;
+  outline: none;
+  color: #0F0F0F;
+  font-family: Roboto;
+  font-size: 16px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  letter-spacing: 0;
+  line-height: 30px;
+}
+
+.dsmAccordian summary > svg {
+  -webkit-transition: 0.1s all;
+  transition: 0.1s all;
+  height: 12px;
+  width: 13px;
+}
+
+.dsmAccordian summary > svg * {
+  stroke: #5B6971 !important;
+}
+
+.dsmAccordian summary > svg line:nth-child(2) {
+  -webkit-transition: 0.2s all;
+  transition: 0.2s all;
+}
+
+.dsmAccordian summary::-webkit-details-marker {
+  display: none;
+}
+
+.dsmAccordian[open] summary ~ * {
+  -webkit-animation: sweep .2s ease-in-out;
+          animation: sweep .2s ease-in-out;
+}
+
+.dsmAccordian.closeAccordian summary ~ * {
+  margin-top: -50px;
+  opacity: 0;
+  -webkit-transition: 0.2s all;
+  transition: 0.2s all;
+}
+
+@-webkit-keyframes sweep {
+  0% {
+    opacity: 0;
+    margin-top: -50px;
+  }
+  100% {
+    opacity: 1;
+    margin-top: 0px;
+  }
+}
+
+@keyframes sweep {
+  0% {
+    opacity: 0;
+    margin-top: -50px;
+  }
+  100% {
+    opacity: 1;
+    margin-top: 0px;
+  }
+}
+
+.dsmAccordian[open] {
+  background-color: #F7F8F9;
+  color: #232B30;
+  font-family: Roboto;
+  font-size: 16px;
+  letter-spacing: 0;
+  line-height: 24px;
+}
+
+.dsmAccordian[open] .accordianContent {
+  max-height: 1000000px;
+}
+
+.dsmAccordian[open] summary {
+  font-weight: bold;
+  margin-bottom: 12px;
+}
+
+.dsmAccordian[open] summary > svg line:first-child {
+  -webkit-animation: scaleDown 0.1s ease-in-out;
+          animation: scaleDown 0.1s ease-in-out;
+}
+
+.dsmAccordian[open] summary > svg line:nth-child(2) {
+  -webkit-transform: rotate(-90deg) translateX(-13px);
+          transform: rotate(-90deg) translateX(-13px);
+}
+
+@-webkit-keyframes scaleDown {
+  from {
+    stroke-width: 1px;
+  }
+  to {
+    stroke-width: 0px;
+  }
+}
+
+@keyframes scaleDown {
+  from {
+    stroke-width: 1px;
+  }
+  to {
+    stroke-width: 0px;
+  }
+}
