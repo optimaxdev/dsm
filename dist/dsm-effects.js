@@ -1,13 +1,12 @@
 import buttonClick from '../js/buttons.js'
 import { selectButtonClick, selectClick } from '../js/dropdown.js'
-import trustpilot from '../js/trustpilot.js'
+import '../js/trustpilot.js'
 import { openTooltip, closeTooltip, adjustTooltip } from '../js/tooltip.js'
 import '../js/icons.js'
 import '../js/accordian.js'
 
 document.addEventListener('DOMContentLoaded', function () {
   adjustTooltip()
-  trustpilot()
 
   document.addEventListener('change', (e) => {
     if (e.target.type == 'text' && e.target.closest('.dsmForm')) {
