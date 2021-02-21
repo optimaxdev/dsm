@@ -1,4 +1,4 @@
-function buttonClick(e) {
+export default function buttonClick(e) {
   e.preventDefault()
   e.stopPropagation()
   let el = e.target.closest('button')

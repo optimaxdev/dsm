@@ -95,4 +95,5 @@ function adjustTooltip() {
     }
   })
 }
-adjustTooltip()
+
+export { openTooltip, closeTooltip, adjustTooltip }

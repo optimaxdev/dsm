@@ -33,3 +33,5 @@ function selectButtonClick(e) {
   el.querySelector('ul').style.display = 'block'
   el.querySelector('button').classList.add('active')
 }
+
+export { selectClick, selectButtonClick }
