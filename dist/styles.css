@@ -1962,6 +1962,8 @@ svg.dsmLogo * {
 .dsmAccordian[open] summary {
   font-weight: bold;
   margin-bottom: 12px;
+  background-color: #F7F8F9;
+  width: 100%;
 }
 
 .dsmAccordian[open] summary > svg line:first-child {

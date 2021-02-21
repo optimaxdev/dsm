@@ -14,14 +14,18 @@ document.querySelectorAll('.dsmAccordian').forEach((a) => {
   a.addEventListener('click', (e) => {
     e.preventDefault()
     let el = e.target.closest('details')
+    el.setAttribute('aria-listener', true)
 
     if (window.innerWidth < 768) {
       document.querySelectorAll('.dsmAccordian').forEach((a) => {
         if (a.getAttribute('open') == null) return
         a.classList.add('closeAccordian')
         setTimeout(() => {
-          a.removeAttribute('open')
-          a.classList.remove('closeAccordian')
+          el.removeAttribute('open')
+          el.classList.remove('closeAccordian')
+        }, 200)
+        setTimeout(() => {
+          el.style.minHeight = '0px'
         }, 150)
       })
     }

@@ -98,6 +98,8 @@
         summary {
             font-weight: bold;
             margin-bottom: 12px;
+            background-color: #F7F8F9;
+            width: 100%;
 
             >svg line:first-child {
                 animation: scaleDown 0.1s ease-in-out;
