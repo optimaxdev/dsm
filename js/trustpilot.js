@@ -1,9 +1,8 @@
 import { replaceIcons } from './icons.js'
 
-console.log(Swiper)
 if (
   document.querySelector('.dsmTrustpilot') &&
-  Swiper &&
+  typeof Swiper != 'undefined' &&
   document.querySelector('.dsmTrustpilot').dataset.apikey != undefined
 ) {
   let container = document.querySelector('.dsmTrustpilot')
