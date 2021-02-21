@@ -12,6 +12,9 @@ if (
 
   let params = ['perPage=40']
   params.push(`apikey=${container.dataset.apikey}`)
+  if (container.dataset.tags) {
+    params.push(`tagValue=${container.dataset.tags}`)
+  }
   if (container.dataset.stars) {
     params.push(`stars=${container.dataset.stars.split(',')}`)
   } else {
@@ -70,6 +73,7 @@ if (
         let allowTouchMove = container.dataset.touchMove
           ? container.dataset.touchMove == 'true'
           : 'true'
+        let speed = container.dataset.speed ? container.dataset.speed : '300'
         let swiper = new Swiper('.dsmTrustpilot .swiper-container', {
           navigation: {
             nextEl: '#swiperRightArrow',
@@ -79,6 +83,7 @@ if (
           slidesPerView: slidesPerView,
           spaceBetween: parseInt(spaceBetween),
           slidesPerGroup: parseInt(slidesPerGroup),
+          speed: parseInt(speed),
           pagination: {
             el: '.swiper-pagination',
             type: 'bullets',

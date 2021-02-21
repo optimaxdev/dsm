@@ -17,32 +17,45 @@ document.querySelectorAll('.dsmAccordian').forEach((a) => {
     el.setAttribute('aria-listener', true)
 
     if (window.innerWidth < 768) {
-      document.querySelectorAll('.dsmAccordian').forEach((a) => {
-        if (a.getAttribute('open') == null) return
-        a.classList.add('closeAccordian')
+      if (el.getAttribute('open') == null) {
+        let count = 0
+        document.querySelectorAll('.dsmAccordian').forEach((a) => {
+          let currEl = a
+          count++
+          if (currEl.getAttribute('open') == null) return
+          currEl.classList.add('closeAccordian')
+          setTimeout(() => {
+            currEl.removeAttribute('open')
+            currEl.classList.remove('closeAccordian')
+          }, 200)
+          setTimeout(() => {
+            currEl.style.minHeight = '0px'
+          }, 250)
+        })
+
+        if (count == document.querySelectorAll('.dsmAccordian').length) {
+          el.style.minHeight = el.offsetHeight + 'px'
+          el.setAttribute('open', '')
+        }
+      } else {
+        el.style.minHeight = el.offsetHeight + 'px'
+        el.setAttribute('open', '')
+      }
+    } else {
+      if (el.getAttribute('open') != null) {
+        el.classList.add('closeAccordian')
+
         setTimeout(() => {
           el.removeAttribute('open')
           el.classList.remove('closeAccordian')
         }, 200)
         setTimeout(() => {
           el.style.minHeight = '0px'
-        }, 150)
-      })
-    }
-
-    if (el.getAttribute('open') != null) {
-      el.classList.add('closeAccordian')
-
-      setTimeout(() => {
-        el.removeAttribute('open')
-        el.classList.remove('closeAccordian')
-      }, 200)
-      setTimeout(() => {
-        el.style.minHeight = '0px'
-      }, 150)
-    } else {
-      el.style.minHeight = el.offsetHeight + 'px'
-      el.setAttribute('open', '')
+        }, 250)
+      } else {
+        el.style.minHeight = el.offsetHeight + 'px'
+        el.setAttribute('open', '')
+      }
     }
   })
 })
