@@ -1994,9 +1994,9 @@ svg.dsmLogo * {
   }
 }
 
-.dsmTrustpilot {
+.dsmTrustpilot .swiper-outer {
   margin: 0 42px;
-  margin-bottom: 50px;
+  padding-bottom: 36px;
   position: relative;
 }
 
@@ -2075,7 +2075,7 @@ svg.dsmLogo * {
 
 .dsmTrustpilot .swiperArrows {
   z-index: 1;
-  top: 50%;
+  top: calc(50% - 36px);
   outline: none;
   -webkit-transform: translateY(-50%);
           transform: translateY(-50%);
@@ -2125,7 +2125,6 @@ svg.dsmLogo * {
   height: 48px;
   background-color: #fff;
   position: absolute;
-  top: 50%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -2138,8 +2137,6 @@ svg.dsmLogo * {
       -ms-flex-align: center;
           align-items: center;
   right: 19.5px;
-  -webkit-transform: translateY(-50%);
-          transform: translateY(-50%);
   border-radius: 50%;
   border: 1px solid #F1F1F1;
   background-color: #FFFFFF;
@@ -2157,7 +2154,7 @@ svg.dsmLogo * {
 
 .dsmTrustpilot .swiper-pagination {
   left: 50%;
-  bottom: -36px;
+  bottom: 36px;
   -webkit-transform: translateX(-50%);
           transform: translateX(-50%);
   display: -webkit-box;

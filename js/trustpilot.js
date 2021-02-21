@@ -6,7 +6,7 @@ if (
   document.querySelector('.dsmTrustpilot').dataset.apikey != undefined
 ) {
   let container = document.querySelector('.dsmTrustpilot')
-  container.innerHTML = `<div class="swiper-container" id="swiper-reviews"><div class="swiper-wrapper"></div></div><div class="arrowContainer arrow-left swiperArrows" id="swiperLeftArrow"><i class="dsmIcons arrow-left"></i></div><div class="arrowContainer arrow-right swiperArrows" id="swiperRightArrow"><i class="dsmIcons arrow-right"></i></div>  <div class="swiper-pagination"></div>
+  container.innerHTML = `<div class="swiper-outer"><div class="swiper-container" id="swiper-reviews"><div class="swiper-wrapper"></div></div><div class="arrowContainer arrow-left swiperArrows" id="swiperLeftArrow"><i class="dsmIcons arrow-left"></i></div><div class="arrowContainer arrow-right swiperArrows" id="swiperRightArrow"><i class="dsmIcons arrow-right"></i></div>  <div class="swiper-pagination"></div></div>
       `
   replaceIcons()
 
@@ -64,6 +64,9 @@ if (
         let spaceBetween = container.dataset.spaceBetween
           ? container.dataset.spaceBetween
           : 20
+        let slidesPerGroup = container.dataset.slidesPerGroup
+          ? container.dataset.slidesPerGroup
+          : 1
         let allowTouchMove = container.dataset.touchMove
           ? container.dataset.touchMove == 'true'
           : 'true'
@@ -75,6 +78,7 @@ if (
           loop: loop,
           slidesPerView: slidesPerView,
           spaceBetween: parseInt(spaceBetween),
+          slidesPerGroup: parseInt(slidesPerGroup),
           pagination: {
             el: '.swiper-pagination',
             type: 'bullets',
