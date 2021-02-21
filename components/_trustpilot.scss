@@ -1,0 +1,164 @@
+@import url('https://cdnjs.cloudflare.com/ajax/libs/Swiper/6.4.14/swiper-bundle.css');
+
+.dsmTrustpilot {
+    margin: 0 42px;
+    margin-bottom: 50px;
+    position: relative;
+
+    .dsmIcons.arrow-left {
+        margin-right: 1px;
+    }
+
+    .dsmIcons.arrow-right {
+        margin-left: 1px;
+    }
+
+    .swiper-slide {
+        border-radius: 4px;
+        background-color: #FFFFFF;
+        box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.2);
+        padding: 18px 30px;
+        color: #4D4D4D;
+        font-family: Roboto;
+        display: flex;
+        flex-direction: column;
+        font-size: 16px;
+        box-sizing: border-box;
+        letter-spacing: 0;
+        height: auto;
+        line-height: 22px;
+    }
+
+    .swiperTop {
+        display: flex;
+        margin-bottom: 25px;
+        justify-content: space-between;
+    }
+
+    .swiperDate {
+        color: #89959C;
+        font-size: 14px;
+        letter-spacing: 0;
+        line-height: 16px;
+        text-align: right;
+    }
+
+    .swiperTitle {
+        color: #0F0F0F;
+        font-size: 16px;
+        font-weight: bold;
+        margin-bottom: 12px;
+        letter-spacing: 0;
+        line-height: 19px;
+        display: -webkit-box;
+        -webkit-line-clamp: 1;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+    }
+
+    .swiperAuthor {
+        color: #89959C;
+        font-size: 14px;
+        letter-spacing: 0;
+        line-height: 16px;
+        margin-top: auto;
+        padding-top: 10px;
+        justify-self: end;
+    }
+
+    .swiperArrows {
+        z-index: 1;
+        top: 50%;
+        outline: none;
+        transform: translateY(-50%);
+    }
+
+    .swiperArrows.arrow-left {
+        left: -24px;
+    }
+
+    .swiperArrows.arrow-right {
+        right: -24px;
+    }
+
+    .swiper-container {
+        padding: 10px;
+        margin: -10px;
+        margin-bottom: 36px;
+    }
+
+    .swiper-button-disabled svg * {
+        stroke: #AAAAAA !important;
+    }
+
+    .arrowContainer svg.dsmIcons {
+        height: 11px;
+        width: 6px;
+    }
+
+    .swiperRating {
+        display: flex;
+        gap: 2px;
+    }
+
+    .swiperText {
+        margin-right: 20px;
+        display: -webkit-box;
+        -webkit-line-clamp: 4;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+    }
+
+    .arrowContainer {
+        width: 48px;
+        cursor: pointer;
+        height: 48px;
+        background-color: #fff;
+        position: absolute;
+        top: 50%;
+        display: flex;
+        justify-content: center;
+        transition: 0.2s all;
+        align-items: center;
+        right: 19.5px;
+        transform: translateY(-50%);
+        border-radius: 50%;
+        border: 1px solid #F1F1F1;
+        background-color: #FFFFFF;
+        box-shadow: 0 1px 3px 0 rgba(58, 72, 80, 0.07), 0 8px 14px 0 rgba(176, 189, 197, 0.15);
+
+        &:hover {
+            background-color: #F7F8F9;
+        }
+    }
+
+    .swiper-button-disabled:hover {
+        background-color: #fff;
+    }
+
+    .swiper-pagination {
+        left: 50%;
+        bottom: -36px;
+        transform: translateX(-50%);
+        display: flex;
+        gap: 9px;
+    }
+
+    .swiper-pagination-bullet {
+        height: 9px;
+        width: 9px;
+        outline: none;
+        opacity: 0.3;
+        background-color: #89959C;
+        transition: 0.2s all;
+
+        &:hover {
+            opacity: 0.5;
+        }
+    }
+
+    .swiper-pagination-bullet-active {
+        opacity: 1;
+        pointer-events: none;
+    }
+}
