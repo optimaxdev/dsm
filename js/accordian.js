@@ -25,10 +25,10 @@ document.querySelectorAll('.dsmAccordian').forEach((a) => {
         setTimeout(() => {
           currEl.removeAttribute('open')
           currEl.classList.remove('closeAccordian')
-        }, 150)
+        }, 200)
         setTimeout(() => {
           currEl.style.minHeight = '0px'
-        }, 150)
+        }, 200)
       })
 
       if (count == document.querySelectorAll('.dsmAccordian').length) {
@@ -40,10 +40,10 @@ document.querySelectorAll('.dsmAccordian').forEach((a) => {
       setTimeout(() => {
         el.removeAttribute('open')
         el.classList.remove('closeAccordian')
-      }, 150)
+      }, 200)
       setTimeout(() => {
         el.style.minHeight = '0px'
-      }, 150)
+      }, 200)
     }
   })
 })
