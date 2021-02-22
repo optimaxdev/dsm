@@ -36,6 +36,9 @@ if (
       ? parseInt(container.dataset.maxSlides)
       : 0
     reviews.forEach((r, q) => {
+      if (maxSlides != 0 && slidesAdded >= maxSlides) {
+        return startSwiper()
+      }
       count++
       let minChars = container.dataset.minChars
         ? parseInt(container.dataset.minChars)
@@ -62,56 +65,58 @@ if (
         .querySelector('.dsmTrustpilot .swiper-wrapper')
         .appendChild(slide)
       slidesAdded++
-      if (maxSlides != 0 && slidesAdded >= maxSlides) count = reviews.length
+
       if (count >= reviews.length) {
-        let loop = container.dataset.loop
-          ? container.dataset.loop == 'true'
-          : 'true'
-        let slidesPerView = container.dataset.slides
-          ? container.dataset.slides
-          : 3
-        let spaceBetween = container.dataset.spaceBetween
-          ? container.dataset.spaceBetween
-          : 20
-        let slidesPerGroup = container.dataset.slidesPerGroup
-          ? container.dataset.slidesPerGroup
-          : 1
-        let allowTouchMove = container.dataset.touchMove
-          ? container.dataset.touchMove == 'true'
-          : 'true'
-        let speed = container.dataset.speed ? container.dataset.speed : '300'
-        let swiper = new Swiper('.dsmTrustpilot .swiper-container', {
-          navigation: {
-            nextEl: '#swiperRightArrow',
-            prevEl: '#swiperLeftArrow',
-          },
-          loop: loop,
-          slidesPerView: slidesPerView,
-          spaceBetween: parseInt(spaceBetween),
-          slidesPerGroup: parseInt(slidesPerGroup),
-          speed: parseInt(speed),
-          pagination: {
-            el: '.swiper-pagination',
-            type: 'bullets',
-            clickable: true,
-          },
-          breakpoints: {
-            1024: {
-              allowTouchMove: allowTouchMove,
-            },
-            736: {
-              slidesPerView: 2,
-              slidesPerGroup: 2,
-            },
-            320: {
-              allowTouchMove: true,
-              slidesPerView: 1,
-              slidesPerGroup: 1,
-            },
-          },
-        })
-        delete container.dataset.apikey
+        startSwiper()
       }
     })
   })
+}
+
+function startSwiper() {
+  let container = document.querySelector('.dsmTrustpilot')
+
+  let loop = container.dataset.loop ? container.dataset.loop == 'true' : 'true'
+  let slidesPerView = container.dataset.slides ? container.dataset.slides : 3
+  let spaceBetween = container.dataset.spaceBetween
+    ? container.dataset.spaceBetween
+    : 20
+  let slidesPerGroup = container.dataset.slidesPerGroup
+    ? container.dataset.slidesPerGroup
+    : 1
+  let allowTouchMove = container.dataset.touchMove
+    ? container.dataset.touchMove == 'true'
+    : 'true'
+  let speed = container.dataset.speed ? container.dataset.speed : '300'
+  let swiper = new Swiper('.dsmTrustpilot .swiper-container', {
+    navigation: {
+      nextEl: '#swiperRightArrow',
+      prevEl: '#swiperLeftArrow',
+    },
+    loop: loop,
+    slidesPerView: slidesPerView,
+    spaceBetween: parseInt(spaceBetween),
+    slidesPerGroup: parseInt(slidesPerGroup),
+    speed: parseInt(speed),
+    pagination: {
+      el: '.swiper-pagination',
+      type: 'bullets',
+      clickable: true,
+    },
+    breakpoints: {
+      1024: {
+        allowTouchMove: allowTouchMove,
+      },
+      736: {
+        slidesPerView: 2,
+        slidesPerGroup: 2,
+      },
+      320: {
+        allowTouchMove: true,
+        slidesPerView: 1,
+        slidesPerGroup: 1,
+      },
+    },
+  })
+  delete container.dataset.apikey
 }

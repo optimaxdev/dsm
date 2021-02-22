@@ -113,6 +113,7 @@
     }
 
     .arrowContainer {
+        -webkit-tap-highlight-color: transparent;
         width: 48px;
         cursor: pointer;
         height: 48px;
@@ -140,8 +141,11 @@
     .swiper-pagination {
         left: 50%;
         bottom: 36px;
+        width: 100%;
+        justify-content: center;
         transform: translateX(-50%);
         display: flex;
+        flex-wrap: wrap;
         gap: 9px;
     }
 

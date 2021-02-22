@@ -2120,6 +2120,7 @@ svg.dsmLogo * {
 }
 
 .dsmTrustpilot .arrowContainer {
+  -webkit-tap-highlight-color: transparent;
   width: 48px;
   cursor: pointer;
   height: 48px;
@@ -2155,11 +2156,17 @@ svg.dsmLogo * {
 .dsmTrustpilot .swiper-pagination {
   left: 50%;
   bottom: 36px;
+  width: 100%;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   -webkit-transform: translateX(-50%);
           transform: translateX(-50%);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
   gap: 9px;
 }
 
