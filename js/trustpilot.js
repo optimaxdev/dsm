@@ -22,6 +22,7 @@ if (
   }
   params = params.join('&')
   let reviewsRequest = new XMLHttpRequest()
+  let starEmpty = `<svg xmlns="http://www.w3.org/2000/svg" width="17.4" height="17.3" viewBox="0 0 17.4 17.3" overflow="visible"><g transform="translate(0 .5)" fill-rule="evenodd" clip-rule="evenodd"><polygon points="0,16.8 17.4,16.8 17.4,-0.5 0,-0.5" fill="#dcdce6"/><path d="M14.7 6.8h-4.6L8.7 2.4 7.2 6.8H2.6l3.8 2.7L5 13.9l3.8-2.7L11 9.5l3.7-2.7zm-6 4.3l2.6-.7 1.1 3.4-3.7-2.7z" fill="#fff"/></g></svg>`
   let star = `<svg xmlns="http://www.w3.org/2000/svg" width="17.4" height="17.3" viewBox="0 0 17.4 17.3" overflow="visible"><g transform="translate(0 .5)" fill-rule="evenodd" clip-rule="evenodd"><polygon points="0,16.8 17.4,16.8 17.4,-0.5 0,-0.5" fill="#00b67a"/><path d="M14.7 6.8h-4.6L8.7 2.4 7.2 6.8H2.6l3.8 2.7L5 13.9l3.8-2.7L11 9.5l3.7-2.7zm-6 4.3l2.6-.7 1.1 3.4-3.7-2.7z" fill="#fff"/></g></svg>`
   reviewsRequest.open(
     'GET',
@@ -52,6 +53,9 @@ if (
       })}, ${date.getFullYear()}`
       for (let i = 0; i < r.stars; i++) {
         stars += star
+      }
+      for (let i = 0; i < 5 - r.stars; i++) {
+        stars += starEmpty
       }
       slide.classList = 'swiper-slide'
       slide.innerHTML += `<div class="swiperTop">
