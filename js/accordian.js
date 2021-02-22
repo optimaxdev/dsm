@@ -15,47 +15,29 @@ document.querySelectorAll('.dsmAccordian').forEach((a) => {
     e.preventDefault()
     let el = e.target.closest('details')
     el.setAttribute('aria-listener', true)
+    if (el.getAttribute('open') == null) {
+      let count = 0
+      document.querySelectorAll('.dsmAccordian').forEach((a) => {
+        let currEl = a
+        count++
+        if (currEl.getAttribute('open') == null) return
+        currEl.classList.add('closeAccordian')
+        setTimeout(() => {
+          currEl.removeAttribute('open')
+          currEl.classList.remove('closeAccordian')
+        }, 200)
+        setTimeout(() => {
+          currEl.style.minHeight = '0px'
+        }, 250)
+      })
 
-    if (window.innerWidth < 768) {
-      if (el.getAttribute('open') == null) {
-        let count = 0
-        document.querySelectorAll('.dsmAccordian').forEach((a) => {
-          let currEl = a
-          count++
-          if (currEl.getAttribute('open') == null) return
-          currEl.classList.add('closeAccordian')
-          setTimeout(() => {
-            currEl.removeAttribute('open')
-            currEl.classList.remove('closeAccordian')
-          }, 200)
-          setTimeout(() => {
-            currEl.style.minHeight = '0px'
-          }, 250)
-        })
-
-        if (count == document.querySelectorAll('.dsmAccordian').length) {
-          el.style.minHeight = el.offsetHeight + 'px'
-          el.setAttribute('open', '')
-        }
-      } else {
+      if (count == document.querySelectorAll('.dsmAccordian').length) {
         el.style.minHeight = el.offsetHeight + 'px'
         el.setAttribute('open', '')
       }
     } else {
-      if (el.getAttribute('open') != null) {
-        el.classList.add('closeAccordian')
-
-        setTimeout(() => {
-          el.removeAttribute('open')
-          el.classList.remove('closeAccordian')
-        }, 200)
-        setTimeout(() => {
-          el.style.minHeight = '0px'
-        }, 250)
-      } else {
-        el.style.minHeight = el.offsetHeight + 'px'
-        el.setAttribute('open', '')
-      }
+      el.style.minHeight = el.offsetHeight + 'px'
+      el.setAttribute('open', '')
     }
   })
 })

@@ -18,7 +18,7 @@ if (
   if (container.dataset.stars) {
     params.push(`stars=${container.dataset.stars.split(',')}`)
   } else {
-    params.push(`stars=5`)
+    params.push(`stars=4,5`)
   }
   params = params.join('&')
   let reviewsRequest = new XMLHttpRequest()
@@ -31,6 +31,10 @@ if (
   reviewsRequest.addEventListener('load', () => {
     let reviews = JSON.parse(reviewsRequest.response).reviews
     let count = 0
+    let slidesAdded = 0
+    let maxSlides = container.dataset.maxSlides
+      ? parseInt(container.dataset.maxSlides)
+      : 0
     reviews.forEach((r, q) => {
       count++
       let minChars = container.dataset.minChars
@@ -57,6 +61,8 @@ if (
       document
         .querySelector('.dsmTrustpilot .swiper-wrapper')
         .appendChild(slide)
+      slidesAdded++
+      if (maxSlides != 0 && slidesAdded >= maxSlides) count = reviews.length
       if (count >= reviews.length) {
         let loop = container.dataset.loop
           ? container.dataset.loop == 'true'
@@ -95,10 +101,12 @@ if (
             },
             736: {
               slidesPerView: 2,
+              slidesPerGroup: 2,
             },
             320: {
               allowTouchMove: true,
               slidesPerView: 1,
+              slidesPerGroup: 1,
             },
           },
         })
