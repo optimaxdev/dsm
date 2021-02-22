@@ -3,9 +3,9 @@
     border-top: 1px solid #E7EBED;
     border-bottom: 1px solid #E7EBED;
     padding: 20px;
-    transition: 0.2s background-color, 0.3s height, 0.25s min-height;
+    transition: 0.2s background-color, 0.3s height, 0.15s min-height;
     height: 100%;
-    min-height: 0;
+    min-height: 1px;
     cursor: pointer;
 
     &:hover {
@@ -60,8 +60,7 @@
     }
 
     &.closeAccordian summary~* {
-        animation: sweep-reverse .2s ease-in-out;
-        // margin-top: -50px;
+        animation: sweep-reverse .1s ease-in-out;
         opacity: 0;
     }
 

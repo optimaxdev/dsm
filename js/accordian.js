@@ -25,10 +25,10 @@ document.querySelectorAll('.dsmAccordian').forEach((a) => {
         setTimeout(() => {
           currEl.removeAttribute('open')
           currEl.classList.remove('closeAccordian')
-        }, 250)
+        }, 150)
         setTimeout(() => {
           currEl.style.minHeight = '0px'
-        }, 250)
+        }, 150)
       })
 
       if (count == document.querySelectorAll('.dsmAccordian').length) {
@@ -36,8 +36,14 @@ document.querySelectorAll('.dsmAccordian').forEach((a) => {
         el.setAttribute('open', '')
       }
     } else {
-      el.style.minHeight = el.offsetHeight + 'px'
-      el.setAttribute('open', '')
+      el.classList.add('closeAccordian')
+      setTimeout(() => {
+        el.removeAttribute('open')
+        el.classList.remove('closeAccordian')
+      }, 150)
+      setTimeout(() => {
+        el.style.minHeight = '0px'
+      }, 150)
     }
   })
 })
