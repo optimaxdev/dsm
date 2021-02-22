@@ -25,7 +25,7 @@ document.querySelectorAll('.dsmAccordian').forEach((a) => {
         setTimeout(() => {
           currEl.removeAttribute('open')
           currEl.classList.remove('closeAccordian')
-        }, 200)
+        }, 250)
         setTimeout(() => {
           currEl.style.minHeight = '0px'
         }, 250)
