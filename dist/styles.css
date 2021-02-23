@@ -2050,6 +2050,7 @@ svg.dsmLogo * {
   -webkit-box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.2);
           box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.2);
   padding: 18px 30px;
+  padding-left: 36px;
   color: #4D4D4D;
   font-family: Roboto;
   display: -webkit-box;
@@ -2162,7 +2163,7 @@ svg.dsmLogo * {
 
 .dsmTrustpilot .swiperArrows {
   z-index: 1;
-  top: calc(50% - 36px);
+  top: calc(50% - 18px);
   outline: none;
   -webkit-transform: translateY(-50%);
           transform: translateY(-50%);
@@ -2264,7 +2265,7 @@ svg.dsmLogo * {
   .dsmTrustpilot .arrowContainer {
     width: 40px;
     height: 40px;
-    top: 30%;
+    top: 35%;
   }
 }
 
@@ -2310,4 +2311,67 @@ svg.dsmLogo * {
 .dsmTrustpilot .swiper-pagination-bullet-active {
   opacity: 1;
   pointer-events: none;
+}
+
+.dsmTrustpilot-Header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 13px;
+}
+
+@media (max-width: 768px) {
+  .dsmTrustpilot-Header {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    gap: 10px;
+  }
+  .dsmTrustpilot-Header .reviewsDot {
+    display: none;
+  }
+  .dsmTrustpilot-Header .trustpilotLogo {
+    height: 21px;
+    width: 82px;
+  }
+}
+
+.dsmTrustpilot-Header .starsContainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 2px;
+}
+
+@media (max-width: 768px) {
+  .dsmTrustpilot-Header .starsContainer svg {
+    width: 26px;
+    height: 26px;
+  }
+}
+
+.dsmTrustpilot-Header .numberOfReviews {
+  color: #0F0F0F;
+  font-family: Roboto;
+  font-size: 19.2px;
+  font-weight: 300;
+  letter-spacing: 0;
+  line-height: 23px;
+}
+
+@media (max-width: 768px) {
+  .dsmTrustpilot-Header .numberOfReviews {
+    color: #0F0F0F;
+    font-family: Helvetica;
+    font-size: 12px;
+    letter-spacing: 0;
+    line-height: 14px;
+  }
 }

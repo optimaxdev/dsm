@@ -1,0 +1,49 @@
+.dsmTrustpilot-Header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 13px;
+
+    @media (max-width: 768px) {
+        flex-direction: column;
+        gap: 10px;
+
+        .reviewsDot {
+            display: none;
+        }
+
+        .trustpilotLogo {
+            height: 21px;
+            width: 82px;
+        }
+    }
+
+    .starsContainer {
+        display: flex;
+        gap: 2px;
+
+        @media (max-width: 768px) {
+            svg {
+                width: 26px;
+                height: 26px;
+            }
+        }
+    }
+
+    .numberOfReviews {
+        color: #0F0F0F;
+        font-family: Roboto;
+        font-size: 19.2px;
+        font-weight: 300;
+        letter-spacing: 0;
+        line-height: 23px;
+
+        @media (max-width: 768px) {
+            color: #0F0F0F;
+            font-family: Helvetica;
+            font-size: 12px;
+            letter-spacing: 0;
+            line-height: 14px;
+        }
+    }
+}

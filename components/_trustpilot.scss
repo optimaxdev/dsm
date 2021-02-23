@@ -25,6 +25,7 @@
         background-color: #FFFFFF;
         box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.2);
         padding: 18px 30px;
+        padding-left: 36px;
         color: #4D4D4D;
         font-family: Roboto;
         display: flex;
@@ -112,7 +113,7 @@
 
     .swiperArrows {
         z-index: 1;
-        top: calc(50% - 36px);
+        top: calc(50% - 18px);
         outline: none;
         transform: translateY(-50%);
     }
@@ -192,7 +193,7 @@
         @media (max-width: 768px) {
             width: 40px;
             height: 40px;
-            top: 30%;
+            top: 35%;
         }
 
         &:hover {
