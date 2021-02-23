@@ -36,6 +36,11 @@ if (
     let maxSlides = container.dataset.maxSlides
       ? parseInt(container.dataset.maxSlides)
       : 0
+    if (window.innerWidth < 768) {
+      maxSlides = container.dataset.mobileMaxSlides
+        ? parseInt(container.dataset.mobileMaxSlides)
+        : 6
+    }
     reviews.forEach((r, q) => {
       if (maxSlides != 0 && slidesAdded >= maxSlides) {
         return startSwiper()

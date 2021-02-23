@@ -1,11 +1,15 @@
 @import url('https://cdnjs.cloudflare.com/ajax/libs/Swiper/6.4.14/swiper-bundle.css');
 
 .dsmTrustpilot {
-
     .swiper-outer {
         margin: 0 42px;
         padding-bottom: 36px;
         position: relative;
+
+        @media (max-width: 768px) {
+            margin: 0 16px;
+            padding-bottom: 20px;
+        }
     }
 
     .dsmIcons.arrow-left {
@@ -30,12 +34,34 @@
         letter-spacing: 0;
         height: auto;
         line-height: 22px;
+
+        @media (max-width: 768px) {
+            border: 1px solid #F1F1F1;
+            border-radius: 8px;
+            padding: 29px 10.5px;
+            box-shadow: 0 1px 0 0 rgba(58, 72, 80, 0.07),
+                0 2px 11px -1px rgba(176, 189, 197, 0.12);
+
+            >div {
+                margin: 0 60px;
+            }
+
+        }
     }
 
     .swiperTop {
         display: flex;
         margin-bottom: 25px;
         justify-content: space-between;
+
+        @media (max-width: 768px) {
+            display: block;
+            order: 2;
+            text-align: center;
+            justify-content: flex-start;
+            margin-top: 10px !important;
+            margin-bottom: 10px !important;
+        }
     }
 
     .swiperDate {
@@ -44,6 +70,10 @@
         letter-spacing: 0;
         line-height: 16px;
         text-align: right;
+
+        @media (max-width: 768px) {
+            text-align: center;
+        }
     }
 
     .swiperTitle {
@@ -57,6 +87,11 @@
         -webkit-line-clamp: 1;
         -webkit-box-orient: vertical;
         overflow: hidden;
+
+        @media (max-width: 768px) {
+            text-align: center;
+            margin-bottom: 10px !important;
+        }
     }
 
     .swiperAuthor {
@@ -67,6 +102,12 @@
         margin-top: auto;
         padding-top: 10px;
         justify-self: end;
+
+        @media (max-width: 768px) {
+            text-align: center;
+            order: 3;
+            padding-top: 0;
+        }
     }
 
     .swiperArrows {
@@ -78,16 +119,25 @@
 
     .swiperArrows.arrow-left {
         left: -24px;
+
+        @media (max-width: 768px) {
+            left: 10.5px;
+        }
     }
 
     .swiperArrows.arrow-right {
         right: -24px;
+
+        @media (max-width: 768px) {
+            right: 10.5px;
+        }
+
     }
 
     .swiper-container {
         padding: 10px;
         margin: -10px;
-        margin-bottom: 36px;
+        margin-bottom: 0;
     }
 
     .swiper-button-disabled svg * {
@@ -102,6 +152,11 @@
     .swiperRating {
         display: flex;
         gap: 2px;
+
+        @media (max-width: 768px) {
+            justify-content: center;
+            margin-bottom: 10px !important;
+        }
     }
 
     .swiperText {
@@ -110,6 +165,11 @@
         -webkit-line-clamp: 4;
         -webkit-box-orient: vertical;
         overflow: hidden;
+
+        @media (max-width: 768px) {
+            text-align: center;
+            -webkit-line-clamp: 3;
+        }
     }
 
     .arrowContainer {
@@ -129,6 +189,12 @@
         background-color: #FFFFFF;
         box-shadow: 0 1px 3px 0 rgba(58, 72, 80, 0.07), 0 8px 14px 0 rgba(176, 189, 197, 0.15);
 
+        @media (max-width: 768px) {
+            width: 40px;
+            height: 40px;
+            top: 30%;
+        }
+
         &:hover {
             background-color: #F7F8F9;
         }
@@ -140,7 +206,7 @@
 
     .swiper-pagination {
         left: 50%;
-        bottom: 36px;
+        bottom: 0;
         width: 100%;
         justify-content: center;
         transform: translateX(-50%);

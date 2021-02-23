@@ -1842,12 +1842,22 @@ svg.dsmLogo * {
   background-color: #F7F8F9;
 }
 
+@media (max-width: 768px) {
+  .dsmAccordian {
+    padding: 18px 20px;
+  }
+  .dsmAccordian:hover {
+    background-color: transparent;
+  }
+}
+
 .dsmAccordian .accordianContent {
   display: block;
   max-height: 0;
   -webkit-transition: 0.6s all;
   transition: 0.6s all;
   overflow: hidden;
+  padding-right: 33px;
 }
 
 .dsmAccordian summary {
@@ -1856,9 +1866,10 @@ svg.dsmLogo * {
   color: #0F0F0F;
   font-family: Roboto;
   font-size: 16px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr auto;
+      grid-template-columns: 1fr auto;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
@@ -1866,14 +1877,25 @@ svg.dsmLogo * {
       -ms-flex-align: center;
           align-items: center;
   letter-spacing: 0;
+  gap: 23px;
   line-height: 30px;
 }
 
+@media (max-width: 768px) {
+  .dsmAccordian summary {
+    font-size: 16px;
+    line-height: 24px;
+  }
+}
+
 .dsmAccordian summary > svg {
+  -ms-flex-item-align: start;
+      align-self: flex-start;
   -webkit-transition: 0.1s all;
   transition: 0.1s all;
   height: 12px;
   width: 13px;
+  margin-top: 3px;
 }
 
 .dsmAccordian summary > svg * {
@@ -1976,6 +1998,13 @@ svg.dsmLogo * {
           transform: rotate(-90deg) translateX(-13px);
 }
 
+@media (max-width: 768px) {
+  .dsmAccordian[open] {
+    font-size: 14px;
+    line-height: 24px;
+  }
+}
+
 @-webkit-keyframes scaleDown {
   from {
     stroke-width: 1px;
@@ -1998,6 +2027,13 @@ svg.dsmLogo * {
   margin: 0 42px;
   padding-bottom: 36px;
   position: relative;
+}
+
+@media (max-width: 768px) {
+  .dsmTrustpilot .swiper-outer {
+    margin: 0 16px;
+    padding-bottom: 20px;
+  }
 }
 
 .dsmTrustpilot .dsmIcons.arrow-left {
@@ -2031,6 +2067,19 @@ svg.dsmLogo * {
   line-height: 22px;
 }
 
+@media (max-width: 768px) {
+  .dsmTrustpilot .swiper-slide {
+    border: 1px solid #F1F1F1;
+    border-radius: 8px;
+    padding: 29px 10.5px;
+    -webkit-box-shadow: 0 1px 0 0 rgba(58, 72, 80, 0.07), 0 2px 11px -1px rgba(176, 189, 197, 0.12);
+            box-shadow: 0 1px 0 0 rgba(58, 72, 80, 0.07), 0 2px 11px -1px rgba(176, 189, 197, 0.12);
+  }
+  .dsmTrustpilot .swiper-slide > div {
+    margin: 0 60px;
+  }
+}
+
 .dsmTrustpilot .swiperTop {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -2041,12 +2090,33 @@ svg.dsmLogo * {
           justify-content: space-between;
 }
 
+@media (max-width: 768px) {
+  .dsmTrustpilot .swiperTop {
+    display: block;
+    -webkit-box-ordinal-group: 3;
+        -ms-flex-order: 2;
+            order: 2;
+    text-align: center;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+    margin-top: 10px !important;
+    margin-bottom: 10px !important;
+  }
+}
+
 .dsmTrustpilot .swiperDate {
   color: #89959C;
   font-size: 14px;
   letter-spacing: 0;
   line-height: 16px;
   text-align: right;
+}
+
+@media (max-width: 768px) {
+  .dsmTrustpilot .swiperDate {
+    text-align: center;
+  }
 }
 
 .dsmTrustpilot .swiperTitle {
@@ -2062,6 +2132,13 @@ svg.dsmLogo * {
   overflow: hidden;
 }
 
+@media (max-width: 768px) {
+  .dsmTrustpilot .swiperTitle {
+    text-align: center;
+    margin-bottom: 10px !important;
+  }
+}
+
 .dsmTrustpilot .swiperAuthor {
   color: #89959C;
   font-size: 14px;
@@ -2071,6 +2148,16 @@ svg.dsmLogo * {
   padding-top: 10px;
   -ms-grid-column-align: end;
       justify-self: end;
+}
+
+@media (max-width: 768px) {
+  .dsmTrustpilot .swiperAuthor {
+    text-align: center;
+    -webkit-box-ordinal-group: 4;
+        -ms-flex-order: 3;
+            order: 3;
+    padding-top: 0;
+  }
 }
 
 .dsmTrustpilot .swiperArrows {
@@ -2085,14 +2172,26 @@ svg.dsmLogo * {
   left: -24px;
 }
 
+@media (max-width: 768px) {
+  .dsmTrustpilot .swiperArrows.arrow-left {
+    left: 10.5px;
+  }
+}
+
 .dsmTrustpilot .swiperArrows.arrow-right {
   right: -24px;
+}
+
+@media (max-width: 768px) {
+  .dsmTrustpilot .swiperArrows.arrow-right {
+    right: 10.5px;
+  }
 }
 
 .dsmTrustpilot .swiper-container {
   padding: 10px;
   margin: -10px;
-  margin-bottom: 36px;
+  margin-bottom: 0;
 }
 
 .dsmTrustpilot .swiper-button-disabled svg * {
@@ -2111,12 +2210,28 @@ svg.dsmLogo * {
   gap: 2px;
 }
 
+@media (max-width: 768px) {
+  .dsmTrustpilot .swiperRating {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    margin-bottom: 10px !important;
+  }
+}
+
 .dsmTrustpilot .swiperText {
   margin-right: 20px;
   display: -webkit-box;
   -webkit-line-clamp: 4;
   -webkit-box-orient: vertical;
   overflow: hidden;
+}
+
+@media (max-width: 768px) {
+  .dsmTrustpilot .swiperText {
+    text-align: center;
+    -webkit-line-clamp: 3;
+  }
 }
 
 .dsmTrustpilot .arrowContainer {
@@ -2145,6 +2260,14 @@ svg.dsmLogo * {
           box-shadow: 0 1px 3px 0 rgba(58, 72, 80, 0.07), 0 8px 14px 0 rgba(176, 189, 197, 0.15);
 }
 
+@media (max-width: 768px) {
+  .dsmTrustpilot .arrowContainer {
+    width: 40px;
+    height: 40px;
+    top: 30%;
+  }
+}
+
 .dsmTrustpilot .arrowContainer:hover {
   background-color: #F7F8F9;
 }
@@ -2155,7 +2278,7 @@ svg.dsmLogo * {
 
 .dsmTrustpilot .swiper-pagination {
   left: 50%;
-  bottom: 36px;
+  bottom: 0;
   width: 100%;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
