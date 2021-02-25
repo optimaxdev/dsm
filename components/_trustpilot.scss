@@ -152,7 +152,14 @@
 
     .swiperRating {
         display: flex;
-        gap: 2px;
+
+        svg {
+            margin-right: 2px;
+        }
+
+        svg:last-child {
+            margin-right: 0;
+        }
 
         @media (max-width: 768px) {
             justify-content: center;
@@ -213,11 +220,11 @@
         transform: translateX(-50%);
         display: flex;
         flex-wrap: wrap;
-        gap: 9px;
     }
 
     .swiper-pagination-bullet {
         height: 9px;
+        margin-right: 9px;
         width: 9px;
         outline: none;
         opacity: 0.3;
@@ -226,6 +233,10 @@
 
         &:hover {
             opacity: 0.5;
+        }
+
+        &:last-child {
+            margin-right: 0;
         }
     }
 

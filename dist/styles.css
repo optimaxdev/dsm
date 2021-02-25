@@ -1868,11 +1868,14 @@ svg.dsmLogo * {
   font-size: 16px;
   display: -ms-grid;
   display: grid;
+  width: 100%;
   -ms-grid-columns: 1fr auto;
       grid-template-columns: 1fr auto;
+  justify-content: space-between;
   -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -moz-box-pack: justify;
+  -ms-flex-pack: justify;
+  -webkit-justify-content: space-between;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -1893,6 +1896,8 @@ svg.dsmLogo * {
       align-self: flex-start;
   -webkit-transition: 0.1s all;
   transition: 0.1s all;
+  text-align: right;
+  justify-self: flex-end;
   height: 12px;
   width: 13px;
   margin-top: 3px;
@@ -2208,7 +2213,14 @@ svg.dsmLogo * {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  gap: 2px;
+}
+
+.dsmTrustpilot .swiperRating svg {
+  margin-right: 2px;
+}
+
+.dsmTrustpilot .swiperRating svg:last-child {
+  margin-right: 0;
 }
 
 @media (max-width: 768px) {
@@ -2291,11 +2303,11 @@ svg.dsmLogo * {
   display: flex;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-  gap: 9px;
 }
 
 .dsmTrustpilot .swiper-pagination-bullet {
   height: 9px;
+  margin-right: 9px;
   width: 9px;
   outline: none;
   opacity: 0.3;
@@ -2306,6 +2318,10 @@ svg.dsmLogo * {
 
 .dsmTrustpilot .swiper-pagination-bullet:hover {
   opacity: 0.5;
+}
+
+.dsmTrustpilot .swiper-pagination-bullet:last-child {
+  margin-right: 0;
 }
 
 .dsmTrustpilot .swiper-pagination-bullet-active {
@@ -2347,7 +2363,15 @@ svg.dsmLogo * {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  gap: 2px;
+  margin: 0 13px;
+}
+
+.dsmTrustpilot-Header .starsContainer svg {
+  margin-right: 2px;
+}
+
+.dsmTrustpilot-Header .starsContainer svg:last-child {
+  margin-right: 0;
 }
 
 @media (max-width: 768px) {

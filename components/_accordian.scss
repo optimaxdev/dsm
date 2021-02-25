@@ -35,8 +35,13 @@
         font-family: Roboto;
         font-size: 16px;
         display: grid;
+        width: 100%;
         grid-template-columns: 1fr auto;
         justify-content: space-between;
+        -webkit-box-pack: justify;
+        -moz-box-pack: justify;
+        -ms-flex-pack: justify;
+        -webkit-justify-content: space-between;
         align-items: center;
         letter-spacing: 0;
         gap: 23px;
@@ -51,6 +56,8 @@
         >svg {
             align-self: flex-start;
             transition: 0.1s all;
+            text-align: right;
+            justify-self: flex-end;
             height: 12px;
             width: 13px;
             margin-top: 3px;

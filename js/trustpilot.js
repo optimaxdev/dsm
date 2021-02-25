@@ -3,7 +3,8 @@ import { replaceIcons } from './icons.js'
 if (
   document.querySelector('.dsmTrustpilot') &&
   typeof Swiper != 'undefined' &&
-  document.querySelector('.dsmTrustpilot').dataset.apikey != undefined
+  (document.querySelector('.dsmTrustpilot').dataset.apikey != undefined ||
+    document.querySelector('.dsmTrustpilot').getAttribute('data') != undefined)
 ) {
   let container = document.querySelector('.dsmTrustpilot')
   container.innerHTML = `<div class="swiper-outer"><div class="swiper-container" id="swiper-reviews"><div class="swiper-wrapper"></div></div><div class="arrowContainer arrow-left swiperArrows" id="swiperLeftArrow"><i class="dsmIcons arrow-left"></i></div><div class="arrowContainer arrow-right swiperArrows" id="swiperRightArrow"><i class="dsmIcons arrow-right"></i></div>  <div class="swiper-pagination"></div></div>

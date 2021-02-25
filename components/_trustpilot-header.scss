@@ -20,7 +20,15 @@
 
     .starsContainer {
         display: flex;
-        gap: 2px;
+        margin: 0 13px;
+
+        svg {
+            margin-right: 2px;
+        }
+
+        svg:last-child {
+            margin-right: 0;
+        }
 
         @media (max-width: 768px) {
             svg {

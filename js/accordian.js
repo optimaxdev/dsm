@@ -3,7 +3,7 @@ import { replaceIcons } from './icons.js'
 document.querySelectorAll('.dsmAccordian').forEach((a) => {
   if (!a.querySelector('svg')) {
     a.querySelector('summary').innerHTML = `${
-      a.querySelector('summary').innerText
+      a.querySelector('summary').innerHTML
     } <i class="dsmIcons plus"></i>`
     replaceIcons()
   }
