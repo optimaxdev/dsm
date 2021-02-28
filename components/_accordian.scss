@@ -36,6 +36,7 @@
         font-size: 16px;
         display: grid;
         width: 100%;
+        position: relative;
         grid-template-columns: 1fr auto;
         justify-content: space-between;
         -webkit-box-pack: justify;
@@ -54,13 +55,16 @@
 
 
         >svg {
+            position: absolute;
+            right: 0;
+            top: 50%;
+            transform: translateY(-50%);
             align-self: flex-start;
             transition: 0.1s all;
             text-align: right;
             justify-self: flex-end;
             height: 12px;
             width: 13px;
-            margin-top: 3px;
 
             * {
                 stroke: #5B6971 !important;
@@ -93,6 +97,10 @@
         0% {
             opacity: 0;
             margin-top: -50px
+        }
+
+        30% {
+            opacity: 0;
         }
 
         100% {
