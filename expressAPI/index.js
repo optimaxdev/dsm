@@ -45,6 +45,8 @@ app.get('/reviews', function (req, res) {
   params = params.join('&')
 
   axios.get(`${req.query['url']}?${params}`).then((response) => {
+    if (response.data.reviews == undefined)
+      return res.status(404).send('Reviews not found for this request!')
     response.data.reviews.forEach((e) => {
       data.push({
         title: e.title,
