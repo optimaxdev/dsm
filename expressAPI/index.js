@@ -60,6 +60,21 @@ app.get('/reviews', function (req, res) {
   })
 })
 
-app.listen(1818, () => {
-  console.log(`Example app listening at http://localhost:1818`)
-})
+var http = require('http'),
+  https = require('https')
+var fs = require('fs')
+
+http.createServer(app).listen(1818)
+https
+  .createServer(
+    {
+      key: fs.readFileSync('server.key'),
+      cert: fs.readFileSync('server.cert'),
+    },
+    app,
+  )
+  .listen(1819)
+
+// app.listen(1818, () => {
+//   console.log(`Example app listening at http://localhost:1818`)
+// })
