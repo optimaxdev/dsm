@@ -2047,7 +2047,7 @@ svg.dsmLogo * {
 
 @media (max-width: 768px) {
   .dsmTrustpilot .swiper-outer {
-    margin: 0 16px;
+    margin: 0;
     padding-bottom: 20px;
   }
 }
@@ -2254,7 +2254,7 @@ svg.dsmLogo * {
 @media (max-width: 768px) {
   .dsmTrustpilot .swiperText {
     text-align: center;
-    -webkit-line-clamp: 4;
+    -webkit-line-clamp: 3;
   }
 }
 
@@ -2288,7 +2288,6 @@ svg.dsmLogo * {
   .dsmTrustpilot .arrowContainer {
     width: 40px;
     height: 40px;
-    top: 35%;
   }
 }
 
