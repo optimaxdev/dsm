@@ -16,6 +16,7 @@ document.querySelectorAll('.dsmAccordian').forEach((a) => {
     a.style.minHeight = a.offsetHeight + 'px'
   }
   a.addEventListener('click', (e) => {
+    if (e.target.tagName == 'A') return
     e.preventDefault()
     let el = e.target.closest('details')
     el.setAttribute('aria-listener', true)
