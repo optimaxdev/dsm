@@ -1885,12 +1885,6 @@ svg.dsmLogo * {
   line-height: 30px;
 }
 
-.dsmAccordian summary a {
-  font-size: inherit;
-  color: #0000EE;
-  text-decoration: underline;
-}
-
 @media (max-width: 768px) {
   .dsmAccordian summary {
     font-size: 16px;
@@ -1921,6 +1915,12 @@ svg.dsmLogo * {
 .dsmAccordian summary > svg line:nth-child(2) {
   -webkit-transition: 0.2s all;
   transition: 0.2s all;
+}
+
+.dsmAccordian a {
+  font-size: inherit;
+  color: #0000EE;
+  text-decoration: underline;
 }
 
 .dsmAccordian summary::-webkit-details-marker {
