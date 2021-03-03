@@ -2057,7 +2057,7 @@ svg.dsmLogo * {
 }
 
 .dsmTrustpilot .dsmIcons.arrow-right {
-  margin-left: 1px;
+  margin-left: 2px;
 }
 
 .dsmTrustpilot .swiper-slide {
@@ -2179,7 +2179,7 @@ svg.dsmLogo * {
 
 .dsmTrustpilot .swiperArrows {
   z-index: 1;
-  top: calc(50% - 18px);
+  top: calc(50% - 10px);
   outline: none;
   -webkit-transform: translateY(-50%);
           transform: translateY(-50%);
@@ -2352,13 +2352,27 @@ svg.dsmLogo * {
   gap: 13px;
 }
 
+.dsmTrustpilot-Header > * {
+  margin-right: 13px !important;
+}
+
+.dsmTrustpilot-Header > *:last-child {
+  margin-right: 0 !important;
+}
+
 @media (max-width: 768px) {
   .dsmTrustpilot-Header {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
-    gap: 10px;
+  }
+  .dsmTrustpilot-Header > * {
+    margin-right: 0 !important;
+    margin-bottom: 10px !important;
+  }
+  .dsmTrustpilot-Header > *:last-child {
+    margin-bottom: 0 !important;
   }
   .dsmTrustpilot-Header .reviewsDot {
     display: none;
@@ -2373,7 +2387,6 @@ svg.dsmLogo * {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  margin: 0 13px;
 }
 
 .dsmTrustpilot-Header .starsContainer svg {

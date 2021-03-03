@@ -1,6 +1,9 @@
 import { replaceIcons } from './icons.js'
 
-let apiURL = 'http://freud-online.co.uk:3200'
+let apiURL =
+  location.protocol != 'https:'
+    ? 'http://freud-online.co.uk:3200'
+    : 'https://freud-online.co.uk:3100'
 
 if (document.querySelector('.dsmTrustpilot') && typeof Swiper != 'undefined') {
   let container = document.querySelector('.dsmTrustpilot')

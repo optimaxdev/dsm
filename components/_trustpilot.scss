@@ -17,7 +17,7 @@
     }
 
     .dsmIcons.arrow-right {
-        margin-left: 1px;
+        margin-left: 2px;
     }
 
     .swiper-slide {
@@ -113,7 +113,7 @@
 
     .swiperArrows {
         z-index: 1;
-        top: calc(50% - 18px);
+        top: calc(50% - 10px);
         outline: none;
         transform: translateY(-50%);
     }
