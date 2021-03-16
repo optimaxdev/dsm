@@ -45,8 +45,11 @@
         -webkit-justify-content: space-between;
         align-items: center;
         letter-spacing: 0;
-        gap: 23px;
         line-height: 30px;
+
+        >span {
+            margin-right: 23px;
+        }
 
         @media (max-width: 768px) {
             font-size: 16px;
