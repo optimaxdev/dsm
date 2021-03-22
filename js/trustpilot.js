@@ -1,6 +1,6 @@
 import { replaceIcons } from './icons.js'
 
-let apiURL = 'https://master-gusa-desktop.gusadev.com/bff/trustpilot/'
+let apiURL = 'https://master-gusa-desktop.gusadev.com/bff/trustpilot'
 
 if (document.querySelector('.dsmTrustpilot') && typeof Swiper != 'undefined') {
   let container = document.querySelector('.dsmTrustpilot')
