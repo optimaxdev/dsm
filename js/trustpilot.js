@@ -1,6 +1,9 @@
 import { replaceIcons } from './icons.js'
 
-let apiURL = 'https://master-gusa-desktop.gusadev.com/bff/trustpilot'
+let apiURL = 'https://glassesusa.com/bff/trustpilot'
+if (!window.location.href.includes('glassesusa')) {
+  apiURL = 'https://api.freud-online.co.uk:3100'
+}
 
 if (document.querySelector('.dsmTrustpilot') && typeof Swiper != 'undefined') {
   let container = document.querySelector('.dsmTrustpilot')
@@ -15,7 +18,7 @@ if (document.querySelector('.dsmTrustpilot') && typeof Swiper != 'undefined') {
       'url=https://api.trustpilot.com/v1/business-units/4a89c04f00006400050497f3/reviews',
     ]
     if (container.dataset.tags) {
-      params.push(`tagValue=${container.dataset.tags}`)
+      params.push(`tags=${container.dataset.tags}`)
     }
     if (container.dataset.stars) {
       params.push(`stars=${container.dataset.stars.split(',')}`)
@@ -86,6 +89,7 @@ function startSwiper() {
   let container = document.querySelector('.dsmTrustpilot')
 
   let loop = container.dataset.loop ? container.dataset.loop == 'true' : 'true'
+  console.log(container)
   let slidesPerView = container.dataset.slides ? container.dataset.slides : 3
   let spaceBetween = container.dataset.spaceBetween
     ? container.dataset.spaceBetween
