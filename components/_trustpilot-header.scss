@@ -60,7 +60,24 @@
         letter-spacing: 0;
         line-height: 23px;
 
+        .mobileText {
+            display: none;
+        }
+
         @media (max-width: 768px) {
+            .desktopText {
+                display: none;
+            }
+
+            .mobileText {
+                display: inline-block;
+            }
+
+            .underlineReviews {
+                font-weight: bold;
+                text-decoration: underline;
+            }
+
             color: #0F0F0F;
             font-family: Helvetica;
             font-size: 12px;

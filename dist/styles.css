@@ -2420,6 +2420,10 @@ svg.dsmLogo * {
   line-height: 23px;
 }
 
+.dsmTrustpilot-Header .numberOfReviews .mobileText {
+  display: none;
+}
+
 @media (max-width: 768px) {
   .dsmTrustpilot-Header .numberOfReviews {
     color: #0F0F0F;
@@ -2427,5 +2431,15 @@ svg.dsmLogo * {
     font-size: 12px;
     letter-spacing: 0;
     line-height: 14px;
+  }
+  .dsmTrustpilot-Header .numberOfReviews .desktopText {
+    display: none;
+  }
+  .dsmTrustpilot-Header .numberOfReviews .mobileText {
+    display: inline-block;
+  }
+  .dsmTrustpilot-Header .numberOfReviews .underlineReviews {
+    font-weight: bold;
+    text-decoration: underline;
   }
 }

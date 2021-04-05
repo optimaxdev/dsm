@@ -193,8 +193,13 @@ if (document.querySelector('.dsmTrustpilot-Header')) {
                     points="23.677176 8.63506842 14.6356823 8.63506842 11.8429429 0.0695061498 9.04147626 8.63506842 -1.74546201e-05 8.62638124 7.32219608 13.9255628 4.5207294 22.4824378 11.8429429 17.1919435 19.1564292 22.4824378 16.3636898 13.9255628" />
                 <polygon fill="#005128" points="16.9272727 16.3309693 16.3836672 14.2222222 12.4727273 17.7777778" />
             </g>
-        </svg><div class="starsContainer">${starsContainer}</div><span class="numberOfReviews"><span class="reviewsDot">•&nbsp; </span>Reviews ${reviews.numberOfReviews
+        </svg><div class="starsContainer">${starsContainer}</div><span class="numberOfReviews"><span class="reviewsDot">•&nbsp; </span><span class="desktopText">Reviews ${reviews.numberOfReviews
       .toString()
-      .replace(/\B(?=(\d{3})+(?!\d))/g, ',')}+</span>`
+      .replace(
+        /\B(?=(\d{3})+(?!\d))/g,
+        ',',
+      )}+</span><span class="mobileText">Based on <span class="underlineReviews">${reviews.numberOfReviews
+      .toString()
+      .replace(/\B(?=(\d{3})+(?!\d))/g, ',')}+ reviews</span></span>`
   })
 }
