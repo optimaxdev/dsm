@@ -1,12 +1,15 @@
 .dsmAccordian {
     outline: none;
     border-top: 1px solid #E7EBED;
-    border-bottom: 1px solid #E7EBED;
     padding: 20px;
     transition: 0.2s background-color, 0.3s height, 0.15s min-height;
     height: 100%;
     min-height: 1px;
     cursor: pointer;
+
+    &:last-of-type {
+        border-bottom: 1px solid #E7EBED;
+    }
 
     &:hover {
         background-color: #F7F8F9;

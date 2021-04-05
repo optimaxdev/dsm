@@ -45,14 +45,12 @@ if (document.querySelector('.dsmTrustpilot') && typeof Swiper != 'undefined') {
           : 6
       }
       reviews.forEach((r, q) => {
-        if (maxSlides != 0 && slidesAdded >= maxSlides) {
-          return startSwiper()
-        }
         count++
         let minChars = container.dataset.minChars
           ? parseInt(container.dataset.minChars)
           : 75
-        if (r.text.length < minChars) return count++
+        if (r.text.length < minChars) return
+
         let slide = document.createElement('div')
         let stars = ''
         let date = new Date(r.date)
@@ -77,11 +75,10 @@ if (document.querySelector('.dsmTrustpilot') && typeof Swiper != 'undefined') {
           .querySelector('.dsmTrustpilot .swiper-wrapper')
           .appendChild(slide)
         slidesAdded++
-
-        if (count >= reviews.length) {
-          startSwiper()
-        }
       })
+      if (count >= reviews.length) {
+        return startSwiper()
+      }
     })
   }
 }
@@ -90,7 +87,6 @@ function startSwiper() {
   let container = document.querySelector('.dsmTrustpilot')
 
   let loop = container.dataset.loop ? container.dataset.loop == 'true' : 'true'
-  console.log(container)
   let slidesPerView = container.dataset.slides ? container.dataset.slides : 3
   let spaceBetween = container.dataset.spaceBetween
     ? container.dataset.spaceBetween
