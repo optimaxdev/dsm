@@ -1,6 +1,7 @@
 import { replaceIcons } from './icons.js'
 
-let apiURL = 'https://glassesusa.com/bff/trustpilot'
+let apiURL = 'https://api.freud-online.co.uk:3100'
+// let apiURL = 'https://glassesusa.com/bff/trustpilot'
 if (!window.location.href.includes('glassesusa')) {
   apiURL = 'https://api.freud-online.co.uk:3100'
 }
