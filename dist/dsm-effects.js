@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', function () {
   adjustTooltip()
   loadElements()
 })
-function loadElements() {
+export function loadElements() {
   document.addEventListener('change', (e) => {
     if (e.target.type == 'text' && e.target.closest('.dsmForm')) {
       // Text input styling including effects on change values
