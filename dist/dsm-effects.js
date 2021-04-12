@@ -4,12 +4,14 @@ import '../js/trustpilot.js'
 import { openTooltip, closeTooltip, adjustTooltip } from '../js/tooltip.js'
 import '../js/icons.js'
 import '../js/accordian.js'
+import { runHeader, startTrustpilot } from '../js/trustpilot.js'
+import { loadAccordian } from '../js/accordian.js'
 
 document.addEventListener('DOMContentLoaded', function () {
-  adjustTooltip()
   loadElements()
 })
 export function loadElements() {
+  loadAccordian()
   document.addEventListener('change', (e) => {
     if (e.target.type == 'text' && e.target.closest('.dsmForm')) {
       // Text input styling including effects on change values
@@ -26,9 +28,23 @@ export function loadElements() {
     }
   })
 
-  document.body.addEventListener('click', function (e) {
-    clickHandler(e)
-  })
+  if (document.querySelector('.dsmTrustpilot-Header')) {
+    runHeader()
+  }
+  if (
+    document.querySelector('.dsmTrustpilot') &&
+    typeof Swiper != 'undefined'
+  ) {
+    startTrustpilot()
+  }
+  document.querySelectorAll('.selectContainer button').forEach((a) =>
+    a.addEventListener('click', (e) => {
+      e.preventDefault()
+      e.stopImmediatePropagation()
+      e.stopPropagation()
+      selectButtonClick(e)
+    }),
+  )
 
   document
     .querySelectorAll('.dsmButton')
@@ -81,11 +97,41 @@ export function loadElements() {
     if (e.querySelector('label').innerText == '')
       e.querySelector('label').innerText = 'Please insert a placeholder'
   })
+  document.querySelectorAll('.dsmForm .radioContainer').forEach((e) => {
+    if (!e.querySelector('.radioStyling')) {
+      if (e.dataset.error) {
+        e.innerHTML += `<span class="radioStyling error"></span>`
+      } else if (e.dataset.size) {
+        e.innerHTML += `<span class="radioStyling ${e.dataset.size}"></span>`
+      } else {
+        e.innerHTML += `<span class="radioStyling"></span>`
+      }
+    }
+  })
+  adjustTooltip()
+  document.querySelectorAll('.dsmTooltip').forEach((e) => {
+    if (e.classList.contains('click')) return
+    e.addEventListener('mouseover', (r) => {
+      r.target
+        .closest('.dsmTooltip')
+        .querySelector('.container').style.opacity = ''
+      r.target
+        .closest('.dsmTooltip')
+        .querySelector('.container').style.visibility = ''
+    })
+  })
 }
-
+document.body.addEventListener('click', function (e) {
+  clickHandler(e)
+})
 function clickHandler(e) {
   let el = e.target
 
+  if (el.closest('svg') && el.closest('.dsmTooltip .container')) {
+    if (el.closest('.dsmTooltip.click') || el.closest('.dsmTooltip.close')) {
+      closeTooltip(el.closest('.dsmTooltip'))
+    }
+  }
   if (!el.closest('.dsmTooltip.click')) {
     document.querySelectorAll('.dsmTooltip.click').forEach((el) => {
       closeTooltip(el)
@@ -93,16 +139,21 @@ function clickHandler(e) {
   }
 
   if (!el.closest('.selectContainer')) {
+    if (!document.querySelectorAll('.selectContainer')) return
     document.querySelectorAll('.selectContainer').forEach((e) => {
       e.classList.remove('selected')
-      e.querySelector('ul').style.display = 'none'
-      e.querySelector('button').classList.add('filled')
-      e.querySelector('button').classList.remove('active')
+      if (e.querySelector('ul') && e.querySelector('button')) {
+        e.querySelector('ul').style.display = 'none'
+        e.querySelector('button').classList.add('filled')
+        e.querySelector('button').classList.remove('active')
+      }
     })
   }
 
   if (el.closest('.dsmTooltip.click')) openTooltip(e)
   if (el.closest('.dsmButton')) buttonClick(e)
   if (el.closest('.selectContainer li')) selectClick(e)
-  if (el.closest('.selectContainer button')) selectButtonClick(e)
+  if (el.closest('.selectContainer') && el.closest('button')) {
+    selectButtonClick(e)
+  }
 }

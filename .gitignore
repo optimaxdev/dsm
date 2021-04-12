@@ -2,6 +2,7 @@
 
 # dependencies
 /react-documentation
+/angular-docs
 styles.scss
 /documentation
 documentation/examples.html
@@ -9,3 +10,4 @@ documentation/examples.html
 /expressAPI/node_modules
 /expressAPI/server.cert
 /expressAPI/server.key
+.DS_Store

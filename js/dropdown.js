@@ -27,11 +27,12 @@ function selectButtonClick(e) {
 
   if (el.querySelector('button').classList.contains('active')) {
     el.querySelector('button').classList.remove('active')
-    return (el.querySelector('ul').style.display = 'none')
+    el.querySelector('button').classList.add('bananas')
+    el.querySelector('ul').style.display = 'none'
+  } else {
+    el.querySelector('ul').style.display = 'block'
+    el.querySelector('button').classList.add('active')
   }
-
-  el.querySelector('ul').style.display = 'block'
-  el.querySelector('button').classList.add('active')
 }
 
 export { selectClick, selectButtonClick }

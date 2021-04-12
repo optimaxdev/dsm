@@ -34,7 +34,8 @@ function openTooltip(e) {
 }
 
 function closeTooltip(el) {
-  el = el.closest('.dsmTooltip.click').querySelector('.container')
+  el = el.closest('.dsmTooltip.click') || el.closest('.dsmTooltip.close')
+  el = el.querySelector('.container')
   if (!el) return
   let opacity = 1
   el.style.opacity = opacity
@@ -54,6 +55,7 @@ function closeTooltip(el) {
 
 function adjustTooltip() {
   document.querySelectorAll('.dsmTooltip').forEach((e) => {
+    if (e.querySelector('.item')) return
     let text = e.innerText
     e.innerHTML = `<div class="item">?</div><div class="container">
             <div class="arrow"></div>
@@ -91,7 +93,7 @@ function adjustTooltip() {
     if (e.classList.contains('close')) {
       el.innerHTML =
         el.innerHTML +
-        `<svg onclick="closeTooltip(this)" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 13 13" width="100%" height="100%"><g fill="none" stroke="#b0bdc5"><path d="M12.3.7L.6 12.3M.7.7l11.7 11.6"></path></g></svg>`
+        `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 13 13" width="100%" height="100%"><g fill="none" stroke="#b0bdc5"><path d="M12.3.7L.6 12.3M.7.7l11.7 11.6"></path></g></svg>`
     }
   })
 }

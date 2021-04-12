@@ -1221,7 +1221,7 @@ svg.dsmIcons * {
   border: 1px solid #d8d8d8;
   cursor: default;
   pointer-events: none;
-  color: #d8d8d8;
+  color: #d8d8d8 !important;
 }
 
 .selectContainer button:hover {

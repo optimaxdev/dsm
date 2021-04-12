@@ -2,11 +2,13 @@ import { replaceIcons } from './icons.js'
 
 // let apiURL = 'https://api.freud-online.co.uk:3100'
 let apiURL = '/bff/trustpilot'
-if (!window.location.href.includes('glassesusa')) {
+if (
+  !window.location.href.includes('glassesusa.com') ||
+  !window.location.href.includes('gusa')
+) {
   apiURL = 'https://api.freud-online.co.uk:3100'
 }
-
-if (document.querySelector('.dsmTrustpilot') && typeof Swiper != 'undefined') {
+export function startTrustpilot() {
   let container = document.querySelector('.dsmTrustpilot')
   if (!container.querySelector('.swiper-outer'))
     container.innerHTML = `<div class="swiper-outer"><div class="swiper-container" id="swiper-reviews"><div class="swiper-wrapper"></div></div><div class="arrowContainer arrow-left swiperArrows" id="swiperLeftArrow"><i class="dsmIcons arrow-left"></i></div><div class="arrowContainer arrow-right swiperArrows" id="swiperRightArrow"><i class="dsmIcons arrow-right"></i></div>  <div class="swiper-pagination"></div></div>
@@ -45,6 +47,7 @@ if (document.querySelector('.dsmTrustpilot') && typeof Swiper != 'undefined') {
           : 6
       }
       reviews.forEach((r, q) => {
+        if (maxSlides && slidesAdded == maxSlides) return
         count++
         let minChars = container.dataset.minChars
           ? parseInt(container.dataset.minChars)
@@ -76,12 +79,14 @@ if (document.querySelector('.dsmTrustpilot') && typeof Swiper != 'undefined') {
           .appendChild(slide)
         slidesAdded++
       })
-      if (count >= reviews.length) {
+      if (count >= reviews.length || slidesAdded == maxSlides) {
         return startSwiper()
       }
     })
   }
 }
+
+let dsmSwiper
 
 function startSwiper() {
   let container = document.querySelector('.dsmTrustpilot')
@@ -98,7 +103,7 @@ function startSwiper() {
     ? container.dataset.touchMove == 'true'
     : 'true'
   let speed = container.dataset.speed ? container.dataset.speed : '300'
-  let swiper = new Swiper('.dsmTrustpilot .swiper-container', {
+  dsmSwiper = new Swiper('.dsmTrustpilot .swiper-container', {
     navigation: {
       nextEl: '#swiperRightArrow',
       prevEl: '#swiperLeftArrow',
@@ -132,7 +137,7 @@ function startSwiper() {
   })
 }
 
-if (document.querySelector('.dsmTrustpilot-Header')) {
+export function runHeader() {
   let container = document.querySelector('.dsmTrustpilot-Header')
 
   let reviewsRequest = new XMLHttpRequest()
