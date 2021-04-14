@@ -6,12 +6,14 @@ import '../js/icons.js'
 import '../js/accordian.js'
 import { runHeader, startTrustpilot } from '../js/trustpilot.js'
 import { loadAccordian } from '../js/accordian.js'
+import { replaceIcons } from '../js/icons.js'
 
 document.addEventListener('DOMContentLoaded', function () {
   loadElements()
 })
 export function loadElements() {
   loadAccordian()
+  replaceIcons()
   document.addEventListener('change', (e) => {
     if (e.target.type == 'text' && e.target.closest('.dsmForm')) {
       // Text input styling including effects on change values
