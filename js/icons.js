@@ -39,6 +39,7 @@ replaceIcons()
 export { replaceIcons }
 
 function onClassChange(a) {
+  if (!a) return
   // Options for the observer (which mutations to observe)
   const observerConfig = {
     attributes: true,
