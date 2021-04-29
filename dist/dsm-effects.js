@@ -80,6 +80,7 @@ export function loadElements() {
                     d="M1.2 6.3l4.7 4.9 7.3-10" />
             </svg></span>`
     } else {
+      e.dataset.size ? e.classList.add(e.dataset.size) : ''
       e.innerHTML = `<input type="checkbox" ${
         e.dataset.disabled ? 'disabled' : ''
       }><span class="checkbox${e.dataset.error ? ' error' : ''}"></span>`

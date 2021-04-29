@@ -1058,6 +1058,37 @@ svg.dsmIcons * {
   width: 14px !important;
 }
 
+.checkboxContainer.large .checkbox {
+  height: 24px;
+  width: 24px;
+}
+
+.checkboxContainer.large .checkbox:after {
+  height: 17px;
+  width: 8px;
+  left: 8.5px;
+  top: 1px;
+  border-width: 0 3px 3px 0;
+}
+
+.checkboxContainer.medium {
+  height: 24px !important;
+  width: 24px !important;
+}
+
+.checkboxContainer.medium .checkbox {
+  height: 24px;
+  width: 24px;
+}
+
+.checkboxContainer.medium .checkbox::after {
+  height: 16px;
+  width: 7px;
+  left: 7px;
+  top: 1px;
+  border-width: 0 3px 3px 0;
+}
+
 .checkboxContainer input[type=checkbox] {
   position: absolute;
   opacity: 0;
@@ -1076,7 +1107,11 @@ svg.dsmIcons * {
 }
 
 .checkboxContainer input[type=checkbox]:disabled + .checkbox:hover {
-  border: 1px solid #aaaaaa;
+  border: 1px solid #DEDEDE;
+}
+
+.checkboxContainer input[type=checkbox]:disabled + .checkbox {
+  border: 1px solid #DEDEDE;
 }
 
 .checkboxContainer input[type=checkbox]:checked + .checkbox.ticked {
@@ -1104,12 +1139,12 @@ svg.dsmIcons * {
 }
 
 .checkboxContainer .checkbox:after {
-  left: 5px;
-  top: 2px;
+  left: 4px;
+  top: 1px;
   height: 8px;
   width: 4px;
   border: solid #2196f3;
-  border-width: 0 3px 3px 0;
+  border-width: 0 2px 2px 0;
   -webkit-transform: rotate(45deg);
   transform: rotate(45deg);
 }
@@ -1118,11 +1153,12 @@ svg.dsmIcons * {
   position: absolute;
   top: 0;
   left: 0;
-  border: 1px solid #aaaaaa;
-  height: 16px;
+  height: 14px;
+  border: 1px solid #AAAAAA;
+  border-radius: 2px;
   -webkit-box-sizing: content-box;
           box-sizing: content-box;
-  width: 16px;
+  width: 14px;
   -webkit-transition: 0.2s border-color;
   transition: 0.2s border-color;
   background-color: white;

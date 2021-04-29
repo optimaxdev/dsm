@@ -288,6 +288,7 @@
     margin-bottom: 0;
     width: 16px;
 
+
     &.large,
     &.large .checkbox {
         height: 28px !important;
@@ -296,6 +297,37 @@
         svg {
             height: 12px !important;
             width: 14px !important;
+        }
+    }
+
+    &.large .checkbox {
+        height: 24px;
+        width: 24px;
+
+        &:after {
+            height: 17px;
+            width: 8px;
+            left: 8.5px;
+            top: 1px;
+            border-width: 0 3px 3px 0;
+        }
+    }
+
+    &.medium {
+        height: 24px !important;
+        width: 24px !important;
+
+        .checkbox {
+            height: 24px;
+            width: 24px;
+        }
+
+        .checkbox::after {
+            height: 16px;
+            width: 7px;
+            left: 7px;
+            top: 1px;
+            border-width: 0 3px 3px 0;
         }
     }
 
@@ -316,7 +348,11 @@
         }
 
         &:disabled+.checkbox:hover {
-            border: 1px solid rgb(170, 170, 170);
+            border: 1px solid #DEDEDE;
+        }
+
+        &:disabled+.checkbox {
+            border: 1px solid #DEDEDE;
         }
 
         &:checked+.checkbox.ticked {
@@ -338,12 +374,12 @@
     }
 
     .checkbox:after {
-        left: 5px;
-        top: 2px;
+        left: 4px;
+        top: 1px;
         height: 8px;
         width: 4px;
         border: solid rgb(33, 150, 243);
-        border-width: 0 3px 3px 0;
+        border-width: 0 2px 2px 0;
         -webkit-transform: rotate(45deg);
         -ms-transform: rotate(45deg);
         transform: rotate(45deg);
@@ -353,10 +389,11 @@
         position: absolute;
         top: 0;
         left: 0;
-        border: 1px solid rgb(170, 170, 170);
-        height: 16px;
+        height: 14px;
+        border: 1px solid #AAAAAA;
+        border-radius: 2px;
         box-sizing: content-box;
-        width: 16px;
+        width: 14px;
         transition: 0.2s border-color;
         background-color: white;
 
@@ -409,6 +446,7 @@
     &.error button.filled {
         color: rgb(176, 189, 197);
     }
+
 
     button {
         background-color: white;
