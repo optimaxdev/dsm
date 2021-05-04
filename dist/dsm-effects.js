@@ -85,6 +85,8 @@ export function loadElements() {
       e.dataset.size ? e.classList.add(e.dataset.size) : ''
       e.innerHTML = `<input type="checkbox" ${
         e.dataset.disabled ? 'disabled' : ''
+      }${
+        e.getAttribute('checked') != null ? ' checked' : ''
       }><span class="checkbox${e.dataset.error ? ' error' : ''}"></span>`
     }
   })
