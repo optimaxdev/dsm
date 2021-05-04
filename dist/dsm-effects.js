@@ -8,6 +8,8 @@ import { runHeader, startTrustpilot } from '../js/trustpilot.js'
 import { loadAccordian } from '../js/accordian.js'
 import { replaceIcons } from '../js/icons.js'
 
+globalThis.reloadElements = () => loadElements()
+
 document.addEventListener('DOMContentLoaded', function () {
   loadElements()
 })
