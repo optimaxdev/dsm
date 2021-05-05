@@ -779,43 +779,69 @@ svg.dsmIcons * {
   color: #6b6b6b;
 }
 
-.dsmForm .inputLabel input[type=text] {
+.dsmForm .inputLabel input[type=text],
+.dsmForm .inputLabel input[type=email],
+.dsmForm .inputLabel input[type=number] {
   padding-top: 20px;
 }
 
-.dsmForm .inputLabel input[type=text]::-webkit-input-placeholder {
+.dsmForm .inputLabel input[type=text]::-webkit-input-placeholder,
+.dsmForm .inputLabel input[type=email]::-webkit-input-placeholder,
+.dsmForm .inputLabel input[type=number]::-webkit-input-placeholder {
   opacity: 0;
   color: #dedede;
 }
 
-.dsmForm .inputLabel input[type=text]:-ms-input-placeholder {
+.dsmForm .inputLabel input[type=text]:-ms-input-placeholder,
+.dsmForm .inputLabel input[type=email]:-ms-input-placeholder,
+.dsmForm .inputLabel input[type=number]:-ms-input-placeholder {
   opacity: 0;
   color: #dedede;
 }
 
-.dsmForm .inputLabel input[type=text]::-ms-input-placeholder {
+.dsmForm .inputLabel input[type=text]::-ms-input-placeholder,
+.dsmForm .inputLabel input[type=email]::-ms-input-placeholder,
+.dsmForm .inputLabel input[type=number]::-ms-input-placeholder {
   opacity: 0;
   color: #dedede;
 }
 
-.dsmForm .inputLabel input[type=text]::placeholder {
+.dsmForm .inputLabel input[type=text]::placeholder,
+.dsmForm .inputLabel input[type=email]::placeholder,
+.dsmForm .inputLabel input[type=number]::placeholder {
   opacity: 0;
   color: #dedede;
 }
 
-.dsmForm .inputLabel input[type=text]:focus-within::-webkit-input-placeholder {
+.dsmForm .inputLabel input[type=text].noLabel,
+.dsmForm .inputLabel input[type=email].noLabel,
+.dsmForm .inputLabel input[type=number].noLabel {
+  padding-top: 0;
+  padding-bottom: 0;
+  height: 48px;
+}
+
+.dsmForm .inputLabel input[type=text]:focus-within::-webkit-input-placeholder,
+.dsmForm .inputLabel input[type=email]:focus-within::-webkit-input-placeholder,
+.dsmForm .inputLabel input[type=number]:focus-within::-webkit-input-placeholder {
   opacity: 1;
 }
 
-.dsmForm .inputLabel input[type=text]:focus-within:-ms-input-placeholder {
+.dsmForm .inputLabel input[type=text]:focus-within:-ms-input-placeholder,
+.dsmForm .inputLabel input[type=email]:focus-within:-ms-input-placeholder,
+.dsmForm .inputLabel input[type=number]:focus-within:-ms-input-placeholder {
   opacity: 1;
 }
 
-.dsmForm .inputLabel input[type=text]:focus-within::-ms-input-placeholder {
+.dsmForm .inputLabel input[type=text]:focus-within::-ms-input-placeholder,
+.dsmForm .inputLabel input[type=email]:focus-within::-ms-input-placeholder,
+.dsmForm .inputLabel input[type=number]:focus-within::-ms-input-placeholder {
   opacity: 1;
 }
 
-.dsmForm .inputLabel input[type=text]:focus-within::placeholder {
+.dsmForm .inputLabel input[type=text]:focus-within::placeholder,
+.dsmForm .inputLabel input[type=email]:focus-within::placeholder,
+.dsmForm .inputLabel input[type=number]:focus-within::placeholder {
   opacity: 1;
 }
 
@@ -847,7 +873,9 @@ svg.dsmIcons * {
   width: calc(100% - 30px);
 }
 
-.dsmForm input[type=text] {
+.dsmForm input[type=text],
+.dsmForm input[type=email],
+.dsmForm input[type=number] {
   color: #6b6b6b;
   font-size: 16px;
   font-weight: 400;
@@ -864,25 +892,33 @@ svg.dsmIcons * {
   outline: none;
 }
 
-.dsmForm input[type=text]:focus {
+.dsmForm input[type=text]:focus,
+.dsmForm input[type=email]:focus,
+.dsmForm input[type=number]:focus {
   color: black;
   border-color: #3fabe6;
 }
 
-.dsmForm input[type=text].error {
+.dsmForm input[type=text].error,
+.dsmForm input[type=email].error,
+.dsmForm input[type=number].error {
   border: 1px solid #e02020;
   background-color: #fff7f7;
   color: #e02020;
   font-weight: bold;
 }
 
-.dsmForm input[type=text]:disabled {
+.dsmForm input[type=text]:disabled,
+.dsmForm input[type=email]:disabled,
+.dsmForm input[type=number]:disabled {
   border-color: #dedede;
   background: white;
   cursor: not-allowed;
 }
 
-.dsmForm input[type=text]:disabled + label {
+.dsmForm input[type=text]:disabled + label,
+.dsmForm input[type=email]:disabled + label,
+.dsmForm input[type=number]:disabled + label {
   color: #c8c8c8;
 }
 

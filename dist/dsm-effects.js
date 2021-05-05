@@ -17,9 +17,14 @@ export function loadElements() {
   loadAccordian()
   replaceIcons()
   document.addEventListener('change', (e) => {
-    if (e.target.type == 'text' && e.target.closest('.dsmForm')) {
+    if (
+      e.target.type == 'text' ||
+      e.target.type == 'email' ||
+      (e.target.type == 'number' && e.target.closest('.dsmForm'))
+    ) {
       // Text input styling including effects on change values
       if (e.target.value != '') {
+        if (!e.target.parentNode.querySelector('label')) return
         e.target.parentNode.querySelector('label').style.fontSize = '11px'
         e.target.parentNode.querySelector('label').style.lineHeight = '19px'
         e.target.parentNode.querySelector('label').style.transform =
@@ -98,11 +103,9 @@ export function loadElements() {
   })
   document.querySelectorAll('.dsmForm .inputLabel').forEach((e) => {
     if (!e.querySelector('label'))
-      e.innerHTML = `<label>${e.querySelector('input').placeholder}</label>${
-        e.innerHTML
-      }`
-    if (e.querySelector('label').innerText == '')
-      e.querySelector('label').innerText = 'Please insert a placeholder'
+      e.querySelector('input').classList.add('noLabel')
+    // if (e.querySelector('label').innerText == '')
+    //   e.querySelector('label').innerText = 'Please insert a placeholder'
   })
   document.querySelectorAll('.dsmForm .radioContainer').forEach((e) => {
     if (!e.querySelector('.radioStyling')) {

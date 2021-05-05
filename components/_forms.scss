@@ -61,13 +61,21 @@
         position: relative;
         color: rgb(107, 107, 107);
 
-        input[type=text] {
+        input[type=text],
+        input[type=email],
+        input[type=number] {
             &::placeholder {
                 opacity: 0;
                 color: rgb(222, 222, 222);
             }
 
             padding-top: 20px;
+
+            &.noLabel {
+                padding-top: 0;
+                padding-bottom: 0;
+                height: 48px;
+            }
 
             &:focus-within::placeholder {
                 opacity: 1;
@@ -101,7 +109,9 @@
         }
     }
 
-    input[type=text] {
+    input[type=text],
+    input[type=email],
+    input[type=number] {
 
         &:focus {
             color: rgb(0, 0, 0);
