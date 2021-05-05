@@ -24,6 +24,8 @@ export function loadElements() {
     ) {
       // Text input styling including effects on change values
       if (e.target.value != '') {
+        if (!e.target.classList.contains('error'))
+          e.target.style.color = 'rgba(15, 15, 15, 1)'
         if (!e.target.parentNode.querySelector('label')) return
         e.target.parentNode.querySelector('label').style.fontSize = '11px'
         e.target.parentNode.querySelector('label').style.lineHeight = '19px'
