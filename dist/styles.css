@@ -821,6 +821,30 @@ svg.dsmIcons * {
   height: 48px;
 }
 
+.dsmForm .inputLabel input[type=text].noLabel::-webkit-input-placeholder,
+.dsmForm .inputLabel input[type=email].noLabel::-webkit-input-placeholder,
+.dsmForm .inputLabel input[type=number].noLabel::-webkit-input-placeholder {
+  opacity: 1;
+}
+
+.dsmForm .inputLabel input[type=text].noLabel:-ms-input-placeholder,
+.dsmForm .inputLabel input[type=email].noLabel:-ms-input-placeholder,
+.dsmForm .inputLabel input[type=number].noLabel:-ms-input-placeholder {
+  opacity: 1;
+}
+
+.dsmForm .inputLabel input[type=text].noLabel::-ms-input-placeholder,
+.dsmForm .inputLabel input[type=email].noLabel::-ms-input-placeholder,
+.dsmForm .inputLabel input[type=number].noLabel::-ms-input-placeholder {
+  opacity: 1;
+}
+
+.dsmForm .inputLabel input[type=text].noLabel::placeholder,
+.dsmForm .inputLabel input[type=email].noLabel::placeholder,
+.dsmForm .inputLabel input[type=number].noLabel::placeholder {
+  opacity: 1;
+}
+
 .dsmForm .inputLabel input[type=text]:focus-within::-webkit-input-placeholder,
 .dsmForm .inputLabel input[type=email]:focus-within::-webkit-input-placeholder,
 .dsmForm .inputLabel input[type=number]:focus-within::-webkit-input-placeholder {

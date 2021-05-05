@@ -75,6 +75,10 @@
                 padding-top: 0;
                 padding-bottom: 0;
                 height: 48px;
+
+                &::placeholder {
+                    opacity: 1;
+                }
             }
 
             &:focus-within::placeholder {

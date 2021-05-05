@@ -104,8 +104,6 @@ export function loadElements() {
   document.querySelectorAll('.dsmForm .inputLabel').forEach((e) => {
     if (!e.querySelector('label'))
       e.querySelector('input').classList.add('noLabel')
-    // if (e.querySelector('label').innerText == '')
-    //   e.querySelector('label').innerText = 'Please insert a placeholder'
   })
   document.querySelectorAll('.dsmForm .radioContainer').forEach((e) => {
     if (!e.querySelector('.radioStyling')) {
