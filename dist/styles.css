@@ -1066,23 +1066,23 @@ svg.dsmIcons * {
 }
 
 .radioContainer .radioStyling.medium {
-  width: 20px;
-  height: 20px;
+  width: 22px;
+  height: 22px;
 }
 
 .radioContainer .radioStyling.medium::before {
-  width: 10px;
-  height: 10px;
+  width: 12px;
+  height: 12px;
 }
 
 .radioContainer .radioStyling.large {
-  width: 28px;
-  height: 28px;
+  width: 30px;
+  height: 30px;
 }
 
 .radioContainer .radioStyling.large::before {
-  width: 14px;
-  height: 14px;
+  width: 18px;
+  height: 18px;
 }
 
 .radioContainer .radioStyling.error {
