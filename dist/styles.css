@@ -52,9 +52,11 @@
   border-radius: 24px;
 }
 
-.dsmButton.round:hover {
-  background-color: #1c86da;
-  border-color: #1c86da;
+@media (hover: hover) {
+  .dsmButton.round:hover {
+    background-color: #1c86da;
+    border-color: #1c86da;
+  }
 }
 
 .dsmButton.round:disabled span {
@@ -189,9 +191,11 @@
   font-size: 22px;
 }
 
-.dsmButton:hover {
-  background-color: #e36000;
-  border-color: #e36000;
+@media (hover: hover) {
+  .dsmButton:hover {
+    background-color: #e36000;
+    border-color: #e36000;
+  }
 }
 
 .dsmButton:disabled {
@@ -208,9 +212,11 @@
   border-color: #89959c;
 }
 
-.dsmButton.regentGray:hover {
-  background-color: #3a4850;
-  border-color: #3a4850;
+@media (hover: hover) {
+  .dsmButton.regentGray:hover {
+    background-color: #3a4850;
+    border-color: #3a4850;
+  }
 }
 
 .dsmButton.towerGray {
@@ -219,9 +225,11 @@
   border-color: #b0bdc5;
 }
 
-.dsmButton.towerGray:hover {
-  background-color: #89959c;
-  border-color: #89959c;
+@media (hover: hover) {
+  .dsmButton.towerGray:hover {
+    background-color: #89959c;
+    border-color: #89959c;
+  }
 }
 
 .dsmButton.codGray {
@@ -230,9 +238,11 @@
   border-color: #0f0f0f;
 }
 
-.dsmButton.codGray:hover {
-  background-color: #2d2d2d;
-  border-color: #2d2d2d;
+@media (hover: hover) {
+  .dsmButton.codGray:hover {
+    background-color: #2d2d2d;
+    border-color: #2d2d2d;
+  }
 }
 
 .dsmButton.white {
@@ -241,9 +251,11 @@
   border-color: white;
 }
 
-.dsmButton.white:hover {
-  background-color: #f1f3f4;
-  border-color: #f1f3f4;
+@media (hover: hover) {
+  .dsmButton.white:hover {
+    background-color: #f1f3f4;
+    border-color: #f1f3f4;
+  }
 }
 
 .dsmButton.ghost {
@@ -252,11 +264,13 @@
   border: 1px solid;
 }
 
-.dsmButton.ghost:hover {
-  border-width: 1px;
-  color: white;
-  border-color: #ff6c00;
-  background-color: #ff6c00;
+@media (hover: hover) {
+  .dsmButton.ghost:hover {
+    border-width: 1px;
+    color: white;
+    border-color: #ff6c00;
+    background-color: #ff6c00;
+  }
 }
 
 .dsmButton.ghost.secondary, .dsmButton.ghost.round {
@@ -264,10 +278,12 @@
   background-color: transparent;
 }
 
-.dsmButton.ghost.secondary:hover, .dsmButton.ghost.round:hover {
-  border-color: #1c86da;
-  background-color: #1c86da;
-  color: white;
+@media (hover: hover) {
+  .dsmButton.ghost.secondary:hover, .dsmButton.ghost.round:hover {
+    border-color: #1c86da;
+    background-color: #1c86da;
+    color: white;
+  }
 }
 
 .dsmButton.ghost.round.porcelain {
@@ -275,10 +291,12 @@
   color: #e7ebed;
 }
 
-.dsmButton.ghost.round.porcelain:hover {
-  background-color: #e1e1e1;
-  border-color: #e1e1e1;
-  color: #3a4850;
+@media (hover: hover) {
+  .dsmButton.ghost.round.porcelain:hover {
+    background-color: #e1e1e1;
+    border-color: #e1e1e1;
+    color: #3a4850;
+  }
 }
 
 .dsmButton.ghost.round.regentGray {
@@ -286,10 +304,12 @@
   border-color: #89959c;
 }
 
-.dsmButton.ghost.round.regentGray:hover {
-  background-color: #3a4850;
-  border-color: #3a4850;
-  color: white;
+@media (hover: hover) {
+  .dsmButton.ghost.round.regentGray:hover {
+    background-color: #3a4850;
+    border-color: #3a4850;
+    color: white;
+  }
 }
 
 .dsmButton.ghost.round.towerGray {
@@ -297,10 +317,12 @@
   border-color: #b0bdc5;
 }
 
-.dsmButton.ghost.round.towerGray:hover {
-  background-color: #89959c;
-  border-color: #89959c;
-  color: white;
+@media (hover: hover) {
+  .dsmButton.ghost.round.towerGray:hover {
+    background-color: #89959c;
+    border-color: #89959c;
+    color: white;
+  }
 }
 
 .dsmButton.ghost.round.codGray {
@@ -308,10 +330,12 @@
   color: #0f0f0f;
 }
 
-.dsmButton.ghost.round.codGray:hover {
-  background-color: #2d2d2d;
-  border-color: #2d2d2d;
-  color: white;
+@media (hover: hover) {
+  .dsmButton.ghost.round.codGray:hover {
+    background-color: #2d2d2d;
+    border-color: #2d2d2d;
+    color: white;
+  }
 }
 
 .dsmButton.secondary {
@@ -319,9 +343,11 @@
   border-color: #2196f3;
 }
 
-.dsmButton.secondary:hover {
-  background-color: #1c86da;
-  border-color: #1c86da;
+@media (hover: hover) {
+  .dsmButton.secondary:hover {
+    background-color: #1c86da;
+    border-color: #1c86da;
+  }
 }
 
 .dsmButton.porcelain {
@@ -330,9 +356,11 @@
   border-color: #e7ebed;
 }
 
-.dsmButton.porcelain:hover {
-  background-color: #e1e1e1;
-  border-color: #e1e1e1;
+@media (hover: hover) {
+  .dsmButton.porcelain:hover {
+    background-color: #e1e1e1;
+    border-color: #e1e1e1;
+  }
 }
 
 .dsmButton:disabled .progress + * {
