@@ -11,3 +11,5 @@ documentation/examples.html
 /expressAPI/server.cert
 /expressAPI/server.key
 .DS_Store
+/.DS_Store
+/.vscode
