@@ -157,6 +157,12 @@
   padding: 2px 11px;
 }
 
+@media (max-width: 768px) {
+  .dsmButton.small.round {
+    padding: 7px 18px;
+  }
+}
+
 .dsmButton.regular {
   height: 48px;
   padding-left: 35px;
@@ -168,6 +174,12 @@
   padding: 10px 20px;
 }
 
+@media (max-width: 768px) {
+  .dsmButton.regular.round {
+    padding: 13.5px 23px;
+  }
+}
+
 .dsmButton.medium {
   height: 40px;
   font-size: 16px;
@@ -175,6 +187,12 @@
 
 .dsmButton.medium.round {
   padding: 6px 17px;
+}
+
+@media (max-width: 768px) {
+  .dsmButton.medium.round {
+    padding: 11px 20px;
+  }
 }
 
 .dsmButton.large {
