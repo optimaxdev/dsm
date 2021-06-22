@@ -13,3 +13,4 @@ documentation/examples.html
 .DS_Store
 /.DS_Store
 /.vscode
+.vscode/settings.json
