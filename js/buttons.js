@@ -1,7 +1,7 @@
 export default function buttonClick(e) {
   let el = e.target.closest('button')
   if (!el) return
-  e.preventDefault()
+ // e.preventDefault()
   e.stopPropagation()
   if (el.classList.contains('round')) {
     el.style.width = el.clientWidth + 'px'
