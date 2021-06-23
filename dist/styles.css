@@ -27,8 +27,8 @@
   background-color: #ff6c00;
   border-color: #ff6c00;
   color: white;
-  -webkit-transition: 0.3s all;
-  transition: 0.3s all;
+  -webkit-transition: 0.3s background-color;
+  transition: 0.3s background-color;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   white-space: nowrap;
@@ -43,6 +43,11 @@
 
 .dsmButton:hover, .dsmButton:focus {
   text-decoration: none;
+}
+
+.dsmButton a {
+  color: inherit;
+  text-decoration: inherit;
 }
 
 .dsmButton.round {
