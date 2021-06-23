@@ -48,6 +48,8 @@
 .dsmButton a {
   color: inherit;
   text-decoration: inherit;
+  font-size: inherit;
+  line-height: inherit;
 }
 
 .dsmButton.round {
