@@ -34,7 +34,8 @@ export function loadElements() {
         e.target.parentNode.querySelector('label').style.color =
           'rgb(170, 170, 170)'
       } else {
-        e.target.parentNode.querySelector('label').removeAttribute('style')
+        if (e.target.parentNode.querySelector('label'))
+          e.target.parentNode.querySelector('label').removeAttribute('style')
       }
     }
   })
