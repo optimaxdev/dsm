@@ -10,9 +10,8 @@ import { replaceIcons } from '../js/icons.js'
 
 globalThis.reloadElements = () => loadElements()
 
-document.addEventListener('DOMContentLoaded', function () {
-  loadElements()
-})
+loadElements()
+
 export function loadElements() {
   loadAccordian()
   replaceIcons()
