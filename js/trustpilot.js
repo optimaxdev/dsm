@@ -90,6 +90,8 @@ let dsmSwiper
 
 function startSwiper() {
   let container = document.querySelector('.dsmTrustpilot')
+  if (container.dataset.loaded) return
+  container.dataset.loaded = 'true'
 
   let loop = container.dataset.loop ? container.dataset.loop == 'true' : 'true'
   let slidesPerView = container.dataset.slides ? container.dataset.slides : 3
