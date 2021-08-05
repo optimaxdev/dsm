@@ -2,14 +2,12 @@ import { replaceIcons } from './icons.js'
 
 // let apiURL = 'https://api.freud-online.co.uk:3100'
 let apiURL = '/bff/trustpilot'
-// if (
-//   !window.location.href.includes('glassesusa.com') &&
-//   !window.location.href.includes('gusa')
-// ) {
-//   apiURL = 'https://api.freud-online.co.uk:3100'
-// } else {
-//   return
-// }
+if (
+  !window.location.href.includes('glassesusa.com') &&
+  !window.location.href.includes('gusa')
+) {
+  apiURL = 'https://api.freud-online.co.uk:3100'
+}
 export function startTrustpilot() {
   let container = document.querySelector('.dsmTrustpilot')
   if (!container.querySelector('.swiper-outer'))
