@@ -14,10 +14,12 @@ export function loadSlider() {
     document.querySelector('.dsmSliderToggle').dispatchEvent(event)
   }
 
+
   items.forEach((item) => {
     item.addEventListener('click', (e) => {
       handleIndicator(e.target)
     })
-    item.classList.contains('is-active') && handleIndicator(item)
+    item.classList.contains('is-active') && handleIndicator(item);
+
   })
 }
