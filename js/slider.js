@@ -22,4 +22,5 @@ export function loadSlider() {
     item.classList.contains('is-active') && handleIndicator(item);
 
   })
+
 }
