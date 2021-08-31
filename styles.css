@@ -2673,12 +2673,4 @@ svg.dsmLogo * {
   font-weight: normal;
   color: #000000;
 }
-
-@media (max-width: 580px) {
-  .dsmSliderToggle .dsmSliderToggle {
-    overflow: auto;
-    font-family: Helvetica;
-    height: 38px;
-  }
-}
 /*# sourceMappingURL=styles.css.map */
