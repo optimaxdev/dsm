@@ -7,6 +7,7 @@ import '../js/accordian.js'
 import { runHeader, startTrustpilot } from '../js/trustpilot.js'
 import { loadAccordian } from '../js/accordian.js'
 import { replaceIcons } from '../js/icons.js'
+import {loadSlider} from '../js/slider.js';
 
 globalThis.reloadElements = () => loadElements()
 
@@ -15,6 +16,7 @@ loadElements()
 export function loadElements() {
   loadAccordian()
   replaceIcons()
+loadSlider()
   document.addEventListener('change', (e) => {
     if (
       e.target.type == 'text' ||

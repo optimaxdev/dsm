@@ -2595,3 +2595,95 @@ svg.dsmLogo * {
     text-decoration: underline;
   }
 }
+
+.dsmSliderToggle {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: static;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  height: 36px;
+  background: #F1F1F1;
+  border-radius: 36px;
+  position: relative;
+  padding: 0px 4px 0px 4px;
+  font-family: Roboto, Sans-serif;
+}
+
+@media (max-width: 768px) {
+  .dsmSliderToggle {
+    -webkit-box-pack: unset;
+        -ms-flex-pack: unset;
+            justify-content: unset;
+    width: -webkit-max-content;
+    width: -moz-max-content;
+    width: max-content;
+    overflow: hidden;
+    font-family: Helvetica;
+    margin: auto;
+  }
+}
+
+.dsmSliderToggle > .dsmSliderToggleClick {
+  background: #FFFFFF;
+  -webkit-box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.0973831);
+          box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.0973831);
+  border-radius: 17px;
+}
+
+.dsmSliderToggle .dsmSliderToggleBtn {
+  padding: 6px 20px 6px 20px;
+  text-decoration: none;
+  z-index: 4;
+  font-weight: 500;
+  position: relative;
+  font-style: normal;
+  font-size: 14px;
+  line-height: 16px;
+  cursor: pointer;
+  color: #4D4D4D;
+  padding: 6px 20px 6px 20px;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.dsmSliderToggle .dsmSliderToggleBtn:hover {
+  color: #000000;
+}
+
+.dsmSliderToggle .nav-indicator {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 4px;
+  -webkit-transition: .4s;
+  transition: .4s;
+  height: 5px;
+  z-index: 1;
+  border-radius: 8px 8px 0 0;
+  background: #FFFFFF;
+  -webkit-box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.0973831);
+          box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.0973831);
+  border-radius: 17px;
+  height: 28px;
+  top: 4px;
+}
+
+.dsmSliderToggle div.dsmSliderToggleBtn.is-active {
+  font-style: normal;
+  font-weight: normal;
+  color: #000000;
+}
+/*# sourceMappingURL=styles.css.map */
