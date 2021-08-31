@@ -2622,7 +2622,7 @@ svg.dsmLogo * {
   font-family: Roboto, Sans-serif;
 }
 
-@media (max-width: 414px) {
+@media (max-width: 768px) {
   .dsmSliderToggle {
     -webkit-box-pack: unset;
         -ms-flex-pack: unset;
