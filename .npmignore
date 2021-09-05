@@ -12,4 +12,4 @@ documentation/examples.html
 /expressAPI/server.key
 .DS_Store
 /.DS_Store
-.vscode/*
+.vscode/* 
