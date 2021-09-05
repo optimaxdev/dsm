@@ -1,0 +1,15 @@
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+# dependencies
+/react-documentation
+/angular-docs
+styles.scss
+/documentation
+documentation/examples.html
+/expressAPI/.env
+/expressAPI/node_modules
+/expressAPI/server.cert
+/expressAPI/server.key
+.DS_Store
+/.DS_Store 
+.vscode/* 
