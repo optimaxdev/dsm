@@ -1,15 +1,7 @@
-import * as http from 'http';
-import * as https from 'https';
-import * as fs from 'fs';
-
-import * as express from 'express';
-const app = express();
-
-import * as axios from "axios";
-const axios = axios.default
-
-import * as dotenv from "dotenv";
-dotenv.config()
+var express = require('express')
+var app = express()
+const axios = require('axios').default
+require('dotenv').config()
 
 app.get('/', function (req, res) {
   return res.status(403).send('Please use a valid request url')
@@ -68,9 +60,9 @@ app.get('/reviews', function (req, res) {
   })
 })
 
-// var http = require('http'),
-//   https = require('https')
-// var fs = require('fs')
+var http = require('http'),
+  https = require('https')
+var fs = require('fs')
 
 http.createServer(app).listen(1818)
 https
