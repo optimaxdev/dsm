@@ -6,10 +6,7 @@
 styles.scss
 /documentation
 documentation/examples.html
-/expressAPI/.env
-/expressAPI/node_modules
-/expressAPI/server.cert
-/expressAPI/server.key
+/expressAPI/*
 .DS_Store
 /.DS_Store 
 .vscode/* 
