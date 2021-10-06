@@ -6,3 +6,4 @@ styles.scss
 /.DS_Store 
 .vscode/* 
 */.DS_Store
+/documentation
