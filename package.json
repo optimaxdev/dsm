@@ -11,9 +11,6 @@
     "type": "git",
     "url": "git+https://github.com/glassesUSA/dsm.git"
   },
-  "exports": {
-    ".": "./dist/styles.css"
-  },
   "author": "GlassesUSA",
   "license": "ISC",
   "bugs": {
