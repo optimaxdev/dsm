@@ -1,9 +1,9 @@
 {
-  "name": "@glassesusa/glassesusa-dsm",
+  "name": "@glassesusa/dsm",
   "type": "module",
-  "version": "1.0.4",
+  "version": "1.1.0",
   "description": "The full documentation for the system can be found at https://glassesusa.github.io/dsm-docs/",
-  "main": "dist/dsm-effects.js",
+  "main": "dsm-effects.js",
   "scripts": {
     "test": "echo \"No test specified\""
   },
