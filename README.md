@@ -13,6 +13,10 @@ Using the package manager [npm](npmjs.com) to install it.
 ```bash
 npm install @glassesusa/dsm
 ```
+or
+```bash
+yarn add @glassesusa/dsm
+```
 Using a CDN to install it.
 
 ```xml
