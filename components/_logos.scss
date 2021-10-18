@@ -1,7 +1,7 @@
 @font-face {
     font-family: 'brands';
-    src: url('../fonts/brands.eot?y0faqm');
-    src: url('../fonts/brands.eot?y0faqm#iefix') format('embedded-opentype'), url('../fonts/brands.ttf?y0faqm') format('truetype'), url('../fonts/brands.woff?y0faqm') format('woff'), url('../fonts/brands.svg?y0faqm#icomoon') format('svg');
+    src: /* webpackIgnore: true */ url('../fonts/brands.eot?y0faqm');
+    src: /* webpackIgnore: true */ url('../fonts/brands.eot?y0faqm#iefix') format('embedded-opentype'), /* webpackIgnore: true */ url('../fonts/brands.ttf?y0faqm') format('truetype'), /* webpackIgnore: true */ url('../fonts/brands.woff?y0faqm') format('woff'), /* webpackIgnore: true */ url('../fonts/brands.svg?y0faqm#icomoon') format('svg');
     font-weight: normal;
     font-style: normal;
     font-display: block;
@@ -20,7 +20,7 @@ svg.dsmLogo {
     font-family: 'brands' !important;
     font-style: normal;
     font-weight: normal;
-    font-size: 25px;
+    font-size: 25px; 
     color: black;
     font-variant: normal;
     text-transform: none;
