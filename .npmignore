@@ -8,3 +8,4 @@ styles.scss
 components/
 .gitignore
 /documentation
+node_modules
