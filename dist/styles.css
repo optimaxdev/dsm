@@ -527,8 +527,11 @@ a.dsmButton {
 
 @font-face {
   font-family: 'icomoon';
-  src: url("../fonts/icomoon.eot");
-  src: url("../fonts/icomoon.eot") format("embedded-opentype"), url("../fonts/icomoon.ttf") format("truetype"), url("../fonts/icomoon.woff") format("woff"), url("../fonts/icomoon.svg") format("svg");
+  src: /* webpackIgnore: true */ url('../fonts/icomoon.eot');
+  src: /* webpackIgnore: true */ url('../fonts/icomoon.eot') format('embedded-opentype'),
+      /* webpackIgnore: true */ url('../fonts/icomoon.ttf') format('truetype'),
+      /* webpackIgnore: true */ url('../fonts/icomoon.woff') format('woff'),
+      /* webpackIgnore: true */ url('../fonts/icomoon.svg') format('svg');
   font-weight: normal;
   font-style: normal;
   font-display: block;
@@ -1696,14 +1699,15 @@ svg.dsmIcons * {
 
 @font-face {
   font-family: 'brands';
-  src: url("../fonts/brands.eot?y0faqm");
-  src: url("../fonts/brands.eot?y0faqm#iefix") format("embedded-opentype"), url("../fonts/brands.ttf?y0faqm") format("truetype"), url("../fonts/brands.woff?y0faqm") format("woff"), url("../fonts/brands.svg?y0faqm#icomoon") format("svg");
+  src: /* webpackIgnore: true */ url('../fonts/brands.eot?y0faqm');
+  src: /* webpackIgnore: true */ url('../fonts/brands.eot?y0faqm#iefix') format('embedded-opentype'), /* webpackIgnore: true */ url('../fonts/brands.ttf?y0faqm') format('truetype'), /* webpackIgnore: true */ url('../fonts/brands.woff?y0faqm') format('woff'), /* webpackIgnore: true */ url('../fonts/brands.svg?y0faqm#icomoon') format('svg');
   font-weight: normal;
   font-style: normal;
   font-display: block;
 }
 
 svg.dsmLogo {
+  color: red;
   height: 25px;
   width: auto;
 }
