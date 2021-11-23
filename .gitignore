@@ -5,6 +5,7 @@ styles.scss
 .DS_Store
 /.DS_Store 
 .vscode/* 
+node_modules
 */.DS_Store
 /documentation
 node_modules
