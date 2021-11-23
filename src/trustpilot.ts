@@ -1,4 +1,5 @@
-import { replaceIcons } from './icons.js'
+import { replaceIcons } from './icons'
+import Swiper from 'swiper'
 
 // let apiURL = 'https://api.freud-online.co.uk:3100'
 let apiURL = '/bff/trustpilot'
@@ -9,7 +10,7 @@ if (
   apiURL = 'https://api.freud-online.co.uk:3100'
 }
 export function startTrustpilot() {
-  let container = document.querySelector('.dsmTrustpilot')
+  let container = document.querySelector('.dsmTrustpilot') as HTMLElement
   if (!container.querySelector('.swiper-outer'))
     container.innerHTML = `<div class="swiper-outer"><div class="swiper-container" id="swiper-reviews"><div class="swiper-wrapper"></div></div><div class="arrowContainer arrow-left swiperArrows" id="swiperLeftArrow"><i class="dsmIcons arrow-left"></i></div><div class="arrowContainer arrow-right swiperArrows" id="swiperRightArrow"><i class="dsmIcons arrow-right"></i></div>  <div class="swiper-pagination"></div></div>
       `
@@ -17,7 +18,7 @@ export function startTrustpilot() {
   if (document.querySelector('.dsmTrustpilot .swiper-slide')) {
     startSwiper()
   } else {
-    let params = [
+    let params: any = [
       'url=https://api.trustpilot.com/v1/business-units/4a89c04f00006400050497f3/reviews',
     ]
     if (container.dataset.tags) {
@@ -56,7 +57,7 @@ export function startTrustpilot() {
 
         let slide = document.createElement('div')
         let stars = ''
-        let date = new Date(r.date)
+        let date: any = new Date(r.date)
         date = `${date.getDate()} ${date.toLocaleDateString('default', {
           month: 'short',
         })}, ${date.getFullYear()}`
@@ -66,7 +67,8 @@ export function startTrustpilot() {
         for (let i = 0; i < 5 - r.stars; i++) {
           stars += starEmpty
         }
-        slide.classList = 'swiper-slide'
+        slide.className = ''
+        slide.classList.add('swiper-slide')
         slide.innerHTML += `<div class="swiperTop">
         <div class="swiperRating">${stars}</div>
         <div class="swiperDate">${date}</div>
@@ -89,21 +91,23 @@ export function startTrustpilot() {
 let dsmSwiper
 
 function startSwiper() {
-  let container = document.querySelector('.dsmTrustpilot')
+  let container = document.querySelector('.dsmTrustpilot') as HTMLElement
   if (container.dataset.loaded) return
   container.dataset.loaded = 'true'
 
-  let loop = container.dataset.loop ? container.dataset.loop == 'true' : 'true'
-  let slidesPerView = container.dataset.slides ? container.dataset.slides : 3
+  let loop = container.dataset.loop ? container.dataset.loop == 'true' : true
+  let slidesPerView = container.dataset.slides
+    ? parseInt(container.dataset.slides)
+    : 3
   let spaceBetween = container.dataset.spaceBetween
-    ? container.dataset.spaceBetween
+    ? parseInt(container.dataset.spaceBetween)
     : 20
   let slidesPerGroup = container.dataset.slidesPerGroup
-    ? container.dataset.slidesPerGroup
+    ? parseInt(container.dataset.slidesPerGroup)
     : 1
   let allowTouchMove = container.dataset.touchMove
     ? container.dataset.touchMove == 'true'
-    : 'true'
+    : true
   let speed = container.dataset.speed ? container.dataset.speed : '300'
   dsmSwiper = new Swiper('.dsmTrustpilot .swiper-container', {
     navigation: {
@@ -112,8 +116,8 @@ function startSwiper() {
     },
     loop: loop,
     slidesPerView: slidesPerView,
-    spaceBetween: parseInt(spaceBetween),
-    slidesPerGroup: parseInt(slidesPerGroup),
+    spaceBetween: spaceBetween,
+    slidesPerGroup: slidesPerGroup,
     speed: parseInt(speed),
     pagination: {
       el: '.swiper-pagination',

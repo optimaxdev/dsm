@@ -1,7 +1,8 @@
-import { replaceIcons } from './icons.js'
+import { replaceIcons } from './icons'
 
 export function loadAccordian() {
-  document.querySelectorAll('.dsmAccordian').forEach((a) => {
+  document.querySelectorAll<HTMLElement>('.dsmAccordian').forEach((a) => {
+    if (typeof a === 'undefined') return
     if (!a.querySelector('summary>span')) {
       a.querySelector('summary').innerHTML = `<span>${
         a.querySelector('summary').innerHTML
@@ -19,19 +20,20 @@ export function loadAccordian() {
       a.innerHTML = `${splitElements[0]}</summary><span class="accordianContent">${splitElements[1]}</span>`
     }
 
-    if (a.getAttribute('open') != null) {
+    if (a && a.getAttribute('open') != null) {
       a.style.minHeight = a.offsetHeight + 'px'
     }
     a.addEventListener('click', (e) => {
-      if (e.target.tagName == 'A') return
+      const element = e.target as HTMLElement
+      if (element.tagName == 'A') return
       e.preventDefault()
-      let el = e.target.closest('details')
-      el.setAttribute('aria-listener', true)
+      let el = element.closest('details')
+      el.setAttribute('aria-listener', 'true')
       if (el.getAttribute('open') == null) {
         let count = 0
         let openElements = document.querySelectorAll('.dsmAccordian[open]')
         openElements.forEach((a) => {
-          let currEl = a
+          let currEl = a as HTMLElement
           currEl.classList.add('closeAccordian')
           setTimeout(() => {
             currEl.removeAttribute('open')
