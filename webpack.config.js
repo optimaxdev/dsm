@@ -1,4 +1,5 @@
 const path = require('path')
+const TerserPlugin = require('terser-webpack-plugin')
 
 module.exports = {
   entry: './src/index.ts',
@@ -8,7 +9,6 @@ module.exports = {
   },
   module: {
     rules: [
-      // All files with a '.ts' or '.tsx' extension will be handled by 'ts-loader'.
       {
         test: /\.tsx?$/,
         loader: 'ts-loader',
@@ -18,5 +18,8 @@ module.exports = {
   resolve: {
     extensions: ['.ts'],
   },
-  // Other options...
+  optimization: {
+    minimize: true,
+    minimizer: [new TerserPlugin()],
+  },
 }
