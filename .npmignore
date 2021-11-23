@@ -9,3 +9,6 @@ components/
 .gitignore
 /documentation
 node_modules
+src
+webpack.config.js
+tsconfig.json
