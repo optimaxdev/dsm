@@ -1,118 +1,118 @@
-import { replaceIcons } from "./icons.js";
-import Swiper from "swiper";
+import { replaceIcons } from './icons'
+import Swiper from 'swiper'
 
 // let apiURL = 'https://api.freud-online.co.uk:3100'
-let apiURL = "/bff/trustpilot";
+let apiURL = '/bff/trustpilot'
 if (
-  !window.location.href.includes("glassesusa.com") &&
-  !window.location.href.includes("gusa")
+  !window.location.href.includes('glassesusa.com') &&
+  !window.location.href.includes('gusa')
 ) {
-  apiURL = "https://api.freud-online.co.uk:3100";
+  apiURL = 'https://api.freud-online.co.uk:3100'
 }
 export function startTrustpilot() {
-  let container = document.querySelector(".dsmTrustpilot") as HTMLElement;
-  if (!container.querySelector(".swiper-outer"))
+  let container = document.querySelector('.dsmTrustpilot') as HTMLElement
+  if (!container.querySelector('.swiper-outer'))
     container.innerHTML = `<div class="swiper-outer"><div class="swiper-container" id="swiper-reviews"><div class="swiper-wrapper"></div></div><div class="arrowContainer arrow-left swiperArrows" id="swiperLeftArrow"><i class="dsmIcons arrow-left"></i></div><div class="arrowContainer arrow-right swiperArrows" id="swiperRightArrow"><i class="dsmIcons arrow-right"></i></div>  <div class="swiper-pagination"></div></div>
-      `;
-  replaceIcons();
-  if (document.querySelector(".dsmTrustpilot .swiper-slide")) {
-    startSwiper();
+      `
+  replaceIcons()
+  if (document.querySelector('.dsmTrustpilot .swiper-slide')) {
+    startSwiper()
   } else {
     let params: any = [
-      "url=https://api.trustpilot.com/v1/business-units/4a89c04f00006400050497f3/reviews",
-    ];
+      'url=https://api.trustpilot.com/v1/business-units/4a89c04f00006400050497f3/reviews',
+    ]
     if (container.dataset.tags) {
-      params.push(`tags=${container.dataset.tags}`);
+      params.push(`tags=${container.dataset.tags}`)
     }
     if (container.dataset.stars) {
-      params.push(`stars=${container.dataset.stars.split(",")}`);
+      params.push(`stars=${container.dataset.stars.split(',')}`)
     } else {
-      params.push(`stars=4,5`);
+      params.push(`stars=4,5`)
     }
-    params = params.join("&");
-    let reviewsRequest = new XMLHttpRequest();
-    let starEmpty = `<svg xmlns="http://www.w3.org/2000/svg" width="17.4" height="17.3" viewBox="0 0 17.4 17.3" overflow="visible"><g transform="translate(0 .5)" fill-rule="evenodd" clip-rule="evenodd"><polygon points="0,16.8 17.4,16.8 17.4,-0.5 0,-0.5" fill="#dcdce6"/><path d="M14.7 6.8h-4.6L8.7 2.4 7.2 6.8H2.6l3.8 2.7L5 13.9l3.8-2.7L11 9.5l3.7-2.7zm-6 4.3l2.6-.7 1.1 3.4-3.7-2.7z" fill="#fff"/></g></svg>`;
-    let star = `<svg xmlns="http://www.w3.org/2000/svg" width="17.4" height="17.3" viewBox="0 0 17.4 17.3" overflow="visible"><g transform="translate(0 .5)" fill-rule="evenodd" clip-rule="evenodd"><polygon points="0,16.8 17.4,16.8 17.4,-0.5 0,-0.5" fill="#00b67a"/><path d="M14.7 6.8h-4.6L8.7 2.4 7.2 6.8H2.6l3.8 2.7L5 13.9l3.8-2.7L11 9.5l3.7-2.7zm-6 4.3l2.6-.7 1.1 3.4-3.7-2.7z" fill="#fff"/></g></svg>`;
-    reviewsRequest.open("GET", `${apiURL}/reviews?${params}`);
-    reviewsRequest.send();
-    reviewsRequest.addEventListener("load", () => {
-      let reviews = JSON.parse(reviewsRequest.response);
-      let count = 0;
-      let slidesAdded = 0;
+    params = params.join('&')
+    let reviewsRequest = new XMLHttpRequest()
+    let starEmpty = `<svg xmlns="http://www.w3.org/2000/svg" width="17.4" height="17.3" viewBox="0 0 17.4 17.3" overflow="visible"><g transform="translate(0 .5)" fill-rule="evenodd" clip-rule="evenodd"><polygon points="0,16.8 17.4,16.8 17.4,-0.5 0,-0.5" fill="#dcdce6"/><path d="M14.7 6.8h-4.6L8.7 2.4 7.2 6.8H2.6l3.8 2.7L5 13.9l3.8-2.7L11 9.5l3.7-2.7zm-6 4.3l2.6-.7 1.1 3.4-3.7-2.7z" fill="#fff"/></g></svg>`
+    let star = `<svg xmlns="http://www.w3.org/2000/svg" width="17.4" height="17.3" viewBox="0 0 17.4 17.3" overflow="visible"><g transform="translate(0 .5)" fill-rule="evenodd" clip-rule="evenodd"><polygon points="0,16.8 17.4,16.8 17.4,-0.5 0,-0.5" fill="#00b67a"/><path d="M14.7 6.8h-4.6L8.7 2.4 7.2 6.8H2.6l3.8 2.7L5 13.9l3.8-2.7L11 9.5l3.7-2.7zm-6 4.3l2.6-.7 1.1 3.4-3.7-2.7z" fill="#fff"/></g></svg>`
+    reviewsRequest.open('GET', `${apiURL}/reviews?${params}`)
+    reviewsRequest.send()
+    reviewsRequest.addEventListener('load', () => {
+      let reviews = JSON.parse(reviewsRequest.response)
+      let count = 0
+      let slidesAdded = 0
       let maxSlides = container.dataset.maxSlides
         ? parseInt(container.dataset.maxSlides)
-        : 0;
+        : 0
       if (window.innerWidth < 768) {
         maxSlides = container.dataset.mobileMaxSlides
           ? parseInt(container.dataset.mobileMaxSlides)
-          : 6;
+          : 6
       }
       reviews.forEach((r, q) => {
-        if (maxSlides && slidesAdded == maxSlides) return;
-        count++;
+        if (maxSlides && slidesAdded == maxSlides) return
+        count++
         let minChars = container.dataset.minChars
           ? parseInt(container.dataset.minChars)
-          : 75;
-        if (r.text.length < minChars) return;
+          : 75
+        if (r.text.length < minChars) return
 
-        let slide = document.createElement("div");
-        let stars = "";
-        let date: any = new Date(r.date);
-        date = `${date.getDate()} ${date.toLocaleDateString("default", {
-          month: "short",
-        })}, ${date.getFullYear()}`;
+        let slide = document.createElement('div')
+        let stars = ''
+        let date: any = new Date(r.date)
+        date = `${date.getDate()} ${date.toLocaleDateString('default', {
+          month: 'short',
+        })}, ${date.getFullYear()}`
         for (let i = 0; i < r.stars; i++) {
-          stars += star;
+          stars += star
         }
         for (let i = 0; i < 5 - r.stars; i++) {
-          stars += starEmpty;
+          stars += starEmpty
         }
-        slide.className = "";
-        slide.classList.add("swiper-slide");
+        slide.className = ''
+        slide.classList.add('swiper-slide')
         slide.innerHTML += `<div class="swiperTop">
         <div class="swiperRating">${stars}</div>
         <div class="swiperDate">${date}</div>
       </div>
       <div class="swiperTitle">${r.title}</div>
       <div class="swiperText">${r.text}</div>
-      <div class="swiperAuthor">${r.author}</div>`;
+      <div class="swiperAuthor">${r.author}</div>`
         document
-          .querySelector(".dsmTrustpilot .swiper-wrapper")
-          .appendChild(slide);
-        slidesAdded++;
-      });
+          .querySelector('.dsmTrustpilot .swiper-wrapper')
+          .appendChild(slide)
+        slidesAdded++
+      })
       if (count >= reviews.length || slidesAdded == maxSlides) {
-        return startSwiper();
+        return startSwiper()
       }
-    });
+    })
   }
 }
 
-let dsmSwiper;
+let dsmSwiper
 
 function startSwiper() {
-  let container = document.querySelector(".dsmTrustpilot") as HTMLElement;
-  if (container.dataset.loaded) return;
-  container.dataset.loaded = "true";
+  let container = document.querySelector('.dsmTrustpilot') as HTMLElement
+  if (container.dataset.loaded) return
+  container.dataset.loaded = 'true'
 
-  let loop = container.dataset.loop ? container.dataset.loop == "true" : true;
+  let loop = container.dataset.loop ? container.dataset.loop == 'true' : true
   let slidesPerView = container.dataset.slides
     ? parseInt(container.dataset.slides)
-    : 3;
+    : 3
   let spaceBetween = container.dataset.spaceBetween
     ? parseInt(container.dataset.spaceBetween)
-    : 20;
+    : 20
   let slidesPerGroup = container.dataset.slidesPerGroup
     ? parseInt(container.dataset.slidesPerGroup)
-    : 1;
+    : 1
   let allowTouchMove = container.dataset.touchMove
-    ? container.dataset.touchMove == "true"
-    : true;
-  let speed = container.dataset.speed ? container.dataset.speed : "300";
-  dsmSwiper = new Swiper(".dsmTrustpilot .swiper-container", {
+    ? container.dataset.touchMove == 'true'
+    : true
+  let speed = container.dataset.speed ? container.dataset.speed : '300'
+  dsmSwiper = new Swiper('.dsmTrustpilot .swiper-container', {
     navigation: {
-      nextEl: "#swiperRightArrow",
-      prevEl: "#swiperLeftArrow",
+      nextEl: '#swiperRightArrow',
+      prevEl: '#swiperLeftArrow',
     },
     loop: loop,
     slidesPerView: slidesPerView,
@@ -120,8 +120,8 @@ function startSwiper() {
     slidesPerGroup: slidesPerGroup,
     speed: parseInt(speed),
     pagination: {
-      el: ".swiper-pagination",
-      type: "bullets",
+      el: '.swiper-pagination',
+      type: 'bullets',
       clickable: true,
     },
     breakpoints: {
@@ -140,40 +140,40 @@ function startSwiper() {
         slidesPerGroup: 1,
       },
     },
-  });
+  })
 }
 
 export function runHeader() {
-  let container = document.querySelector(".dsmTrustpilot-Header");
+  let container = document.querySelector('.dsmTrustpilot-Header')
 
-  let reviewsRequest = new XMLHttpRequest();
-  let starHalf = `<svg xmlns="http://www.w3.org/2000/svg" width="17.4" height="17.3" viewBox="0 0 19.5 19.8" overflow="visible"><style>.st0,.st1,.st2{fill-rule:evenodd;clip-rule:evenodd}.st0{fill-opacity:.33;fill:#b0b0b0}.st1,.st2{fill:#00b67a}.st2{fill:#fff}</style><polygon id="Fill-5_1_" class="st0" points="9.1,19.8 19.5,19.8 19.5,0 9.1,0"/><polygon id="Fill-6_1_" class="st1" points="0,19.8 10.4,19.8 10.4,0 0,0"/><path id="Fill-11_1_" class="st2" d="M16.9 8h-5.5L9.7 3 8.1 8H2.6L7 11.1l-1.7 5L9.8 13l2.7-1.9L16.9 8zm-7.2 5l3.1-.8 1.3 3.9L9.7 13z"/></svg>`;
-  let starEmpty = `<svg xmlns="http://www.w3.org/2000/svg" width="17.4" height="17.3" viewBox="0 0 17.4 17.3" overflow="visible"><g transform="translate(0 .5)" fill-rule="evenodd" clip-rule="evenodd"><polygon points="0,16.8 17.4,16.8 17.4,-0.5 0,-0.5" fill="#dcdce6"/><path d="M14.7 6.8h-4.6L8.7 2.4 7.2 6.8H2.6l3.8 2.7L5 13.9l3.8-2.7L11 9.5l3.7-2.7zm-6 4.3l2.6-.7 1.1 3.4-3.7-2.7z" fill="#fff"/></g></svg>`;
-  let star = `<svg xmlns="http://www.w3.org/2000/svg" width="17.4" height="17.3" viewBox="0 0 17.4 17.3" overflow="visible"><g transform="translate(0 .5)" fill-rule="evenodd" clip-rule="evenodd"><polygon points="0,16.8 17.4,16.8 17.4,-0.5 0,-0.5" fill="#00b67a"/><path d="M14.7 6.8h-4.6L8.7 2.4 7.2 6.8H2.6l3.8 2.7L5 13.9l3.8-2.7L11 9.5l3.7-2.7zm-6 4.3l2.6-.7 1.1 3.4-3.7-2.7z" fill="#fff"/></g></svg>`;
+  let reviewsRequest = new XMLHttpRequest()
+  let starHalf = `<svg xmlns="http://www.w3.org/2000/svg" width="17.4" height="17.3" viewBox="0 0 19.5 19.8" overflow="visible"><style>.st0,.st1,.st2{fill-rule:evenodd;clip-rule:evenodd}.st0{fill-opacity:.33;fill:#b0b0b0}.st1,.st2{fill:#00b67a}.st2{fill:#fff}</style><polygon id="Fill-5_1_" class="st0" points="9.1,19.8 19.5,19.8 19.5,0 9.1,0"/><polygon id="Fill-6_1_" class="st1" points="0,19.8 10.4,19.8 10.4,0 0,0"/><path id="Fill-11_1_" class="st2" d="M16.9 8h-5.5L9.7 3 8.1 8H2.6L7 11.1l-1.7 5L9.8 13l2.7-1.9L16.9 8zm-7.2 5l3.1-.8 1.3 3.9L9.7 13z"/></svg>`
+  let starEmpty = `<svg xmlns="http://www.w3.org/2000/svg" width="17.4" height="17.3" viewBox="0 0 17.4 17.3" overflow="visible"><g transform="translate(0 .5)" fill-rule="evenodd" clip-rule="evenodd"><polygon points="0,16.8 17.4,16.8 17.4,-0.5 0,-0.5" fill="#dcdce6"/><path d="M14.7 6.8h-4.6L8.7 2.4 7.2 6.8H2.6l3.8 2.7L5 13.9l3.8-2.7L11 9.5l3.7-2.7zm-6 4.3l2.6-.7 1.1 3.4-3.7-2.7z" fill="#fff"/></g></svg>`
+  let star = `<svg xmlns="http://www.w3.org/2000/svg" width="17.4" height="17.3" viewBox="0 0 17.4 17.3" overflow="visible"><g transform="translate(0 .5)" fill-rule="evenodd" clip-rule="evenodd"><polygon points="0,16.8 17.4,16.8 17.4,-0.5 0,-0.5" fill="#00b67a"/><path d="M14.7 6.8h-4.6L8.7 2.4 7.2 6.8H2.6l3.8 2.7L5 13.9l3.8-2.7L11 9.5l3.7-2.7zm-6 4.3l2.6-.7 1.1 3.4-3.7-2.7z" fill="#fff"/></g></svg>`
   reviewsRequest.open(
-    "GET",
-    `${apiURL}/header?url=https://api.trustpilot.com/v1/business-units/4a89c04f00006400050497f3`
-  );
-  let starsContainer = "";
-  reviewsRequest.send();
-  reviewsRequest.addEventListener("load", () => {
-    let reviews = JSON.parse(reviewsRequest.response);
-    let stars = reviews.score;
+    'GET',
+    `${apiURL}/header?url=https://api.trustpilot.com/v1/business-units/4a89c04f00006400050497f3`,
+  )
+  let starsContainer = ''
+  reviewsRequest.send()
+  reviewsRequest.addEventListener('load', () => {
+    let reviews = JSON.parse(reviewsRequest.response)
+    let stars = reviews.score
 
     if (stars % 1 != 0) {
       for (let i = 0; i < stars - 1; i++) {
-        starsContainer += star;
+        starsContainer += star
       }
-      starsContainer += starHalf;
+      starsContainer += starHalf
       for (let i = 0; i < 5 - stars - 1; i++) {
-        starsContainer += starEmpty;
+        starsContainer += starEmpty
       }
     } else {
       for (let i = 0; i < stars; i++) {
-        starsContainer += star;
+        starsContainer += star
       }
       for (let i = 0; i < 5 - stars; i++) {
-        starsContainer += starEmpty;
+        starsContainer += starEmpty
       }
     }
 
@@ -204,9 +204,9 @@ export function runHeader() {
       .toString()
       .replace(
         /\B(?=(\d{3})+(?!\d))/g,
-        ","
+        ',',
       )}+</span><span class="mobileText">Based on <span class="underlineReviews">${reviews.numberOfReviews
       .toString()
-      .replace(/\B(?=(\d{3})+(?!\d))/g, ",")}+ reviews</span></span>`;
-  });
+      .replace(/\B(?=(\d{3})+(?!\d))/g, ',')}+ reviews</span></span>`
+  })
 }
