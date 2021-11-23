@@ -9,14 +9,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/glassesUSA/dsm.git"
+    "url": "git+https://github.com/optimaxdev/dsm.git"
   },
   "author": "GlassesUSA",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/glassesUSA/dsm/issues"
+    "url": "https://github.com/optimaxdev/dsm/issues"
   },
-  "homepage": "https://github.com/glassesUSA/dsm#readme",
+  "homepage": "https://github.com/optimaxdev/dsm#readme",
   "dependencies": {
     "source-map-loader": "^3.0.0",
     "swiper": "^7.0.9",
