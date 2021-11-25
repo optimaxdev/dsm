@@ -47,7 +47,6 @@ export function loadAccordian() {
         let loopFinished = setInterval(() => {
           if (count == openElements.length) {
             clearInterval(loopFinished)
-            el.style.minHeight = el.offsetHeight + 'px'
             el.setAttribute('open', '')
           }
         }, 50)
@@ -56,10 +55,7 @@ export function loadAccordian() {
         setTimeout(() => {
           el.removeAttribute('open')
           el.classList.remove('closeAccordian')
-        }, 200)
-        setTimeout(() => {
-          el.style.minHeight = '0px'
-        }, 200)
+        }, 500)
       }
     })
   })

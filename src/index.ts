@@ -134,6 +134,7 @@ export function loadElements() {
     })
   })
 }
+
 document.body.addEventListener('click', function (e) {
   clickHandler(e)
 })
