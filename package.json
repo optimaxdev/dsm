@@ -1,6 +1,7 @@
 {
   "name": "@glassesusa/dsm",
   "version": "2.0.2",
+  "private": false,
   "description": "The full documentation for the system can be found at https://glassesusa.github.io/dsm-docs/",
   "main": "dsm-effects.js",
   "scripts": {
@@ -9,7 +10,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/optimaxdev/dsm.git"
+    "url": "git+https://github.com/optimaxdev/dsm.git"
   },
   "author": "GlassesUSA",
   "license": "ISC",
@@ -28,9 +29,6 @@
   "devDependencies": {
     "semantic-release": "^18.0.1",
     "terser-webpack-plugin": "^5.2.5"
-  },
-  "publishConfig": {
-    "access": "restricted"
   },
   "release": {
     "branches": [

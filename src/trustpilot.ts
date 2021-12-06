@@ -1,5 +1,6 @@
 import { replaceIcons } from './icons'
-import Swiper from 'swiper'
+import Swiper, { Navigation } from 'swiper'
+Swiper.use([Navigation])
 
 // let apiURL = 'https://api.freud-online.co.uk:3100'
 let apiURL = '/bff/trustpilot'
@@ -109,6 +110,7 @@ function startSwiper() {
     ? container.dataset.touchMove == 'true'
     : true
   let speed = container.dataset.speed ? container.dataset.speed : '300'
+
   dsmSwiper = new Swiper('.dsmTrustpilot .swiper-container', {
     navigation: {
       nextEl: '#swiperRightArrow',
