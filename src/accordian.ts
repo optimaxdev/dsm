@@ -15,7 +15,8 @@ export function loadAccordian() {
       } <i class="dsmIcons plus"></i>`
       replaceIcons()
     }
-    if (!a.querySelector('summary .accordianContent')) {
+
+    if (!a.querySelector('.accordianContent')) {
       let splitElements = a.innerHTML.split('</summary>')
       a.innerHTML = `${splitElements[0]}</summary><span class="accordianContent">${splitElements[1]}</span>`
     }
