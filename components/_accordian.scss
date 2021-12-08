@@ -3,7 +3,7 @@
     border-top: 1px solid #E7EBED;
     padding: 20px;
     transition: 0.2s background-color, 0.3s height, 3s max-height;
-    max-height: 71px;
+    max-height: auto;
     box-sizing: border-box;
     overflow: hidden;
     cursor: pointer;
@@ -72,7 +72,7 @@
         line-height: 30px;
 
         >span {
-            margin-right: 23px;
+            margin-right: 60px;
         }
 
         @media (max-width: 768px) {
@@ -122,7 +122,7 @@
     }
 
     &.closeAccordian {
-        max-height: 71px;
+        max-height: auto;
         transition: 0.2s background-color,
             0.3s height,
             0.5s max-height;

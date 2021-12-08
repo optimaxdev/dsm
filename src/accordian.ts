@@ -29,6 +29,8 @@ export function loadAccordian() {
       if (element.tagName == 'A') return
       e.preventDefault()
       let el = element.closest('details')
+
+      el.style.maxHeight = el.clientHeight + 1 + 'px'
       el.setAttribute('aria-listener', 'true')
       if (el.getAttribute('open') == null) {
         let count = 0
@@ -48,13 +50,18 @@ export function loadAccordian() {
         let loopFinished = setInterval(() => {
           if (count == openElements.length) {
             clearInterval(loopFinished)
+            el.style.maxHeight = ''
             el.setAttribute('open', '')
           }
         }, 50)
       } else {
+        const paddding = window.innerWidth > 768 ? 41 : 18 * 2 + 1
+        el.style.maxHeight =
+          el.querySelector('summary').clientHeight + paddding + 'px'
         el.classList.add('closeAccordian')
         setTimeout(() => {
           el.removeAttribute('open')
+          el.style.maxHeight = ''
           el.classList.remove('closeAccordian')
         }, 500)
       }

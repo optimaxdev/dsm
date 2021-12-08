@@ -1990,7 +1990,7 @@ svg.dsmLogo * {
   padding: 20px;
   -webkit-transition: 0.2s background-color, 0.3s height, 3s max-height;
   transition: 0.2s background-color, 0.3s height, 3s max-height;
-  max-height: 71px;
+  max-height: auto;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   overflow: hidden;
@@ -2077,7 +2077,7 @@ svg.dsmLogo * {
 }
 
 .dsmAccordian summary > span {
-  margin-right: 23px;
+  margin-right: 60px;
 }
 
 @media (max-width: 768px) {
@@ -2131,7 +2131,7 @@ svg.dsmLogo * {
 }
 
 .dsmAccordian.closeAccordian {
-  max-height: 71px;
+  max-height: auto;
   -webkit-transition: 0.2s background-color, 0.3s height, 0.5s max-height;
   transition: 0.2s background-color, 0.3s height, 0.5s max-height;
 }
