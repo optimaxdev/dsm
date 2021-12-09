@@ -1995,6 +1995,10 @@ svg.dsmLogo * {
           box-sizing: border-box;
   overflow: hidden;
   cursor: pointer;
+  max-width: 936px;
+  margin: auto;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 .dsmAccordian:last-of-type {
@@ -2002,7 +2006,7 @@ svg.dsmLogo * {
 }
 
 .dsmAccordian:hover {
-  background-color: #F7F8F9;
+  background-color: rgba(58, 72, 80, 0.04);
 }
 
 @media (max-width: 768px) {
@@ -2014,6 +2018,18 @@ svg.dsmLogo * {
   }
 }
 
+@media (min-width: 1280px) {
+  .dsmAccordian {
+    max-width: 966px;
+  }
+}
+
+@media (min-width: 1440px) {
+  .dsmAccordian {
+    max-width: 1079px;
+  }
+}
+
 .dsmAccordian .accordianContent {
   display: block;
   max-height: 0;
@@ -2021,13 +2037,25 @@ svg.dsmLogo * {
   transition: 0.6s all;
   opacity: 0;
   overflow: hidden;
-  padding-right: 33px;
+  max-width: 624px;
+}
+
+@media (min-width: 1280px) {
+  .dsmAccordian .accordianContent {
+    max-width: 644px;
+  }
+}
+
+@media (min-width: 1440px) {
+  .dsmAccordian .accordianContent {
+    max-width: 719px;
+  }
 }
 
 .dsmAccordian summary {
   list-style: none;
   outline: none;
-  color: #0F0F0F;
+  color: #232B30;
   font-family: Roboto;
   font-size: 16px;
   display: -ms-grid;
@@ -2076,7 +2104,7 @@ svg.dsmLogo * {
 }
 
 .dsmAccordian summary > svg * {
-  stroke: #5B6971 !important;
+  stroke: #B0BDC5 !important;
 }
 
 .dsmAccordian summary > svg line:nth-child(2) {
@@ -2191,7 +2219,7 @@ svg.dsmLogo * {
 }
 
 .dsmAccordian[open] {
-  background-color: #F7F8F9;
+  background-color: rgba(58, 72, 80, 0.04);
   color: #232B30;
   font-family: Roboto;
   font-size: 16px;
@@ -2207,6 +2235,10 @@ svg.dsmLogo * {
 .dsmAccordian[open] summary {
   font-weight: bold;
   width: 100%;
+}
+
+.dsmAccordian[open] summary > svg * {
+  stroke: #3A4850 !important;
 }
 
 .dsmAccordian[open] summary > svg line:first-child {

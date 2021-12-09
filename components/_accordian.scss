@@ -7,13 +7,16 @@
     box-sizing: border-box;
     overflow: hidden;
     cursor: pointer;
+    max-width: 936px; 
+    margin: auto;
+    box-sizing: border-box;
 
     &:last-of-type {
         border-bottom: 1px solid #E7EBED;
     }
 
     &:hover {
-        background-color: #F7F8F9;
+        background-color: rgba(58, 72, 80, 0.04);
     }
 
     @media (max-width: 768px) {
@@ -24,19 +27,35 @@
         }
     }
 
+    @media (min-width: 1280px) {
+        max-width: 966px;
+    }
+
+    @media (min-width: 1440px) {
+        max-width: 1079px;
+    }
+
     .accordianContent {
         display: block;
         max-height: 0;
         transition: 0.6s all;
         opacity: 0;
         overflow: hidden;
-        padding-right: 33px;
+        max-width: 624px;
+
+        @media (min-width: 1280px) {
+            max-width: 644px;
+        }
+
+        @media (min-width: 1440px) {
+            max-width: 719px;
+        }
     }
 
     summary {
         list-style: none;
         outline: none;
-        color: #0F0F0F;
+        color: #232B30;
         font-family: Roboto;
         font-size: 16px;
         display: grid;
@@ -75,7 +94,7 @@
             width: 13px;
 
             * {
-                stroke: #5B6971 !important;
+                stroke: #B0BDC5 !important;
             }
 
             line:nth-child(2) {
@@ -160,7 +179,7 @@
     }
 
     &[open] {
-        background-color: #F7F8F9;
+        background-color: rgba(58, 72, 80, 0.04);
 
         .accordianContent {
             padding-top: 12px;
@@ -170,6 +189,10 @@
         summary {
             font-weight: bold;
             width: 100%;
+
+            >svg * {
+                stroke: #3A4850 !important;
+            }
 
             >svg line:first-child {
                 animation: scaleDown 0.1s ease-in-out;
