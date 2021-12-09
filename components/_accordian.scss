@@ -7,7 +7,6 @@
     box-sizing: border-box;
     overflow: hidden;
     cursor: pointer;
-    max-width: 936px; 
     margin: auto;
     box-sizing: border-box;
 
@@ -27,28 +26,16 @@
         }
     }
 
-    @media (min-width: 1280px) {
-        max-width: 966px;
-    }
-
-    @media (min-width: 1440px) {
-        max-width: 1079px;
-    }
-
     .accordianContent {
         display: block;
         max-height: 0;
         transition: 0.6s all;
         opacity: 0;
         overflow: hidden;
-        max-width: 624px;
+        max-width: 80%;
 
-        @media (min-width: 1280px) {
-            max-width: 644px;
-        }
-
-        @media (min-width: 1440px) {
-            max-width: 719px;
+        @media (max-width: 768px) {
+            max-width: 100%;
         }
     }
 
