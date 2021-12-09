@@ -1988,10 +1988,12 @@ svg.dsmLogo * {
   outline: none;
   border-top: 1px solid #E7EBED;
   padding: 20px;
-  -webkit-transition: 0.2s background-color, 0.3s height, 0.15s min-height;
-  transition: 0.2s background-color, 0.3s height, 0.15s min-height;
-  height: 100%;
-  min-height: 1px;
+  -webkit-transition: 0.2s background-color, 0.3s height, 3s max-height;
+  transition: 0.2s background-color, 0.3s height, 3s max-height;
+  max-height: 71px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  overflow: hidden;
   cursor: pointer;
   max-width: 936px;
   margin: auto;
@@ -2033,6 +2035,7 @@ svg.dsmLogo * {
   max-height: 0;
   -webkit-transition: 0.6s all;
   transition: 0.6s all;
+  opacity: 0;
   overflow: hidden;
   max-width: 624px;
 }
@@ -2120,8 +2123,17 @@ svg.dsmLogo * {
 }
 
 .dsmAccordian[open] summary ~ * {
-  -webkit-animation: sweep .2s ease-in-out;
-          animation: sweep .2s ease-in-out;
+  opacity: 1;
+}
+
+.dsmAccordian[open] {
+  max-height: 1000px;
+}
+
+.dsmAccordian.closeAccordian {
+  max-height: 71px;
+  -webkit-transition: 0.2s background-color, 0.3s height, 0.5s max-height;
+  transition: 0.2s background-color, 0.3s height, 0.5s max-height;
 }
 
 .dsmAccordian.closeAccordian summary {
@@ -2129,36 +2141,60 @@ svg.dsmLogo * {
 }
 
 .dsmAccordian.closeAccordian summary ~ * {
-  -webkit-animation: sweep-reverse .1s ease-in-out;
-          animation: sweep-reverse .1s ease-in-out;
   opacity: 0;
 }
 
-@-webkit-keyframes sweep {
-  0% {
-    opacity: 0;
-    margin-top: -50px;
+@-webkit-keyframes slideDown {
+  from {
+    max-height: 71px;
   }
-  30% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-    margin-top: 0px;
+  to {
+    max-height: 1000px;
   }
 }
 
-@keyframes sweep {
-  0% {
-    opacity: 0;
-    margin-top: -50px;
+@keyframes slideDown {
+  from {
+    max-height: 71px;
   }
-  30% {
+  to {
+    max-height: 1000px;
+  }
+}
+
+@-webkit-keyframes slideUp {
+  to {
+    max-height: 71px;
+  }
+  from {
+    max-height: 1000px;
+  }
+}
+
+@keyframes slideUp {
+  to {
+    max-height: 71px;
+  }
+  from {
+    max-height: 1000px;
+  }
+}
+
+@-webkit-keyframes fadeIn {
+  0% {
     opacity: 0;
   }
   100% {
     opacity: 1;
-    margin-top: 0px;
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
   }
 }
 
@@ -2192,12 +2228,12 @@ svg.dsmLogo * {
 }
 
 .dsmAccordian[open] .accordianContent {
-  max-height: 1000000px;
+  padding-top: 12px;
+  max-height: none;
 }
 
 .dsmAccordian[open] summary {
   font-weight: bold;
-  margin-bottom: 12px;
   width: 100%;
 }
 

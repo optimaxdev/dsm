@@ -2,9 +2,10 @@
     outline: none;
     border-top: 1px solid #E7EBED;
     padding: 20px;
-    transition: 0.2s background-color, 0.3s height, 0.15s min-height;
-    height: 100%;
-    min-height: 1px;
+    transition: 0.2s background-color, 0.3s height, 3s max-height;
+    max-height: 71px;
+    box-sizing: border-box;
+    overflow: hidden;
     cursor: pointer;
     max-width: 936px; 
     margin: auto;
@@ -38,6 +39,7 @@
         display: block;
         max-height: 0;
         transition: 0.6s all;
+        opacity: 0;
         overflow: hidden;
         max-width: 624px;
 
@@ -112,7 +114,19 @@
     }
 
     &[open] summary~* {
-        animation: sweep .2s ease-in-out;
+        opacity: 1;
+    }
+
+    &[open] {
+        max-height: 1000px;
+    }
+
+    &.closeAccordian {
+        max-height: 71px;
+        transition: 0.2s background-color,
+            0.3s height,
+            0.5s max-height;
+
     }
 
     &.closeAccordian summary {
@@ -120,23 +134,36 @@
     }
 
     &.closeAccordian summary~* {
-        animation: sweep-reverse .1s ease-in-out;
         opacity: 0;
     }
 
-    @keyframes sweep {
-        0% {
-            opacity: 0;
-            margin-top: -50px
+    @keyframes slideDown {
+        from {
+            max-height: 71px;
         }
 
-        30% {
+        to {
+            max-height: 1000px;
+        }
+    }
+
+    @keyframes slideUp {
+        to {
+            max-height: 71px;
+        }
+
+        from {
+            max-height: 1000px;
+        }
+    }
+
+    @keyframes fadeIn {
+        0% {
             opacity: 0;
         }
 
         100% {
             opacity: 1;
-            margin-top: 0px
         }
     }
 
@@ -155,12 +182,12 @@
         background-color: rgba(58, 72, 80, 0.04);
 
         .accordianContent {
-            max-height: 1000000px;
+            padding-top: 12px;
+            max-height: none;
         }
 
         summary {
             font-weight: bold;
-            margin-bottom: 12px;
             width: 100%;
 
             >svg * {
