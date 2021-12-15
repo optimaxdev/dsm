@@ -9,7 +9,9 @@ import Swiper from 'swiper'
 
 globalThis.reloadElements = () => loadElements()
 
-loadElements()
+document.addEventListener('DOMContentLoaded', () => {
+  loadElements()
+})
 
 export function loadElements() {
   loadAccordian()
