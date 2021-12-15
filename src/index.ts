@@ -14,9 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
 })
 
 export function loadElements() {
-  setTimeout(() => {
-    loadAccordian()
-  }, 250)
+  loadAccordian()
   replaceIcons()
   loadSlider()
   document.addEventListener('change', (e) => {

@@ -16,10 +16,10 @@ export function loadAccordian() {
       replaceIcons()
     }
 
-    if (!a.querySelector('.accordianContent')) {
-      let splitElements = a.innerHTML.split('</summary>')
-      a.innerHTML = `${splitElements[0]}</summary><span class="accordianContent">${splitElements[1]}</span>`
-    }
+    // if (!a.querySelector('.accordianContent')) {
+    //   let splitElements = a.innerHTML.split('</summary>')
+    //   a.innerHTML = `${splitElements[0]}</summary><span class="accordianContent">${splitElements[1]}</span>`
+    // }
 
     if (a && a.getAttribute('open') != null) {
       a.style.minHeight = a.offsetHeight + 'px'
