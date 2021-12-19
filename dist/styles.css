@@ -2016,7 +2016,7 @@ svg.dsmLogo * {
   }
 }
 
-.dsmAccordian .accordianContent {
+.dsmAccordian > .accordianContent {
   display: block;
   max-height: 0;
   -webkit-transition: 0.6s all;
@@ -2027,7 +2027,7 @@ svg.dsmLogo * {
 }
 
 @media (max-width: 768px) {
-  .dsmAccordian .accordianContent {
+  .dsmAccordian > .accordianContent {
     max-width: 100%;
   }
 }
@@ -2102,7 +2102,7 @@ svg.dsmLogo * {
   display: none;
 }
 
-.dsmAccordian[open] summary ~ * {
+.dsmAccordian[open] * {
   opacity: 1;
 }
 

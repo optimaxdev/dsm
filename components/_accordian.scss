@@ -26,7 +26,7 @@
         }
     }
 
-    .accordianContent {
+    >.accordianContent {
         display: block;
         max-height: 0;
         transition: 0.6s all;
@@ -100,7 +100,7 @@
         display: none;
     }
 
-    &[open] summary~* {
+    &[open] * {
         opacity: 1;
     }
 
