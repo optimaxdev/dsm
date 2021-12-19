@@ -2207,7 +2207,7 @@ svg.dsmLogo * {
   line-height: 24px;
 }
 
-.dsmAccordian[open] .accordianContent {
+.dsmAccordian[open] > .accordianContent {
   padding-top: 12px;
   max-height: none;
 }

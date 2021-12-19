@@ -168,7 +168,7 @@
     &[open] {
         background-color: rgba(58, 72, 80, 0.04);
 
-        .accordianContent {
+        >.accordianContent {
             padding-top: 12px;
             max-height: none;
         }
