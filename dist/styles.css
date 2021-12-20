@@ -1,5 +1,4 @@
 @import url("https://cdnjs.cloudflare.com/ajax/libs/Swiper/6.4.14/swiper-bundle.css");
-
 a.dsmButton {
   color: white;
   font-size: 16px;
@@ -12,10 +11,10 @@ a.dsmButton {
   display: inline-flex;
   -webkit-box-align: center;
   -ms-flex-align: center;
-  align-items: center;
+      align-items: center;
   -webkit-box-pack: center;
   -ms-flex-pack: center;
-  justify-content: center;
+      justify-content: center;
   position: relative;
   min-width: 100px;
   border-radius: 4px;
@@ -23,13 +22,13 @@ a.dsmButton {
   cursor: pointer;
   font-weight: bold;
   -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
   vertical-align: middle;
   -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
+     -moz-appearance: none;
+          appearance: none;
   text-decoration: none;
   background-color: #ff6c00;
   border-color: #ff6c00;
@@ -37,7 +36,7 @@ a.dsmButton {
   -webkit-transition: 0.3s background-color;
   transition: 0.3s background-color;
   -webkit-box-sizing: border-box;
-  box-sizing: border-box;
+          box-sizing: border-box;
   white-space: nowrap;
   -webkit-tap-highlight-color: transparent;
   overflow: hidden;
@@ -48,8 +47,7 @@ a.dsmButton {
   text-transform: none;
 }
 
-.dsmButton:hover,
-.dsmButton:focus {
+.dsmButton:hover, .dsmButton:focus {
   text-decoration: none;
 }
 
@@ -93,7 +91,7 @@ a.dsmButton {
   border-color: #1c86da;
 }
 
-.dsmButton.round.disabled.ghost>svg path {
+.dsmButton.round.disabled.ghost > svg path {
   fill: #57b5ff !important;
 }
 
@@ -101,7 +99,7 @@ a.dsmButton {
   background-color: #e1e1e1;
 }
 
-.dsmButton.round.disabled.porcelain>svg path {
+.dsmButton.round.disabled.porcelain > svg path {
   fill: #b0bdc5 !important;
 }
 
@@ -109,7 +107,7 @@ a.dsmButton {
   background-color: #3a4850;
 }
 
-.dsmButton.round.disabled.regentGray>svg path {
+.dsmButton.round.disabled.regentGray > svg path {
   fill: #89959c !important;
 }
 
@@ -117,7 +115,7 @@ a.dsmButton {
   background-color: #89959c;
 }
 
-.dsmButton.round.disabled.towerGray>svg path {
+.dsmButton.round.disabled.towerGray > svg path {
   fill: #b0bdc5 !important;
 }
 
@@ -137,29 +135,27 @@ a.dsmButton {
   fill: #b0bdc5 !important;
 }
 
-.dsmButton.round>svg {
+.dsmButton.round > svg {
   height: 100%;
   -webkit-transform-origin: center center;
-  transform-origin: center center;
+          transform-origin: center center;
   width: 100%;
   position: absolute;
   inset: 0px;
   margin: auto;
 }
 
-.dsmButton.round>svg path {
+.dsmButton.round > svg path {
   fill: #57b5ff;
 }
 
-.dsmButton.round:disabled,
-.dsmButton.round.ghost.round:disabled {
+.dsmButton.round:disabled, .dsmButton.round.ghost.round:disabled {
   border-color: transparent;
   background-color: #d8d8d8 !important;
   color: white !important;
 }
 
-.dsmButton.round:disabled span,
-.dsmButton.round.ghost.round:disabled span {
+.dsmButton.round:disabled span, .dsmButton.round.ghost.round:disabled span {
   opacity: 1;
 }
 
@@ -308,16 +304,13 @@ a.dsmButton {
   }
 }
 
-.dsmButton.ghost.secondary,
-.dsmButton.ghost.round {
+.dsmButton.ghost.secondary, .dsmButton.ghost.round {
   color: #2196f3;
   background-color: transparent;
 }
 
 @media (hover: hover) {
-
-  .dsmButton.ghost.secondary:hover,
-  .dsmButton.ghost.round:hover {
+  .dsmButton.ghost.secondary:hover, .dsmButton.ghost.round:hover {
     border-color: #1c86da;
     background-color: #1c86da;
     color: white;
@@ -401,7 +394,7 @@ a.dsmButton {
   }
 }
 
-.dsmButton:disabled .progress+* {
+.dsmButton:disabled .progress + * {
   opacity: 0.5;
 }
 
@@ -415,13 +408,11 @@ a.dsmButton {
   border: none;
 }
 
-.dsmButton.disabled.secondary,
-.dsmButton.secondary:disabled {
+.dsmButton.disabled.secondary, .dsmButton.secondary:disabled {
   background-color: #1c86da;
 }
 
-.dsmButton.disabled.secondary span,
-.dsmButton.secondary:disabled span {
+.dsmButton.disabled.secondary span, .dsmButton.secondary:disabled span {
   opacity: 0.5;
 }
 
@@ -457,7 +448,7 @@ a.dsmButton {
   bottom: 0;
   will-change: left, right;
   -webkit-animation: indeterminate 2.1s cubic-bezier(0.65, 0.815, 0.735, 0.395) infinite;
-  animation: indeterminate 2.1s cubic-bezier(0.65, 0.815, 0.735, 0.395) infinite;
+          animation: indeterminate 2.1s cubic-bezier(0.65, 0.815, 0.735, 0.395) infinite;
 }
 
 .dsmButton .progress .indeterminate:after {
@@ -469,9 +460,9 @@ a.dsmButton {
   bottom: 0;
   will-change: left, right;
   -webkit-animation: indeterminate-short 2.1s cubic-bezier(0.165, 0.84, 0.44, 1) infinite;
-  animation: indeterminate-short 2.1s cubic-bezier(0.165, 0.84, 0.44, 1) infinite;
+          animation: indeterminate-short 2.1s cubic-bezier(0.165, 0.84, 0.44, 1) infinite;
   -webkit-animation-delay: 1.15s;
-  animation-delay: 1.15s;
+          animation-delay: 1.15s;
 }
 
 @-webkit-keyframes indeterminate {
@@ -479,12 +470,10 @@ a.dsmButton {
     left: -35%;
     right: 100%;
   }
-
   60% {
     left: 100%;
     right: -90%;
   }
-
   100% {
     left: 100%;
     right: -90%;
@@ -496,12 +485,10 @@ a.dsmButton {
     left: -35%;
     right: 100%;
   }
-
   60% {
     left: 100%;
     right: -90%;
   }
-
   100% {
     left: 100%;
     right: -90%;
@@ -513,12 +500,10 @@ a.dsmButton {
     left: -200%;
     right: 100%;
   }
-
   60% {
     left: 107%;
     right: -8%;
   }
-
   100% {
     left: 107%;
     right: -8%;
@@ -530,12 +515,10 @@ a.dsmButton {
     left: -200%;
     right: 100%;
   }
-
   60% {
     left: 107%;
     right: -8%;
   }
-
   100% {
     left: 107%;
     right: -8%;
@@ -560,21 +543,21 @@ svg.dsmIcons {
   height: 0;
 }
 
-.dsmSlider input[type=checkbox]:checked+.slider {
+.dsmSlider input[type=checkbox]:checked + .slider {
   background-color: #2196F3;
 }
 
-.dsmSlider input[type=checkbox]:focus+.slider {
+.dsmSlider input[type=checkbox]:focus + .slider {
   -webkit-box-shadow: 0 0 1px #2196F3;
-  box-shadow: 0 0 1px #2196F3;
+          box-shadow: 0 0 1px #2196F3;
 }
 
-.dsmSlider input[type=checkbox]:checked+.slider:before {
+.dsmSlider input[type=checkbox]:checked + .slider:before {
   -webkit-transform: translateX(16px);
-  transform: translateX(16px);
+          transform: translateX(16px);
 }
 
-.dsmSlider input[type=checkbox]:disabled+.slider {
+.dsmSlider input[type=checkbox]:disabled + .slider {
   cursor: default;
   background-color: #F1F1F1;
 }
@@ -599,7 +582,7 @@ svg.dsmIcons {
   height: 16px;
   width: 16px;
   -webkit-box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.1);
-  box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.1);
+          box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.1);
   left: 2px;
   bottom: 2px;
   background-color: white;
@@ -620,7 +603,7 @@ svg.dsmIcons {
   outline: none;
   color: black;
   -webkit-box-sizing: border-box;
-  box-sizing: border-box;
+          box-sizing: border-box;
   font-family: Roboto;
   -webkit-transition: 0.2s border-color;
   transition: 0.2s border-color;
@@ -790,7 +773,7 @@ svg.dsmIcons {
 
 .dsmForm .inputLabel:focus-within label {
   -webkit-transform: translateY(-13px);
-  transform: translateY(-13px);
+          transform: translateY(-13px);
   color: #aaaaaa;
   font-size: 11px;
   line-height: 19px;
@@ -824,14 +807,14 @@ svg.dsmIcons {
   font-weight: 400;
   width: 100%;
   -webkit-box-sizing: border-box;
-  box-sizing: border-box;
+          box-sizing: border-box;
   display: block;
   border: 1px solid #d8d8d8;
   border-radius: 4px;
   padding: 8px 15px;
   -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
+     -moz-appearance: none;
+          appearance: none;
   outline: none;
 }
 
@@ -858,9 +841,9 @@ svg.dsmIcons {
   cursor: not-allowed;
 }
 
-.dsmForm input[type=text]:disabled+label,
-.dsmForm input[type=email]:disabled+label,
-.dsmForm input[type=number]:disabled+label {
+.dsmForm input[type=text]:disabled + label,
+.dsmForm input[type=email]:disabled + label,
+.dsmForm input[type=number]:disabled + label {
   color: #c8c8c8;
 }
 
@@ -888,7 +871,7 @@ svg.dsmIcons {
   display: inline-flex;
   -webkit-box-align: center;
   -ms-flex-align: center;
-  align-items: center;
+      align-items: center;
 }
 
 .radioContainer input[type=radio] {
@@ -909,24 +892,24 @@ svg.dsmIcons {
   cursor: default;
 }
 
-.radioContainer input[type=radio]:disabled+.radioStyling {
+.radioContainer input[type=radio]:disabled + .radioStyling {
   border: 1px solid #dedede !important;
   border-color: #dedede !important;
 }
 
-.radioContainer input[type=radio]:disabled:checked+.radioStyling::before {
+.radioContainer input[type=radio]:disabled:checked + .radioStyling::before {
   background-color: #dedede;
 }
 
-.radioContainer input[type=radio]:checked+.radioStyling {
+.radioContainer input[type=radio]:checked + .radioStyling {
   border: 2px solid #2196F3;
 }
 
-.radioContainer input[type=radio]:checked+.radioStyling::before {
+.radioContainer input[type=radio]:checked + .radioStyling::before {
   background-color: #2196f3;
 }
 
-.radioContainer input[type=radio]:checked+.radioStyling.error {
+.radioContainer input[type=radio]:checked + .radioStyling.error {
   background-color: #fff;
 }
 
@@ -940,7 +923,7 @@ svg.dsmIcons {
   border-radius: 100%;
   margin-right: 10px;
   -webkit-box-sizing: border-box;
-  box-sizing: border-box;
+          box-sizing: border-box;
   -webkit-transition: border-color 0.15s linear 0s;
   transition: border-color 0.15s linear 0s;
   width: 12px;
@@ -957,27 +940,26 @@ svg.dsmIcons {
   width: 6px;
   height: 6px;
   -webkit-transform: translate3d(-50%, -50%, 0px);
-  transform: translate3d(-50%, -50%, 0px);
+          transform: translate3d(-50%, -50%, 0px);
   border-radius: 50%;
   background-color: transparent;
   -webkit-transition: background-color 0.15s linear 0s;
   transition: background-color 0.15s linear 0s;
 }
 
-.radioContainer .radioStyling.ticked.medium,
-.radioContainer .radioStyling.ticked.large {
+.radioContainer .radioStyling.ticked.medium, .radioContainer .radioStyling.ticked.large {
   background-color: transparent;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   -ms-flex-line-pack: center;
-  align-content: center;
+      align-content: center;
   -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .radioContainer .radioStyling.ticked svg {
@@ -1013,7 +995,7 @@ svg.dsmIcons {
   display: inline-block !important;
   position: relative;
   -webkit-box-sizing: content-box;
-  box-sizing: content-box;
+          box-sizing: content-box;
   cursor: pointer;
   font-size: 22px;
   -webkit-user-select: none;
@@ -1076,44 +1058,44 @@ svg.dsmIcons {
   width: 0;
 }
 
-.checkboxContainer input[type=checkbox]:checked~.checkbox::after {
+.checkboxContainer input[type=checkbox]:checked ~ .checkbox::after {
   display: block;
 }
 
-.checkboxContainer input[type=checkbox]:checked~.checkbox {
+.checkboxContainer input[type=checkbox]:checked ~ .checkbox {
   border: 1px solid #3a4850;
   background-color: #fff;
 }
 
-.checkboxContainer input[type=checkbox]:disabled+.checkbox:hover {
+.checkboxContainer input[type=checkbox]:disabled + .checkbox:hover {
   border: 1px solid #DEDEDE;
 }
 
-.checkboxContainer input[type=checkbox]:disabled+.checkbox {
+.checkboxContainer input[type=checkbox]:disabled + .checkbox {
   border: 1px solid #DEDEDE;
 }
 
-.checkboxContainer input[type=checkbox]:checked+.checkbox.ticked {
+.checkboxContainer input[type=checkbox]:checked + .checkbox.ticked {
   background-color: #2196F3;
   border-color: #2196F3;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   -ms-flex-line-pack: center;
-  align-content: center;
+      align-content: center;
   -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
-.checkboxContainer input[type=checkbox]:checked+.checkbox.ticked::after {
+.checkboxContainer input[type=checkbox]:checked + .checkbox.ticked::after {
   border: none;
 }
 
-.checkboxContainer input[type=checkbox]:checked+.checkbox.ticked svg {
+.checkboxContainer input[type=checkbox]:checked + .checkbox.ticked svg {
   display: block;
 }
 
@@ -1136,7 +1118,7 @@ svg.dsmIcons {
   border: 1px solid #AAAAAA;
   border-radius: 2px;
   -webkit-box-sizing: content-box;
-  box-sizing: content-box;
+          box-sizing: content-box;
   width: 14px;
   -webkit-transition: 0.2s border-color;
   transition: 0.2s border-color;
@@ -1202,8 +1184,8 @@ svg.dsmIcons {
   cursor: pointer;
   width: 280px;
   -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
+     -moz-appearance: none;
+          appearance: none;
   padding: 0px 20px 0px 20px;
   background-repeat: no-repeat;
   background-position: right 18px center;
@@ -1216,17 +1198,17 @@ svg.dsmIcons {
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: 1fr auto;
-  grid-template-columns: 1fr auto;
+      grid-template-columns: 1fr auto;
   -webkit-column-gap: 10px;
-  column-gap: 10px;
+          column-gap: 10px;
   -webkit-box-pack: justify;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   -ms-flex-line-pack: center;
-  align-content: center;
+      align-content: center;
   -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
   height: 48px;
   -webkit-transition: 0.2s all;
   transition: 0.2s all;
@@ -1254,7 +1236,7 @@ svg.dsmIcons {
 
 .selectContainer button.active svg {
   -webkit-transform: rotate(180deg);
-  transform: rotate(180deg);
+          transform: rotate(180deg);
 }
 
 .selectContainer button.filled {
@@ -1266,7 +1248,7 @@ svg.dsmIcons {
   -webkit-transition: ease-in-out .2s all;
   transition: ease-in-out .2s all;
   -webkit-transform: rotate(0deg);
-  transform: rotate(0deg);
+          transform: rotate(0deg);
 }
 
 .selectContainer button .selectedItem {
@@ -1284,9 +1266,9 @@ svg.dsmIcons {
   z-index: 5;
   overflow: overlay;
   -webkit-box-shadow: rgba(58, 72, 80, 0.24) 0px 1px 1px 0px, rgba(176, 189, 197, 0.12) 1px 2px 11px -1px;
-  box-shadow: rgba(58, 72, 80, 0.24) 0px 1px 1px 0px, rgba(176, 189, 197, 0.12) 1px 2px 11px -1px;
+          box-shadow: rgba(58, 72, 80, 0.24) 0px 1px 1px 0px, rgba(176, 189, 197, 0.12) 1px 2px 11px -1px;
   -webkit-box-sizing: border-box;
-  box-sizing: border-box;
+          box-sizing: border-box;
   margin: 0px;
   padding: 10px 0px;
   max-height: 309px;
@@ -1439,9 +1421,9 @@ svg.dsmIcons {
   height: 16px;
   background-color: white;
   -webkit-transform: rotate(45deg);
-  transform: rotate(45deg);
+          transform: rotate(45deg);
   -webkit-box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 8px;
-  box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 8px;
+          box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 8px;
 }
 
 .dsmTooltip .infoBox {
@@ -1451,7 +1433,7 @@ svg.dsmIcons {
   border-radius: 12px;
   overflow: hidden;
   -webkit-box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 8px;
-  box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 8px;
+          box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 8px;
 }
 
 .dsmTooltip .infoBox:before {
@@ -1477,8 +1459,8 @@ svg.dsmIcons {
   display: -ms-inline-flexbox;
   display: inline-flex;
   -webkit-box-align: end;
-  -ms-flex-align: end;
-  align-items: flex-end;
+      -ms-flex-align: end;
+          align-items: flex-end;
   border-radius: 2px;
   line-height: 12px;
   padding: 4.5px 8px 4.5px 10px;
@@ -1526,48 +1508,38 @@ svg.dsmIcons {
 
 .dsmShadow {
   -webkit-box-shadow: 0 1px 0 0 rgba(58, 72, 80, 0.07), 0 2px 11px -1px rgba(176, 189, 197, 0.12);
-  box-shadow: 0 1px 0 0 rgba(58, 72, 80, 0.07), 0 2px 11px -1px rgba(176, 189, 197, 0.12);
+          box-shadow: 0 1px 0 0 rgba(58, 72, 80, 0.07), 0 2px 11px -1px rgba(176, 189, 197, 0.12);
 }
 
 .dsmShadow.shadow-2 {
   -webkit-box-shadow: 0 1px 1px 0 rgba(58, 72, 80, 0.07), 0 4px 12px -1px rgba(176, 189, 197, 0.13), 0 1px 4px 1px rgba(137, 149, 156, 0.07);
-  box-shadow: 0 1px 1px 0 rgba(58, 72, 80, 0.07), 0 4px 12px -1px rgba(176, 189, 197, 0.13), 0 1px 4px 1px rgba(137, 149, 156, 0.07);
+          box-shadow: 0 1px 1px 0 rgba(58, 72, 80, 0.07), 0 4px 12px -1px rgba(176, 189, 197, 0.13), 0 1px 4px 1px rgba(137, 149, 156, 0.07);
 }
 
 .dsmShadow.shadow-3 {
   -webkit-box-shadow: 0 1px 2px 0 rgba(58, 72, 80, 0.07), 0 6px 13px 0 rgba(176, 189, 197, 0.14), 0 1px 6px 1px rgba(137, 149, 156, 0.09);
-  box-shadow: 0 1px 2px 0 rgba(58, 72, 80, 0.07), 0 6px 13px 0 rgba(176, 189, 197, 0.14), 0 1px 6px 1px rgba(137, 149, 156, 0.09);
+          box-shadow: 0 1px 2px 0 rgba(58, 72, 80, 0.07), 0 6px 13px 0 rgba(176, 189, 197, 0.14), 0 1px 6px 1px rgba(137, 149, 156, 0.09);
 }
 
 .dsmShadow.shadow-4 {
   -webkit-box-shadow: 0 1px 3px 0 rgba(58, 72, 80, 0.07), 0 8px 14px 0 rgba(176, 189, 197, 0.15), 0 2px 8px 1px rgba(137, 149, 156, 0.11);
-  box-shadow: 0 1px 3px 0 rgba(58, 72, 80, 0.07), 0 8px 14px 0 rgba(176, 189, 197, 0.15), 0 2px 8px 1px rgba(137, 149, 156, 0.11);
+          box-shadow: 0 1px 3px 0 rgba(58, 72, 80, 0.07), 0 8px 14px 0 rgba(176, 189, 197, 0.15), 0 2px 8px 1px rgba(137, 149, 156, 0.11);
 }
 
 .dsmShadow.shadow-5 {
   -webkit-box-shadow: 0 1px 4px 0 rgba(58, 72, 80, 0.07), 0 10px 15px 0 rgba(176, 189, 197, 0.16), 0 4px 10px 1px rgba(137, 149, 156, 0.13);
-  box-shadow: 0 1px 4px 0 rgba(58, 72, 80, 0.07), 0 10px 15px 0 rgba(176, 189, 197, 0.16), 0 4px 10px 1px rgba(137, 149, 156, 0.13);
+          box-shadow: 0 1px 4px 0 rgba(58, 72, 80, 0.07), 0 10px 15px 0 rgba(176, 189, 197, 0.16), 0 4px 10px 1px rgba(137, 149, 156, 0.13);
 }
 
 .dsmShadow.shadow-6 {
   -webkit-box-shadow: 0 1px 5px 1px rgba(58, 72, 80, 0.07), 0 12px 16px 0 rgba(176, 189, 197, 0.17), 0 6px 12px 1px rgba(137, 149, 156, 0.15);
-  box-shadow: 0 1px 5px 1px rgba(58, 72, 80, 0.07), 0 12px 16px 0 rgba(176, 189, 197, 0.17), 0 6px 12px 1px rgba(137, 149, 156, 0.15);
+          box-shadow: 0 1px 5px 1px rgba(58, 72, 80, 0.07), 0 12px 16px 0 rgba(176, 189, 197, 0.17), 0 6px 12px 1px rgba(137, 149, 156, 0.15);
 }
 
 @font-face {
   font-family: 'brands';
-  src:
-    /* webpackIgnore: true */
-    url('../fonts/brands.eot?y0faqm');
-  src:
-    /* webpackIgnore: true */
-    url('../fonts/brands.eot?y0faqm#iefix') format('embedded-opentype'),
-    /* webpackIgnore: true */
-    url('../fonts/brands.ttf?y0faqm') format('truetype'),
-    /* webpackIgnore: true */
-    url('../fonts/brands.woff?y0faqm') format('woff'),
-    /* webpackIgnore: true */
-    url('../fonts/brands.svg?y0faqm#icomoon') format('svg');
+  src: /* webpackIgnore: true */ url('../fonts/brands.eot?y0faqm');
+  src: /* webpackIgnore: true */ url('../fonts/brands.eot?y0faqm#iefix') format('embedded-opentype'), /* webpackIgnore: true */ url('../fonts/brands.ttf?y0faqm') format('truetype'), /* webpackIgnore: true */ url('../fonts/brands.woff?y0faqm') format('woff'), /* webpackIgnore: true */ url('../fonts/brands.svg?y0faqm#icomoon') format('svg');
   font-weight: normal;
   font-style: normal;
   font-display: block;
@@ -1859,7 +1831,7 @@ svg.dsmLogo * {
   transition: 0.2s background-color, 0.3s height, 3s max-height;
   max-height: auto;
   -webkit-box-sizing: border-box;
-  box-sizing: border-box;
+          box-sizing: border-box;
   overflow: hidden;
   cursor: pointer;
   margin: auto;
@@ -1878,13 +1850,12 @@ svg.dsmLogo * {
   .dsmAccordian {
     padding: 18px 20px;
   }
-
   .dsmAccordian:hover {
     background-color: transparent;
   }
 }
 
-.dsmAccordian>.accordianContent {
+.dsmAccordian > .accordianContent {
   display: block;
   max-height: 0;
   -webkit-transition: 0.6s all;
@@ -1895,7 +1866,7 @@ svg.dsmLogo * {
 }
 
 @media (max-width: 768px) {
-  .dsmAccordian>.accordianContent {
+  .dsmAccordian > .accordianContent {
     max-width: 100%;
   }
 }
@@ -1911,20 +1882,20 @@ svg.dsmLogo * {
   width: 100%;
   position: relative;
   -ms-grid-columns: 1fr auto;
-  grid-template-columns: 1fr auto;
+      grid-template-columns: 1fr auto;
   justify-content: space-between;
   -webkit-box-pack: justify;
   -moz-box-pack: justify;
   -ms-flex-pack: justify;
   -webkit-justify-content: space-between;
   -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
   letter-spacing: 0;
   line-height: 30px;
 }
 
-.dsmAccordian summary>span {
+.dsmAccordian summary > span {
   margin-right: 60px;
 }
 
@@ -1935,14 +1906,14 @@ svg.dsmLogo * {
   }
 }
 
-.dsmAccordian summary>svg {
+.dsmAccordian summary > svg {
   position: absolute;
   right: 0;
   top: 50%;
   -webkit-transform: translateY(-50%);
-  transform: translateY(-50%);
+          transform: translateY(-50%);
   -ms-flex-item-align: start;
-  align-self: flex-start;
+      align-self: flex-start;
   -webkit-transition: 0.1s all;
   transition: 0.1s all;
   text-align: right;
@@ -1951,11 +1922,11 @@ svg.dsmLogo * {
   width: 13px;
 }
 
-.dsmAccordian summary>svg * {
+.dsmAccordian summary > svg * {
   stroke: #B0BDC5 !important;
 }
 
-.dsmAccordian summary>svg line:nth-child(2) {
+.dsmAccordian summary > svg line:nth-child(2) {
   -webkit-transition: 0.2s all;
   transition: 0.2s all;
 }
@@ -1988,7 +1959,7 @@ svg.dsmLogo * {
   font-weight: normal !important;
 }
 
-.dsmAccordian.closeAccordian summary~* {
+.dsmAccordian.closeAccordian summary ~ * {
   opacity: 0;
 }
 
@@ -1996,7 +1967,6 @@ svg.dsmLogo * {
   from {
     max-height: 71px;
   }
-
   to {
     max-height: 1000px;
   }
@@ -2006,7 +1976,6 @@ svg.dsmLogo * {
   from {
     max-height: 71px;
   }
-
   to {
     max-height: 1000px;
   }
@@ -2016,7 +1985,6 @@ svg.dsmLogo * {
   to {
     max-height: 71px;
   }
-
   from {
     max-height: 1000px;
   }
@@ -2026,7 +1994,6 @@ svg.dsmLogo * {
   to {
     max-height: 71px;
   }
-
   from {
     max-height: 1000px;
   }
@@ -2036,7 +2003,6 @@ svg.dsmLogo * {
   0% {
     opacity: 0;
   }
-
   100% {
     opacity: 1;
   }
@@ -2046,7 +2012,6 @@ svg.dsmLogo * {
   0% {
     opacity: 0;
   }
-
   100% {
     opacity: 1;
   }
@@ -2057,7 +2022,6 @@ svg.dsmLogo * {
     opacity: 1;
     margin-top: 0px;
   }
-
   100% {
     opacity: 0;
   }
@@ -2068,7 +2032,6 @@ svg.dsmLogo * {
     opacity: 1;
     margin-top: 0px;
   }
-
   100% {
     opacity: 0;
   }
@@ -2083,7 +2046,7 @@ svg.dsmLogo * {
   line-height: 24px;
 }
 
-.dsmAccordian[open]>.accordianContent {
+.dsmAccordian[open] > .accordianContent {
   padding-top: 12px;
   max-height: none;
 }
@@ -2093,18 +2056,18 @@ svg.dsmLogo * {
   width: 100%;
 }
 
-.dsmAccordian[open] summary>svg * {
+.dsmAccordian[open] summary > svg * {
   stroke: #3A4850 !important;
 }
 
-.dsmAccordian[open] summary>svg line:first-child {
+.dsmAccordian[open] summary > svg line:first-child {
   -webkit-animation: scaleDown 0.1s ease-in-out;
-  animation: scaleDown 0.1s ease-in-out;
+          animation: scaleDown 0.1s ease-in-out;
 }
 
-.dsmAccordian[open] summary>svg line:nth-child(2) {
+.dsmAccordian[open] summary > svg line:nth-child(2) {
   -webkit-transform: rotate(-90deg) translateX(-13px);
-  transform: rotate(-90deg) translateX(-13px);
+          transform: rotate(-90deg) translateX(-13px);
 }
 
 @media (max-width: 768px) {
@@ -2118,7 +2081,6 @@ svg.dsmLogo * {
   from {
     stroke-width: 1px;
   }
-
   to {
     stroke-width: 0px;
   }
@@ -2128,7 +2090,6 @@ svg.dsmLogo * {
   from {
     stroke-width: 1px;
   }
-
   to {
     stroke-width: 0px;
   }
@@ -2159,7 +2120,7 @@ svg.dsmLogo * {
   border-radius: 4px;
   background-color: #FFFFFF;
   -webkit-box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.2);
-  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.2);
+          box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.2);
   padding: 18px 30px;
   padding-left: 36px;
   color: #4D4D4D;
@@ -2169,11 +2130,11 @@ svg.dsmLogo * {
   display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-  -ms-flex-direction: column;
-  flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
   font-size: 16px;
   -webkit-box-sizing: border-box;
-  box-sizing: border-box;
+          box-sizing: border-box;
   letter-spacing: 0;
   height: auto;
   line-height: 22px;
@@ -2185,10 +2146,9 @@ svg.dsmLogo * {
     border-radius: 8px;
     padding: 29px 10.5px;
     -webkit-box-shadow: 0 1px 0 0 rgba(58, 72, 80, 0.07), 0 2px 11px -1px rgba(176, 189, 197, 0.12);
-    box-shadow: 0 1px 0 0 rgba(58, 72, 80, 0.07), 0 2px 11px -1px rgba(176, 189, 197, 0.12);
+            box-shadow: 0 1px 0 0 rgba(58, 72, 80, 0.07), 0 2px 11px -1px rgba(176, 189, 197, 0.12);
   }
-
-  .dsmTrustpilot .swiper-slide>div {
+  .dsmTrustpilot .swiper-slide > div {
     margin: 0 60px;
   }
 }
@@ -2199,20 +2159,20 @@ svg.dsmLogo * {
   display: flex;
   margin-bottom: 25px;
   -webkit-box-pack: justify;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
 @media (max-width: 768px) {
   .dsmTrustpilot .swiperTop {
     display: block;
     -webkit-box-ordinal-group: 3;
-    -ms-flex-order: 2;
-    order: 2;
+        -ms-flex-order: 2;
+            order: 2;
     text-align: center;
     -webkit-box-pack: start;
-    -ms-flex-pack: start;
-    justify-content: flex-start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
     margin-top: 10px !important;
     margin-bottom: 10px !important;
   }
@@ -2260,15 +2220,15 @@ svg.dsmLogo * {
   margin-top: auto;
   padding-top: 10px;
   -ms-grid-column-align: end;
-  justify-self: end;
+      justify-self: end;
 }
 
 @media (max-width: 768px) {
   .dsmTrustpilot .swiperAuthor {
     text-align: center;
     -webkit-box-ordinal-group: 4;
-    -ms-flex-order: 3;
-    order: 3;
+        -ms-flex-order: 3;
+            order: 3;
     padding-top: 0;
   }
 }
@@ -2278,7 +2238,7 @@ svg.dsmLogo * {
   top: calc(50% - 10px);
   outline: none;
   -webkit-transform: translateY(-50%);
-  transform: translateY(-50%);
+          transform: translateY(-50%);
 }
 
 .dsmTrustpilot .swiperArrows.arrow-left {
@@ -2333,8 +2293,8 @@ svg.dsmLogo * {
 @media (max-width: 768px) {
   .dsmTrustpilot .swiperRating {
     -webkit-box-pack: center;
-    -ms-flex-pack: center;
-    justify-content: center;
+        -ms-flex-pack: center;
+            justify-content: center;
     margin-bottom: 10px !important;
   }
 }
@@ -2365,19 +2325,19 @@ svg.dsmLogo * {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   -webkit-transition: 0.2s all;
   transition: 0.2s all;
   -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
   right: 19.5px;
   border-radius: 50%;
   border: 1px solid #F1F1F1;
   background-color: #FFFFFF;
   -webkit-box-shadow: 0 1px 3px 0 rgba(58, 72, 80, 0.07), 0 8px 14px 0 rgba(176, 189, 197, 0.15);
-  box-shadow: 0 1px 3px 0 rgba(58, 72, 80, 0.07), 0 8px 14px 0 rgba(176, 189, 197, 0.15);
+          box-shadow: 0 1px 3px 0 rgba(58, 72, 80, 0.07), 0 8px 14px 0 rgba(176, 189, 197, 0.15);
 }
 
 @media (max-width: 768px) {
@@ -2400,15 +2360,15 @@ svg.dsmLogo * {
   bottom: 0;
   width: 100%;
   -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   -webkit-transform: translateX(-50%);
-  transform: translateX(-50%);
+          transform: translateX(-50%);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
+      flex-wrap: wrap;
 }
 
 .dsmTrustpilot .swiper-pagination-bullet {
@@ -2440,18 +2400,18 @@ svg.dsmLogo * {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
-.dsmTrustpilot-Header>* {
+.dsmTrustpilot-Header > * {
   margin-right: 13px !important;
 }
 
-.dsmTrustpilot-Header>*:last-child {
+.dsmTrustpilot-Header > *:last-child {
   margin-right: 0 !important;
 }
 
@@ -2459,23 +2419,19 @@ svg.dsmLogo * {
   .dsmTrustpilot-Header {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
-    -ms-flex-direction: column;
-    flex-direction: column;
+        -ms-flex-direction: column;
+            flex-direction: column;
   }
-
-  .dsmTrustpilot-Header>* {
+  .dsmTrustpilot-Header > * {
     margin-right: 0 !important;
     margin-bottom: 10px !important;
   }
-
-  .dsmTrustpilot-Header>*:last-child {
+  .dsmTrustpilot-Header > *:last-child {
     margin-bottom: 0 !important;
   }
-
   .dsmTrustpilot-Header .reviewsDot {
     display: none;
   }
-
   .dsmTrustpilot-Header .trustpilotLogo {
     height: 21px;
     width: 82px;
@@ -2524,15 +2480,12 @@ svg.dsmLogo * {
     letter-spacing: 0;
     line-height: 14px;
   }
-
   .dsmTrustpilot-Header .numberOfReviews .desktopText {
     display: none;
   }
-
   .dsmTrustpilot-Header .numberOfReviews .mobileText {
     display: inline-block;
   }
-
   .dsmTrustpilot-Header .numberOfReviews .underlineReviews {
     font-weight: bold;
     text-decoration: underline;
@@ -2545,14 +2498,14 @@ svg.dsmLogo * {
   display: flex;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
-  -ms-flex-direction: row;
-  flex-direction: row;
+      -ms-flex-direction: row;
+          flex-direction: row;
   -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
   position: static;
   width: -webkit-max-content;
   width: -moz-max-content;
@@ -2568,8 +2521,8 @@ svg.dsmLogo * {
 @media (max-width: 768px) {
   .dsmSliderToggle {
     -webkit-box-pack: unset;
-    -ms-flex-pack: unset;
-    justify-content: unset;
+        -ms-flex-pack: unset;
+            justify-content: unset;
     width: -webkit-max-content;
     width: -moz-max-content;
     width: max-content;
@@ -2579,10 +2532,10 @@ svg.dsmLogo * {
   }
 }
 
-.dsmSliderToggle>.dsmSliderToggleClick {
+.dsmSliderToggle > .dsmSliderToggleClick {
   background: #FFFFFF;
   -webkit-box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.0973831);
-  box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.0973831);
+          box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.0973831);
   border-radius: 17px;
 }
 
@@ -2618,7 +2571,7 @@ svg.dsmLogo * {
   border-radius: 8px 8px 0 0;
   background: #FFFFFF;
   -webkit-box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.0973831);
-  box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.0973831);
+          box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.0973831);
   border-radius: 17px;
   height: 28px;
   top: 4px;
@@ -2632,5 +2585,5 @@ svg.dsmLogo * {
   border-radius: 17px;
   background: #FFFFFF;
   -webkit-box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.0973831);
-  box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.0973831);
+          box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.0973831);
 }
