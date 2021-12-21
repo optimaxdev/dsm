@@ -7,15 +7,15 @@ function replaceIcons() {
     let classes = []
     a.classList.forEach((c) => classes.push(c))
     classes.splice(classes.indexOf('dsmIcons'), 1)
-    if (config[classes[0]]) {
+    if (Icons[classes[0]]) {
       let oldClasses = [classes[0], 'dsmIcons']
-      a.innerHTML = config[classes[0]]
+      a.innerHTML = Icons[classes[0]]
       a.querySelector('svg').classList.add(...oldClasses)
       a.classList.add(...oldClasses)
       a.outerHTML = a.innerHTML
-    } else if (Icons[classes[0]]) {
+    } else if (config[classes[0]]) {
       let oldClasses = [classes[0], 'dsmIcons']
-      a.innerHTML = Icons[classes[0]]
+      a.innerHTML = config[classes[0]]
       a.querySelector('svg').classList.add(...oldClasses)
       a.classList.add(...oldClasses)
       a.outerHTML = a.innerHTML
