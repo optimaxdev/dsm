@@ -2031,8 +2031,8 @@ svg.dsmLogo * {
   }
 
   to {
-    -webkit-transform: rotate(-90deg) translateX(5px);
-    transform: rotate(-90deg) translateX(5px);
+    -webkit-transform: rotate(-90deg) translateX(50%);
+    transform: rotate(-90deg) translateX(50%);
   }
 }
 
@@ -2043,15 +2043,15 @@ svg.dsmLogo * {
   }
 
   to {
-    -webkit-transform: rotate(-90deg) translateX(5px);
-    transform: rotate(-90deg) translateX(5px);
+    -webkit-transform: rotate(-90deg) translateX(50%);
+    transform: rotate(-90deg) translateX(50%);
   }
 }
 
 @-webkit-keyframes rotateBack {
   from {
-    -webkit-transform: rotate(-90deg) translateX(5px);
-    transform: rotate(-90deg) translateX(5px);
+    -webkit-transform: rotate(-90deg) translateX(50%);
+    transform: rotate(-90deg) translateX(50%);
   }
 
   to {
@@ -2062,8 +2062,8 @@ svg.dsmLogo * {
 
 @keyframes rotateBack {
   from {
-    -webkit-transform: rotate(-90deg) translateX(5px);
-    transform: rotate(-90deg) translateX(5px);
+    -webkit-transform: rotate(-90deg) translateX(50%);
+    transform: rotate(-90deg) translateX(50%);
   }
 
   to {
