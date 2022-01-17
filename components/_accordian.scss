@@ -28,7 +28,7 @@
 
     >.accordianContent {
         display: block;
-        max-height: 0;
+        // max-height: 0;
         transition: 0.6s all;
         opacity: 0;
         overflow: hidden;
@@ -130,8 +130,6 @@
         transition: 0.2s background-color,
             0.3s height,
             0.5s max-height;
-
-
     }
 
     &.accordianClosed summary svg {
@@ -245,7 +243,7 @@
 
         >.accordianContent {
             padding-top: 12px;
-            max-height: none;
+            // max-height: none;
         }
 
         summary {
