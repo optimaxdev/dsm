@@ -12,8 +12,10 @@ export function loadAccordian() {
     if (!a.querySelector('svg')) {
       a.querySelector('summary').innerHTML = `${
         a.querySelector('summary').innerHTML
-      } <i class="dsmIcons plus"></i>`
-      replaceIcons()
+      } <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="plus dsmIcons">
+<path d="M14.5 8L1.5 8" stroke="#0F0F0F" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+<path d="M8 14.5L8 1.5" stroke="#0F0F0F" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>`
     }
 
     // if (!a.querySelector('.accordianContent')) {
@@ -41,6 +43,10 @@ export function loadAccordian() {
           setTimeout(() => {
             currEl.removeAttribute('open')
             currEl.classList.remove('closeAccordian')
+            currEl.classList.add('accordianClosed')
+            setTimeout(() => {
+              currEl.classList.remove('accordianClosed')
+            }, 300)
             count++
           }, 200)
           setTimeout(() => {
@@ -59,6 +65,12 @@ export function loadAccordian() {
         el.style.maxHeight =
           el.querySelector('summary').clientHeight + paddding + 'px'
         el.classList.add('closeAccordian')
+        setTimeout(() => {
+          el.classList.add('accordianClosed')
+          setTimeout(() => {
+            el.classList.remove('accordianClosed')
+          }, 500)
+        }, 300)
         setTimeout(() => {
           el.removeAttribute('open')
           el.style.maxHeight = ''

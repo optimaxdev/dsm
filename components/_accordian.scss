@@ -81,6 +81,7 @@
             width: 13px;
 
             * {
+                transition: 0.3s all;
                 stroke: #B0BDC5 !important;
             }
 
@@ -106,6 +107,22 @@
 
     &[open] {
         max-height: 1000px;
+
+        summary svg {
+            transform-origin: center center;
+            animation: rotateTop 0.3s forwards;
+
+            path {
+                &:nth-child(1) {
+                    transform-origin: center center;
+                    animation: rotateArrow 0.3s forwards;
+                }
+
+                &:nth-child(2) {
+                    opacity: 0;
+                }
+            }
+        }
     }
 
     &.closeAccordian {
@@ -114,6 +131,64 @@
             0.3s height,
             0.5s max-height;
 
+
+    }
+
+    &.accordianClosed summary svg {
+        transform-origin: center center;
+        animation: rotateBack 0.3s forwards;
+
+        path {
+            &:nth-child(1) {
+                transform-origin: center center;
+                animation: rotateBackArrow 0.3s forwards;
+            }
+
+            &:nth-child(2) {
+                opacity: 1;
+                transition: 0.3s opacity;
+            }
+        }
+    }
+
+    @keyframes rotateTop {
+        from {
+            transform: rotate(0) translateY(-50%)
+        }
+
+        to {
+            transform: rotate(-90deg) translateX(5px)
+        }
+    }
+
+    @keyframes rotateBack {
+        from {
+            transform: rotate(-90deg) translateX(5px)
+        }
+
+        to {
+            transform: rotate(0) translateY(-50%)
+        }
+    }
+
+    @keyframes rotateArrow {
+        from {
+            transform: rotate(0);
+        }
+
+        to {
+            transform: rotate(-90deg);
+        }
+    }
+
+    @keyframes rotateBackArrow {
+        from {
+            transform: rotate(-90deg);
+        }
+
+        to {
+            transform: rotate(0);
+        }
     }
 
     &.closeAccordian summary {
