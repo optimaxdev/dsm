@@ -33,8 +33,8 @@ a.dsmButton {
   background-color: #ff6c00;
   border-color: #ff6c00;
   color: white;
-  -webkit-transition: 0.3s background-color;
-  transition: 0.3s background-color;
+  -webkit-transition: 0.15s background-color;
+  transition: 0.15s background-color;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   white-space: nowrap;
@@ -56,6 +56,11 @@ a.dsmButton {
   text-decoration: inherit !important;
   font-size: inherit !important;
   line-height: inherit !important;
+}
+
+.dsmButton span svg * {
+  -webkit-transition: 0.15s all;
+  transition: 0.15s all;
 }
 
 .dsmButton.round {
@@ -123,7 +128,7 @@ a.dsmButton {
   background-color: #2d2d2d;
 }
 
-.dsmButton.round.disabled.codGray svg path {
+.dsmButton.round.disabled.codGray > svg path {
   fill: #898989 !important;
 }
 
@@ -131,7 +136,7 @@ a.dsmButton {
   background-color: #f1f3f4;
 }
 
-.dsmButton.round.disabled.white svg path {
+.dsmButton.round.disabled.white > svg path {
   fill: #b0bdc5 !important;
 }
 
@@ -315,6 +320,12 @@ a.dsmButton {
     background-color: #1c86da;
     color: white;
   }
+  .dsmButton.ghost.secondary:hover span svg*[stroke]:not[stroke=""], .dsmButton.ghost.round:hover span svg*[stroke]:not[stroke=""] {
+    stroke: white;
+  }
+  .dsmButton.ghost.secondary:hover span svg*[fill]:not[fill=""], .dsmButton.ghost.round:hover span svg*[fill]:not[fill=""] {
+    fill: white;
+  }
 }
 
 .dsmButton.ghost.round.porcelain {
@@ -327,6 +338,12 @@ a.dsmButton {
     background-color: #e1e1e1;
     border-color: #e1e1e1;
     color: #3a4850;
+  }
+  .dsmButton.ghost.round.porcelain:hover span svg*[stroke]:not[stroke=""] {
+    stroke: #3a4850;
+  }
+  .dsmButton.ghost.round.porcelain:hover span svg*[fill]:not[fill=""] {
+    fill: #3a4850;
   }
 }
 
@@ -341,6 +358,12 @@ a.dsmButton {
     border-color: #3a4850;
     color: white;
   }
+  .dsmButton.ghost.round.regentGray:hover span svg*[stroke]:not[stroke=""] {
+    stroke: white;
+  }
+  .dsmButton.ghost.round.regentGray:hover span svg*[fill]:not[fill=""] {
+    fill: white;
+  }
 }
 
 .dsmButton.ghost.round.towerGray {
@@ -354,6 +377,12 @@ a.dsmButton {
     border-color: #89959c;
     color: white;
   }
+  .dsmButton.ghost.round.towerGray:hover span svg*[stroke]:not[stroke=""] {
+    stroke: white;
+  }
+  .dsmButton.ghost.round.towerGray:hover span svg*[fill]:not[fill=""] {
+    fill: white;
+  }
 }
 
 .dsmButton.ghost.round.codGray {
@@ -366,6 +395,12 @@ a.dsmButton {
     background-color: #2d2d2d;
     border-color: #2d2d2d;
     color: white;
+  }
+  .dsmButton.ghost.round.codGray:hover span svg*[stroke]:not[stroke=""] {
+    stroke: white;
+  }
+  .dsmButton.ghost.round.codGray:hover span svg*[fill]:not[fill=""] {
+    fill: white;
   }
 }
 
