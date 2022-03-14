@@ -1899,6 +1899,7 @@ svg.dsmLogo * {
   max-height: auto;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+  width: 100%;
   overflow: hidden;
   cursor: pointer;
   margin: auto;
