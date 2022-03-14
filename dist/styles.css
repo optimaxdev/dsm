@@ -9,6 +9,7 @@ a.dsmButton {
   display: -webkit-inline-box;
   display: -ms-inline-flexbox;
   display: inline-flex;
+  font-family: Roboto;
   -webkit-box-align: center;
   -ms-flex-align: center;
       align-items: center;
@@ -77,8 +78,66 @@ a.dsmButton {
   }
 }
 
+@media (max-width: 768px) {
+  .dsmButton.round {
+    padding: 11px 20px;
+  }
+}
+
 .dsmButton.round:disabled span {
   display: block !important;
+}
+
+.dsmButton.round.regentGray {
+  color: white;
+  background-color: #89959c;
+  border-color: #89959c;
+}
+
+@media (hover: hover) {
+  .dsmButton.round.regentGray:hover {
+    background-color: #3a4850;
+    border-color: #3a4850;
+  }
+}
+
+.dsmButton.round.towerGray {
+  color: white;
+  background-color: #b0bdc5;
+  border-color: #b0bdc5;
+}
+
+@media (hover: hover) {
+  .dsmButton.round.towerGray:hover {
+    background-color: #89959c;
+    border-color: #89959c;
+  }
+}
+
+.dsmButton.round.codGray {
+  color: white;
+  background-color: #0f0f0f;
+  border-color: #0f0f0f;
+}
+
+@media (hover: hover) {
+  .dsmButton.round.codGray:hover {
+    background-color: #2d2d2d;
+    border-color: #2d2d2d;
+  }
+}
+
+.dsmButton.round.white {
+  color: #3a4850;
+  background-color: white;
+  border-color: white;
+}
+
+@media (hover: hover) {
+  .dsmButton.round.white:hover {
+    background-color: #f1f3f4;
+    border-color: #f1f3f4;
+  }
 }
 
 .dsmButton.round.disabled {
@@ -167,8 +226,7 @@ a.dsmButton {
 .dsmButton.small {
   font-size: 14px;
   height: 32px;
-  padding-left: 19px;
-  padding-right: 19px;
+  padding: 0 16px;
 }
 
 .dsmButton.small.round {
@@ -177,14 +235,13 @@ a.dsmButton {
 
 @media (max-width: 768px) {
   .dsmButton.small.round {
-    padding: 7px 18px;
+    padding: 6px 18px;
   }
 }
 
 .dsmButton.regular {
   height: 48px;
-  padding-left: 35px;
-  padding-right: 35px;
+  padding: 0 18px;
   font-size: 18px;
 }
 
@@ -194,7 +251,7 @@ a.dsmButton {
 
 @media (max-width: 768px) {
   .dsmButton.regular.round {
-    padding: 13.5px 23px;
+    padding: 13px 23px;
   }
 }
 
@@ -213,24 +270,38 @@ a.dsmButton {
   }
 }
 
-.dsmButton.large {
+.dsmButton:not(.round).large {
   height: 64px;
-  padding-left: 60px;
-  padding-right: 60px;
+  padding: 0 24px;
   font-size: 20px;
 }
 
-.dsmButton.extralarge {
+.dsmButton:not(.round).extralarge {
   height: 70px;
-  padding-left: 60px;
-  padding-right: 60px;
+  padding: 0 29px;
   font-size: 22px;
 }
 
 @media (hover: hover) {
-  .dsmButton:hover {
+  .dsmButton:not(.round):hover {
     background-color: #e36000;
     border-color: #e36000;
+  }
+}
+
+@media (max-width: 768px) {
+  .dsmButton:not(.round) {
+    height: 48px;
+    padding: 0 21px;
+  }
+  .dsmButton:not(.round).large, .dsmButton:not(.round).extralarge, .dsmButton:not(.round).regular {
+    height: 60px;
+    padding: 0 21px;
+    font-size: 20px;
+  }
+  .dsmButton:not(.round).small, .dsmButton:not(.round).medium {
+    height: 48px;
+    padding: 0 21px;
   }
 }
 
@@ -240,58 +311,6 @@ a.dsmButton {
   background-color: #d8d8d8;
   color: white;
   border-color: rgba(0, 0, 0, 0);
-}
-
-.dsmButton.regentGray {
-  color: white;
-  background-color: #89959c;
-  border-color: #89959c;
-}
-
-@media (hover: hover) {
-  .dsmButton.regentGray:hover {
-    background-color: #3a4850;
-    border-color: #3a4850;
-  }
-}
-
-.dsmButton.towerGray {
-  color: white;
-  background-color: #b0bdc5;
-  border-color: #b0bdc5;
-}
-
-@media (hover: hover) {
-  .dsmButton.towerGray:hover {
-    background-color: #89959c;
-    border-color: #89959c;
-  }
-}
-
-.dsmButton.codGray {
-  color: white;
-  background-color: #0f0f0f;
-  border-color: #0f0f0f;
-}
-
-@media (hover: hover) {
-  .dsmButton.codGray:hover {
-    background-color: #2d2d2d;
-    border-color: #2d2d2d;
-  }
-}
-
-.dsmButton.white {
-  color: #3a4850;
-  background-color: white;
-  border-color: white;
-}
-
-@media (hover: hover) {
-  .dsmButton.white:hover {
-    background-color: #f1f3f4;
-    border-color: #f1f3f4;
-  }
 }
 
 .dsmButton.ghost {
@@ -401,6 +420,19 @@ a.dsmButton {
   }
   .dsmButton.ghost.round.codGray:hover span svg*[fill]:not[fill=""] {
     fill: white;
+  }
+}
+
+.dsmButton.ghost.round.white {
+  color: white;
+  border-color: white;
+}
+
+@media (hover: hover) {
+  .dsmButton.ghost.round.white:hover {
+    background-color: white;
+    border-color: white;
+    color: #3A4850;
   }
 }
 
