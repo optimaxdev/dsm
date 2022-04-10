@@ -8,7 +8,7 @@ if (
   !window.location.href.includes('glassesusa.com') ||
   !window.location.href.includes('gusa')
 ) {
-  apiURL = 'http://api.freud-online.co.uk:3100'
+  apiURL = 'https://api.freud-online.co.uk:3100'
 }
 
 export function startTrustpilot() {
