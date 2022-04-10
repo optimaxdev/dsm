@@ -2,13 +2,13 @@ import { replaceIcons } from './icons'
 import Swiper, { Navigation } from 'swiper'
 Swiper.use([Navigation])
 
-let apiURL = 'http://api.freud-online.co.uk:3100'
-// let apiURL = 'https://www.glassesusa.com/bff/trustpilot'
+// let apiURL = 'http://api.freud-online.co.uk:3100'
+let apiURL = 'https://www.glassesusa.com/bff/trustpilot'
 if (
   !window.location.href.includes('glassesusa.com') ||
   !window.location.href.includes('gusa')
 ) {
-  apiURL = 'https://master-gusa-desktop.gusadev.com/bff/trustpilot'
+  apiURL = 'http://api.freud-online.co.uk:3100'
 }
 
 export function startTrustpilot() {
