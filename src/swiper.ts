@@ -203,7 +203,7 @@ function initiateSwiper(swiperContainer: HTMLElement, config: configType) {
         .addEventListener('click', () =>
           nextSlide(swiperContainer, config.loop, true, config),
         )
-    } else if (typeof config.arrows.prevArrow !== 'undefined')
+    } else if (typeof config?.arrows?.nextArrow !== 'undefined')
       config.arrows.nextArrow.addEventListener('click', () =>
         nextSlide(swiperContainer, config.loop, true, config),
       )
@@ -217,7 +217,7 @@ function initiateSwiper(swiperContainer: HTMLElement, config: configType) {
         .addEventListener('click', () =>
           prevSlide(swiperContainer, config.loop, true, config),
         )
-    } else if (typeof config.arrows.prevArrow !== 'undefined')
+    } else if (typeof config?.arrows?.prevArrow !== 'undefined')
       config.arrows.prevArrow.addEventListener('click', () =>
         prevSlide(swiperContainer, config.loop, true, config),
       )
