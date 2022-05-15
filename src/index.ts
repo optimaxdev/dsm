@@ -6,6 +6,7 @@ import { loadAccordian } from './accordian'
 import { replaceIcons } from './icons'
 import { loadSlider } from './slider'
 import Swiper from 'swiper'
+import './swiper'
 
 globalThis.reloadElements = () => loadElements()
 
