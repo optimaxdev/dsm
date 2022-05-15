@@ -36,7 +36,7 @@ type configType = {
 
 let pos = { top: 0, left: 0, x: 0, y: 0 }
 
-this.initiateSwiper = initiateSwiper
+globalThis.initiateSwiper = initiateSwiper
 
 function trackProgress(event: MouseEvent, swiperContainer: HTMLElement) {
   const el = Array.from(swiperContainer.querySelectorAll('.slide')).filter(
