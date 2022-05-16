@@ -159,7 +159,7 @@ function calculateSlides(swiperContainer: HTMLElement, config: configType) {
           break
         case 'pagination':
           ;(slide as HTMLElement).style.width =
-            Math.round(containerWidth / slidesPerView) + 'px'
+            Math.round(slideWidth - gap + gap / slidesPerView) + 'px'
           break
 
         default:
