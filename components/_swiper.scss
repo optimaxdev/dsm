@@ -63,13 +63,7 @@
 
     .slide {
         transition: 0.15s width;
-
-        // background: #DBE1E5;
-        @for $i from 0 to 100 {
-            &:nth-child(#{$i}) {
-                @include random-bgr();
-            }
-        }
+        background: #DBE1E5;
     }
 
     .progress {
