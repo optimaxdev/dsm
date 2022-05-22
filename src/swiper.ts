@@ -409,6 +409,16 @@ function onMouseUp(ele: HTMLElement, swiperContainer: HTMLElement) {
     swiperContainer.querySelector('.slides').children,
   ).indexOf(el)
 
+  if (
+    swiperContainer.querySelector('.slides').scrollLeft ===
+    swiperContainer.querySelector('.slides').scrollWidth
+  ) {
+    ele.scrollTo({
+      left: swiperContainer.querySelector('.slides').scrollWidth,
+      behavior: 'smooth',
+    })
+  }
+
   ele.scrollTo({
     left:
       pos * el.clientWidth +
