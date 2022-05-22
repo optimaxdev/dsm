@@ -417,13 +417,12 @@ function onMouseUp(ele: HTMLElement, swiperContainer: HTMLElement) {
       left: swiperContainer.querySelector('.slides').scrollWidth,
       behavior: 'smooth',
     })
-  }
-
-  ele.scrollTo({
-    left:
-      pos * el.clientWidth +
-      pos * parseInt((el as HTMLElement).style.marginRight) -
-      2,
-    behavior: 'smooth',
-  })
+  } else
+    ele.scrollTo({
+      left:
+        pos * el.clientWidth +
+        pos * parseInt((el as HTMLElement).style.marginRight) -
+        2,
+      behavior: 'smooth',
+    })
 }
