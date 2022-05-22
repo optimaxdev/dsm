@@ -188,6 +188,16 @@ function initiateSwiper(swiperContainer: HTMLElement, config: configType) {
   slidesContainer.addEventListener('mousedown', (e: MouseEvent) =>
     onMouseDown(e, slidesContainer as HTMLElement, swiperContainer),
   )
+  slidesContainer.addEventListener(
+    'touchmove',
+    (mouseMove = (e) => onMouseMove(e, swiperContainer)),
+  )
+  slidesContainer.addEventListener(
+    'touchend',
+    (mouseUp = () =>
+      onMouseUp(slidesContainer as HTMLElement, swiperContainer)),
+  )
+
   swiperContainer.style.padding = `0 ${config.padding}px`
   swiperContainer.dataset.swiperId = (Math.random() + 1)
     .toString(36)
