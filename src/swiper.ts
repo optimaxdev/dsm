@@ -411,7 +411,8 @@ function onMouseUp(ele: HTMLElement, swiperContainer: HTMLElement) {
 
   if (
     swiperContainer.querySelector('.slides').scrollLeft ===
-    swiperContainer.querySelector('.slides').scrollWidth
+    swiperContainer.querySelector('.slides').scrollWidth -
+      swiperContainer.querySelector('.slides').clientWidth
   ) {
     ele.scrollTo({
       left: swiperContainer.querySelector('.slides').scrollWidth,
