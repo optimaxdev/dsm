@@ -2968,10 +2968,11 @@ svg.dsmLogo * {
 
 @media (max-width: 600px) {
   .dsm-product-grid {
-    max-width: 343px;
+    max-width: 100%;
     row-gap: 28px;
-    -ms-grid-columns: (minmax(auto, 1fr))[1];
-        grid-template-columns: repeat(1, minmax(auto, 1fr));
+    margin: 0 16px;
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
   }
 }
 
@@ -3100,6 +3101,12 @@ svg.dsmLogo * {
   }
 }
 
+@media (max-width: 600px) {
+  .dsm-product-grid .product-images {
+    height: 50vw;
+  }
+}
+
 .dsm-product-grid .product-images img {
   mix-blend-mode: multiply;
   max-width: 100%;
@@ -3147,6 +3154,12 @@ svg.dsmLogo * {
   padding: 0 16px;
   visibility: hidden;
   margin-top: 12px;
+}
+
+@media (max-width: 600px) {
+  .dsm-product-grid .button-row {
+    display: none;
+  }
 }
 
 .dsm-product {
