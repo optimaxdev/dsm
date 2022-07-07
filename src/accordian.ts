@@ -1,5 +1,3 @@
-import { replaceIcons } from './icons'
-
 export function loadAccordian() {
   document.querySelectorAll<HTMLElement>('.dsmAccordian').forEach((a) => {
     if (typeof a === 'undefined') return
@@ -12,7 +10,7 @@ export function loadAccordian() {
     if (!a.querySelector('svg')) {
       a.querySelector('summary').innerHTML = `${
         a.querySelector('summary').innerHTML
-      } <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="plus dsmIcons">
+      } <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M14.5 8L1.5 8" stroke="#0F0F0F" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
 <path d="M8 14.5L8 1.5" stroke="#0F0F0F" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
 </svg>`

@@ -1,0 +1,187 @@
+.dsm-product-grid {
+    display: grid;
+    max-width: 1296px;
+    font-family: Roboto;
+    margin: 0 auto;
+    justify-content: space-between;
+    grid-template-columns: repeat(3, minmax(auto, 386px));
+
+    @media (max-width: 1280px) {
+        max-width: 1164px;
+        grid-template-columns: repeat(3, minmax(auto, 340px));
+    }
+
+    @media (max-width: 1024px) {
+        max-width: 936px;
+        grid-template-columns: repeat(3, minmax(auto, 280px));
+    }
+
+    @media (max-width: 768px) {
+        max-width: 728px;
+        grid-template-columns: repeat(2, minmax(auto, 354px));
+    }
+
+    @media (max-width: 600px) {
+        max-width: 343px;
+        grid-template-columns: repeat(1, minmax(auto, 1fr));
+    }
+
+    .dsmBadge {
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+
+    .colour-chooser {
+        display: grid;
+        grid-auto-flow: column;
+        grid-auto-columns: 24px;
+        gap: 5px;
+        margin-top: 8px;
+        margin-bottom: 12px;
+        justify-content: center;
+
+        .circle {
+            width: 20px;
+            height: 20px;
+            position: relative;
+            cursor: pointer;
+            border-radius: 50%;
+            border: 1px solid rgba(91, 105, 113, 0.2);
+
+            &::after {
+                transition: 0.3s all;
+                border: 1px solid transparent;
+            }
+
+            &:hover::after {
+                display: block;
+                border: 1px solid rgba(91, 105, 113, 0.35);
+            }
+
+            &.active {
+                &::after {
+                    display: block;
+                }
+
+                &:hover::after {
+                    border: 1px solid #5B6971;
+                }
+            }
+
+            &::after {
+                display: none;
+                border: 1px solid #5B6971;
+                content: "";
+                width: 24px;
+                height: 24px;
+                position: absolute;
+                top: 50%;
+                border-radius: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+            }
+        }
+
+        .circle-plus {
+            width: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 20px;
+            position: relative;
+            cursor: pointer;
+            border-radius: 50%;
+            border: 1px solid #5B6971;
+            color: #5B6971;
+
+            &:hover {
+                border: 1px solid #0F0F0F;
+                color: #0F0F0F;
+            }
+
+        }
+    }
+
+    .product-name {
+        font-weight: 700;
+        font-size: 18px;
+        margin-bottom: 6px;
+        line-height: 24px;
+        text-align: center;
+        color: #0F0F0F;
+
+        @media (max-width: 1024px) {
+            font-size: 16px;
+            line-height: 24px;
+        }
+
+        @media (max-width: 768px) {
+            font-size: 18px;
+            line-height: 24px;
+        }
+    }
+
+
+    .product-images {
+        height: 170px;
+        display: block;
+
+        @media (max-width: 1024px) {
+            height: 140px;
+        }
+
+        @media (max-width: 768px) {
+            height: 177px;
+        }
+
+        img {
+            mix-blend-mode: multiply;
+            max-width: 100%;
+            height: 100%;
+            width: 100%;
+            display: none;
+            object-fit: contain;
+            object-position: center;
+
+            &.active {
+                display: block;
+            }
+        }
+    }
+
+    .product-price {
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 16px;
+        text-align: center;
+        color: #89959C;
+
+        @media (max-width: 1024px) {
+            font-size: 14px;
+            line-height: 16px;
+        }
+
+        @media (max-width: 768px) {
+            font-size: 14px;
+            line-height: 16px;
+        }
+    }
+
+    .button-row {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 8px;
+        padding: 0 16px;
+        visibility: hidden;
+        margin-top: 12px;
+    }
+}
+
+.dsm-product {
+    position: relative;
+}
+
+.dsm-product:hover .button-row {
+    visibility: visible;
+}
