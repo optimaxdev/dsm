@@ -54,6 +54,7 @@
             background-position: 50%;
             background-repeat: no-repeat;
             background-size: cover;
+            background-position: center center;
             border: 1px solid rgba(91, 105, 113, 0.2);
 
             &::after {
@@ -167,6 +168,14 @@
         line-height: 16px;
         text-align: center;
         color: #89959C;
+
+        .old {
+            text-decoration: line-through;
+        }
+
+        .new {
+            color: #F22A42;
+        }
 
         @media (max-width: 1024px) {
             font-size: 14px;

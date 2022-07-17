@@ -2039,8 +2039,8 @@ svg.dsmLogo * {
 
 .dsmAccordian.closeAccordian {
   max-height: auto;
-  -webkit-transition: 0.2s background-color, 0.3s height, 0.5s max-height;
-  transition: 0.2s background-color, 0.3s height, 0.5s max-height;
+  -webkit-transition: 0.2s background-color, 0.3s height, 0.5s max-height;
+  transition: 0.2s background-color, 0.3s height, 0.5s max-height;
 }
 
 .dsmAccordian.accordianClosed summary svg {
@@ -3004,6 +3004,7 @@ svg.dsmLogo * {
   background-position: 50%;
   background-repeat: no-repeat;
   background-size: cover;
+  background-position: center center;
   border: 1px solid rgba(91, 105, 113, 0.2);
 }
 
@@ -3132,6 +3133,14 @@ svg.dsmLogo * {
   line-height: 16px;
   text-align: center;
   color: #89959C;
+}
+
+.dsm-product-grid .product-price .old {
+  text-decoration: line-through;
+}
+
+.dsm-product-grid .product-price .new {
+  color: #F22A42;
 }
 
 @media (max-width: 1024px) {
