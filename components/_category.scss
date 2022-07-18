@@ -135,15 +135,15 @@
         height: 170px;
         display: block;
 
-        @media (max-width: 1024px) {
+        @media (max-width: 1280px) {
             height: 140px;
         }
 
-        @media (max-width: 768px) {
+        @media (max-width: 1024px) {
             height: 177px;
         }
 
-        @media (max-width: 600px) {
+        @media (max-width: 768px) {
             height: 50vw;
         }
 
@@ -177,12 +177,12 @@
             color: #F22A42;
         }
 
-        @media (max-width: 1024px) {
+        @media (max-width: 1280px) {
             font-size: 14px;
             line-height: 16px;
         }
 
-        @media (max-width: 768px) {
+        @media (max-width: 1024px) {
             font-size: 14px;
             line-height: 16px;
         }
@@ -197,7 +197,7 @@
         visibility: hidden;
         margin-top: 12px;
 
-        @media (max-width: 600px) {
+        @media (max-width: 768px) {
             display: none;
         }
     }
