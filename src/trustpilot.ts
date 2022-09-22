@@ -2,13 +2,12 @@ import { replaceIcons } from './icons'
 import Swiper, { Navigation } from 'swiper'
 Swiper.use([Navigation])
 
-// let apiURL = 'http://api.freud-online.co.uk:3100'
-let apiURL = 'https://www.glassesusa.com/bff/trustpilot'
+let apiURL = 'http://api.freud-online.co.uk:3100'
 if (
-  !window.location.href.includes('glassesusa.com') ||
-  !window.location.href.includes('gusa')
+  window.location.href.includes('glassesusa.com') ||
+  window.location.href.includes('gusa')
 ) {
-  apiURL = 'https://api.freud-online.co.uk:3100'
+  apiURL = 'https://www.glassesusa.com/bff/trustpilot'
 }
 
 export function startTrustpilot() {
@@ -212,12 +211,12 @@ export function runHeader() {
                 <polygon fill="#005128" points="16.9272727 16.3309693 16.3836672 14.2222222 12.4727273 17.7777778" />
             </g>
         </svg><div class="starsContainer">${starsContainer}</div><span class="numberOfReviews"><span class="reviewsDot">•&nbsp; </span><span class="desktopText">Reviews ${reviews.numberOfReviews
-      .toString()
-      .replace(
-        /\B(?=(\d{3})+(?!\d))/g,
-        ',',
-      )}+</span><span class="mobileText">Based on <span class="underlineReviews">${reviews.numberOfReviews
-      .toString()
-      .replace(/\B(?=(\d{3})+(?!\d))/g, ',')}+ reviews</span></span>`
+        .toString()
+        .replace(
+          /\B(?=(\d{3})+(?!\d))/g,
+          ',',
+        )}+</span><span class="mobileText">Based on <span class="underlineReviews">${reviews.numberOfReviews
+          .toString()
+          .replace(/\B(?=(\d{3})+(?!\d))/g, ',')}+ reviews</span></span>`
   })
 }
