@@ -2039,8 +2039,8 @@ svg.dsmLogo * {
 
 .dsmAccordian.closeAccordian {
   max-height: auto;
-  -webkit-transition: 0.2s background-color, 0.3s height, 0.5s max-height;
-  transition: 0.2s background-color, 0.3s height, 0.5s max-height;
+  -webkit-transition: 0.2s background-color, 0.3s height, 0.5s max-height;
+  transition: 0.2s background-color, 0.3s height, 0.5s max-height;
 }
 
 .dsmAccordian.accordianClosed summary svg {
@@ -2941,7 +2941,7 @@ svg.dsmLogo * {
   row-gap: 20px;
 }
 
-@media (max-width: 1280px) {
+@media (max-width: 1440px) {
   .dsm-product-grid {
     max-width: 1164px;
     -ms-grid-columns: (minmax(auto, 340px))[3];
@@ -2949,7 +2949,7 @@ svg.dsmLogo * {
   }
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 1280px) {
   .dsm-product-grid {
     max-width: 936px;
     -ms-grid-columns: (minmax(auto, 280px))[3];
@@ -2957,7 +2957,7 @@ svg.dsmLogo * {
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
   .dsm-product-grid {
     max-width: 728px;
     row-gap: 36px;
@@ -2966,7 +2966,7 @@ svg.dsmLogo * {
   }
 }
 
-@media (max-width: 600px) {
+@media (max-width: 768px) {
   .dsm-product-grid {
     max-width: 100%;
     row-gap: 28px;
@@ -3093,19 +3093,19 @@ svg.dsmLogo * {
   display: block;
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 1280px) {
   .dsm-product-grid .product-images {
     height: 140px;
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
   .dsm-product-grid .product-images {
     height: 177px;
   }
 }
 
-@media (max-width: 600px) {
+@media (max-width: 768px) {
   .dsm-product-grid .product-images {
     height: 50vw;
   }
@@ -3143,14 +3143,14 @@ svg.dsmLogo * {
   color: #F22A42;
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 1280px) {
   .dsm-product-grid .product-price {
     font-size: 14px;
     line-height: 16px;
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
   .dsm-product-grid .product-price {
     font-size: 14px;
     line-height: 16px;
@@ -3168,7 +3168,7 @@ svg.dsmLogo * {
   margin-top: 12px;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 768px) {
   .dsm-product-grid .button-row {
     display: none;
   }
