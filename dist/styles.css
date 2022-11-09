@@ -1974,7 +1974,7 @@ svg.dsmLogo * {
   }
 }
 
-.dsmAccordian summary > svg {
+.dsmAccordian summary > .plus {
   position: absolute;
   right: 0;
   top: 50%;
@@ -1990,13 +1990,13 @@ svg.dsmLogo * {
   width: 13px;
 }
 
-.dsmAccordian summary > svg * {
+.dsmAccordian summary > .plus * {
   -webkit-transition: 0.3s all;
   transition: 0.3s all;
   stroke: #B0BDC5 !important;
 }
 
-.dsmAccordian summary > svg line:nth-child(2) {
+.dsmAccordian summary > .plus line:nth-child(2) {
   -webkit-transition: 0.2s all;
   transition: 0.2s all;
 }
@@ -2019,21 +2019,21 @@ svg.dsmLogo * {
   max-height: 1000px;
 }
 
-.dsmAccordian[open] summary svg {
+.dsmAccordian[open] summary .plus {
   -webkit-transform-origin: center center;
           transform-origin: center center;
   -webkit-animation: rotateTop 0.3s forwards;
           animation: rotateTop 0.3s forwards;
 }
 
-.dsmAccordian[open] summary svg path:nth-child(1) {
+.dsmAccordian[open] summary .plus path:nth-child(1) {
   -webkit-transform-origin: center center;
           transform-origin: center center;
   -webkit-animation: rotateArrow 0.3s forwards;
           animation: rotateArrow 0.3s forwards;
 }
 
-.dsmAccordian[open] summary svg path:nth-child(2) {
+.dsmAccordian[open] summary .plus path:nth-child(2) {
   opacity: 0;
 }
 
@@ -2043,21 +2043,21 @@ svg.dsmLogo * {
   transition: 0.2s background-color, 0.3s height, 0.5s max-height;
 }
 
-.dsmAccordian.accordianClosed summary svg {
+.dsmAccordian.accordianClosed summary .plus {
   -webkit-transform-origin: center center;
           transform-origin: center center;
   -webkit-animation: rotateBack 0.3s forwards;
           animation: rotateBack 0.3s forwards;
 }
 
-.dsmAccordian.accordianClosed summary svg path:nth-child(1) {
+.dsmAccordian.accordianClosed summary .plus path:nth-child(1) {
   -webkit-transform-origin: center center;
           transform-origin: center center;
   -webkit-animation: rotateBackArrow 0.3s forwards;
           animation: rotateBackArrow 0.3s forwards;
 }
 
-.dsmAccordian.accordianClosed summary svg path:nth-child(2) {
+.dsmAccordian.accordianClosed summary .plus path:nth-child(2) {
   opacity: 1;
   -webkit-transition: 0.3s opacity;
   transition: 0.3s opacity;
@@ -2251,16 +2251,16 @@ svg.dsmLogo * {
   width: 100%;
 }
 
-.dsmAccordian[open] summary > svg * {
+.dsmAccordian[open] summary > .plus * {
   stroke: #3A4850 !important;
 }
 
-.dsmAccordian[open] summary > svg line:first-child {
+.dsmAccordian[open] summary > .plus line:first-child {
   -webkit-animation: scaleDown 0.1s ease-in-out;
           animation: scaleDown 0.1s ease-in-out;
 }
 
-.dsmAccordian[open] summary > svg line:nth-child(2) {
+.dsmAccordian[open] summary > .plus line:nth-child(2) {
   -webkit-transform: rotate(-90deg) translateX(-13px);
           transform: rotate(-90deg) translateX(-13px);
 }
