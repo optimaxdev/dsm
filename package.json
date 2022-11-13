@@ -27,7 +27,7 @@
     "webpack": "^5.59.1"
   },
   "devDependencies": {
-    "semantic-release": "^18.0.1",
+    "semantic-release": "^19.0.5",
     "terser-webpack-plugin": "^5.2.5"
   },
   "release": {
