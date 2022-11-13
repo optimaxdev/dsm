@@ -7,7 +7,10 @@ if (
   window.location.href.includes('glassesusa.com') ||
   window.location.href.includes('gusa')
 ) {
-  apiURL = 'https://www.glassesusa.com/bff/trustpilot'
+  apiURL =
+    window.innerWidth > 768
+      ? 'https://www.glassesusa.com/bff/trustpilot'
+      : 'https://m.glassesusa.com/bff/trustpilot'
 }
 
 export function startTrustpilot() {
