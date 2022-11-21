@@ -72,6 +72,7 @@ export function loadAccordian() {
         setTimeout(() => {
           el.removeAttribute('open')
           el.style.maxHeight = ''
+          el.style.minHeight = ''
           el.classList.remove('closeAccordian')
         }, 500)
       }
