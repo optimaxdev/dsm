@@ -61,6 +61,7 @@
         position: relative;
         color: rgb(107, 107, 107);
 
+        input[type=url],
         input[type=text],
         input[type=email],
         input[type=number] {
@@ -113,6 +114,7 @@
         }
     }
 
+    input[type=url],
     input[type=text],
     input[type=email],
     input[type=number] {

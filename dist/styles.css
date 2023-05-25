@@ -1,6 +1,6 @@
 @import url("https://cdnjs.cloudflare.com/ajax/libs/Swiper/6.4.14/swiper-bundle.min.css");
 a.dsmButton {
-  color: white;
+  color: rgb(255, 255, 255);
   font-size: 16px;
   text-decoration: none;
 }
@@ -33,7 +33,7 @@ a.dsmButton {
   text-decoration: none;
   background-color: #ff6c00;
   border-color: #ff6c00;
-  color: white;
+  color: rgb(255, 255, 255);
   -webkit-transition: 0.15s background-color;
   transition: 0.15s background-color;
   -webkit-box-sizing: border-box;
@@ -47,158 +47,128 @@ a.dsmButton {
   border: none;
   text-transform: none;
 }
-
 .dsmButton:hover, .dsmButton:focus {
   text-decoration: none;
 }
-
 .dsmButton a {
   color: inherit !important;
   text-decoration: inherit !important;
   font-size: inherit !important;
   line-height: inherit !important;
 }
-
 .dsmButton span svg * {
   -webkit-transition: 0.15s all;
   transition: 0.15s all;
 }
-
 .dsmButton.round {
   border: 2px solid;
-  background-color: #2196f3;
-  border-color: #2196f3;
+  background-color: rgb(33, 150, 243);
+  border-color: rgb(33, 150, 243);
   border-radius: 24px;
 }
-
 @media (hover: hover) {
   .dsmButton.round:hover {
-    background-color: #1c86da;
-    border-color: #1c86da;
+    background-color: rgb(28, 134, 218);
+    border-color: rgb(28, 134, 218);
   }
 }
-
 @media (max-width: 768px) {
   .dsmButton.round {
     padding: 11px 20px;
   }
 }
-
 .dsmButton.round:disabled span {
   display: block !important;
 }
-
 .dsmButton.round.regentGray {
-  color: white;
-  background-color: #89959c;
-  border-color: #89959c;
+  color: rgb(255, 255, 255);
+  background-color: rgb(137, 149, 156);
+  border-color: rgb(137, 149, 156);
 }
-
 @media (hover: hover) {
   .dsmButton.round.regentGray:hover {
-    background-color: #3a4850;
-    border-color: #3a4850;
+    background-color: rgb(58, 72, 80);
+    border-color: rgb(58, 72, 80);
   }
 }
-
 .dsmButton.round.towerGray {
-  color: white;
-  background-color: #b0bdc5;
-  border-color: #b0bdc5;
+  color: rgb(255, 255, 255);
+  background-color: rgb(176, 189, 197);
+  border-color: rgb(176, 189, 197);
 }
-
 @media (hover: hover) {
   .dsmButton.round.towerGray:hover {
-    background-color: #89959c;
-    border-color: #89959c;
+    background-color: rgb(137, 149, 156);
+    border-color: rgb(137, 149, 156);
   }
 }
-
 .dsmButton.round.codGray {
-  color: white;
-  background-color: #0f0f0f;
-  border-color: #0f0f0f;
+  color: rgb(255, 255, 255);
+  background-color: rgb(15, 15, 15);
+  border-color: rgb(15, 15, 15);
 }
-
 @media (hover: hover) {
   .dsmButton.round.codGray:hover {
-    background-color: #2d2d2d;
-    border-color: #2d2d2d;
+    background-color: rgb(45, 45, 45);
+    border-color: rgb(45, 45, 45);
   }
 }
-
 .dsmButton.round.white {
-  color: #3a4850;
-  background-color: white;
-  border-color: white;
+  color: rgb(58, 72, 80);
+  background-color: rgb(255, 255, 255);
+  border-color: rgb(255, 255, 255);
 }
-
 @media (hover: hover) {
   .dsmButton.round.white:hover {
-    background-color: #f1f3f4;
-    border-color: #f1f3f4;
+    background-color: rgb(241, 243, 244);
+    border-color: rgb(241, 243, 244);
   }
 }
-
 .dsmButton.round.disabled {
-  background-color: #1c86da;
+  background-color: rgb(28, 134, 218);
   border-color: transparent;
   cursor: default;
 }
-
 .dsmButton.round.disabled span {
   display: none;
 }
-
 .dsmButton.round.disabled.ghost {
-  background-color: #1c86da;
-  border-color: #1c86da;
+  background-color: rgb(28, 134, 218);
+  border-color: rgb(28, 134, 218);
 }
-
 .dsmButton.round.disabled.ghost > svg path {
-  fill: #57b5ff !important;
+  fill: rgb(87, 181, 255) !important;
 }
-
 .dsmButton.round.disabled.porcelain {
-  background-color: #e1e1e1;
+  background-color: rgb(225, 225, 225);
 }
-
 .dsmButton.round.disabled.porcelain > svg path {
-  fill: #b0bdc5 !important;
+  fill: rgb(176, 189, 197) !important;
 }
-
 .dsmButton.round.disabled.regentGray {
-  background-color: #3a4850;
+  background-color: rgb(58, 72, 80);
 }
-
 .dsmButton.round.disabled.regentGray > svg path {
-  fill: #89959c !important;
+  fill: rgb(137, 149, 156) !important;
 }
-
 .dsmButton.round.disabled.towerGray {
-  background-color: #89959c;
+  background-color: rgb(137, 149, 156);
 }
-
 .dsmButton.round.disabled.towerGray > svg path {
-  fill: #b0bdc5 !important;
+  fill: rgb(176, 189, 197) !important;
 }
-
 .dsmButton.round.disabled.codGray {
-  background-color: #2d2d2d;
+  background-color: rgb(45, 45, 45);
 }
-
 .dsmButton.round.disabled.codGray > svg path {
-  fill: #898989 !important;
+  fill: rgb(137, 137, 137) !important;
 }
-
 .dsmButton.round.disabled.white {
-  background-color: #f1f3f4;
+  background-color: rgb(241, 243, 244);
 }
-
 .dsmButton.round.disabled.white > svg path {
-  fill: #b0bdc5 !important;
+  fill: rgb(176, 189, 197) !important;
 }
-
 .dsmButton.round > svg {
   height: 100%;
   -webkit-transform-origin: center center;
@@ -208,87 +178,71 @@ a.dsmButton {
   inset: 0px;
   margin: auto;
 }
-
 .dsmButton.round > svg path {
-  fill: #57b5ff;
+  fill: rgb(87, 181, 255);
 }
-
 .dsmButton.round:disabled, .dsmButton.round.ghost.round:disabled {
   border-color: transparent;
-  background-color: #d8d8d8 !important;
-  color: white !important;
+  background-color: rgb(216, 216, 216) !important;
+  color: rgb(255, 255, 255) !important;
 }
-
 .dsmButton.round:disabled span, .dsmButton.round.ghost.round:disabled span {
   opacity: 1;
 }
-
 .dsmButton.small {
   font-size: 14px;
   height: 32px;
   padding: 0 16px;
 }
-
 .dsmButton.small.round {
   padding: 2px 11px;
 }
-
 @media (max-width: 768px) {
   .dsmButton.small.round {
     padding: 6px 18px;
   }
 }
-
 .dsmButton.regular {
   height: 48px;
   padding: 0 18px;
   font-size: 18px;
 }
-
 .dsmButton.regular.round {
   padding: 10px 20px;
 }
-
 @media (max-width: 768px) {
   .dsmButton.regular.round {
     padding: 13px 23px;
   }
 }
-
 .dsmButton.medium {
   height: 40px;
   font-size: 16px;
 }
-
 .dsmButton.medium.round {
   padding: 6px 17px;
 }
-
 @media (max-width: 768px) {
   .dsmButton.medium.round {
     padding: 11px 20px;
   }
 }
-
 .dsmButton:not(.round).large {
   height: 64px;
   padding: 0 24px;
   font-size: 20px;
 }
-
 .dsmButton:not(.round).extralarge {
   height: 70px;
   padding: 0 29px;
   font-size: 22px;
 }
-
 @media (hover: hover) {
   .dsmButton:not(.round):hover {
-    background-color: #e36000;
-    border-color: #e36000;
+    background-color: rgb(227, 96, 0);
+    border-color: rgb(227, 96, 0);
   }
 }
-
 @media (max-width: 768px) {
   .dsmButton:not(.round) {
     height: 48px;
@@ -304,39 +258,34 @@ a.dsmButton {
     padding: 0 21px;
   }
 }
-
 .dsmButton:disabled {
   cursor: default;
   pointer-events: none;
-  background-color: #d8d8d8;
-  color: white;
+  background-color: rgb(216, 216, 216);
+  color: rgb(255, 255, 255);
   border-color: rgba(0, 0, 0, 0);
 }
-
 .dsmButton.ghost {
   background-color: transparent;
-  color: #ff6c00;
+  color: rgb(255, 108, 0);
   border: 1px solid;
 }
-
 @media (hover: hover) {
   .dsmButton.ghost:hover {
     border-width: 1px;
     color: white;
-    border-color: #ff6c00;
-    background-color: #ff6c00;
+    border-color: rgb(255, 108, 0);
+    background-color: rgb(255, 108, 0);
   }
 }
-
 .dsmButton.ghost.secondary, .dsmButton.ghost.round {
-  color: #2196f3;
+  color: rgb(33, 150, 243);
   background-color: transparent;
 }
-
 @media (hover: hover) {
   .dsmButton.ghost.secondary:hover, .dsmButton.ghost.round:hover {
-    border-color: #1c86da;
-    background-color: #1c86da;
+    border-color: rgb(28, 134, 218);
+    background-color: rgb(28, 134, 218);
     color: white;
   }
   .dsmButton.ghost.secondary:hover span svg*[stroke]:not[stroke=""], .dsmButton.ghost.round:hover span svg*[stroke]:not[stroke=""] {
@@ -346,35 +295,31 @@ a.dsmButton {
     fill: white;
   }
 }
-
 .dsmButton.ghost.round.porcelain {
-  border-color: #e7ebed;
-  color: #e7ebed;
+  border-color: rgb(231, 235, 237);
+  color: rgb(231, 235, 237);
 }
-
 @media (hover: hover) {
   .dsmButton.ghost.round.porcelain:hover {
-    background-color: #e1e1e1;
-    border-color: #e1e1e1;
-    color: #3a4850;
+    background-color: rgb(225, 225, 225);
+    border-color: rgb(225, 225, 225);
+    color: rgb(58, 72, 80);
   }
   .dsmButton.ghost.round.porcelain:hover span svg*[stroke]:not[stroke=""] {
-    stroke: #3a4850;
+    stroke: rgb(58, 72, 80);
   }
   .dsmButton.ghost.round.porcelain:hover span svg*[fill]:not[fill=""] {
-    fill: #3a4850;
+    fill: rgb(58, 72, 80);
   }
 }
-
 .dsmButton.ghost.round.regentGray {
-  color: #89959c;
-  border-color: #89959c;
+  color: rgb(137, 149, 156);
+  border-color: rgb(137, 149, 156);
 }
-
 @media (hover: hover) {
   .dsmButton.ghost.round.regentGray:hover {
-    background-color: #3a4850;
-    border-color: #3a4850;
+    background-color: rgb(58, 72, 80);
+    border-color: rgb(58, 72, 80);
     color: white;
   }
   .dsmButton.ghost.round.regentGray:hover span svg*[stroke]:not[stroke=""] {
@@ -384,16 +329,14 @@ a.dsmButton {
     fill: white;
   }
 }
-
 .dsmButton.ghost.round.towerGray {
-  color: #b0bdc5;
-  border-color: #b0bdc5;
+  color: rgb(176, 189, 197);
+  border-color: rgb(176, 189, 197);
 }
-
 @media (hover: hover) {
   .dsmButton.ghost.round.towerGray:hover {
-    background-color: #89959c;
-    border-color: #89959c;
+    background-color: rgb(137, 149, 156);
+    border-color: rgb(137, 149, 156);
     color: white;
   }
   .dsmButton.ghost.round.towerGray:hover span svg*[stroke]:not[stroke=""] {
@@ -403,16 +346,14 @@ a.dsmButton {
     fill: white;
   }
 }
-
 .dsmButton.ghost.round.codGray {
-  border-color: #0f0f0f;
-  color: #0f0f0f;
+  border-color: rgb(15, 15, 15);
+  color: rgb(15, 15, 15);
 }
-
 @media (hover: hover) {
   .dsmButton.ghost.round.codGray:hover {
-    background-color: #2d2d2d;
-    border-color: #2d2d2d;
+    background-color: rgb(45, 45, 45);
+    border-color: rgb(45, 45, 45);
     color: white;
   }
   .dsmButton.ghost.round.codGray:hover span svg*[stroke]:not[stroke=""] {
@@ -422,92 +363,76 @@ a.dsmButton {
     fill: white;
   }
 }
-
 .dsmButton.ghost.round.white {
   color: white;
   border-color: white;
 }
-
 @media (hover: hover) {
   .dsmButton.ghost.round.white:hover {
-    background-color: white;
-    border-color: white;
+    background-color: rgb(255, 255, 255);
+    border-color: rgb(255, 255, 255);
     color: #3A4850;
   }
 }
-
 .dsmButton.secondary {
-  background-color: #2196f3;
-  border-color: #2196f3;
+  background-color: rgb(33, 150, 243);
+  border-color: rgb(33, 150, 243);
 }
-
 @media (hover: hover) {
   .dsmButton.secondary:hover {
-    background-color: #1c86da;
-    border-color: #1c86da;
+    background-color: rgb(28, 134, 218);
+    border-color: rgb(28, 134, 218);
   }
 }
-
 .dsmButton.porcelain {
-  color: #3a4850;
-  background-color: #e7ebed;
-  border-color: #e7ebed;
+  color: rgb(58, 72, 80);
+  background-color: rgb(231, 235, 237);
+  border-color: rgb(231, 235, 237);
 }
-
 @media (hover: hover) {
   .dsmButton.porcelain:hover {
-    background-color: #e1e1e1;
-    border-color: #e1e1e1;
+    background-color: rgb(225, 225, 225);
+    border-color: rgb(225, 225, 225);
   }
 }
-
 .dsmButton:disabled .progress + * {
   opacity: 0.5;
 }
-
 .dsmButton.ghost.disabled {
-  background-color: #e36000;
+  background-color: rgb(227, 96, 0);
   color: white;
 }
-
 .dsmButton.disabled {
-  background-color: #e36000;
+  background-color: rgb(227, 96, 0);
   border: none;
 }
-
 .dsmButton.disabled.secondary, .dsmButton.secondary:disabled {
-  background-color: #1c86da;
+  background-color: rgb(28, 134, 218);
 }
-
 .dsmButton.disabled.secondary span, .dsmButton.secondary:disabled span {
   opacity: 0.5;
 }
-
 .dsmButton.secondary .progress {
-  background-color: #3fabe6;
+  background-color: rgb(63, 171, 230);
 }
-
 .dsmButton.secondary .progress .indeterminate {
-  background-color: #1b467e;
+  background-color: rgb(27, 70, 126);
 }
-
 .dsmButton .progress {
   position: absolute;
   height: 4px;
   display: block;
   width: 100%;
-  background-color: #f59a34;
+  background-color: rgb(245, 154, 52);
   top: 0px;
   background-clip: padding-box;
   overflow: hidden;
 }
-
 .dsmButton .progress .indeterminate {
-  background-color: #d2431e;
+  background-color: rgb(210, 67, 30);
 }
-
 .dsmButton .progress .indeterminate:before {
-  content: '';
+  content: "";
   position: absolute;
   background-color: inherit;
   top: 0;
@@ -517,9 +442,8 @@ a.dsmButton {
   -webkit-animation: indeterminate 2.1s cubic-bezier(0.65, 0.815, 0.735, 0.395) infinite;
           animation: indeterminate 2.1s cubic-bezier(0.65, 0.815, 0.735, 0.395) infinite;
 }
-
 .dsmButton .progress .indeterminate:after {
-  content: '';
+  content: "";
   position: absolute;
   background-color: inherit;
   top: 0;
@@ -531,7 +455,6 @@ a.dsmButton {
   -webkit-animation-delay: 1.15s;
           animation-delay: 1.15s;
 }
-
 @-webkit-keyframes indeterminate {
   0% {
     left: -35%;
@@ -546,7 +469,6 @@ a.dsmButton {
     right: -90%;
   }
 }
-
 @keyframes indeterminate {
   0% {
     left: -35%;
@@ -561,7 +483,6 @@ a.dsmButton {
     right: -90%;
   }
 }
-
 @-webkit-keyframes indeterminate-short {
   0% {
     left: -200%;
@@ -576,7 +497,6 @@ a.dsmButton {
     right: -8%;
   }
 }
-
 @keyframes indeterminate-short {
   0% {
     left: -200%;
@@ -603,32 +523,26 @@ svg.dsmIcons {
   width: 36px;
   height: 20px;
 }
-
 .dsmSlider input[type=checkbox] {
   opacity: 0;
   width: 0;
   height: 0;
 }
-
 .dsmSlider input[type=checkbox]:checked + .slider {
   background-color: #2196F3;
 }
-
 .dsmSlider input[type=checkbox]:focus + .slider {
   -webkit-box-shadow: 0 0 1px #2196F3;
           box-shadow: 0 0 1px #2196F3;
 }
-
 .dsmSlider input[type=checkbox]:checked + .slider:before {
   -webkit-transform: translateX(16px);
           transform: translateX(16px);
 }
-
 .dsmSlider input[type=checkbox]:disabled + .slider {
   cursor: default;
   background-color: #F1F1F1;
 }
-
 .dsmSlider .slider {
   position: absolute;
   cursor: pointer;
@@ -637,11 +551,10 @@ svg.dsmIcons {
   right: 0;
   bottom: 0;
   background-color: #B0BDC5;
-  -webkit-transition: .4s;
+  -webkit-transition: 0.4s;
   border-radius: 34px;
-  transition: .4s;
+  transition: 0.4s;
 }
-
 .dsmSlider .slider:before {
   position: absolute;
   content: "";
@@ -653,17 +566,16 @@ svg.dsmIcons {
   left: 2px;
   bottom: 2px;
   background-color: white;
-  -webkit-transition: .4s;
-  transition: .4s;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
 }
 
 .dsmForm {
   font-family: Roboto;
 }
-
 .dsmForm textarea {
   resize: none;
-  border: 1px solid #d8d8d8;
+  border: 1px solid rgb(216, 216, 216);
   border-radius: 4px;
   padding: 14px 18px;
   width: 100%;
@@ -677,111 +589,97 @@ svg.dsmIcons {
   font-size: 15px;
   background: white;
 }
-
 .dsmForm textarea:focus {
-  border: 1px solid #3fabe6;
+  border: 1px solid rgb(63, 171, 230);
 }
-
 .dsmForm textarea.error {
   color: #000;
-  border: 1px solid #d2431e;
-  background: #fff7f7;
+  border: 1px solid rgb(210, 67, 30);
+  background: rgb(255, 247, 247);
 }
-
 .dsmForm textarea::-webkit-input-placeholder {
-  color: #6b6b6b;
+  color: rgb(107, 107, 107);
 }
-
+.dsmForm textarea::-moz-placeholder {
+  color: rgb(107, 107, 107);
+}
 .dsmForm textarea:-ms-input-placeholder {
-  color: #6b6b6b;
+  color: rgb(107, 107, 107);
 }
-
 .dsmForm textarea::-ms-input-placeholder {
-  color: #6b6b6b;
+  color: rgb(107, 107, 107);
 }
-
 .dsmForm textarea::placeholder {
-  color: #6b6b6b;
+  color: rgb(107, 107, 107);
 }
-
 .dsmForm textarea:disabled {
-  border-color: #dedede;
+  border-color: rgb(222, 222, 222);
   pointer-events: none;
 }
-
 .dsmForm textarea:disabled::-webkit-input-placeholder {
-  color: #c8c8c8;
+  color: rgb(200, 200, 200);
 }
-
+.dsmForm textarea:disabled::-moz-placeholder {
+  color: rgb(200, 200, 200);
+}
 .dsmForm textarea:disabled:-ms-input-placeholder {
-  color: #c8c8c8;
+  color: rgb(200, 200, 200);
 }
-
 .dsmForm textarea:disabled::-ms-input-placeholder {
-  color: #c8c8c8;
+  color: rgb(200, 200, 200);
 }
-
 .dsmForm textarea:disabled::placeholder {
-  color: #c8c8c8;
+  color: rgb(200, 200, 200);
 }
-
 .dsmForm textarea::-webkit-scrollbar {
   cursor: pointer;
   width: 16px;
 }
-
 .dsmForm textarea::-webkit-scrollbar-thumb {
   cursor: pointer;
-  background: #e7ebed;
+  background: rgb(231, 235, 237);
   border-radius: 16px;
-  border: 5px solid white;
+  border: 5px solid rgb(255, 255, 255);
 }
-
 .dsmForm textarea::-webkit-scrollbar-track {
   cursor: pointer;
-  background: white;
+  background: rgb(255, 255, 255);
   border-radius: 16px;
 }
-
 .dsmForm .inputLabel {
   position: relative;
-  color: #6b6b6b;
+  color: rgb(107, 107, 107);
 }
-
+.dsmForm .inputLabel input[type=url],
 .dsmForm .inputLabel input[type=text],
 .dsmForm .inputLabel input[type=email],
 .dsmForm .inputLabel input[type=number] {
   padding-top: 20px;
 }
-
-.dsmForm .inputLabel input[type=text]::-webkit-input-placeholder,
-.dsmForm .inputLabel input[type=email]::-webkit-input-placeholder,
-.dsmForm .inputLabel input[type=number]::-webkit-input-placeholder {
+.dsmForm .inputLabel input[type=url]::-webkit-input-placeholder, .dsmForm .inputLabel input[type=text]::-webkit-input-placeholder, .dsmForm .inputLabel input[type=email]::-webkit-input-placeholder, .dsmForm .inputLabel input[type=number]::-webkit-input-placeholder {
   opacity: 0;
-  color: #dedede;
+  color: rgb(222, 222, 222);
 }
-
-.dsmForm .inputLabel input[type=text]:-ms-input-placeholder,
-.dsmForm .inputLabel input[type=email]:-ms-input-placeholder,
-.dsmForm .inputLabel input[type=number]:-ms-input-placeholder {
+.dsmForm .inputLabel input[type=url]::-moz-placeholder, .dsmForm .inputLabel input[type=text]::-moz-placeholder, .dsmForm .inputLabel input[type=email]::-moz-placeholder, .dsmForm .inputLabel input[type=number]::-moz-placeholder {
   opacity: 0;
-  color: #dedede;
+  color: rgb(222, 222, 222);
 }
-
-.dsmForm .inputLabel input[type=text]::-ms-input-placeholder,
-.dsmForm .inputLabel input[type=email]::-ms-input-placeholder,
-.dsmForm .inputLabel input[type=number]::-ms-input-placeholder {
+.dsmForm .inputLabel input[type=url]:-ms-input-placeholder, .dsmForm .inputLabel input[type=text]:-ms-input-placeholder, .dsmForm .inputLabel input[type=email]:-ms-input-placeholder, .dsmForm .inputLabel input[type=number]:-ms-input-placeholder {
   opacity: 0;
-  color: #dedede;
+  color: rgb(222, 222, 222);
 }
-
+.dsmForm .inputLabel input[type=url]::-ms-input-placeholder, .dsmForm .inputLabel input[type=text]::-ms-input-placeholder, .dsmForm .inputLabel input[type=email]::-ms-input-placeholder, .dsmForm .inputLabel input[type=number]::-ms-input-placeholder {
+  opacity: 0;
+  color: rgb(222, 222, 222);
+}
+.dsmForm .inputLabel input[type=url]::placeholder,
 .dsmForm .inputLabel input[type=text]::placeholder,
 .dsmForm .inputLabel input[type=email]::placeholder,
 .dsmForm .inputLabel input[type=number]::placeholder {
   opacity: 0;
-  color: #dedede;
+  color: rgb(222, 222, 222);
 }
-
+.dsmForm .inputLabel input[type=url].noLabel,
 .dsmForm .inputLabel input[type=text].noLabel,
 .dsmForm .inputLabel input[type=email].noLabel,
 .dsmForm .inputLabel input[type=number].noLabel {
@@ -789,70 +687,56 @@ svg.dsmIcons {
   padding-bottom: 0;
   height: 48px;
 }
-
-.dsmForm .inputLabel input[type=text].noLabel::-webkit-input-placeholder,
-.dsmForm .inputLabel input[type=email].noLabel::-webkit-input-placeholder,
-.dsmForm .inputLabel input[type=number].noLabel::-webkit-input-placeholder {
+.dsmForm .inputLabel input[type=url].noLabel::-webkit-input-placeholder, .dsmForm .inputLabel input[type=text].noLabel::-webkit-input-placeholder, .dsmForm .inputLabel input[type=email].noLabel::-webkit-input-placeholder, .dsmForm .inputLabel input[type=number].noLabel::-webkit-input-placeholder {
   opacity: 1;
 }
-
-.dsmForm .inputLabel input[type=text].noLabel:-ms-input-placeholder,
-.dsmForm .inputLabel input[type=email].noLabel:-ms-input-placeholder,
-.dsmForm .inputLabel input[type=number].noLabel:-ms-input-placeholder {
+.dsmForm .inputLabel input[type=url].noLabel::-moz-placeholder, .dsmForm .inputLabel input[type=text].noLabel::-moz-placeholder, .dsmForm .inputLabel input[type=email].noLabel::-moz-placeholder, .dsmForm .inputLabel input[type=number].noLabel::-moz-placeholder {
   opacity: 1;
 }
-
-.dsmForm .inputLabel input[type=text].noLabel::-ms-input-placeholder,
-.dsmForm .inputLabel input[type=email].noLabel::-ms-input-placeholder,
-.dsmForm .inputLabel input[type=number].noLabel::-ms-input-placeholder {
+.dsmForm .inputLabel input[type=url].noLabel:-ms-input-placeholder, .dsmForm .inputLabel input[type=text].noLabel:-ms-input-placeholder, .dsmForm .inputLabel input[type=email].noLabel:-ms-input-placeholder, .dsmForm .inputLabel input[type=number].noLabel:-ms-input-placeholder {
   opacity: 1;
 }
-
+.dsmForm .inputLabel input[type=url].noLabel::-ms-input-placeholder, .dsmForm .inputLabel input[type=text].noLabel::-ms-input-placeholder, .dsmForm .inputLabel input[type=email].noLabel::-ms-input-placeholder, .dsmForm .inputLabel input[type=number].noLabel::-ms-input-placeholder {
+  opacity: 1;
+}
+.dsmForm .inputLabel input[type=url].noLabel::placeholder,
 .dsmForm .inputLabel input[type=text].noLabel::placeholder,
 .dsmForm .inputLabel input[type=email].noLabel::placeholder,
 .dsmForm .inputLabel input[type=number].noLabel::placeholder {
   opacity: 1;
 }
-
-.dsmForm .inputLabel input[type=text]:focus-within::-webkit-input-placeholder,
-.dsmForm .inputLabel input[type=email]:focus-within::-webkit-input-placeholder,
-.dsmForm .inputLabel input[type=number]:focus-within::-webkit-input-placeholder {
+.dsmForm .inputLabel input[type=url]:focus-within::-webkit-input-placeholder, .dsmForm .inputLabel input[type=text]:focus-within::-webkit-input-placeholder, .dsmForm .inputLabel input[type=email]:focus-within::-webkit-input-placeholder, .dsmForm .inputLabel input[type=number]:focus-within::-webkit-input-placeholder {
   opacity: 1;
 }
-
-.dsmForm .inputLabel input[type=text]:focus-within:-ms-input-placeholder,
-.dsmForm .inputLabel input[type=email]:focus-within:-ms-input-placeholder,
-.dsmForm .inputLabel input[type=number]:focus-within:-ms-input-placeholder {
+.dsmForm .inputLabel input[type=url]:focus-within::-moz-placeholder, .dsmForm .inputLabel input[type=text]:focus-within::-moz-placeholder, .dsmForm .inputLabel input[type=email]:focus-within::-moz-placeholder, .dsmForm .inputLabel input[type=number]:focus-within::-moz-placeholder {
   opacity: 1;
 }
-
-.dsmForm .inputLabel input[type=text]:focus-within::-ms-input-placeholder,
-.dsmForm .inputLabel input[type=email]:focus-within::-ms-input-placeholder,
-.dsmForm .inputLabel input[type=number]:focus-within::-ms-input-placeholder {
+.dsmForm .inputLabel input[type=url]:focus-within:-ms-input-placeholder, .dsmForm .inputLabel input[type=text]:focus-within:-ms-input-placeholder, .dsmForm .inputLabel input[type=email]:focus-within:-ms-input-placeholder, .dsmForm .inputLabel input[type=number]:focus-within:-ms-input-placeholder {
   opacity: 1;
 }
-
+.dsmForm .inputLabel input[type=url]:focus-within::-ms-input-placeholder, .dsmForm .inputLabel input[type=text]:focus-within::-ms-input-placeholder, .dsmForm .inputLabel input[type=email]:focus-within::-ms-input-placeholder, .dsmForm .inputLabel input[type=number]:focus-within::-ms-input-placeholder {
+  opacity: 1;
+}
+.dsmForm .inputLabel input[type=url]:focus-within::placeholder,
 .dsmForm .inputLabel input[type=text]:focus-within::placeholder,
 .dsmForm .inputLabel input[type=email]:focus-within::placeholder,
 .dsmForm .inputLabel input[type=number]:focus-within::placeholder {
   opacity: 1;
 }
-
 .dsmForm .inputLabel:focus-within label {
   -webkit-transform: translateY(-13px);
           transform: translateY(-13px);
-  color: #aaaaaa;
+  color: rgb(170, 170, 170);
   font-size: 11px;
   line-height: 19px;
   letter-spacing: 0.16px;
 }
-
 .dsmForm .inputLabel label {
   position: absolute;
   left: 15px;
   top: 50%;
   margin-top: -9px;
-  color: #6b6b6b;
+  color: rgb(107, 107, 107);
   font-size: 15px;
   line-height: 19px;
   letter-spacing: 0.21px;
@@ -865,18 +749,18 @@ svg.dsmIcons {
   overflow: hidden;
   width: calc(100% - 30px);
 }
-
+.dsmForm input[type=url],
 .dsmForm input[type=text],
 .dsmForm input[type=email],
 .dsmForm input[type=number] {
-  color: #6b6b6b;
+  color: rgb(107, 107, 107);
   font-size: 16px;
   font-weight: 400;
   width: 100%;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   display: block;
-  border: 1px solid #d8d8d8;
+  border: 1px solid rgb(216, 216, 216);
   border-radius: 4px;
   padding: 8px 15px;
   -webkit-appearance: none;
@@ -884,45 +768,43 @@ svg.dsmIcons {
           appearance: none;
   outline: none;
 }
-
+.dsmForm input[type=url]:focus,
 .dsmForm input[type=text]:focus,
 .dsmForm input[type=email]:focus,
 .dsmForm input[type=number]:focus {
-  color: black;
-  border-color: #3fabe6;
+  color: rgb(0, 0, 0);
+  border-color: rgb(63, 171, 230);
 }
-
+.dsmForm input[type=url].error,
 .dsmForm input[type=text].error,
 .dsmForm input[type=email].error,
 .dsmForm input[type=number].error {
   border: 1px solid #D2431E;
   background-color: #FFF4EB;
-  color: #e02020;
+  color: rgb(224, 32, 32);
 }
-
+.dsmForm input[type=url]:disabled,
 .dsmForm input[type=text]:disabled,
 .dsmForm input[type=email]:disabled,
 .dsmForm input[type=number]:disabled {
-  border-color: #dedede;
-  background: white;
+  border-color: rgb(222, 222, 222);
+  background: rgb(255, 255, 255);
   cursor: not-allowed;
 }
-
+.dsmForm input[type=url]:disabled + label,
 .dsmForm input[type=text]:disabled + label,
 .dsmForm input[type=email]:disabled + label,
 .dsmForm input[type=number]:disabled + label {
-  color: #c8c8c8;
+  color: rgb(200, 200, 200);
 }
-
 .dsmForm span.error {
   margin-top: 4px;
-  color: #d2431e;
+  color: rgb(210, 67, 30);
   font-size: 12px;
   line-height: 12px;
   display: block;
   text-align: left;
 }
-
 .dsmForm label {
   font-size: 14px;
   display: block;
@@ -940,7 +822,6 @@ svg.dsmIcons {
   -ms-flex-align: center;
       align-items: center;
 }
-
 .radioContainer input[type=radio] {
   position: absolute;
   top: 0px;
@@ -954,36 +835,28 @@ svg.dsmIcons {
   opacity: 0;
   z-index: 1;
 }
-
 .radioContainer input[type=radio]:disabled {
   cursor: default;
 }
-
 .radioContainer input[type=radio]:disabled + .radioStyling {
-  border: 1px solid #dedede !important;
-  border-color: #dedede !important;
+  border: 1px solid rgb(222, 222, 222) !important;
+  border-color: rgb(222, 222, 222) !important;
 }
-
 .radioContainer input[type=radio]:disabled:checked + .radioStyling::before {
-  background-color: #dedede;
+  background-color: rgb(222, 222, 222);
 }
-
 .radioContainer input[type=radio]:checked + .radioStyling {
   border: 2px solid #2196F3;
 }
-
 .radioContainer input[type=radio]:checked + .radioStyling::before {
-  background-color: #2196f3;
+  background-color: rgb(33, 150, 243);
 }
-
 .radioContainer input[type=radio]:checked + .radioStyling.error {
   background-color: #fff;
 }
-
 .radioContainer:hover .radioStyling {
   border: 1px solid #6B6B6B;
 }
-
 .radioContainer .radioStyling {
   display: block;
   position: relative;
@@ -998,7 +871,6 @@ svg.dsmIcons {
   height: 12px;
   border: 1px solid #AAAAAA;
 }
-
 .radioContainer .radioStyling::before {
   content: "";
   position: absolute;
@@ -1013,7 +885,6 @@ svg.dsmIcons {
   -webkit-transition: background-color 0.15s linear 0s;
   transition: background-color 0.15s linear 0s;
 }
-
 .radioContainer .radioStyling.ticked.medium, .radioContainer .radioStyling.ticked.large {
   background-color: transparent;
   display: -webkit-box;
@@ -1028,33 +899,27 @@ svg.dsmIcons {
       -ms-flex-align: center;
           align-items: center;
 }
-
 .radioContainer .radioStyling.ticked svg {
   display: none;
 }
-
 .radioContainer .radioStyling.medium {
   width: 22px;
   height: 22px;
 }
-
 .radioContainer .radioStyling.medium::before {
   width: 12px;
   height: 12px;
 }
-
 .radioContainer .radioStyling.large {
   width: 30px;
   height: 30px;
 }
-
 .radioContainer .radioStyling.large::before {
   width: 18px;
   height: 18px;
 }
-
 .radioContainer .radioStyling.error {
-  border: 1px solid #d2431e;
+  border: 1px solid rgb(210, 67, 30);
   background-color: #FFF7F7;
 }
 
@@ -1073,24 +938,18 @@ svg.dsmIcons {
   margin-bottom: 0;
   width: 16px;
 }
-
-.checkboxContainer.large,
-.checkboxContainer.large .checkbox {
+.checkboxContainer.large, .checkboxContainer.large .checkbox {
   height: 28px !important;
   width: 28px !important;
 }
-
-.checkboxContainer.large svg,
-.checkboxContainer.large .checkbox svg {
+.checkboxContainer.large svg, .checkboxContainer.large .checkbox svg {
   height: 12px !important;
   width: 14px !important;
 }
-
 .checkboxContainer.large .checkbox {
   height: 24px;
   width: 24px;
 }
-
 .checkboxContainer.large .checkbox:after {
   height: 17px;
   width: 8px;
@@ -1098,17 +957,14 @@ svg.dsmIcons {
   top: 1px;
   border-width: 0 3px 3px 0;
 }
-
 .checkboxContainer.medium {
   height: 24px !important;
   width: 24px !important;
 }
-
 .checkboxContainer.medium .checkbox {
   height: 24px;
   width: 24px;
 }
-
 .checkboxContainer.medium .checkbox::after {
   height: 16px;
   width: 7px;
@@ -1116,7 +972,6 @@ svg.dsmIcons {
   top: 1px;
   border-width: 0 3px 3px 0;
 }
-
 .checkboxContainer input[type=checkbox] {
   position: absolute;
   opacity: 0;
@@ -1124,24 +979,19 @@ svg.dsmIcons {
   height: 0;
   width: 0;
 }
-
 .checkboxContainer input[type=checkbox]:checked ~ .checkbox::after {
   display: block;
 }
-
 .checkboxContainer input[type=checkbox]:checked ~ .checkbox {
-  border: 1px solid #3a4850;
+  border: 1px solid rgb(58, 72, 80);
   background-color: #fff;
 }
-
 .checkboxContainer input[type=checkbox]:disabled + .checkbox:hover {
   border: 1px solid #DEDEDE;
 }
-
 .checkboxContainer input[type=checkbox]:disabled + .checkbox {
   border: 1px solid #DEDEDE;
 }
-
 .checkboxContainer input[type=checkbox]:checked + .checkbox.ticked {
   background-color: #2196F3;
   border-color: #2196F3;
@@ -1157,26 +1007,22 @@ svg.dsmIcons {
       -ms-flex-align: center;
           align-items: center;
 }
-
 .checkboxContainer input[type=checkbox]:checked + .checkbox.ticked::after {
   border: none;
 }
-
 .checkboxContainer input[type=checkbox]:checked + .checkbox.ticked svg {
   display: block;
 }
-
 .checkboxContainer .checkbox:after {
   left: 4px;
   top: 1px;
   height: 8px;
   width: 4px;
-  border: solid #2196f3;
+  border: solid rgb(33, 150, 243);
   border-width: 0 2px 2px 0;
   -webkit-transform: rotate(45deg);
   transform: rotate(45deg);
 }
-
 .checkboxContainer .checkbox {
   position: absolute;
   top: 0;
@@ -1191,60 +1037,50 @@ svg.dsmIcons {
   transition: 0.2s border-color;
   background-color: white;
 }
-
 .checkboxContainer .checkbox.ticked {
   border-radius: 50%;
 }
-
 .checkboxContainer .checkbox.ticked svg {
   display: none;
   stroke: white;
   height: 10px;
   width: 10px;
 }
-
 .checkboxContainer .checkbox:hover {
-  border: 1px solid #6b6b6b;
+  border: 1px solid rgb(107, 107, 107);
 }
-
 .checkboxContainer .checkbox::after {
   content: "";
   position: absolute;
   display: none;
 }
-
 .checkboxContainer .checkbox.error {
   margin-top: 0;
-  background-color: #fff7f7;
-  border: 1px solid #d2431e;
+  background-color: rgb(255, 247, 247);
+  border: 1px solid rgb(210, 67, 30);
 }
 
 .selectContainer {
   width: 280px;
 }
-
 .selectContainer.small button {
   height: 32px;
 }
-
 .selectContainer.large button {
   height: 56px;
 }
-
 .selectContainer.error button {
-  border: 1px solid #d2431e;
-  background-color: #fff7f7;
-  color: #b0bdc5;
+  border: 1px solid rgb(210, 67, 30);
+  background-color: rgb(255, 247, 247);
+  color: rgb(176, 189, 197);
 }
-
 .selectContainer.error button.filled {
-  color: #b0bdc5;
+  color: rgb(176, 189, 197);
 }
-
 .selectContainer button {
   background-color: white;
-  border: 1px solid #d8d8d8;
-  color: #0f0f0f;
+  border: 1px solid rgb(216, 216, 216);
+  color: rgb(15, 15, 15);
   font-size: inherit;
   font-family: Roboto;
   border-radius: 4px;
@@ -1262,11 +1098,10 @@ svg.dsmIcons {
   white-space: nowrap;
   text-overflow: ellipsis;
   overflow: hidden;
-  display: -ms-grid;
   display: grid;
-  -ms-grid-columns: 1fr auto;
-      grid-template-columns: 1fr auto;
+  grid-template-columns: 1fr auto;
   -webkit-column-gap: 10px;
+     -moz-column-gap: 10px;
           column-gap: 10px;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
@@ -1280,54 +1115,46 @@ svg.dsmIcons {
   -webkit-transition: 0.2s all;
   transition: 0.2s all;
 }
-
 .selectContainer button:disabled {
-  border: 1px solid #d8d8d8;
+  border: 1px solid rgb(216, 216, 216);
   cursor: default;
   pointer-events: none;
-  color: #d8d8d8 !important;
+  color: rgb(216, 216, 216) !important;
 }
-
 .selectContainer button:hover {
   text-decoration: none !important;
 }
-
 .selectContainer button.active {
   text-decoration: none !important;
-  border: 1px solid #2196f3;
+  border: 1px solid rgb(33, 150, 243);
   border-radius: 4px 4px 0px 0px;
   cursor: pointer;
-  color: #89959c;
+  color: rgb(137, 149, 156);
   z-index: 3;
 }
-
 .selectContainer button.active svg {
   -webkit-transform: rotate(180deg);
           transform: rotate(180deg);
 }
-
 .selectContainer button.filled {
-  color: #0f0f0f;
+  color: rgb(15, 15, 15);
 }
-
 .selectContainer button svg {
   width: 12px;
-  -webkit-transition: ease-in-out .2s all;
-  transition: ease-in-out .2s all;
+  -webkit-transition: ease-in-out 0.2s all;
+  transition: ease-in-out 0.2s all;
   -webkit-transform: rotate(0deg);
           transform: rotate(0deg);
 }
-
 .selectContainer button .selectedItem {
   overflow: hidden;
   text-overflow: ellipsis;
 }
-
 .selectContainer ul {
   display: none;
-  background-color: white;
+  background-color: rgb(255, 255, 255);
   border-radius: 0px 0px 4px 4px;
-  border-top: 1px solid #2196f3;
+  border-top: 1px solid rgb(33, 150, 243);
   position: absolute;
   width: 280px;
   z-index: 5;
@@ -1340,11 +1167,10 @@ svg.dsmIcons {
   padding: 10px 0px;
   max-height: 309px;
 }
-
 .selectContainer li {
   position: relative;
   font-family: Roboto;
-  color: #2d2d2d;
+  color: rgb(45, 45, 45);
   cursor: pointer;
   display: block;
   padding: 0px 20px;
@@ -1357,13 +1183,11 @@ svg.dsmIcons {
   font-size: 16px;
   margin: 0;
 }
-
 .selectContainer li:hover {
-  background-color: #f7f8f9;
+  background-color: rgb(247, 248, 249);
 }
-
 .selectContainer li.selected {
-  background-color: #f2f2f2;
+  background-color: rgb(242, 242, 242);
 }
 
 .dsmTooltip {
@@ -1372,17 +1196,14 @@ svg.dsmIcons {
   padding: 0 10px;
   padding-top: 20px;
 }
-
 .dsmTooltip.click:hover .container {
   opacity: 0;
   visibility: hidden;
 }
-
 .dsmTooltip:hover .container {
   opacity: 1;
   visibility: visible;
 }
-
 .dsmTooltip .item {
   bottom: 0;
   height: 18px;
@@ -1394,17 +1215,15 @@ svg.dsmIcons {
   text-align: center;
   font-size: 11px;
   vertical-align: middle;
-  color: #3fabe6;
-  background-color: white;
+  color: rgb(63, 171, 230);
+  background-color: rgb(255, 255, 255);
   border: 1px solid;
   cursor: pointer;
 }
-
 .dsmTooltip.click .container {
   -webkit-transition: none;
   transition: none;
 }
-
 .dsmTooltip .container {
   overflow: visible;
   opacity: 0;
@@ -1419,38 +1238,31 @@ svg.dsmIcons {
   left: 49px;
   padding-bottom: 8px;
 }
-
 .dsmTooltip.right {
   padding-top: 0;
   padding-left: 10px;
 }
-
 .dsmTooltip.right .arrow {
   left: unset;
   right: 0;
   top: 50%;
 }
-
 .dsmTooltip.right .container {
   padding-bottom: 0;
   padding-right: 8px;
 }
-
 .dsmTooltip.bottom {
   padding-top: 0;
 }
-
 .dsmTooltip.bottom .arrow {
   left: 50%;
   bottom: unset;
   top: 0;
 }
-
 .dsmTooltip.bottom .container {
   padding-bottom: 0;
   padding-top: 8px;
 }
-
 .dsmTooltip.close svg {
   position: absolute;
   top: 22px;
@@ -1460,23 +1272,19 @@ svg.dsmIcons {
   width: 12px;
   z-index: 3;
 }
-
 .dsmTooltip.left {
   padding-top: 0;
   padding-right: 10px;
 }
-
 .dsmTooltip.left .arrow {
   left: 0;
   right: unset;
   top: 50%;
 }
-
 .dsmTooltip.left .container {
   padding-bottom: 0;
   padding-left: 8px;
 }
-
 .dsmTooltip .arrow {
   position: absolute;
   border-width: 0px;
@@ -1487,23 +1295,21 @@ svg.dsmIcons {
   z-index: 1;
   width: 16px;
   height: 16px;
-  background-color: white;
+  background-color: rgb(255, 255, 255);
   -webkit-transform: rotate(45deg);
           transform: rotate(45deg);
   -webkit-box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 8px;
           box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 8px;
 }
-
 .dsmTooltip .infoBox {
   position: relative;
-  background-color: white;
+  background-color: rgb(255, 255, 255);
   font-size: 14px;
   border-radius: 12px;
   overflow: hidden;
   -webkit-box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 8px;
           box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 8px;
 }
-
 .dsmTooltip .infoBox:before {
   content: "";
   z-index: 2;
@@ -1512,9 +1318,8 @@ svg.dsmIcons {
   left: 0px;
   width: 100%;
   height: 100%;
-  background-color: white;
+  background-color: rgb(255, 255, 255);
 }
-
 .dsmTooltip .infoBox .textArea {
   color: black;
   padding: 20px;
@@ -1535,39 +1340,32 @@ svg.dsmIcons {
   font-size: 13px;
   white-space: nowrap;
 }
-
 .dsmBadge.premium {
-  background-color: #fef8ed;
-  color: #c08c17;
+  background-color: rgb(254, 248, 237);
+  color: rgb(192, 140, 23);
 }
-
 .dsmBadge.sales {
-  background-color: #feeef0;
-  color: #f02f41;
+  background-color: rgb(254, 238, 240);
+  color: rgb(240, 47, 65);
 }
-
 .dsmBadge.misc {
-  background-color: #e7f4fe;
-  color: #2c9cf4;
+  background-color: rgb(231, 244, 254);
+  color: rgb(44, 156, 244);
 }
-
 .dsmBadge.sellingFast {
-  background-color: #fff1e0;
-  color: #f57700;
+  background-color: rgb(255, 241, 224);
+  color: rgb(245, 119, 0);
 }
-
 .dsmBadge.small {
   border-radius: 4px 2px;
   padding: 5px 6px 3px;
   font-size: 11px;
 }
-
 .dsmBadge.big {
   border-radius: 4px 2px;
   padding: 6px 8px 5px 10px;
   font-size: 13px;
 }
-
 .dsmBadge.large {
   border-radius: 2px;
   padding: 9px 10px;
@@ -1578,52 +1376,45 @@ svg.dsmIcons {
   -webkit-box-shadow: 0 1px 0 0 rgba(58, 72, 80, 0.07), 0 2px 11px -1px rgba(176, 189, 197, 0.12);
           box-shadow: 0 1px 0 0 rgba(58, 72, 80, 0.07), 0 2px 11px -1px rgba(176, 189, 197, 0.12);
 }
-
 .dsmShadow.shadow-2 {
   -webkit-box-shadow: 0 1px 1px 0 rgba(58, 72, 80, 0.07), 0 4px 12px -1px rgba(176, 189, 197, 0.13), 0 1px 4px 1px rgba(137, 149, 156, 0.07);
           box-shadow: 0 1px 1px 0 rgba(58, 72, 80, 0.07), 0 4px 12px -1px rgba(176, 189, 197, 0.13), 0 1px 4px 1px rgba(137, 149, 156, 0.07);
 }
-
 .dsmShadow.shadow-3 {
   -webkit-box-shadow: 0 1px 2px 0 rgba(58, 72, 80, 0.07), 0 6px 13px 0 rgba(176, 189, 197, 0.14), 0 1px 6px 1px rgba(137, 149, 156, 0.09);
           box-shadow: 0 1px 2px 0 rgba(58, 72, 80, 0.07), 0 6px 13px 0 rgba(176, 189, 197, 0.14), 0 1px 6px 1px rgba(137, 149, 156, 0.09);
 }
-
 .dsmShadow.shadow-4 {
   -webkit-box-shadow: 0 1px 3px 0 rgba(58, 72, 80, 0.07), 0 8px 14px 0 rgba(176, 189, 197, 0.15), 0 2px 8px 1px rgba(137, 149, 156, 0.11);
           box-shadow: 0 1px 3px 0 rgba(58, 72, 80, 0.07), 0 8px 14px 0 rgba(176, 189, 197, 0.15), 0 2px 8px 1px rgba(137, 149, 156, 0.11);
 }
-
 .dsmShadow.shadow-5 {
   -webkit-box-shadow: 0 1px 4px 0 rgba(58, 72, 80, 0.07), 0 10px 15px 0 rgba(176, 189, 197, 0.16), 0 4px 10px 1px rgba(137, 149, 156, 0.13);
           box-shadow: 0 1px 4px 0 rgba(58, 72, 80, 0.07), 0 10px 15px 0 rgba(176, 189, 197, 0.16), 0 4px 10px 1px rgba(137, 149, 156, 0.13);
 }
-
 .dsmShadow.shadow-6 {
   -webkit-box-shadow: 0 1px 5px 1px rgba(58, 72, 80, 0.07), 0 12px 16px 0 rgba(176, 189, 197, 0.17), 0 6px 12px 1px rgba(137, 149, 156, 0.15);
           box-shadow: 0 1px 5px 1px rgba(58, 72, 80, 0.07), 0 12px 16px 0 rgba(176, 189, 197, 0.17), 0 6px 12px 1px rgba(137, 149, 156, 0.15);
 }
 
 @font-face {
-  font-family: 'brands';
+  font-family: "brands";
   src: url("../fonts/brands.eot?y0faqm");
   src: url("../fonts/brands.eot?y0faqm#iefix") format("embedded-opentype"), url("../fonts/brands.ttf?y0faqm") format("truetype"), url("../fonts/brands.woff?y0faqm") format("woff"), url("../fonts/brands.svg?y0faqm#icomoon") format("svg");
   font-weight: normal;
   font-style: normal;
   font-display: block;
 }
-
 svg.dsmLogo {
   height: 25px;
   width: auto;
 }
-
 svg.dsmLogo * {
   fill: black !important;
 }
 
 .dsmLogo {
-  font-family: 'brands' !important;
+  font-family: "brands" !important;
   font-style: normal;
   font-weight: normal;
   font-size: 25px;
@@ -1634,259 +1425,195 @@ svg.dsmLogo * {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-
 .dsmLogo.adidas:before {
   content: "\e900";
 }
-
 .dsmLogo.alain_mikli:before {
   content: "\e901";
 }
-
 .dsmLogo.armani_exchange:before {
   content: "\e902";
 }
-
 .dsmLogo.autoflex:before {
   content: "\e903";
 }
-
 .dsmLogo.balenciaga:before {
   content: "\e904";
 }
-
 .dsmLogo.blumarine:before {
   content: "\e905";
 }
-
 .dsmLogo.burberry:before {
   content: "\e906";
 }
-
 .dsmLogo.calvin_klein_ck:before {
   content: "\e907";
 }
-
 .dsmLogo.calvin_klein_cosmetics:before {
   content: "\e908";
 }
-
 .dsmLogo.calvin_klein:before {
   content: "\e909";
 }
-
 .dsmLogo.celine:before {
   content: "\e90a";
 }
-
 .dsmLogo.coach:before {
   content: "\e90b";
 }
-
 .dsmLogo.converse:before {
   content: "\e90c";
 }
-
 .dsmLogo.diva:before {
   content: "\e90d";
 }
-
 .dsmLogo.dkny:before {
   content: "\e90e";
 }
-
 .dsmLogo.dsquared2:before {
   content: "\e90f";
 }
-
 .dsmLogo.emporio_armani:before {
   content: "\e910";
 }
-
 .dsmLogo.ermenegildo_zenga:before {
   content: "\e911";
 }
-
 .dsmLogo.flexon:before {
   content: "\e912";
 }
-
 .dsmLogo.fossil:before {
   content: "\e913";
 }
-
 .dsmLogo.gant:before {
   content: "\e914";
 }
-
 .dsmLogo.giorgio_armani:before {
   content: "\e915";
 }
-
 .dsmLogo.givenchy:before {
   content: "\e916";
 }
-
 .dsmLogo.gucci:before {
   content: "\e917";
 }
-
 .dsmLogo.guess:before {
   content: "\e918";
 }
-
 .dsmLogo.hugo_boss:before {
   content: "\e919";
 }
-
 .dsmLogo.jimmy_choo:before {
   content: "\e91a";
 }
-
 .dsmLogo.kate_spade:before {
   content: "\e91b";
 }
-
 .dsmLogo.lacoste:before {
   content: "\e91c";
 }
-
 .dsmLogo.lanvim:before {
   content: "\e91d";
 }
-
 .dsmLogo.marc_jacobs:before {
   content: "\e91e";
 }
-
 .dsmLogo.michael_kors:before {
   content: "\e91f";
 }
-
 .dsmLogo.miu_miu:before {
   content: "\e920";
 }
-
 .dsmLogo.mont_blanc:before {
   content: "\e921";
 }
-
 .dsmLogo.nike:before {
   content: "\e922";
 }
-
 .dsmLogo.oakley:before {
   content: "\e923";
 }
-
 .dsmLogo.oneill:before {
   content: "\e924";
 }
-
 .dsmLogo.persol:before {
   content: "\e925";
 }
-
 .dsmLogo.pierre_cardin:before {
   content: "\e926";
 }
-
 .dsmLogo.polo_ralph_lauren:before {
   content: "\e927";
 }
-
 .dsmLogo.prada:before {
   content: "\e928";
 }
-
 .dsmLogo.puma:before {
   content: "\e929";
 }
-
 .dsmLogo.ray_ban:before {
   content: "\e92a";
 }
-
 .dsmLogo.saint_laurent:before {
   content: "\e92b";
 }
-
 .dsmLogo.stella_mccartney:before {
   content: "\e92c";
 }
-
 .dsmLogo.super_dry:before {
   content: "\e92d";
 }
-
 .dsmLogo.swarovski:before {
   content: "\e92e";
 }
-
 .dsmLogo.tom_ford:before {
   content: "\e92f";
 }
-
 .dsmLogo.tory_burch:before {
   content: "\e930";
 }
-
 .dsmLogo.versach:before {
   content: "\e931";
 }
-
 .dsmLogo.viktor_and_rolf:before {
   content: "\e932";
 }
-
 .dsmLogo.vogue:before {
   content: "\e933";
 }
-
 .dsmLogo.revel_tune:before {
   content: "\e934";
 }
-
 .dsmLogo.amelia_e:before {
   content: "\e935";
 }
-
 .dsmLogo.gamespex:before {
   content: "\e936";
 }
-
 .dsmLogo.gamespex2:before {
   content: "\e937";
 }
-
 .dsmLogo.muse_symbol:before {
   content: "\e938";
 }
-
 .dsmLogo.muse_x_hilary_duff:before {
   content: "\e939";
 }
-
 .dsmLogo.muse:before {
   content: "\e93a";
 }
-
 .dsmLogo.olos:before {
   content: "\e93b";
 }
-
 .dsmLogo.ottoto:before {
   content: "\e93c";
 }
-
 .dsmLogo.revel:before {
   content: "\e93d";
 }
-
 .dsmLogo.seaclean:before {
   content: "\e93e";
 }
-
 .dsmLogo.yoji:before {
   content: "\e93f";
 }
@@ -1906,15 +1633,12 @@ svg.dsmLogo * {
   margin: auto;
   box-sizing: border-box;
 }
-
 .dsmAccordian:last-of-type {
   border-bottom: 1px solid #E7EBED;
 }
-
 .dsmAccordian:hover {
   background-color: rgba(58, 72, 80, 0.04);
 }
-
 @media (max-width: 768px) {
   .dsmAccordian {
     padding: 18px 20px;
@@ -1923,7 +1647,6 @@ svg.dsmLogo * {
     background-color: transparent;
   }
 }
-
 .dsmAccordian > .accordianContent {
   display: block;
   -webkit-transition: 0.6s all;
@@ -1932,25 +1655,21 @@ svg.dsmLogo * {
   overflow: hidden;
   max-width: 80%;
 }
-
 @media (max-width: 768px) {
   .dsmAccordian > .accordianContent {
     max-width: 100%;
   }
 }
-
 .dsmAccordian summary {
   list-style: none;
   outline: none;
   color: #232B30;
   font-family: Roboto;
   font-size: 16px;
-  display: -ms-grid;
   display: grid;
   width: 100%;
   position: relative;
-  -ms-grid-columns: 1fr auto;
-      grid-template-columns: 1fr auto;
+  grid-template-columns: 1fr auto;
   justify-content: space-between;
   -webkit-box-pack: justify;
   -moz-box-pack: justify;
@@ -1962,18 +1681,15 @@ svg.dsmLogo * {
   letter-spacing: 0;
   line-height: 30px;
 }
-
 .dsmAccordian summary > span {
   margin-right: 60px;
 }
-
 @media (max-width: 768px) {
   .dsmAccordian summary {
     font-size: 16px;
     line-height: 24px;
   }
 }
-
 .dsmAccordian summary > .plus {
   position: absolute;
   right: 0;
@@ -1989,80 +1705,66 @@ svg.dsmLogo * {
   height: 12px;
   width: 13px;
 }
-
 .dsmAccordian summary > .plus * {
   -webkit-transition: 0.3s all;
   transition: 0.3s all;
   stroke: #B0BDC5 !important;
 }
-
 .dsmAccordian summary > .plus line:nth-child(2) {
   -webkit-transition: 0.2s all;
   transition: 0.2s all;
 }
-
 .dsmAccordian a {
   font-size: inherit;
   color: #0000EE;
   text-decoration: underline;
 }
-
 .dsmAccordian summary::-webkit-details-marker {
   display: none;
 }
-
 .dsmAccordian[open] * {
   opacity: 1;
 }
-
 .dsmAccordian[open] {
   max-height: 1000px;
 }
-
 .dsmAccordian[open] summary .plus {
   -webkit-transform-origin: center center;
           transform-origin: center center;
   -webkit-animation: rotateTop 0.3s forwards;
           animation: rotateTop 0.3s forwards;
 }
-
 .dsmAccordian[open] summary .plus path:nth-child(1) {
   -webkit-transform-origin: center center;
           transform-origin: center center;
   -webkit-animation: rotateArrow 0.3s forwards;
           animation: rotateArrow 0.3s forwards;
 }
-
 .dsmAccordian[open] summary .plus path:nth-child(2) {
   opacity: 0;
 }
-
 .dsmAccordian.closeAccordian {
   max-height: auto;
   -webkit-transition: 0.2s background-color, 0.3s height, 0.5s max-height;
   transition: 0.2s background-color, 0.3s height, 0.5s max-height;
 }
-
 .dsmAccordian.accordianClosed summary .plus {
   -webkit-transform-origin: center center;
           transform-origin: center center;
   -webkit-animation: rotateBack 0.3s forwards;
           animation: rotateBack 0.3s forwards;
 }
-
 .dsmAccordian.accordianClosed summary .plus path:nth-child(1) {
   -webkit-transform-origin: center center;
           transform-origin: center center;
   -webkit-animation: rotateBackArrow 0.3s forwards;
           animation: rotateBackArrow 0.3s forwards;
 }
-
 .dsmAccordian.accordianClosed summary .plus path:nth-child(2) {
   opacity: 1;
   -webkit-transition: 0.3s opacity;
   transition: 0.3s opacity;
 }
-
 @-webkit-keyframes rotateTop {
   from {
     -webkit-transform: rotate(0) translateY(-50%);
@@ -2073,7 +1775,6 @@ svg.dsmLogo * {
             transform: rotate(-90deg) translateX(50%);
   }
 }
-
 @keyframes rotateTop {
   from {
     -webkit-transform: rotate(0) translateY(-50%);
@@ -2084,7 +1785,6 @@ svg.dsmLogo * {
             transform: rotate(-90deg) translateX(50%);
   }
 }
-
 @-webkit-keyframes rotateBack {
   from {
     -webkit-transform: rotate(-90deg) translateX(50%);
@@ -2095,7 +1795,6 @@ svg.dsmLogo * {
             transform: rotate(0) translateY(-50%);
   }
 }
-
 @keyframes rotateBack {
   from {
     -webkit-transform: rotate(-90deg) translateX(50%);
@@ -2106,7 +1805,6 @@ svg.dsmLogo * {
             transform: rotate(0) translateY(-50%);
   }
 }
-
 @-webkit-keyframes rotateArrow {
   from {
     -webkit-transform: rotate(0);
@@ -2117,7 +1815,6 @@ svg.dsmLogo * {
             transform: rotate(-90deg);
   }
 }
-
 @keyframes rotateArrow {
   from {
     -webkit-transform: rotate(0);
@@ -2128,7 +1825,6 @@ svg.dsmLogo * {
             transform: rotate(-90deg);
   }
 }
-
 @-webkit-keyframes rotateBackArrow {
   from {
     -webkit-transform: rotate(-90deg);
@@ -2139,7 +1835,6 @@ svg.dsmLogo * {
             transform: rotate(0);
   }
 }
-
 @keyframes rotateBackArrow {
   from {
     -webkit-transform: rotate(-90deg);
@@ -2150,15 +1845,12 @@ svg.dsmLogo * {
             transform: rotate(0);
   }
 }
-
 .dsmAccordian.closeAccordian summary {
   font-weight: normal !important;
 }
-
 .dsmAccordian.closeAccordian summary ~ * {
   opacity: 0;
 }
-
 @-webkit-keyframes slideDown {
   from {
     max-height: 71px;
@@ -2167,7 +1859,6 @@ svg.dsmLogo * {
     max-height: 1000px;
   }
 }
-
 @keyframes slideDown {
   from {
     max-height: 71px;
@@ -2176,7 +1867,6 @@ svg.dsmLogo * {
     max-height: 1000px;
   }
 }
-
 @-webkit-keyframes slideUp {
   to {
     max-height: 71px;
@@ -2185,7 +1875,6 @@ svg.dsmLogo * {
     max-height: 1000px;
   }
 }
-
 @keyframes slideUp {
   to {
     max-height: 71px;
@@ -2194,7 +1883,6 @@ svg.dsmLogo * {
     max-height: 1000px;
   }
 }
-
 @-webkit-keyframes fadeIn {
   0% {
     opacity: 0;
@@ -2203,7 +1891,6 @@ svg.dsmLogo * {
     opacity: 1;
   }
 }
-
 @keyframes fadeIn {
   0% {
     opacity: 0;
@@ -2212,7 +1899,6 @@ svg.dsmLogo * {
     opacity: 1;
   }
 }
-
 @-webkit-keyframes sweep-reverse {
   0% {
     opacity: 1;
@@ -2222,7 +1908,6 @@ svg.dsmLogo * {
     opacity: 0;
   }
 }
-
 @keyframes sweep-reverse {
   0% {
     opacity: 1;
@@ -2232,7 +1917,6 @@ svg.dsmLogo * {
     opacity: 0;
   }
 }
-
 .dsmAccordian[open] {
   background-color: rgba(58, 72, 80, 0.04);
   color: #232B30;
@@ -2241,37 +1925,30 @@ svg.dsmLogo * {
   letter-spacing: 0;
   line-height: 24px;
 }
-
 .dsmAccordian[open] > .accordianContent {
   padding-top: 12px;
 }
-
 .dsmAccordian[open] summary {
   font-weight: bold;
   width: 100%;
 }
-
 .dsmAccordian[open] summary > .plus * {
   stroke: #3A4850 !important;
 }
-
 .dsmAccordian[open] summary > .plus line:first-child {
   -webkit-animation: scaleDown 0.1s ease-in-out;
           animation: scaleDown 0.1s ease-in-out;
 }
-
 .dsmAccordian[open] summary > .plus line:nth-child(2) {
   -webkit-transform: rotate(-90deg) translateX(-13px);
           transform: rotate(-90deg) translateX(-13px);
 }
-
 @media (max-width: 768px) {
   .dsmAccordian[open] {
     font-size: 14px;
     line-height: 24px;
   }
 }
-
 @-webkit-keyframes scaleDown {
   from {
     stroke-width: 1px;
@@ -2280,7 +1957,6 @@ svg.dsmLogo * {
     stroke-width: 0px;
   }
 }
-
 @keyframes scaleDown {
   from {
     stroke-width: 1px;
@@ -2293,28 +1969,23 @@ svg.dsmLogo * {
 .dsmTrustpilot {
   width: 100%;
 }
-
 .dsmTrustpilot .swiper-outer {
   margin: 0 42px;
   padding-bottom: 36px;
   position: relative;
 }
-
 @media (max-width: 768px) {
   .dsmTrustpilot .swiper-outer {
     margin: 0;
     padding-bottom: 20px;
   }
 }
-
 .dsmTrustpilot .dsmIcons.arrow-left {
   margin-right: 1px;
 }
-
 .dsmTrustpilot .dsmIcons.arrow-right {
   margin-left: 2px;
 }
-
 .dsmTrustpilot .swiper-slide {
   border-radius: 4px;
   background-color: #FFFFFF;
@@ -2338,7 +2009,6 @@ svg.dsmLogo * {
   height: auto;
   line-height: 22px;
 }
-
 @media (max-width: 768px) {
   .dsmTrustpilot .swiper-slide {
     border: 1px solid #F1F1F1;
@@ -2351,7 +2021,6 @@ svg.dsmLogo * {
     margin: 0 60px;
   }
 }
-
 .dsmTrustpilot .swiperTop {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -2361,7 +2030,6 @@ svg.dsmLogo * {
       -ms-flex-pack: justify;
           justify-content: space-between;
 }
-
 @media (max-width: 768px) {
   .dsmTrustpilot .swiperTop {
     display: block;
@@ -2376,7 +2044,6 @@ svg.dsmLogo * {
     margin-bottom: 10px !important;
   }
 }
-
 .dsmTrustpilot .swiperDate {
   color: #89959C;
   font-size: 14px;
@@ -2384,13 +2051,11 @@ svg.dsmLogo * {
   line-height: 16px;
   text-align: right;
 }
-
 @media (max-width: 768px) {
   .dsmTrustpilot .swiperDate {
     text-align: center;
   }
 }
-
 .dsmTrustpilot .swiperTitle {
   color: #0F0F0F;
   font-size: 16px;
@@ -2403,14 +2068,12 @@ svg.dsmLogo * {
   -webkit-box-orient: vertical;
   overflow: hidden;
 }
-
 @media (max-width: 768px) {
   .dsmTrustpilot .swiperTitle {
     text-align: center;
     margin-bottom: 10px !important;
   }
 }
-
 .dsmTrustpilot .swiperAuthor {
   color: #89959C;
   font-size: 14px;
@@ -2418,10 +2081,8 @@ svg.dsmLogo * {
   line-height: 16px;
   margin-top: auto;
   padding-top: 10px;
-  -ms-grid-column-align: end;
-      justify-self: end;
+  justify-self: end;
 }
-
 @media (max-width: 768px) {
   .dsmTrustpilot .swiperAuthor {
     text-align: center;
@@ -2431,7 +2092,6 @@ svg.dsmLogo * {
     padding-top: 0;
   }
 }
-
 .dsmTrustpilot .swiperArrows {
   z-index: 1;
   top: calc(50% - 10px);
@@ -2439,56 +2099,45 @@ svg.dsmLogo * {
   -webkit-transform: translateY(-50%);
           transform: translateY(-50%);
 }
-
 .dsmTrustpilot .swiperArrows.arrow-left {
   left: -24px;
 }
-
 @media (max-width: 768px) {
   .dsmTrustpilot .swiperArrows.arrow-left {
     left: 10.5px;
   }
 }
-
 .dsmTrustpilot .swiperArrows.arrow-right {
   right: -24px;
 }
-
 @media (max-width: 768px) {
   .dsmTrustpilot .swiperArrows.arrow-right {
     right: 10.5px;
   }
 }
-
 .dsmTrustpilot .swiper-container {
   padding: 10px;
   margin: -10px;
   margin-bottom: 0;
 }
-
 .dsmTrustpilot .swiper-button-disabled svg * {
   stroke: #AAAAAA !important;
 }
-
 .dsmTrustpilot .arrowContainer svg.dsmIcons {
   height: 11px;
   width: 6px;
 }
-
 .dsmTrustpilot .swiperRating {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
 }
-
 .dsmTrustpilot .swiperRating svg {
   margin-right: 2px;
 }
-
 .dsmTrustpilot .swiperRating svg:last-child {
   margin-right: 0;
 }
-
 @media (max-width: 768px) {
   .dsmTrustpilot .swiperRating {
     -webkit-box-pack: center;
@@ -2497,7 +2146,6 @@ svg.dsmLogo * {
     margin-bottom: 10px !important;
   }
 }
-
 .dsmTrustpilot .swiperText {
   margin-right: 20px;
   display: -webkit-box;
@@ -2505,14 +2153,12 @@ svg.dsmLogo * {
   -webkit-box-orient: vertical;
   overflow: hidden;
 }
-
 @media (max-width: 768px) {
   .dsmTrustpilot .swiperText {
     text-align: center;
     -webkit-line-clamp: 3;
   }
 }
-
 .dsmTrustpilot .arrowContainer {
   -webkit-tap-highlight-color: transparent;
   width: 48px;
@@ -2538,22 +2184,18 @@ svg.dsmLogo * {
   -webkit-box-shadow: 0 1px 3px 0 rgba(58, 72, 80, 0.07), 0 8px 14px 0 rgba(176, 189, 197, 0.15);
           box-shadow: 0 1px 3px 0 rgba(58, 72, 80, 0.07), 0 8px 14px 0 rgba(176, 189, 197, 0.15);
 }
-
 @media (max-width: 768px) {
   .dsmTrustpilot .arrowContainer {
     width: 40px;
     height: 40px;
   }
 }
-
 .dsmTrustpilot .arrowContainer:hover {
   background-color: #F7F8F9;
 }
-
 .dsmTrustpilot .swiper-button-disabled:hover {
   background-color: #fff;
 }
-
 .dsmTrustpilot .swiper-pagination {
   left: 50%;
   bottom: 0;
@@ -2569,7 +2211,6 @@ svg.dsmLogo * {
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
 }
-
 .dsmTrustpilot .swiper-pagination-bullet {
   height: 9px;
   margin-right: 9px;
@@ -2580,15 +2221,12 @@ svg.dsmLogo * {
   -webkit-transition: 0.2s all;
   transition: 0.2s all;
 }
-
 .dsmTrustpilot .swiper-pagination-bullet:hover {
   opacity: 0.5;
 }
-
 .dsmTrustpilot .swiper-pagination-bullet:last-child {
   margin-right: 0;
 }
-
 .dsmTrustpilot .swiper-pagination-bullet-active {
   opacity: 1;
   pointer-events: none;
@@ -2605,15 +2243,12 @@ svg.dsmLogo * {
       -ms-flex-align: center;
           align-items: center;
 }
-
 .dsmTrustpilot-Header > * {
   margin-right: 13px !important;
 }
-
 .dsmTrustpilot-Header > *:last-child {
   margin-right: 0 !important;
 }
-
 @media (max-width: 768px) {
   .dsmTrustpilot-Header {
     -webkit-box-orient: vertical;
@@ -2636,28 +2271,23 @@ svg.dsmLogo * {
     width: 82px;
   }
 }
-
 .dsmTrustpilot-Header .starsContainer {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
 }
-
 .dsmTrustpilot-Header .starsContainer svg {
   margin-right: 2px;
 }
-
 .dsmTrustpilot-Header .starsContainer svg:last-child {
   margin-right: 0;
 }
-
 @media (max-width: 768px) {
   .dsmTrustpilot-Header .starsContainer svg {
     width: 26px;
     height: 26px;
   }
 }
-
 .dsmTrustpilot-Header .numberOfReviews {
   color: #0F0F0F;
   font-family: Roboto;
@@ -2666,11 +2296,9 @@ svg.dsmLogo * {
   letter-spacing: 0;
   line-height: 23px;
 }
-
 .dsmTrustpilot-Header .numberOfReviews .mobileText {
   display: none;
 }
-
 @media (max-width: 768px) {
   .dsmTrustpilot-Header .numberOfReviews {
     color: #0F0F0F;
@@ -2716,7 +2344,6 @@ svg.dsmLogo * {
   padding: 0px 4px 0px 4px;
   font-family: Roboto, Sans-serif;
 }
-
 @media (max-width: 768px) {
   .dsmSliderToggle {
     -webkit-box-pack: unset;
@@ -2730,14 +2357,12 @@ svg.dsmLogo * {
     margin: auto;
   }
 }
-
 .dsmSliderToggle > .dsmSliderToggleClick {
   background: #FFFFFF;
   -webkit-box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.0973831);
           box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.0973831);
   border-radius: 17px;
 }
-
 .dsmSliderToggle .dsmSliderToggleBtn {
   padding: 6px 20px 6px 20px;
   text-decoration: none;
@@ -2753,18 +2378,16 @@ svg.dsmLogo * {
   -webkit-transition: 0.3s;
   transition: 0.3s;
 }
-
 .dsmSliderToggle .dsmSliderToggleBtn:hover {
   color: #000000;
 }
-
 .dsmSliderToggle .nav-indicator {
   position: absolute;
   left: 0;
   bottom: 0;
   height: 4px;
-  -webkit-transition: .4s;
-  transition: .4s;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
   height: 5px;
   z-index: 1;
   border-radius: 8px 8px 0 0;
@@ -2775,7 +2398,6 @@ svg.dsmLogo * {
   height: 28px;
   top: 4px;
 }
-
 .dsmSliderToggle div.dsmSliderToggleBtn.is-active {
   font-style: normal;
   font-weight: normal;
@@ -2794,18 +2416,15 @@ svg.dsmLogo * {
   margin: 0 auto;
   position: relative;
 }
-
 .dsm-swiper * {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
 }
-
 .dsm-swiper.minimised {
   -webkit-transition: 0.15s max-width;
   transition: 0.15s max-width;
   margin: 0;
 }
-
 .dsm-swiper .pagination {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -2816,7 +2435,6 @@ svg.dsmLogo * {
   width: 100%;
   padding-top: 16px;
 }
-
 .dsm-swiper .pagination .dot {
   background: rgba(58, 72, 80, 0.15);
   border-radius: 100px;
@@ -2826,17 +2444,13 @@ svg.dsmLogo * {
   margin-right: 6px;
   cursor: pointer;
 }
-
 .dsm-swiper .pagination .dot.active {
   background: #3A4850;
 }
-
 .dsm-swiper .pagination .dot:last-child {
   margin-right: 0;
 }
-
 .dsm-swiper .slides {
-  display: -ms-grid;
   display: grid;
   grid-auto-flow: column;
   overflow: auto;
@@ -2850,30 +2464,26 @@ svg.dsmLogo * {
   -webkit-transition: 0.15s width;
   transition: 0.15s width;
 }
-
 .dsm-swiper .slides::-webkit-scrollbar {
   display: none;
 }
-
 .dsm-swiper .slide {
   -webkit-transition: 0.15s width;
   transition: 0.15s width;
   background: #DBE1E5;
 }
-
 .dsm-swiper .progress {
   margin: 0 60px;
   opacity: 0;
   height: 4px;
-  -webkit-transition: .3s opacity;
-  transition: .3s opacity;
+  -webkit-transition: 0.3s opacity;
+  transition: 0.3s opacity;
   margin-top: 16px;
   background: rgba(58, 72, 80, 0.15);
   overflow: hidden;
   border-radius: 100px;
   position: relative;
 }
-
 .dsm-swiper .progress .indicator {
   background: #5B6971;
   position: absolute;
@@ -2916,19 +2526,16 @@ svg.dsmLogo * {
           box-shadow: 0px 1px 2px rgba(58, 72, 80, 0.07), 0px 6px 13px rgba(176, 189, 197, 0.14), 0px 1px 6px rgba(176, 189, 197, 0.09);
   border-radius: 100px;
 }
-
 .swiper-arrow.left {
   padding-right: 23px;
   left: 0;
 }
-
 .swiper-arrow.right {
   padding-left: 23px;
   right: 0;
 }
 
 .dsm-product-grid {
-  display: -ms-grid;
   display: grid;
   max-width: 1296px;
   font-family: Roboto;
@@ -2936,54 +2543,42 @@ svg.dsmLogo * {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  -ms-grid-columns: (minmax(auto, 386px))[3];
-      grid-template-columns: repeat(3, minmax(auto, 386px));
+  grid-template-columns: repeat(3, minmax(auto, 386px));
   row-gap: 20px;
 }
-
 @media (max-width: 1440px) {
   .dsm-product-grid {
     max-width: 1164px;
-    -ms-grid-columns: (minmax(auto, 340px))[3];
-        grid-template-columns: repeat(3, minmax(auto, 340px));
+    grid-template-columns: repeat(3, minmax(auto, 340px));
   }
 }
-
 @media (max-width: 1280px) {
   .dsm-product-grid {
     max-width: 936px;
-    -ms-grid-columns: (minmax(auto, 280px))[3];
-        grid-template-columns: repeat(3, minmax(auto, 280px));
+    grid-template-columns: repeat(3, minmax(auto, 280px));
   }
 }
-
 @media (max-width: 1024px) {
   .dsm-product-grid {
     max-width: 728px;
     row-gap: 36px;
-    -ms-grid-columns: (minmax(auto, 354px))[2];
-        grid-template-columns: repeat(2, minmax(auto, 354px));
+    grid-template-columns: repeat(2, minmax(auto, 354px));
   }
 }
-
 @media (max-width: 768px) {
   .dsm-product-grid {
     max-width: 100%;
     row-gap: 28px;
     margin: 0 16px;
-    -ms-grid-columns: 1fr;
-        grid-template-columns: 1fr;
+    grid-template-columns: 1fr;
   }
 }
-
 .dsm-product-grid .dsmBadge {
   position: absolute;
   top: 0;
   left: 0;
 }
-
 .dsm-product-grid .colour-chooser {
-  display: -ms-grid;
   display: grid;
   grid-auto-flow: column;
   grid-auto-columns: 24px;
@@ -2994,7 +2589,6 @@ svg.dsmLogo * {
       -ms-flex-pack: center;
           justify-content: center;
 }
-
 .dsm-product-grid .colour-chooser .circle {
   width: 20px;
   height: 20px;
@@ -3007,26 +2601,21 @@ svg.dsmLogo * {
   background-position: center center;
   border: 1px solid rgba(91, 105, 113, 0.2);
 }
-
 .dsm-product-grid .colour-chooser .circle::after {
   -webkit-transition: 0.3s all;
   transition: 0.3s all;
   border: 1px solid transparent;
 }
-
 .dsm-product-grid .colour-chooser .circle:hover::after {
   display: block;
   border: 1px solid rgba(91, 105, 113, 0.35);
 }
-
 .dsm-product-grid .colour-chooser .circle.active::after {
   display: block;
 }
-
 .dsm-product-grid .colour-chooser .circle.active:hover::after {
   border: 1px solid #5B6971;
 }
-
 .dsm-product-grid .colour-chooser .circle::after {
   display: none;
   border: 1px solid #5B6971;
@@ -3040,7 +2629,6 @@ svg.dsmLogo * {
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
 }
-
 .dsm-product-grid .colour-chooser .circle-plus {
   width: 20px;
   display: -webkit-box;
@@ -3059,12 +2647,10 @@ svg.dsmLogo * {
   border: 1px solid #5B6971;
   color: #5B6971;
 }
-
 .dsm-product-grid .colour-chooser .circle-plus:hover {
   border: 1px solid #0F0F0F;
   color: #0F0F0F;
 }
-
 .dsm-product-grid .product-name {
   font-weight: 700;
   font-size: 18px;
@@ -3073,44 +2659,37 @@ svg.dsmLogo * {
   text-align: center;
   color: #0F0F0F;
 }
-
 @media (max-width: 1024px) {
   .dsm-product-grid .product-name {
     font-size: 16px;
     line-height: 24px;
   }
 }
-
 @media (max-width: 768px) {
   .dsm-product-grid .product-name {
     font-size: 18px;
     line-height: 24px;
   }
 }
-
 .dsm-product-grid .product-images {
   height: 170px;
   display: block;
 }
-
 @media (max-width: 1280px) {
   .dsm-product-grid .product-images {
     height: 140px;
   }
 }
-
 @media (max-width: 1024px) {
   .dsm-product-grid .product-images {
     height: 177px;
   }
 }
-
 @media (max-width: 768px) {
   .dsm-product-grid .product-images {
     height: 50vw;
   }
 }
-
 .dsm-product-grid .product-images img {
   mix-blend-mode: multiply;
   max-width: 100%;
@@ -3122,11 +2701,9 @@ svg.dsmLogo * {
   -o-object-position: center;
      object-position: center;
 }
-
 .dsm-product-grid .product-images img.active {
   display: block;
 }
-
 .dsm-product-grid .product-price {
   font-weight: 400;
   font-size: 14px;
@@ -3134,40 +2711,32 @@ svg.dsmLogo * {
   text-align: center;
   color: #89959C;
 }
-
 .dsm-product-grid .product-price .old {
   text-decoration: line-through;
 }
-
 .dsm-product-grid .product-price .new {
   color: #F22A42;
 }
-
 @media (max-width: 1280px) {
   .dsm-product-grid .product-price {
     font-size: 14px;
     line-height: 16px;
   }
 }
-
 @media (max-width: 1024px) {
   .dsm-product-grid .product-price {
     font-size: 14px;
     line-height: 16px;
   }
 }
-
 .dsm-product-grid .button-row {
-  display: -ms-grid;
   display: grid;
-  -ms-grid-columns: 1fr 1fr;
-      grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr 1fr;
   gap: 8px;
   padding: 0 16px;
   visibility: hidden;
   margin-top: 12px;
 }
-
 @media (max-width: 768px) {
   .dsm-product-grid .button-row {
     display: none;
