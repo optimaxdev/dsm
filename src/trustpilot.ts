@@ -9,8 +9,8 @@ if (
 ) {
   apiURL =
     window.innerWidth > 768
-      ? "https://www.glassesusa.com/bff/trustpilot"
-      : "https://m.glassesusa.com/bff/trustpilot";
+      ? "https://www.glassesusa.com/bff/v1/trustpilot"
+      : "https://m.glassesusa.com/bff/v1/trustpilot";
 }
 
 export function startTrustpilot() {
