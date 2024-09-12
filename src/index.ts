@@ -13,7 +13,7 @@ globalThis.getTrustScore = () => getScore();
 
 loadElements();
 
-export function loadElements() {
+export async function loadElements() {
   loadAccordian();
   replaceIcons();
   loadSlider();
@@ -44,7 +44,7 @@ export function loadElements() {
   });
 
   if (document.querySelector(".dsmTrustpilot-Header")) {
-    runHeader();
+    await runHeader();
   }
   if (
     typeof Swiper !== "undefined" &&
