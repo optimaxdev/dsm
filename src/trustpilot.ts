@@ -197,8 +197,8 @@ export async function runHeader() {
       for (let i = 0; i < 5 - stars; i++) {
         starsContainer += starEmpty;
       }
-
-      container.innerHTML = `<svg class="trustpilotLogo" width="98" height="24" viewBox="0 0 98 24" xmlns="http://www.w3.org/2000/svg"
+    }
+    container.innerHTML = `<svg class="trustpilotLogo" width="98" height="24" viewBox="0 0 98 24" xmlns="http://www.w3.org/2000/svg"
             xmlns:xlink="http://www.w3.org/1999/xlink">
             <defs>
                 <polygon id="a"
@@ -219,14 +219,13 @@ export async function runHeader() {
                 <polygon fill="#005128" points="16.9272727 16.3309693 16.3836672 14.2222222 12.4727273 17.7777778" />
             </g>
         </svg><div class="starsContainer">${starsContainer}</div><span class="numberOfReviews"><span class="reviewsDot">•&nbsp; </span><span class="desktopText">Reviews ${reviews.numberOfReviews
-        .toString()
-        .replace(
-          /\B(?=(\d{3})+(?!\d))/g,
-          ","
-        )}+</span><span class="mobileText">Based on <span class="underlineReviews">${reviews.numberOfReviews
-        .toString()
-        .replace(/\B(?=(\d{3})+(?!\d))/g, ",")}+ reviews</span></span>`;
-    }
+      .toString()
+      .replace(
+        /\B(?=(\d{3})+(?!\d))/g,
+        ","
+      )}+</span><span class="mobileText">Based on <span class="underlineReviews">${reviews.numberOfReviews
+      .toString()
+      .replace(/\B(?=(\d{3})+(?!\d))/g, ",")}+ reviews</span></span>`;
   } catch (err) {
     if (!err) return;
     console.log(err);
