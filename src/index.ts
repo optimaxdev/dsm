@@ -1,7 +1,7 @@
 import buttonClick from "./buttons";
 import { selectButtonClick, selectClick } from "./dropdown";
 import { openTooltip, closeTooltip, adjustTooltip } from "./tooltip";
-import { runHeader, startTrustpilot } from "./trustpilot";
+import { getScore, runHeader, startTrustpilot } from "./trustpilot";
 import { loadAccordian } from "./accordian";
 import { replaceIcons } from "./icons";
 import { loadSlider } from "./slider";
@@ -9,6 +9,7 @@ import Swiper from "swiper";
 import "./swiper";
 
 globalThis.reloadElements = () => loadElements();
+globalThis.getScore = () => getScore();
 
 loadElements();
 

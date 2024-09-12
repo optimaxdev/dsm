@@ -156,18 +156,33 @@ function startSwiper() {
   });
 }
 
-export function runHeader() {
-  let container = document.querySelector(".dsmTrustpilot-Header");
+export const getScore = () => {
+  return new Promise((res, rej) => {
+    let reviewsRequest = new XMLHttpRequest();
+    reviewsRequest.open("GET", `${apiURL}/rating`);
+    reviewsRequest.send();
 
-  let reviewsRequest = new XMLHttpRequest();
-  let starHalf = `<svg xmlns="http://www.w3.org/2000/svg" width="17.4" height="17.3" viewBox="0 0 19.5 19.8" overflow="visible"><style>.st0,.st1,.st2{fill-rule:evenodd;clip-rule:evenodd}.st0{fill-opacity:.33;fill:#b0b0b0}.st1,.st2{fill:#00b67a}.st2{fill:#fff}</style><polygon id="Fill-5_1_" class="st0" points="9.1,19.8 19.5,19.8 19.5,0 9.1,0"/><polygon id="Fill-6_1_" class="st1" points="0,19.8 10.4,19.8 10.4,0 0,0"/><path id="Fill-11_1_" class="st2" d="M16.9 8h-5.5L9.7 3 8.1 8H2.6L7 11.1l-1.7 5L9.8 13l2.7-1.9L16.9 8zm-7.2 5l3.1-.8 1.3 3.9L9.7 13z"/></svg>`;
-  let starEmpty = `<svg xmlns="http://www.w3.org/2000/svg" width="17.4" height="17.3" viewBox="0 0 17.4 17.3" overflow="visible"><g transform="translate(0 .5)" fill-rule="evenodd" clip-rule="evenodd"><polygon points="0,16.8 17.4,16.8 17.4,-0.5 0,-0.5" fill="#dcdce6"/><path d="M14.7 6.8h-4.6L8.7 2.4 7.2 6.8H2.6l3.8 2.7L5 13.9l3.8-2.7L11 9.5l3.7-2.7zm-6 4.3l2.6-.7 1.1 3.4-3.7-2.7z" fill="#fff"/></g></svg>`;
-  let star = `<svg xmlns="http://www.w3.org/2000/svg" width="17.4" height="17.3" viewBox="0 0 17.4 17.3" overflow="visible"><g transform="translate(0 .5)" fill-rule="evenodd" clip-rule="evenodd"><polygon points="0,16.8 17.4,16.8 17.4,-0.5 0,-0.5" fill="#00b67a"/><path d="M14.7 6.8h-4.6L8.7 2.4 7.2 6.8H2.6l3.8 2.7L5 13.9l3.8-2.7L11 9.5l3.7-2.7zm-6 4.3l2.6-.7 1.1 3.4-3.7-2.7z" fill="#fff"/></g></svg>`;
-  reviewsRequest.open("GET", `${apiURL}/rating`);
-  let starsContainer = "";
-  reviewsRequest.send();
-  reviewsRequest.addEventListener("load", () => {
-    let reviews = JSON.parse(reviewsRequest.response);
+    reviewsRequest.addEventListener("load", () => {
+      if (reviewsRequest.status === 404) {
+        return rej();
+      }
+
+      res(JSON.parse(reviewsRequest.response));
+    });
+    reviewsRequest.addEventListener("error", () => {
+      rej();
+    });
+  }) as Promise<{ score: number; numberOfReviews: string } | undefined>;
+};
+
+export async function runHeader() {
+  let container = document.querySelector(".dsmTrustpilot-Header");
+  try {
+    let reviews = await getScore();
+    let starHalf = `<svg xmlns="http://www.w3.org/2000/svg" width="17.4" height="17.3" viewBox="0 0 19.5 19.8" overflow="visible"><style>.st0,.st1,.st2{fill-rule:evenodd;clip-rule:evenodd}.st0{fill-opacity:.33;fill:#b0b0b0}.st1,.st2{fill:#00b67a}.st2{fill:#fff}</style><polygon id="Fill-5_1_" class="st0" points="9.1,19.8 19.5,19.8 19.5,0 9.1,0"/><polygon id="Fill-6_1_" class="st1" points="0,19.8 10.4,19.8 10.4,0 0,0"/><path id="Fill-11_1_" class="st2" d="M16.9 8h-5.5L9.7 3 8.1 8H2.6L7 11.1l-1.7 5L9.8 13l2.7-1.9L16.9 8zm-7.2 5l3.1-.8 1.3 3.9L9.7 13z"/></svg>`;
+    let starEmpty = `<svg xmlns="http://www.w3.org/2000/svg" width="17.4" height="17.3" viewBox="0 0 17.4 17.3" overflow="visible"><g transform="translate(0 .5)" fill-rule="evenodd" clip-rule="evenodd"><polygon points="0,16.8 17.4,16.8 17.4,-0.5 0,-0.5" fill="#dcdce6"/><path d="M14.7 6.8h-4.6L8.7 2.4 7.2 6.8H2.6l3.8 2.7L5 13.9l3.8-2.7L11 9.5l3.7-2.7zm-6 4.3l2.6-.7 1.1 3.4-3.7-2.7z" fill="#fff"/></g></svg>`;
+    let star = `<svg xmlns="http://www.w3.org/2000/svg" width="17.4" height="17.3" viewBox="0 0 17.4 17.3" overflow="visible"><g transform="translate(0 .5)" fill-rule="evenodd" clip-rule="evenodd"><polygon points="0,16.8 17.4,16.8 17.4,-0.5 0,-0.5" fill="#00b67a"/><path d="M14.7 6.8h-4.6L8.7 2.4 7.2 6.8H2.6l3.8 2.7L5 13.9l3.8-2.7L11 9.5l3.7-2.7zm-6 4.3l2.6-.7 1.1 3.4-3.7-2.7z" fill="#fff"/></g></svg>`;
+    let starsContainer = "";
     let stars = reviews.score;
 
     if (stars % 1 != 0) {
@@ -185,9 +200,8 @@ export function runHeader() {
       for (let i = 0; i < 5 - stars; i++) {
         starsContainer += starEmpty;
       }
-    }
 
-    container.innerHTML = `<svg class="trustpilotLogo" width="98" height="24" viewBox="0 0 98 24" xmlns="http://www.w3.org/2000/svg"
+      container.innerHTML = `<svg class="trustpilotLogo" width="98" height="24" viewBox="0 0 98 24" xmlns="http://www.w3.org/2000/svg"
             xmlns:xlink="http://www.w3.org/1999/xlink">
             <defs>
                 <polygon id="a"
@@ -208,12 +222,13 @@ export function runHeader() {
                 <polygon fill="#005128" points="16.9272727 16.3309693 16.3836672 14.2222222 12.4727273 17.7777778" />
             </g>
         </svg><div class="starsContainer">${starsContainer}</div><span class="numberOfReviews"><span class="reviewsDot">•&nbsp; </span><span class="desktopText">Reviews ${reviews.numberOfReviews
-      .toString()
-      .replace(
-        /\B(?=(\d{3})+(?!\d))/g,
-        ","
-      )}+</span><span class="mobileText">Based on <span class="underlineReviews">${reviews.numberOfReviews
-      .toString()
-      .replace(/\B(?=(\d{3})+(?!\d))/g, ",")}+ reviews</span></span>`;
-  });
+        .toString()
+        .replace(
+          /\B(?=(\d{3})+(?!\d))/g,
+          ","
+        )}+</span><span class="mobileText">Based on <span class="underlineReviews">${reviews.numberOfReviews
+        .toString()
+        .replace(/\B(?=(\d{3})+(?!\d))/g, ",")}+ reviews</span></span>`;
+    }
+  } catch {}
 }
