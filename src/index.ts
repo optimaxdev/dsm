@@ -9,7 +9,7 @@ import Swiper from "swiper";
 import "./swiper";
 
 globalThis.reloadElements = () => loadElements();
-globalThis.getScore = () => getScore();
+globalThis.getTrustScore = () => getScore();
 
 loadElements();
 
