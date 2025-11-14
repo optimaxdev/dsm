@@ -2125,6 +2125,7 @@ svg.dsmLogo * {
   }
 }
 .dsmTrustpilot .swiper-container {
+  overflow: hidden;
   padding: 10px;
   margin: -10px;
   margin-bottom: 0;
