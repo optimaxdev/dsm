@@ -6,7 +6,8 @@
   "main": "dsm-effects.js",
   "scripts": {
     "test": "echo \"No test specified\"",
-    "semantic-release": "semantic-release"
+    "semantic-release": "semantic-release",
+    "webpack": "webpack"
   },
   "repository": {
     "type": "git",
@@ -28,7 +29,8 @@
   },
   "devDependencies": {
     "semantic-release": "^18.0.1",
-    "terser-webpack-plugin": "^5.2.5"
+    "terser-webpack-plugin": "^5.2.5",
+    "webpack-cli": "^6.0.1"
   },
   "release": {
     "branches": [

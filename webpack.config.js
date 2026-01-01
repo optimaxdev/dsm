@@ -1,26 +1,32 @@
-const path = require('path')
-const TerserPlugin = require('terser-webpack-plugin')
+const path = require("path");
+const TerserPlugin = require("terser-webpack-plugin");
 
 module.exports = {
-  entry: './src/index.ts',
+  entry: "./src/index.ts",
   output: {
-    path: path.resolve(__dirname, 'dist'),
-    filename: 'dsm-effects.js',
+    path: path.resolve(__dirname, "dist"),
+    filename: "dsm-effects.js",
   },
   module: {
     rules: [
       {
         test: /\.tsx?$/,
-        loader: 'ts-loader',
+        exclude: [/node_modules/, /\.d\.ts$/],
+        use: {
+          loader: "ts-loader",
+          options: {
+            transpileOnly: true,
+          },
+        },
       },
     ],
   },
   resolve: {
-    extensions: ['.ts'],
+    extensions: [".ts"],
   },
   optimization: {
     minimize: true,
     usedExports: false,
     minimizer: [new TerserPlugin()],
   },
-}
+};
