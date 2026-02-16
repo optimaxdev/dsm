@@ -1,67 +1,67 @@
 .dsmSliderToggle {
-	display: flex;
-	flex-direction: row;
-	justify-content: center;
-	align-items: center;
-	position: static;
-	width: max-content;
-	height: 36px;
-	background: #F1F1F1;
-	border-radius: 36px;
-	position: relative;
-	padding: 0px 4px 0px 4px;
-	font-family: Roboto, Sans-serif;
-	@media (max-width: 768px) {
-		justify-content: unset;
-		width: max-content;
-		overflow: hidden;
-		font-family: Helvetica;
-		margin: auto;
-	}
-	>.dsmSliderToggleClick {
-		background: #FFFFFF;
-		box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.0973831);
-		border-radius: 17px;
-	}
-	.dsmSliderToggleBtn {
-		padding: 6px 20px 6px 20px;
-		text-decoration: none;
-		z-index: 4;
-		font-weight: 500;
-		position: relative;
-		font-style: normal;
-		font-size: 14px;
-		line-height: 16px;
-		cursor: pointer;
-		color: #4D4D4D;
-		padding: 6px 20px 6px 20px;
-		transition: 0.3s;
-	}
-	.dsmSliderToggleBtn:hover {
-		color: #000000;
-	}
-	.nav-indicator {
-		position: absolute;
-		left: 0;
-		bottom: 0;
-		height: 4px;
-		transition: .4s;
-		height: 5px;
-		z-index: 1;
-		border-radius: 8px 8px 0 0;
-		background: #FFFFFF;
-		box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.0973831);
-		border-radius: 17px;
-		height: 28px;
-		top: 4px;
-	}
-	div.dsmSliderToggleBtn.is-active {
-		font-style: normal;
-		font-weight: normal;
-		color: #000000;
-		z-index: 2;
-		border-radius: 17px;
-		background: #FFFFFF;
-		box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.0973831);
-	}
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  position: static;
+  width: max-content;
+  height: 36px;
+  background: #f1f1f1;
+  border-radius: 36px;
+  position: relative;
+  padding: 0px 4px 0px 4px;
+  font-family: Roboto, Sans-serif;
+  @media (max-width: 768px) {
+    justify-content: unset;
+    width: max-content;
+    overflow: hidden;
+    font-family: Helvetica;
+    margin: auto;
+  }
+  > .dsmSliderToggleClick {
+    background: #fff;
+    box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.0973831);
+    border-radius: 17px;
+  }
+  .dsmSliderToggleBtn {
+    padding: 6px 20px 6px 20px;
+    text-decoration: none;
+    z-index: 4;
+    font-weight: 500;
+    position: relative;
+    font-style: normal;
+    font-size: 14px;
+    line-height: 16px;
+    cursor: pointer;
+    color: #4d4d4d;
+    padding: 6px 20px 6px 20px;
+    transition: 0.3s;
+  }
+  .dsmSliderToggleBtn:hover {
+    color: #000000;
+  }
+  .nav-indicator {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 4px;
+    transition: 0.4s;
+    height: 5px;
+    z-index: 1;
+    border-radius: 8px 8px 0 0;
+    background: #fff;
+    box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.0973831);
+    border-radius: 17px;
+    height: 28px;
+    top: 4px;
+  }
+  div.dsmSliderToggleBtn.is-active {
+    font-style: normal;
+    font-weight: normal;
+    color: #000000;
+    z-index: 2;
+    border-radius: 17px;
+    background: #fff;
+    box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.0973831);
+  }
 }

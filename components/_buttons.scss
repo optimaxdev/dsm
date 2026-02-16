@@ -1,608 +1,591 @@
 a.dsmButton {
-    color: rgb(255, 255, 255);
-    font-size: 16px;
-    text-decoration: none;
+  color: $color-white;
+  font-size: 16px;
+  text-decoration: none;
 }
 
 .dsmButton {
-    display: inline-flex;
-    font-family: Roboto;
-    -webkit-box-align: center;
-    align-items: center;
-    -webkit-box-pack: center;
-    justify-content: center;
-    position: relative;
-    min-width: 100px;
-    border-radius: 4px;
-    outline: 0px;
-    cursor: pointer;
-    font-weight: bold;
-    user-select: none;
-    vertical-align: middle;
-    appearance: none;
+  display: inline-flex;
+  font-family: Roboto;
+  -webkit-box-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  justify-content: center;
+  position: relative;
+  min-width: 100px;
+  outline: 0px;
+  cursor: pointer;
+  font-weight: bold;
+  user-select: none;
+  vertical-align: middle;
+  appearance: none;
+  text-decoration: none;
+  border-radius: 8px;
+  border: 2px solid;
+  border-color: $color-primary-dark;
+  color: $color-white;
+  box-sizing: border-box;
+  white-space: nowrap;
+  -webkit-tap-highlight-color: transparent;
+  overflow: hidden;
+  height: 40px;
+  padding: 6px 17px;
+  font-size: 16px;
+  text-transform: none;
+
+  &:not(.round) {
+    background: $gradient-primary;
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    background: $color-white-overlay;
+    inset: 0;
+    z-index: 1;
+    opacity: 0;
+    pointer-events: none;
+  }
+  &::after {
+    content: "";
+    position: absolute;
+    border-radius: 50%;
+    opacity: 0;
+    width: 120%;
+    aspect-ratio: 1 / 1;
+    transition: all 0.8s;
+    background: rgba(0, 0, 0, 0.15);
+  }
+
+  &:active::after {
+    content: "";
+    opacity: 1;
+    width: 0;
+    height: 0;
+    transition: all 0s;
+    z-index: 0;
+  }
+
+  &:hover,
+  &:focus {
     text-decoration: none;
-    background-color: #ff6c00;
-    border-color: #ff6c00;
-    color: rgb(255, 255, 255);
-    transition: 0.15s background-color;
-    box-sizing: border-box;
-    white-space: nowrap;
-    -webkit-tap-highlight-color: transparent;
-    overflow: hidden;
-    height: 40px;
-    padding: 6px 17px;
-    font-size: 16px;
-    border: none;
-    text-transform: none;
+  }
 
-    &:hover,
-    &:focus {
-        text-decoration: none;
+  a {
+    color: inherit !important;
+    text-decoration: inherit !important;
+    font-size: inherit !important;
+    line-height: inherit !important;
+  }
+
+  span {
+    position: relative;
+    z-index: 2;
+  }
+
+  > svg {
+    width: 22px;
+    height: 22px;
+    transform-origin: center center;
+    position: absolute;
+    inset: 0px;
+    margin: auto;
+  }
+
+  &:disabled,
+  &.disabled {
+    cursor: default;
+    pointer-events: none;
+    border-color: $color-primary-disabled !important;
+
+    > svg path {
+      fill: $color-primary-disabled !important;
     }
 
-    a {
-        color: inherit !important;
-        text-decoration: inherit !important;
-        font-size: inherit !important;
-        line-height: inherit !important;
+    &::before {
+      content: "";
+      opacity: 1;
     }
 
-    span svg * {
-        transition: 0.15s all;
+    &.ghost {
+      color: $color-primary-disabled !important;
+    }
+  }
+
+  &.loading {
+    cursor: default;
+    pointer-events: none;
+
+    &:not(.round) {
+      &:not(.ghost) {
+        background: $gradient-primary-hover;
+      }
     }
 
     &.round {
-        border: 2px solid;
-        background-color: rgb(33, 150, 243);
-        border-color: rgb(33, 150, 243);
-        border-radius: 24px;
+      border-color: $color-primary-hover;
+      &:not(.ghost) {
+        background: $color-primary-hover;
+      }
+    }
+    span {
+      display: none;
+    }
+  }
 
-        @media (hover:hover) {
-            &:hover {
-                background-color: rgb(28, 134, 218);
-                border-color: rgb(28, 134, 218);
-            }
-        }
+  &.ghost {
+    background: transparent !important;
+    color: $color-primary;
 
-        @media (max-width: 768px) {
-            padding: 11px 20px;
-        }
-
-        &:disabled span {
-            display: block !important;
-        }
-
-        &.regentGray {
-            color: rgb(255, 255, 255);
-            background-color: rgb(137, 149, 156);
-            border-color: rgb(137, 149, 156);
-
-            @media (hover:hover) {
-                &:hover {
-                    background-color: rgb(58, 72, 80);
-                    border-color: rgb(58, 72, 80);
-                }
-            }
-        }
-
-        &.towerGray {
-            color: rgb(255, 255, 255);
-            background-color: rgb(176, 189, 197);
-            border-color: rgb(176, 189, 197);
-
-            @media (hover:hover) {
-                &:hover {
-                    background-color: rgb(137, 149, 156);
-                    border-color: rgb(137, 149, 156);
-                }
-            }
-        }
-
-        &.codGray {
-            color: rgb(255, 255, 255);
-            background-color: rgb(15, 15, 15);
-            border-color: rgb(15, 15, 15);
-
-            @media (hover:hover) {
-                &:hover {
-                    background-color: rgb(45, 45, 45);
-                    border-color: rgb(45, 45, 45);
-                }
-            }
-        }
-
-
-        &.white {
-            color: rgb(58, 72, 80);
-            background-color: rgb(255, 255, 255);
-            border-color: rgb(255, 255, 255);
-
-            @media (hover:hover) {
-                &:hover {
-                    background-color: rgb(241, 243, 244);
-                    border-color: rgb(241, 243, 244);
-                }
-            }
-        }
-
-        &.disabled {
-            background-color: rgb(28, 134, 218);
-            border-color: transparent;
-            cursor: default;
-
-            span {
-                display: none;
-            }
-
-            &.ghost {
-                background-color: rgb(28, 134, 218);
-                border-color: rgb(28, 134, 218);
-
-                >svg path {
-                    fill: rgb(87, 181, 255) !important;
-                }
-            }
-
-            &.porcelain {
-                background-color: rgb(225, 225, 225);
-
-                >svg path {
-                    fill: rgb(176, 189, 197) !important;
-                }
-            }
-
-            &.regentGray {
-                background-color: rgb(58, 72, 80);
-
-                >svg path {
-                    fill: rgb(137, 149, 156) !important;
-                }
-            }
-
-            &.towerGray {
-                background-color: rgb(137, 149, 156);
-
-                >svg path {
-                    fill: rgb(176, 189, 197) !important;
-                }
-            }
-
-            &.codGray {
-                background-color: rgb(45, 45, 45);
-
-                >svg path {
-                    fill: rgb(137, 137, 137) !important;
-                }
-            }
-
-            &.white {
-                background-color: rgb(241, 243, 244);
-
-                >svg path {
-                    fill: rgb(176, 189, 197) !important;
-                }
-            }
-
-
-        }
-
-        >svg {
-            height: 100%;
-            transform-origin: center center;
-            width: 100%;
-            position: absolute;
-            inset: 0px;
-            margin: auto;
-
-            path {
-                fill: rgb(87, 181, 255);
-            }
-        }
-
-        &:disabled,
-        &.ghost.round:disabled {
-            border-color: transparent;
-            background-color: rgb(216, 216, 216) !important;
-            color: rgb(255, 255, 255) !important;
-
-            span {
-                opacity: 1;
-            }
-        }
+    svg circle {
+      stroke: $color-black;
+      stroke-opacity: 0.25;
     }
 
-    &.small {
-        font-size: 14px;
-        height: 32px;
-        padding: 0 16px;
+    @media (hover: hover) {
+      &:hover {
+        color: $color-primary-dark-hover;
+        border-color: $color-primary-dark-hover;
 
-        &.round {
-            padding: 2px 11px;
+        span svg*[stroke]:not[stroke=""] {
+          stroke: $color-primary-dark-hover;
         }
 
-        @media (max-width: 768px) {
-            &.round {
-                padding: 6px 18px;
-            }
+        span svg*[fill]:not[fill=""] {
+          fill: $color-primary-dark-hover;
         }
+      }
     }
 
-    &.regular {
-        height: 48px;
-        padding: 0 18px;
-        font-size: 18px;
-
-        &.round {
-            padding: 10px 20px;
-        }
-
-        @media (max-width: 768px) {
-            &.round {
-                padding: 13px 23px;
-            }
-        }
+    svg path {
+      stroke: $color-primary-dark;
+      fill: none;
     }
 
-    &.medium {
-        height: 40px;
-        font-size: 16px;
+    &.round {
+      &.porcelain {
+        border-color: $color-porcelain;
+        color: $color-porcelain;
 
-        &.round {
-            padding: 6px 17px;
-        }
+        @media (hover: hover) {
+          &:hover {
+            background: $color-porcelain-hover;
+            border-color: $color-porcelain-hover;
+            color: $color-outer-space;
 
-        @media (max-width: 768px) {
-            &.round {
-                padding: 11px 20px;
+            span svg*[stroke]:not[stroke=""] {
+              stroke: $color-outer-space;
             }
+
+            span svg*[fill]:not[fill=""] {
+              fill: $color-outer-space;
+            }
+          }
         }
+      }
+
+      &.regentGray {
+        color: $color-regent-gray;
+        border-color: $color-regent-gray;
+
+        @media (hover: hover) {
+          &:hover {
+            background: $color-regent-gray-hover;
+            border-color: $color-regent-gray-hover;
+            color: $color-white;
+
+            span svg*[stroke]:not[stroke=""] {
+              stroke: $color-white;
+            }
+
+            span svg*[fill]:not[fill=""] {
+              fill: $color-white;
+            }
+          }
+        }
+      }
+
+      &.towerGray {
+        color: $color-tower-gray;
+        border-color: $color-tower-gray;
+
+        @media (hover: hover) {
+          &:hover {
+            background: $color-tower-gray-hover;
+            border-color: $color-tower-gray-hover;
+            color: $color-white;
+
+            span svg*[stroke]:not[stroke=""] {
+              stroke: $color-white;
+            }
+
+            span svg*[fill]:not[fill=""] {
+              fill: $color-white;
+            }
+          }
+        }
+      }
+
+      &.codGray {
+        border-color: $color-cod-gray;
+        color: $color-cod-gray;
+
+        @media (hover: hover) {
+          &:hover {
+            background: $color-cod-gray-hover;
+            border-color: $color-cod-gray-hover;
+            color: $color-white;
+
+            span svg*[stroke]:not[stroke=""] {
+              stroke: $color-white;
+            }
+
+            span svg*[fill]:not[fill=""] {
+              fill: $color-white;
+            }
+          }
+        }
+      }
+
+      &.white {
+        color: $color-white;
+        border-color: $color-white;
+
+        @media (hover: hover) {
+          &:hover {
+            background: $color-white;
+            border-color: $color-white;
+            color: $color-outer-space;
+          }
+        }
+      }
+    }
+  }
+
+  &.round {
+    border-color: $color-primary;
+    background: $color-primary;
+    border-radius: 24px;
+
+    @media (hover: hover) {
+      &:hover {
+        border-color: $color-primary-hover;
+        background: $color-primary-hover;
+      }
     }
 
-    &:not(.round) {
-        &.large {
-            height: 64px;
-            padding: 0 24px;
-            font-size: 20px;
-        }
-
-        &.extralarge {
-            height: 70px;
-            padding: 0 29px;
-            font-size: 22px;
-        }
-
-        @media (hover:hover) {
-            &:hover {
-                background-color: rgb(227, 96, 0);
-                border-color: rgb(227, 96, 0);
-            }
-        }
-
-        @media (max-width: 768px) {
-            height: 48px;
-            padding: 0 21px;
-
-            &.large,
-            &.extralarge,
-            &.regular {
-                height: 60px;
-                padding: 0 21px;
-                font-size: 20px;
-            }
-
-            &.small,
-            &.medium {
-                height: 48px;
-                padding: 0 21px;
-            }
-        }
+    @media (max-width: 768px) {
+      padding: 11px 20px;
     }
 
-    &:disabled {
-        cursor: default;
-        pointer-events: none;
-        background-color: rgb(216, 216, 216);
-        color: rgb(255, 255, 255);
-        border-color: rgba(0, 0, 0, 0);
+    &:disabled span {
+      display: block !important;
     }
 
+    &.regentGray {
+      color: $color-white;
+      background: $color-regent-gray;
+      border-color: $color-regent-gray;
 
-    &.ghost {
-        background-color: transparent;
-        color: rgb(255, 108, 0);
-        border: 1px solid;
-
-        @media (hover:hover) {
-            &:hover {
-                border-width: 1px;
-                color: white;
-                border-color: rgb(255, 108, 0);
-                background-color: rgb(255, 108, 0);
-            }
+      @media (hover: hover) {
+        &:hover {
+          background: $color-regent-gray-hover;
+          border-color: $color-regent-gray-hover;
         }
-
-        &.secondary,
-        &.round {
-            color: rgb(33, 150, 243);
-            background-color: transparent;
-
-            @media (hover:hover) {
-                &:hover {
-                    border-color: rgb(28, 134, 218);
-                    background-color: rgb(28, 134, 218);
-                    color: white;
-
-                    span svg*[stroke]:not[stroke=""] {
-                        stroke: white;
-                    }
-
-                    span svg*[fill]:not[fill=""] {
-                        fill: white;
-                    }
-                }
-            }
-        }
-
-        &.round {
-            &.porcelain {
-                border-color: rgb(231, 235, 237);
-                color: rgb(231, 235, 237);
-
-                @media (hover:hover) {
-                    &:hover {
-                        background-color: rgb(225, 225, 225);
-                        border-color: rgb(225, 225, 225);
-                        color: rgb(58, 72, 80);
-
-                        span svg*[stroke]:not[stroke=""] {
-                            stroke: rgb(58, 72, 80);
-                        }
-
-                        span svg*[fill]:not[fill=""] {
-                            fill: rgb(58, 72, 80);
-                        }
-                    }
-                }
-            }
-
-            &.regentGray {
-                color: rgb(137, 149, 156);
-                border-color: rgb(137, 149, 156);
-
-                @media (hover:hover) {
-                    &:hover {
-                        background-color: rgb(58, 72, 80);
-                        border-color: rgb(58, 72, 80);
-                        color: white;
-
-                        span svg*[stroke]:not[stroke=""] {
-                            stroke: white;
-                        }
-
-                        span svg*[fill]:not[fill=""] {
-                            fill: white;
-                        }
-                    }
-                }
-            }
-
-            &.towerGray {
-                color: rgb(176, 189, 197);
-                border-color: rgb(176, 189, 197);
-
-                @media (hover:hover) {
-                    &:hover {
-                        background-color: rgb(137, 149, 156);
-                        border-color: rgb(137, 149, 156);
-                        color: white;
-
-                        span svg*[stroke]:not[stroke=""] {
-                            stroke: white;
-                        }
-
-                        span svg*[fill]:not[fill=""] {
-                            fill: white;
-                        }
-                    }
-                }
-
-            }
-
-            &.codGray {
-                border-color: rgb(15, 15, 15);
-                color: rgb(15, 15, 15);
-
-                @media (hover:hover) {
-                    &:hover {
-                        background-color: rgb(45, 45, 45);
-                        border-color: rgb(45, 45, 45);
-                        color: white;
-
-                        span svg*[stroke]:not[stroke=""] {
-                            stroke: white;
-                        }
-
-                        span svg*[fill]:not[fill=""] {
-                            fill: white;
-                        }
-                    }
-                }
-            }
-
-            &.white {
-                color: white;
-                border-color: white;
-
-                @media (hover:hover) {
-                    &:hover {
-                        background-color: rgb(255, 255, 255);
-                        border-color: rgb(255, 255, 255);
-                        color: #3A4850;
-                    }
-                }
-            }
-        }
+      }
     }
 
-    &.secondary {
-        background-color: rgb(33, 150, 243);
-        border-color: rgb(33, 150, 243);
+    &.towerGray {
+      color: $color-white;
+      background: $color-tower-gray;
+      border-color: $color-tower-gray;
 
-        @media (hover:hover) {
-            &:hover {
-                background-color: rgb(28, 134, 218);
-                border-color: rgb(28, 134, 218);
-            }
+      @media (hover: hover) {
+        &:hover {
+          background: $color-tower-gray-hover;
+          border-color: $color-tower-gray-hover;
         }
+      }
     }
 
-    &.porcelain {
-        color: rgb(58, 72, 80);
-        background-color: rgb(231, 235, 237);
-        border-color: rgb(231, 235, 237);
+    &.codGray {
+      color: $color-white;
+      background: $color-cod-gray;
+      border-color: $color-cod-gray;
 
-        @media (hover:hover) {
-            &:hover {
-                background-color: rgb(225, 225, 225);
-                border-color: rgb(225, 225, 225);
-            }
+      @media (hover: hover) {
+        &:hover {
+          background: $color-cod-gray-hover;
+          border-color: $color-cod-gray-hover;
         }
+      }
     }
 
-    &:disabled .progress+* {
-        opacity: 0.5;
-    }
+    &.white {
+      color: $color-outer-space;
+      background: $color-white;
+      border-color: $color-white;
 
-    &.ghost.disabled {
-        background-color: rgb(227, 96, 0);
-        color: white;
+      @media (hover: hover) {
+        &:hover {
+          background: $color-white-hover;
+          border-color: $color-white-hover;
+        }
+      }
     }
 
     &.disabled {
-        background-color: rgb(227, 96, 0);
-        border: none;
+      &.porcelain {
+        background: $color-porcelain-disabled;
+
+        > svg path {
+          fill: $color-tower-gray !important;
+        }
+      }
+
+      &.regentGray {
+        background: $color-regent-gray-hover;
+
+        > svg path {
+          fill: $color-regent-gray-disabled !important;
+        }
+      }
+
+      &.towerGray {
+        background: $color-tower-gray-hover;
+
+        > svg path {
+          fill: $color-tower-gray-disabled !important;
+        }
+      }
+
+      &.codGray {
+        background: $color-cod-gray-hover;
+
+        > svg path {
+          fill: $color-cod-gray-disabled !important;
+        }
+      }
+
+      &.white {
+        background: $color-white-hover;
+
+        > svg path {
+          fill: $color-tower-gray !important;
+        }
+      }
+    }
+  }
+
+  &:not(.round) {
+    &.extralarge {
+      height: 70px;
+      padding: 0 29px;
+      font-size: 22px;
     }
 
-    &.disabled.secondary,
-    &.secondary:disabled {
-        background-color: rgb(28, 134, 218);
+    @media (hover: hover) {
+      &:hover {
+        border-color: $color-primary-dark-hover;
 
-        span {
-            opacity: 0.5;
+        &:not(.ghost) {
+          background: $gradient-primary-hover;
         }
+      }
     }
 
-    &.secondary .progress {
-        background-color: rgb(63, 171, 230);
+    @media (max-width: 768px) {
+      height: 48px;
+      padding: 0 21px;
 
-        .indeterminate {
-            background-color: rgb(27, 70, 126);
-        }
+      &.large,
+      &.extralarge,
+      &.regular {
+        height: 60px;
+        padding: 0 21px;
+        font-size: 20px;
+      }
+
+      &.small,
+      &.medium {
+        height: 48px;
+        padding: 0 21px;
+      }
+    }
+  }
+
+  &.small {
+    font-size: 14px;
+    height: 32px;
+    padding: 0 12px;
+
+    &.round {
+      padding: 9px 14px;
     }
 
-    .progress {
-        position: absolute;
-        height: 4px;
-        display: block;
-        width: 100%;
-        background-color: rgb(245, 154, 52);
-        top: 0px;
-        background-clip: padding-box;
-        overflow: hidden;
-
-        .indeterminate {
-            background-color: rgb(210, 67, 30);
-
-            &:before {
-                content: '';
-                position: absolute;
-                background-color: inherit;
-                top: 0;
-                left: 0;
-                bottom: 0;
-                will-change: left, right;
-                animation: indeterminate 2.1s cubic-bezier(0.65, 0.815, 0.735, 0.395) infinite;
-            }
-
-            &:after {
-                content: '';
-                position: absolute;
-                background-color: inherit;
-                top: 0;
-                left: 0;
-                bottom: 0;
-                will-change: left, right;
-                animation: indeterminate-short 2.1s cubic-bezier(0.165, 0.84, 0.44, 1) infinite;
-                animation-delay: 1.15s;
-            }
-        }
+    svg {
+      width: 18px;
+      height: 18px;
     }
 
-    @-webkit-keyframes indeterminate {
-        0% {
-            left: -35%;
-            right: 100%;
-        }
+    @media (max-width: 768px) {
+      &.round {
+        padding: 8px 14px;
+      }
+    }
+  }
 
-        60% {
-            left: 100%;
-            right: -90%;
-        }
+  &.regular {
+    height: 48px;
+    padding: 0 18px;
+    font-size: 18px;
 
-        100% {
-            left: 100%;
-            right: -90%;
-        }
+    &.round {
+      padding: 10px 20px;
     }
 
-    @keyframes indeterminate {
-        0% {
-            left: -35%;
-            right: 100%;
-        }
-
-        60% {
-            left: 100%;
-            right: -90%;
-        }
-
-        100% {
-            left: 100%;
-            right: -90%;
-        }
+    svg {
+      width: 26px;
+      height: 26px;
     }
 
-    @-webkit-keyframes indeterminate-short {
-        0% {
-            left: -200%;
-            right: 100%;
-        }
+    @media (max-width: 768px) {
+      &.round {
+        padding: 13px 23px;
+      }
+    }
+  }
 
-        60% {
-            left: 107%;
-            right: -8%;
-        }
+  &.medium {
+    height: 40px;
+    font-size: 16px;
 
-        100% {
-            left: 107%;
-            right: -8%;
-        }
+    &.round {
+      padding: 6px 17px;
     }
 
-    @keyframes indeterminate-short {
-        0% {
-            left: -200%;
-            right: 100%;
-        }
-
-        60% {
-            left: 107%;
-            right: -8%;
-        }
-
-        100% {
-            left: 107%;
-            right: -8%;
-        }
+    &:not(.round) {
+      padding: 14px 16px;
     }
+
+    svg {
+      width: 22px;
+      height: 22px;
+    }
+
+    @media (max-width: 768px) {
+      &.round {
+        padding: 11px 20px;
+      }
+    }
+  }
+
+  &.large {
+    height: 60px;
+    font-size: 20px;
+
+    &.round {
+      padding: 0 24px;
+      border-radius: 30px;
+    }
+
+    &:not(.round) {
+      padding: 19px 20px;
+    }
+
+    svg {
+      width: 22px;
+      height: 22px;
+    }
+
+    @media (max-width: 768px) {
+      &.round {
+        padding: 17px 24px;
+      }
+      &:not(.round) {
+        padding: 17px 20px;
+      }
+    }
+  }
+
+  &.porcelain {
+    color: $color-outer-space;
+    background: $color-porcelain;
+    border-color: $color-porcelain;
+
+    @media (hover: hover) {
+      &:hover {
+        background: $color-porcelain-hover;
+        border-color: $color-porcelain-hover;
+      }
+    }
+  }
+
+  @-webkit-keyframes indeterminate {
+    0% {
+      left: -35%;
+      right: 100%;
+    }
+
+    60% {
+      left: 100%;
+      right: -90%;
+    }
+
+    100% {
+      left: 100%;
+      right: -90%;
+    }
+  }
+
+  @keyframes indeterminate {
+    0% {
+      left: -35%;
+      right: 100%;
+    }
+
+    60% {
+      left: 100%;
+      right: -90%;
+    }
+
+    100% {
+      left: 100%;
+      right: -90%;
+    }
+  }
+
+  @-webkit-keyframes indeterminate-short {
+    0% {
+      left: -200%;
+      right: 100%;
+    }
+
+    60% {
+      left: 107%;
+      right: -8%;
+    }
+
+    100% {
+      left: 107%;
+      right: -8%;
+    }
+  }
+
+  @keyframes indeterminate-short {
+    0% {
+      left: -200%;
+      right: 100%;
+    }
+
+    60% {
+      left: 107%;
+      right: -8%;
+    }
+
+    100% {
+      left: 107%;
+      right: -8%;
+    }
+  }
 }

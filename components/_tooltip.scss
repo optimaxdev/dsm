@@ -1,150 +1,150 @@
 .dsmTooltip {
-    position: relative;
+  position: relative;
+  display: inline-block;
+  padding: 0 10px;
+  padding-top: 20px;
+
+  &.click:hover .container {
+    opacity: 0;
+    visibility: hidden;
+  }
+
+  &:hover .container {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .item {
+    bottom: 0;
+    height: 18px;
+    width: 18px;
+    line-height: 18px;
+    font-family: Roboto;
     display: inline-block;
-    padding: 0 10px;
-    padding-top: 20px;
+    border-radius: 50%;
+    text-align: center;
+    font-size: 11px;
+    vertical-align: middle;
+    color: $color-primary;
+    background-color: $color-white;
+    border: 1px solid;
+    cursor: pointer;
+  }
 
-    &.click:hover .container {
-        opacity: 0;
-        visibility: hidden;
-    }
+  &.click .container {
+    transition: none;
+  }
 
-    &:hover .container {
-        opacity: 1;
-        visibility: visible;
-    }
+  .container {
+    overflow: visible;
+    opacity: 0;
+    transition: 0.2s all;
+    z-index: 8;
+    width: 250px;
+    margin: 0px;
+    position: absolute;
+    top: 0;
+    visibility: hidden;
+    left: 49px;
+    padding-bottom: 8px;
+  }
 
-    .item {
-        bottom: 0;
-        height: 18px;
-        width: 18px;
-        line-height: 18px;
-        font-family: Roboto;
-        display: inline-block;
-        border-radius: 50%;
-        text-align: center;
-        font-size: 11px;
-        vertical-align: middle;
-        color: rgb(63, 171, 230);
-        background-color: rgb(255, 255, 255);
-        border: 1px solid;
-        cursor: pointer;
-    }
+  &.right {
+    padding-top: 0;
+    padding-left: 10px;
 
-    &.click .container {
-        transition: none;
+    .arrow {
+      left: unset;
+      right: 0;
+      top: 50%;
     }
 
     .container {
-        overflow: visible;
-        opacity: 0;
-        transition: 0.2s all;
-        z-index: 8;
-        width: 250px;
-        margin: 0px;
-        position: absolute;
-        top: 0;
-        visibility: hidden;
-        left: 49px;
-        padding-bottom: 8px;
+      padding-bottom: 0;
+      padding-right: 8px;
     }
+  }
 
-    &.right {
-        padding-top: 0;
-        padding-left: 10px;
-
-        .arrow {
-            left: unset;
-            right: 0;
-            top: 50%;
-        }
-
-        .container {
-            padding-bottom: 0;
-            padding-right: 8px;
-        }
-    }
-
-    &.bottom {
-        padding-top: 0;
-
-        .arrow {
-            left: 50%;
-            bottom: unset;
-            top: 0;
-        }
-
-        .container {
-            padding-bottom: 0;
-            padding-top: 8px;
-        }
-    }
-
-    &.close svg {
-        position: absolute;
-        top: 22px;
-        right: 12px;
-        cursor: pointer;
-        height: 12px;
-        width: 12px;
-        z-index: 3;
-    }
-
-    &.left {
-        padding-top: 0;
-        padding-right: 10px;
-
-        .arrow {
-            left: 0;
-            right: unset;
-            top: 50%;
-        }
-
-        .container {
-            padding-bottom: 0;
-            padding-left: 8px;
-        }
-    }
+  &.bottom {
+    padding-top: 0;
 
     .arrow {
-        position: absolute;
-        border-width: 0px;
-        border-style: initial;
-        border-color: initial;
-        bottom: 0px;
-        left: 122.5px;
-        z-index: 1;
-        width: 16px;
-        height: 16px;
-        background-color: rgb(255, 255, 255);
-        transform: rotate(45deg);
-        box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 8px;
+      left: 50%;
+      bottom: unset;
+      top: 0;
     }
 
-    .infoBox {
-        position: relative;
-        background-color: rgb(255, 255, 255);
-        font-size: 14px;
-        border-radius: 12px;
-        overflow: hidden;
-        box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 8px;
-
-        &:before {
-            content: "";
-            z-index: 2;
-            position: absolute;
-            top: 0px;
-            left: 0px;
-            width: 100%;
-            height: 100%;
-            background-color: rgb(255, 255, 255);
-        }
-
-        .textArea {
-            color: black;
-            padding: 20px;
-            z-index: 3;
-            position: relative;
-        }
+    .container {
+      padding-bottom: 0;
+      padding-top: 8px;
     }
+  }
+
+  &.close svg {
+    position: absolute;
+    top: 22px;
+    right: 12px;
+    cursor: pointer;
+    height: 12px;
+    width: 12px;
+    z-index: 3;
+  }
+
+  &.left {
+    padding-top: 0;
+    padding-right: 10px;
+
+    .arrow {
+      left: 0;
+      right: unset;
+      top: 50%;
+    }
+
+    .container {
+      padding-bottom: 0;
+      padding-left: 8px;
+    }
+  }
+
+  .arrow {
+    position: absolute;
+    border-width: 0px;
+    border-style: initial;
+    border-color: initial;
+    bottom: 0px;
+    left: 122.5px;
+    z-index: 1;
+    width: 16px;
+    height: 16px;
+    background-color: $color-white;
+    transform: rotate(45deg);
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 8px;
+  }
+
+  .infoBox {
+    position: relative;
+    background-color: $color-white;
+    font-size: 14px;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 8px;
+
+    &:before {
+      content: "";
+      z-index: 2;
+      position: absolute;
+      top: 0px;
+      left: 0px;
+      width: 100%;
+      height: 100%;
+      background-color: $color-white;
+    }
+
+    .textArea {
+      color: black;
+      padding: 20px;
+      z-index: 3;
+      position: relative;
+    }
+  }
 }

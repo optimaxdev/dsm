@@ -1,123 +1,120 @@
 @mixin random-bgr() {
-    background: rgb(random(255), random(255), random(255));
+  background: rgb(random(255), random(255), random(255));
 }
 
 .dsm-swiper {
+  box-sizing: border-box;
+  width: 100%;
+  margin: 0 auto;
+  position: relative;
+
+  * {
     box-sizing: border-box;
+  }
+
+  &.minimised {
+    transition: 0.15s max-width;
+    margin: 0;
+  }
+
+  .pagination {
+    display: flex;
+    justify-content: center;
     width: 100%;
-    margin: 0 auto;
+    padding-top: 16px;
+
+    .dot {
+      background: rgba(58, 72, 80, 0.15);
+      border-radius: 100px;
+      width: 6px;
+      height: 6px;
+      display: block;
+      margin-right: 6px;
+      cursor: pointer;
+
+      &.active {
+        background: #3a4850;
+      }
+
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+  }
+
+  .slides {
+    display: grid;
+    grid-auto-flow: column;
+    overflow: auto;
+    justify-content: flex-start;
+    min-height: 260px;
+    cursor: grab;
+    width: 100%;
+    transition: 0.15s width;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
+
+  .slide {
+    transition: 0.15s width;
+    background: #dbe1e5;
+  }
+
+  .progress {
+    margin: 0 60px;
+    opacity: 0;
+    height: 4px;
+    transition: 0.3s opacity;
+    margin-top: 16px;
+    background: rgba(58, 72, 80, 0.15);
+    overflow: hidden;
+    border-radius: 100px;
     position: relative;
 
-    * {
-        box-sizing: border-box;
+    .indicator {
+      background: #5b6971;
+      position: absolute;
+      left: 0;
+      top: 0;
+      height: 100%;
+      transform-origin: left;
+      display: block;
+      width: 100%;
+      transform: scale(0);
+      transition: 0.3s scale linear;
     }
-
-    &.minimised {
-        transition: 0.15s max-width;
-        // max-width: 800px;
-        margin: 0;
-        // left: 50%;
-
-    }
-
-    .pagination {
-        display: flex;
-        justify-content: center;
-        width: 100%;
-        padding-top: 16px;
-
-        .dot {
-            background: rgba(58, 72, 80, 0.15);
-            border-radius: 100px;
-            width: 6px;
-            height: 6px;
-            display: block;
-            margin-right: 6px;
-            cursor: pointer;
-
-            &.active {
-                background: #3A4850;
-            }
-
-            &:last-child {
-                margin-right: 0;
-            }
-        }
-    }
-
-    .slides {
-        display: grid;
-        grid-auto-flow: column;
-        overflow: auto;
-        justify-content: flex-start;
-        min-height: 260px;
-        cursor: grab;
-        width: 100%;
-        transition: 0.15s width;
-
-
-        &::-webkit-scrollbar {
-            display: none;
-        }
-    }
-
-    .slide {
-        transition: 0.15s width;
-        background: #DBE1E5;
-    }
-
-    .progress {
-        margin: 0 60px;
-        opacity: 0;
-        height: 4px;
-        transition: .3s opacity;
-        margin-top: 16px;
-        background: rgba(58, 72, 80, 0.15);
-        overflow: hidden;
-        border-radius: 100px;
-        position: relative;
-
-        .indicator {
-            background: #5B6971;
-            position: absolute;
-            left: 0;
-            top: 0;
-            height: 100%;
-            transform-origin: left;
-            display: block;
-            width: 100%;
-            transform: scale(0);
-            transition: 0.3s scale linear;
-        }
-    }
+  }
 }
 
 .swiper-arrow {
-    width: 52px;
-    padding: 19px 21px;
-    height: 52px;
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background: #FFFFFF;
-    border: 1px solid #F1F1F1;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    box-sizing: border-box;
-    cursor: pointer;
-    box-shadow: 0px 1px 2px rgba(58, 72, 80, 0.07),
-        0px 6px 13px rgba(176, 189, 197, 0.14),
-        0px 1px 6px rgba(176, 189, 197, 0.09);
-    border-radius: 100px;
+  width: 52px;
+  padding: 19px 21px;
+  height: 52px;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: #fff;
+  border: 1px solid #f1f1f1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  cursor: pointer;
+  box-shadow:
+    0px 1px 2px rgba(58, 72, 80, 0.07),
+    0px 6px 13px rgba(176, 189, 197, 0.14),
+    0px 1px 6px rgba(176, 189, 197, 0.09);
+  border-radius: 100px;
 
-    &.left {
-        padding-right: 23px;
-        left: 0;
-    }
+  &.left {
+    padding-right: 23px;
+    left: 0;
+  }
 
-    &.right {
-        padding-left: 23px;
-        right: 0;
-    }
+  &.right {
+    padding-left: 23px;
+    right: 0;
+  }
 }

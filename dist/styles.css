@@ -1,50 +1,69 @@
 a.dsmButton {
-  color: rgb(255, 255, 255);
+  color: #fff;
   font-size: 16px;
   text-decoration: none;
 }
 
 .dsmButton {
-  display: -webkit-inline-box;
-  display: -ms-inline-flexbox;
   display: inline-flex;
   font-family: Roboto;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-      align-items: center;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
-      justify-content: center;
+  align-items: center;
+  justify-content: center;
   position: relative;
   min-width: 100px;
-  border-radius: 4px;
   outline: 0px;
   cursor: pointer;
   font-weight: bold;
   -webkit-user-select: none;
      -moz-user-select: none;
-      -ms-user-select: none;
           user-select: none;
   vertical-align: middle;
   -webkit-appearance: none;
      -moz-appearance: none;
           appearance: none;
   text-decoration: none;
-  background-color: #ff6c00;
-  border-color: #ff6c00;
-  color: rgb(255, 255, 255);
-  -webkit-transition: 0.15s background-color;
-  transition: 0.15s background-color;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  border-radius: 8px;
+  border: 2px solid;
+  border-color: #196ac6;
+  color: #fff;
+  box-sizing: border-box;
   white-space: nowrap;
   -webkit-tap-highlight-color: transparent;
   overflow: hidden;
   height: 40px;
   padding: 6px 17px;
   font-size: 16px;
-  border: none;
   text-transform: none;
+}
+.dsmButton:not(.round) {
+  background: linear-gradient(90deg, #196ac6 0%, #277bda 100%);
+}
+.dsmButton::before {
+  content: "";
+  position: absolute;
+  background: rgba(255, 255, 255, 0.4);
+  inset: 0;
+  z-index: 1;
+  opacity: 0;
+  pointer-events: none;
+}
+.dsmButton::after {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  opacity: 0;
+  width: 120%;
+  aspect-ratio: 1/1;
+  transition: all 0.8s;
+  background: rgba(0, 0, 0, 0.15);
+}
+.dsmButton:active::after {
+  content: "";
+  opacity: 1;
+  width: 0;
+  height: 0;
+  transition: all 0s;
+  z-index: 0;
 }
 .dsmButton:hover, .dsmButton:focus {
   text-decoration: none;
@@ -55,20 +74,161 @@ a.dsmButton {
   font-size: inherit !important;
   line-height: inherit !important;
 }
-.dsmButton span svg * {
-  -webkit-transition: 0.15s all;
-  transition: 0.15s all;
+.dsmButton span {
+  position: relative;
+  z-index: 2;
+}
+.dsmButton > svg {
+  width: 22px;
+  height: 22px;
+  transform-origin: center center;
+  position: absolute;
+  inset: 0px;
+  margin: auto;
+}
+.dsmButton:disabled, .dsmButton.disabled {
+  cursor: default;
+  pointer-events: none;
+  border-color: #7db0e9 !important;
+}
+.dsmButton:disabled > svg path, .dsmButton.disabled > svg path {
+  fill: #7db0e9 !important;
+}
+.dsmButton:disabled::before, .dsmButton.disabled::before {
+  content: "";
+  opacity: 1;
+}
+.dsmButton:disabled.ghost, .dsmButton.disabled.ghost {
+  color: #7db0e9 !important;
+}
+.dsmButton.loading {
+  cursor: default;
+  pointer-events: none;
+}
+.dsmButton.loading:not(.round):not(.ghost) {
+  background: linear-gradient(90deg, #1358a7 0%, #196ac6 100%);
+}
+.dsmButton.loading.round {
+  border-color: #246fc4;
+}
+.dsmButton.loading.round:not(.ghost) {
+  background: #246fc4;
+}
+.dsmButton.loading span {
+  display: none;
+}
+.dsmButton.ghost {
+  background: transparent !important;
+  color: #277bda;
+}
+.dsmButton.ghost svg circle {
+  stroke: rgb(0, 0, 0);
+  stroke-opacity: 0.25;
+}
+@media (hover: hover) {
+  .dsmButton.ghost:hover {
+    color: #1358a7;
+    border-color: #1358a7;
+  }
+  .dsmButton.ghost:hover span svg*[stroke]:not[stroke=""] {
+    stroke: #1358a7;
+  }
+  .dsmButton.ghost:hover span svg*[fill]:not[fill=""] {
+    fill: #1358a7;
+  }
+}
+.dsmButton.ghost svg path {
+  stroke: #196ac6;
+  fill: none;
+}
+.dsmButton.ghost.round.porcelain {
+  border-color: rgb(231, 235, 237);
+  color: rgb(231, 235, 237);
+}
+@media (hover: hover) {
+  .dsmButton.ghost.round.porcelain:hover {
+    background: rgb(225, 225, 225);
+    border-color: rgb(225, 225, 225);
+    color: rgb(58, 72, 80);
+  }
+  .dsmButton.ghost.round.porcelain:hover span svg*[stroke]:not[stroke=""] {
+    stroke: rgb(58, 72, 80);
+  }
+  .dsmButton.ghost.round.porcelain:hover span svg*[fill]:not[fill=""] {
+    fill: rgb(58, 72, 80);
+  }
+}
+.dsmButton.ghost.round.regentGray {
+  color: rgb(137, 149, 156);
+  border-color: rgb(137, 149, 156);
+}
+@media (hover: hover) {
+  .dsmButton.ghost.round.regentGray:hover {
+    background: rgb(58, 72, 80);
+    border-color: rgb(58, 72, 80);
+    color: #fff;
+  }
+  .dsmButton.ghost.round.regentGray:hover span svg*[stroke]:not[stroke=""] {
+    stroke: #fff;
+  }
+  .dsmButton.ghost.round.regentGray:hover span svg*[fill]:not[fill=""] {
+    fill: #fff;
+  }
+}
+.dsmButton.ghost.round.towerGray {
+  color: rgb(176, 189, 197);
+  border-color: rgb(176, 189, 197);
+}
+@media (hover: hover) {
+  .dsmButton.ghost.round.towerGray:hover {
+    background: rgb(137, 149, 156);
+    border-color: rgb(137, 149, 156);
+    color: #fff;
+  }
+  .dsmButton.ghost.round.towerGray:hover span svg*[stroke]:not[stroke=""] {
+    stroke: #fff;
+  }
+  .dsmButton.ghost.round.towerGray:hover span svg*[fill]:not[fill=""] {
+    fill: #fff;
+  }
+}
+.dsmButton.ghost.round.codGray {
+  border-color: rgb(15, 15, 15);
+  color: rgb(15, 15, 15);
+}
+@media (hover: hover) {
+  .dsmButton.ghost.round.codGray:hover {
+    background: rgb(45, 45, 45);
+    border-color: rgb(45, 45, 45);
+    color: #fff;
+  }
+  .dsmButton.ghost.round.codGray:hover span svg*[stroke]:not[stroke=""] {
+    stroke: #fff;
+  }
+  .dsmButton.ghost.round.codGray:hover span svg*[fill]:not[fill=""] {
+    fill: #fff;
+  }
+}
+.dsmButton.ghost.round.white {
+  color: #fff;
+  border-color: #fff;
+}
+@media (hover: hover) {
+  .dsmButton.ghost.round.white:hover {
+    background: #fff;
+    border-color: #fff;
+    color: rgb(58, 72, 80);
+  }
 }
 .dsmButton.round {
-  border: 2px solid;
-  background-color: rgb(33, 150, 243);
-  border-color: rgb(33, 150, 243);
+  border-color: #277bda;
+  background: #277bda;
   border-radius: 24px;
 }
 @media (hover: hover) {
   .dsmButton.round:hover {
-    background-color: rgb(28, 134, 218);
-    border-color: rgb(28, 134, 218);
+    border-color: #246fc4;
+    background: #246fc4;
   }
 }
 @media (max-width: 768px) {
@@ -80,156 +240,78 @@ a.dsmButton {
   display: block !important;
 }
 .dsmButton.round.regentGray {
-  color: rgb(255, 255, 255);
-  background-color: rgb(137, 149, 156);
+  color: #fff;
+  background: rgb(137, 149, 156);
   border-color: rgb(137, 149, 156);
 }
 @media (hover: hover) {
   .dsmButton.round.regentGray:hover {
-    background-color: rgb(58, 72, 80);
+    background: rgb(58, 72, 80);
     border-color: rgb(58, 72, 80);
   }
 }
 .dsmButton.round.towerGray {
-  color: rgb(255, 255, 255);
-  background-color: rgb(176, 189, 197);
+  color: #fff;
+  background: rgb(176, 189, 197);
   border-color: rgb(176, 189, 197);
 }
 @media (hover: hover) {
   .dsmButton.round.towerGray:hover {
-    background-color: rgb(137, 149, 156);
+    background: rgb(137, 149, 156);
     border-color: rgb(137, 149, 156);
   }
 }
 .dsmButton.round.codGray {
-  color: rgb(255, 255, 255);
-  background-color: rgb(15, 15, 15);
+  color: #fff;
+  background: rgb(15, 15, 15);
   border-color: rgb(15, 15, 15);
 }
 @media (hover: hover) {
   .dsmButton.round.codGray:hover {
-    background-color: rgb(45, 45, 45);
+    background: rgb(45, 45, 45);
     border-color: rgb(45, 45, 45);
   }
 }
 .dsmButton.round.white {
   color: rgb(58, 72, 80);
-  background-color: rgb(255, 255, 255);
-  border-color: rgb(255, 255, 255);
+  background: #fff;
+  border-color: #fff;
 }
 @media (hover: hover) {
   .dsmButton.round.white:hover {
-    background-color: rgb(241, 243, 244);
+    background: rgb(241, 243, 244);
     border-color: rgb(241, 243, 244);
   }
 }
-.dsmButton.round.disabled {
-  background-color: rgb(28, 134, 218);
-  border-color: transparent;
-  cursor: default;
-}
-.dsmButton.round.disabled span {
-  display: none;
-}
-.dsmButton.round.disabled.ghost {
-  background-color: rgb(28, 134, 218);
-  border-color: rgb(28, 134, 218);
-}
-.dsmButton.round.disabled.ghost > svg path {
-  fill: rgb(87, 181, 255) !important;
-}
 .dsmButton.round.disabled.porcelain {
-  background-color: rgb(225, 225, 225);
+  background: rgb(225, 225, 225);
 }
 .dsmButton.round.disabled.porcelain > svg path {
   fill: rgb(176, 189, 197) !important;
 }
 .dsmButton.round.disabled.regentGray {
-  background-color: rgb(58, 72, 80);
+  background: rgb(58, 72, 80);
 }
 .dsmButton.round.disabled.regentGray > svg path {
   fill: rgb(137, 149, 156) !important;
 }
 .dsmButton.round.disabled.towerGray {
-  background-color: rgb(137, 149, 156);
+  background: rgb(137, 149, 156);
 }
 .dsmButton.round.disabled.towerGray > svg path {
   fill: rgb(176, 189, 197) !important;
 }
 .dsmButton.round.disabled.codGray {
-  background-color: rgb(45, 45, 45);
+  background: rgb(45, 45, 45);
 }
 .dsmButton.round.disabled.codGray > svg path {
   fill: rgb(137, 137, 137) !important;
 }
 .dsmButton.round.disabled.white {
-  background-color: rgb(241, 243, 244);
+  background: rgb(241, 243, 244);
 }
 .dsmButton.round.disabled.white > svg path {
   fill: rgb(176, 189, 197) !important;
-}
-.dsmButton.round > svg {
-  height: 100%;
-  -webkit-transform-origin: center center;
-          transform-origin: center center;
-  width: 100%;
-  position: absolute;
-  inset: 0px;
-  margin: auto;
-}
-.dsmButton.round > svg path {
-  fill: rgb(87, 181, 255);
-}
-.dsmButton.round:disabled, .dsmButton.round.ghost.round:disabled {
-  border-color: transparent;
-  background-color: rgb(216, 216, 216) !important;
-  color: rgb(255, 255, 255) !important;
-}
-.dsmButton.round:disabled span, .dsmButton.round.ghost.round:disabled span {
-  opacity: 1;
-}
-.dsmButton.small {
-  font-size: 14px;
-  height: 32px;
-  padding: 0 16px;
-}
-.dsmButton.small.round {
-  padding: 2px 11px;
-}
-@media (max-width: 768px) {
-  .dsmButton.small.round {
-    padding: 6px 18px;
-  }
-}
-.dsmButton.regular {
-  height: 48px;
-  padding: 0 18px;
-  font-size: 18px;
-}
-.dsmButton.regular.round {
-  padding: 10px 20px;
-}
-@media (max-width: 768px) {
-  .dsmButton.regular.round {
-    padding: 13px 23px;
-  }
-}
-.dsmButton.medium {
-  height: 40px;
-  font-size: 16px;
-}
-.dsmButton.medium.round {
-  padding: 6px 17px;
-}
-@media (max-width: 768px) {
-  .dsmButton.medium.round {
-    padding: 11px 20px;
-  }
-}
-.dsmButton:not(.round).large {
-  height: 64px;
-  padding: 0 24px;
-  font-size: 20px;
 }
 .dsmButton:not(.round).extralarge {
   height: 70px;
@@ -238,8 +320,10 @@ a.dsmButton {
 }
 @media (hover: hover) {
   .dsmButton:not(.round):hover {
-    background-color: rgb(227, 96, 0);
-    border-color: rgb(227, 96, 0);
+    border-color: #1358a7;
+  }
+  .dsmButton:not(.round):hover:not(.ghost) {
+    background: linear-gradient(90deg, #1358a7 0%, #196ac6 100%);
   }
 }
 @media (max-width: 768px) {
@@ -257,215 +341,91 @@ a.dsmButton {
     padding: 0 21px;
   }
 }
-.dsmButton:disabled {
-  cursor: default;
-  pointer-events: none;
-  background-color: rgb(216, 216, 216);
-  color: rgb(255, 255, 255);
-  border-color: rgba(0, 0, 0, 0);
+.dsmButton.small {
+  font-size: 14px;
+  height: 32px;
+  padding: 0 12px;
 }
-.dsmButton.ghost {
-  background-color: transparent;
-  color: rgb(255, 108, 0);
-  border: 1px solid;
+.dsmButton.small.round {
+  padding: 9px 14px;
 }
-@media (hover: hover) {
-  .dsmButton.ghost:hover {
-    border-width: 1px;
-    color: white;
-    border-color: rgb(255, 108, 0);
-    background-color: rgb(255, 108, 0);
+.dsmButton.small svg {
+  width: 18px;
+  height: 18px;
+}
+@media (max-width: 768px) {
+  .dsmButton.small.round {
+    padding: 8px 14px;
   }
 }
-.dsmButton.ghost.secondary, .dsmButton.ghost.round {
-  color: rgb(33, 150, 243);
-  background-color: transparent;
+.dsmButton.regular {
+  height: 48px;
+  padding: 0 18px;
+  font-size: 18px;
 }
-@media (hover: hover) {
-  .dsmButton.ghost.secondary:hover, .dsmButton.ghost.round:hover {
-    border-color: rgb(28, 134, 218);
-    background-color: rgb(28, 134, 218);
-    color: white;
-  }
-  .dsmButton.ghost.secondary:hover span svg*[stroke]:not[stroke=""], .dsmButton.ghost.round:hover span svg*[stroke]:not[stroke=""] {
-    stroke: white;
-  }
-  .dsmButton.ghost.secondary:hover span svg*[fill]:not[fill=""], .dsmButton.ghost.round:hover span svg*[fill]:not[fill=""] {
-    fill: white;
-  }
+.dsmButton.regular.round {
+  padding: 10px 20px;
 }
-.dsmButton.ghost.round.porcelain {
-  border-color: rgb(231, 235, 237);
-  color: rgb(231, 235, 237);
+.dsmButton.regular svg {
+  width: 26px;
+  height: 26px;
 }
-@media (hover: hover) {
-  .dsmButton.ghost.round.porcelain:hover {
-    background-color: rgb(225, 225, 225);
-    border-color: rgb(225, 225, 225);
-    color: rgb(58, 72, 80);
-  }
-  .dsmButton.ghost.round.porcelain:hover span svg*[stroke]:not[stroke=""] {
-    stroke: rgb(58, 72, 80);
-  }
-  .dsmButton.ghost.round.porcelain:hover span svg*[fill]:not[fill=""] {
-    fill: rgb(58, 72, 80);
+@media (max-width: 768px) {
+  .dsmButton.regular.round {
+    padding: 13px 23px;
   }
 }
-.dsmButton.ghost.round.regentGray {
-  color: rgb(137, 149, 156);
-  border-color: rgb(137, 149, 156);
+.dsmButton.medium {
+  height: 40px;
+  font-size: 16px;
 }
-@media (hover: hover) {
-  .dsmButton.ghost.round.regentGray:hover {
-    background-color: rgb(58, 72, 80);
-    border-color: rgb(58, 72, 80);
-    color: white;
-  }
-  .dsmButton.ghost.round.regentGray:hover span svg*[stroke]:not[stroke=""] {
-    stroke: white;
-  }
-  .dsmButton.ghost.round.regentGray:hover span svg*[fill]:not[fill=""] {
-    fill: white;
-  }
+.dsmButton.medium.round {
+  padding: 6px 17px;
 }
-.dsmButton.ghost.round.towerGray {
-  color: rgb(176, 189, 197);
-  border-color: rgb(176, 189, 197);
+.dsmButton.medium:not(.round) {
+  padding: 14px 16px;
 }
-@media (hover: hover) {
-  .dsmButton.ghost.round.towerGray:hover {
-    background-color: rgb(137, 149, 156);
-    border-color: rgb(137, 149, 156);
-    color: white;
-  }
-  .dsmButton.ghost.round.towerGray:hover span svg*[stroke]:not[stroke=""] {
-    stroke: white;
-  }
-  .dsmButton.ghost.round.towerGray:hover span svg*[fill]:not[fill=""] {
-    fill: white;
+.dsmButton.medium svg {
+  width: 22px;
+  height: 22px;
+}
+@media (max-width: 768px) {
+  .dsmButton.medium.round {
+    padding: 11px 20px;
   }
 }
-.dsmButton.ghost.round.codGray {
-  border-color: rgb(15, 15, 15);
-  color: rgb(15, 15, 15);
+.dsmButton.large {
+  height: 60px;
+  font-size: 20px;
 }
-@media (hover: hover) {
-  .dsmButton.ghost.round.codGray:hover {
-    background-color: rgb(45, 45, 45);
-    border-color: rgb(45, 45, 45);
-    color: white;
+.dsmButton.large.round {
+  padding: 0 24px;
+  border-radius: 30px;
+}
+.dsmButton.large:not(.round) {
+  padding: 19px 20px;
+}
+.dsmButton.large svg {
+  width: 22px;
+  height: 22px;
+}
+@media (max-width: 768px) {
+  .dsmButton.large.round {
+    padding: 17px 24px;
   }
-  .dsmButton.ghost.round.codGray:hover span svg*[stroke]:not[stroke=""] {
-    stroke: white;
-  }
-  .dsmButton.ghost.round.codGray:hover span svg*[fill]:not[fill=""] {
-    fill: white;
-  }
-}
-.dsmButton.ghost.round.white {
-  color: white;
-  border-color: white;
-}
-@media (hover: hover) {
-  .dsmButton.ghost.round.white:hover {
-    background-color: rgb(255, 255, 255);
-    border-color: rgb(255, 255, 255);
-    color: #3A4850;
-  }
-}
-.dsmButton.secondary {
-  background-color: rgb(33, 150, 243);
-  border-color: rgb(33, 150, 243);
-}
-@media (hover: hover) {
-  .dsmButton.secondary:hover {
-    background-color: rgb(28, 134, 218);
-    border-color: rgb(28, 134, 218);
+  .dsmButton.large:not(.round) {
+    padding: 17px 20px;
   }
 }
 .dsmButton.porcelain {
   color: rgb(58, 72, 80);
-  background-color: rgb(231, 235, 237);
+  background: rgb(231, 235, 237);
   border-color: rgb(231, 235, 237);
 }
 @media (hover: hover) {
   .dsmButton.porcelain:hover {
-    background-color: rgb(225, 225, 225);
+    background: rgb(225, 225, 225);
     border-color: rgb(225, 225, 225);
-  }
-}
-.dsmButton:disabled .progress + * {
-  opacity: 0.5;
-}
-.dsmButton.ghost.disabled {
-  background-color: rgb(227, 96, 0);
-  color: white;
-}
-.dsmButton.disabled {
-  background-color: rgb(227, 96, 0);
-  border: none;
-}
-.dsmButton.disabled.secondary, .dsmButton.secondary:disabled {
-  background-color: rgb(28, 134, 218);
-}
-.dsmButton.disabled.secondary span, .dsmButton.secondary:disabled span {
-  opacity: 0.5;
-}
-.dsmButton.secondary .progress {
-  background-color: rgb(63, 171, 230);
-}
-.dsmButton.secondary .progress .indeterminate {
-  background-color: rgb(27, 70, 126);
-}
-.dsmButton .progress {
-  position: absolute;
-  height: 4px;
-  display: block;
-  width: 100%;
-  background-color: rgb(245, 154, 52);
-  top: 0px;
-  background-clip: padding-box;
-  overflow: hidden;
-}
-.dsmButton .progress .indeterminate {
-  background-color: rgb(210, 67, 30);
-}
-.dsmButton .progress .indeterminate:before {
-  content: "";
-  position: absolute;
-  background-color: inherit;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  will-change: left, right;
-  -webkit-animation: indeterminate 2.1s cubic-bezier(0.65, 0.815, 0.735, 0.395) infinite;
-          animation: indeterminate 2.1s cubic-bezier(0.65, 0.815, 0.735, 0.395) infinite;
-}
-.dsmButton .progress .indeterminate:after {
-  content: "";
-  position: absolute;
-  background-color: inherit;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  will-change: left, right;
-  -webkit-animation: indeterminate-short 2.1s cubic-bezier(0.165, 0.84, 0.44, 1) infinite;
-          animation: indeterminate-short 2.1s cubic-bezier(0.165, 0.84, 0.44, 1) infinite;
-  -webkit-animation-delay: 1.15s;
-          animation-delay: 1.15s;
-}
-@-webkit-keyframes indeterminate {
-  0% {
-    left: -35%;
-    right: 100%;
-  }
-  60% {
-    left: 100%;
-    right: -90%;
-  }
-  100% {
-    left: 100%;
-    right: -90%;
   }
 }
 @keyframes indeterminate {
@@ -480,20 +440,6 @@ a.dsmButton {
   100% {
     left: 100%;
     right: -90%;
-  }
-}
-@-webkit-keyframes indeterminate-short {
-  0% {
-    left: -200%;
-    right: 100%;
-  }
-  60% {
-    left: 107%;
-    right: -8%;
-  }
-  100% {
-    left: 107%;
-    right: -8%;
   }
 }
 @keyframes indeterminate-short {
@@ -528,15 +474,13 @@ svg.dsmIcons {
   height: 0;
 }
 .dsmSlider input[type=checkbox]:checked + .slider {
-  background-color: #2196F3;
+  background-color: #277bda;
 }
 .dsmSlider input[type=checkbox]:focus + .slider {
-  -webkit-box-shadow: 0 0 1px #2196F3;
-          box-shadow: 0 0 1px #2196F3;
+  box-shadow: 0 0 1px #277bda;
 }
 .dsmSlider input[type=checkbox]:checked + .slider:before {
-  -webkit-transform: translateX(16px);
-          transform: translateX(16px);
+  transform: translateX(16px);
 }
 .dsmSlider input[type=checkbox]:disabled + .slider {
   cursor: default;
@@ -560,12 +504,10 @@ svg.dsmIcons {
   border-radius: 50%;
   height: 16px;
   width: 16px;
-  -webkit-box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.1);
-          box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.1);
   left: 2px;
   bottom: 2px;
   background-color: white;
-  -webkit-transition: 0.4s;
   transition: 0.4s;
 }
 
@@ -580,32 +522,21 @@ svg.dsmIcons {
   width: 100%;
   outline: none;
   color: black;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
   font-family: Roboto;
-  -webkit-transition: 0.2s border-color;
   transition: 0.2s border-color;
   font-size: 15px;
-  background: white;
+  background: #fff;
 }
 .dsmForm textarea:focus {
-  border: 1px solid rgb(63, 171, 230);
+  border-color: #277bda;
 }
 .dsmForm textarea.error {
   color: #000;
   border: 1px solid rgb(210, 67, 30);
   background: rgb(255, 247, 247);
 }
-.dsmForm textarea::-webkit-input-placeholder {
-  color: rgb(107, 107, 107);
-}
 .dsmForm textarea::-moz-placeholder {
-  color: rgb(107, 107, 107);
-}
-.dsmForm textarea:-ms-input-placeholder {
-  color: rgb(107, 107, 107);
-}
-.dsmForm textarea::-ms-input-placeholder {
   color: rgb(107, 107, 107);
 }
 .dsmForm textarea::placeholder {
@@ -615,16 +546,7 @@ svg.dsmIcons {
   border-color: rgb(222, 222, 222);
   pointer-events: none;
 }
-.dsmForm textarea:disabled::-webkit-input-placeholder {
-  color: rgb(200, 200, 200);
-}
 .dsmForm textarea:disabled::-moz-placeholder {
-  color: rgb(200, 200, 200);
-}
-.dsmForm textarea:disabled:-ms-input-placeholder {
-  color: rgb(200, 200, 200);
-}
-.dsmForm textarea:disabled::-ms-input-placeholder {
   color: rgb(200, 200, 200);
 }
 .dsmForm textarea:disabled::placeholder {
@@ -638,11 +560,11 @@ svg.dsmIcons {
   cursor: pointer;
   background: rgb(231, 235, 237);
   border-radius: 16px;
-  border: 5px solid rgb(255, 255, 255);
+  border: 5px solid #fff;
 }
 .dsmForm textarea::-webkit-scrollbar-track {
   cursor: pointer;
-  background: rgb(255, 255, 255);
+  background: #fff;
   border-radius: 16px;
 }
 .dsmForm .inputLabel {
@@ -656,19 +578,7 @@ svg.dsmIcons {
 .dsmForm .inputLabel input[type=number] {
   padding-top: 20px;
 }
-.dsmForm .inputLabel input[type=url]::-webkit-input-placeholder, .dsmForm .inputLabel input[type=text]::-webkit-input-placeholder, .dsmForm .inputLabel input[type=email]::-webkit-input-placeholder, .dsmForm .inputLabel input[type=tel]::-webkit-input-placeholder, .dsmForm .inputLabel input[type=number]::-webkit-input-placeholder {
-  opacity: 0;
-  color: rgb(222, 222, 222);
-}
 .dsmForm .inputLabel input[type=url]::-moz-placeholder, .dsmForm .inputLabel input[type=text]::-moz-placeholder, .dsmForm .inputLabel input[type=email]::-moz-placeholder, .dsmForm .inputLabel input[type=tel]::-moz-placeholder, .dsmForm .inputLabel input[type=number]::-moz-placeholder {
-  opacity: 0;
-  color: rgb(222, 222, 222);
-}
-.dsmForm .inputLabel input[type=url]:-ms-input-placeholder, .dsmForm .inputLabel input[type=text]:-ms-input-placeholder, .dsmForm .inputLabel input[type=email]:-ms-input-placeholder, .dsmForm .inputLabel input[type=tel]:-ms-input-placeholder, .dsmForm .inputLabel input[type=number]:-ms-input-placeholder {
-  opacity: 0;
-  color: rgb(222, 222, 222);
-}
-.dsmForm .inputLabel input[type=url]::-ms-input-placeholder, .dsmForm .inputLabel input[type=text]::-ms-input-placeholder, .dsmForm .inputLabel input[type=email]::-ms-input-placeholder, .dsmForm .inputLabel input[type=tel]::-ms-input-placeholder, .dsmForm .inputLabel input[type=number]::-ms-input-placeholder {
   opacity: 0;
   color: rgb(222, 222, 222);
 }
@@ -689,16 +599,7 @@ svg.dsmIcons {
   padding-bottom: 0;
   height: 48px;
 }
-.dsmForm .inputLabel input[type=url].noLabel::-webkit-input-placeholder, .dsmForm .inputLabel input[type=text].noLabel::-webkit-input-placeholder, .dsmForm .inputLabel input[type=email].noLabel::-webkit-input-placeholder, .dsmForm .inputLabel input[type=tel].noLabel::-webkit-input-placeholder, .dsmForm .inputLabel input[type=number].noLabel::-webkit-input-placeholder {
-  opacity: 1;
-}
 .dsmForm .inputLabel input[type=url].noLabel::-moz-placeholder, .dsmForm .inputLabel input[type=text].noLabel::-moz-placeholder, .dsmForm .inputLabel input[type=email].noLabel::-moz-placeholder, .dsmForm .inputLabel input[type=tel].noLabel::-moz-placeholder, .dsmForm .inputLabel input[type=number].noLabel::-moz-placeholder {
-  opacity: 1;
-}
-.dsmForm .inputLabel input[type=url].noLabel:-ms-input-placeholder, .dsmForm .inputLabel input[type=text].noLabel:-ms-input-placeholder, .dsmForm .inputLabel input[type=email].noLabel:-ms-input-placeholder, .dsmForm .inputLabel input[type=tel].noLabel:-ms-input-placeholder, .dsmForm .inputLabel input[type=number].noLabel:-ms-input-placeholder {
-  opacity: 1;
-}
-.dsmForm .inputLabel input[type=url].noLabel::-ms-input-placeholder, .dsmForm .inputLabel input[type=text].noLabel::-ms-input-placeholder, .dsmForm .inputLabel input[type=email].noLabel::-ms-input-placeholder, .dsmForm .inputLabel input[type=tel].noLabel::-ms-input-placeholder, .dsmForm .inputLabel input[type=number].noLabel::-ms-input-placeholder {
   opacity: 1;
 }
 .dsmForm .inputLabel input[type=url].noLabel::placeholder,
@@ -708,16 +609,7 @@ svg.dsmIcons {
 .dsmForm .inputLabel input[type=number].noLabel::placeholder {
   opacity: 1;
 }
-.dsmForm .inputLabel input[type=url]:focus-within::-webkit-input-placeholder, .dsmForm .inputLabel input[type=text]:focus-within::-webkit-input-placeholder, .dsmForm .inputLabel input[type=email]:focus-within::-webkit-input-placeholder, .dsmForm .inputLabel input[type=tel]:focus-within::-webkit-input-placeholder, .dsmForm .inputLabel input[type=number]:focus-within::-webkit-input-placeholder {
-  opacity: 1;
-}
 .dsmForm .inputLabel input[type=url]:focus-within::-moz-placeholder, .dsmForm .inputLabel input[type=text]:focus-within::-moz-placeholder, .dsmForm .inputLabel input[type=email]:focus-within::-moz-placeholder, .dsmForm .inputLabel input[type=tel]:focus-within::-moz-placeholder, .dsmForm .inputLabel input[type=number]:focus-within::-moz-placeholder {
-  opacity: 1;
-}
-.dsmForm .inputLabel input[type=url]:focus-within:-ms-input-placeholder, .dsmForm .inputLabel input[type=text]:focus-within:-ms-input-placeholder, .dsmForm .inputLabel input[type=email]:focus-within:-ms-input-placeholder, .dsmForm .inputLabel input[type=tel]:focus-within:-ms-input-placeholder, .dsmForm .inputLabel input[type=number]:focus-within:-ms-input-placeholder {
-  opacity: 1;
-}
-.dsmForm .inputLabel input[type=url]:focus-within::-ms-input-placeholder, .dsmForm .inputLabel input[type=text]:focus-within::-ms-input-placeholder, .dsmForm .inputLabel input[type=email]:focus-within::-ms-input-placeholder, .dsmForm .inputLabel input[type=tel]:focus-within::-ms-input-placeholder, .dsmForm .inputLabel input[type=number]:focus-within::-ms-input-placeholder {
   opacity: 1;
 }
 .dsmForm .inputLabel input[type=url]:focus-within::placeholder,
@@ -728,8 +620,7 @@ svg.dsmIcons {
   opacity: 1;
 }
 .dsmForm .inputLabel:focus-within label {
-  -webkit-transform: translateY(-13px);
-          transform: translateY(-13px);
+  transform: translateY(-13px);
   color: rgb(170, 170, 170);
   font-size: 11px;
   line-height: 19px;
@@ -745,7 +636,6 @@ svg.dsmIcons {
   line-height: 19px;
   letter-spacing: 0.21px;
   pointer-events: none;
-  -webkit-transition: all 0.2s ease 0s;
   transition: all 0.2s ease 0s;
   text-align: left;
   white-space: nowrap;
@@ -762,8 +652,7 @@ svg.dsmIcons {
   font-size: 16px;
   font-weight: 400;
   width: 100%;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
   display: block;
   border: 1px solid rgb(216, 216, 216);
   border-radius: 4px;
@@ -779,7 +668,7 @@ svg.dsmIcons {
 .dsmForm input[type=tel]:focus,
 .dsmForm input[type=number]:focus {
   color: rgb(0, 0, 0);
-  border-color: rgb(63, 171, 230);
+  border-color: #277bda;
 }
 .dsmForm input[type=url].error,
 .dsmForm input[type=text].error,
@@ -796,7 +685,7 @@ svg.dsmIcons {
 .dsmForm input[type=tel]:disabled,
 .dsmForm input[type=number]:disabled {
   border-color: rgb(222, 222, 222);
-  background: rgb(255, 255, 255);
+  background: #fff;
   cursor: not-allowed;
 }
 .dsmForm input[type=url]:disabled + label,
@@ -824,12 +713,8 @@ svg.dsmIcons {
 .radioContainer {
   position: relative;
   cursor: pointer;
-  display: -webkit-inline-box;
-  display: -ms-inline-flexbox;
   display: inline-flex;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-      align-items: center;
+  align-items: center;
 }
 .radioContainer input[type=radio] {
   position: absolute;
@@ -855,10 +740,10 @@ svg.dsmIcons {
   background-color: rgb(222, 222, 222);
 }
 .radioContainer input[type=radio]:checked + .radioStyling {
-  border: 2px solid #2196f3;
+  border: 2px solid #277bda;
 }
 .radioContainer input[type=radio]:checked + .radioStyling::before {
-  background-color: rgb(33, 150, 243);
+  background-color: #277bda;
 }
 .radioContainer input[type=radio]:checked + .radioStyling.error {
   background-color: #fff;
@@ -871,9 +756,7 @@ svg.dsmIcons {
   position: relative;
   border-radius: 100%;
   margin-right: 10px;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-  -webkit-transition: border-color 0.15s linear 0s;
+  box-sizing: border-box;
   transition: border-color 0.15s linear 0s;
   width: 12px;
   background-color: #fff;
@@ -887,26 +770,17 @@ svg.dsmIcons {
   left: 50%;
   width: 6px;
   height: 6px;
-  -webkit-transform: translate3d(-50%, -50%, 0px);
-          transform: translate3d(-50%, -50%, 0px);
+  transform: translate3d(-50%, -50%, 0px);
   border-radius: 50%;
   background-color: transparent;
-  -webkit-transition: background-color 0.15s linear 0s;
   transition: background-color 0.15s linear 0s;
 }
 .radioContainer .radioStyling.ticked.medium, .radioContainer .radioStyling.ticked.large {
   background-color: transparent;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -ms-flex-line-pack: center;
-      align-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
 }
 .radioContainer .radioStyling.ticked svg {
   display: none;
@@ -935,13 +809,11 @@ svg.dsmIcons {
 .checkboxContainer {
   display: inline-block !important;
   position: relative;
-  -webkit-box-sizing: content-box;
-          box-sizing: content-box;
+  box-sizing: content-box;
   cursor: pointer;
   font-size: 22px;
   -webkit-user-select: none;
   -moz-user-select: none;
-  -ms-user-select: none;
   user-select: none;
   height: 16px;
   margin-bottom: 0;
@@ -1002,19 +874,12 @@ svg.dsmIcons {
   border: 1px solid #dedede;
 }
 .checkboxContainer input[type=checkbox]:checked + .checkbox.ticked {
-  background-color: #2196f3;
-  border-color: #2196f3;
-  display: -webkit-box;
-  display: -ms-flexbox;
+  background-color: #277bda;
+  border-color: #277bda;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -ms-flex-line-pack: center;
-      align-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
 }
 .checkboxContainer input[type=checkbox]:checked + .checkbox.ticked::after {
   border: none;
@@ -1027,9 +892,8 @@ svg.dsmIcons {
   top: 1px;
   height: 8px;
   width: 4px;
-  border: solid rgb(33, 150, 243);
+  border: solid #277bda;
   border-width: 0 2px 2px 0;
-  -webkit-transform: rotate(45deg);
   transform: rotate(45deg);
 }
 .checkboxContainer .checkbox {
@@ -1039,19 +903,17 @@ svg.dsmIcons {
   height: 14px;
   border: 1px solid #aaaaaa;
   border-radius: 2px;
-  -webkit-box-sizing: content-box;
-          box-sizing: content-box;
+  box-sizing: content-box;
   width: 14px;
-  -webkit-transition: 0.2s border-color;
   transition: 0.2s border-color;
-  background-color: white;
+  background-color: #fff;
 }
 .checkboxContainer .checkbox.ticked {
   border-radius: 50%;
 }
 .checkboxContainer .checkbox.ticked svg {
   display: none;
-  stroke: white;
+  stroke: #fff;
   height: 10px;
   width: 10px;
 }
@@ -1087,7 +949,7 @@ svg.dsmIcons {
   color: rgb(176, 189, 197);
 }
 .selectContainer button {
-  background-color: white;
+  background-color: #fff;
   border: 1px solid rgb(216, 216, 216);
   color: rgb(15, 15, 15);
   font-size: inherit;
@@ -1109,19 +971,12 @@ svg.dsmIcons {
   overflow: hidden;
   display: grid;
   grid-template-columns: 1fr auto;
-  -webkit-column-gap: 10px;
-     -moz-column-gap: 10px;
-          column-gap: 10px;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -ms-flex-line-pack: center;
-      align-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -moz-column-gap: 10px;
+       column-gap: 10px;
+  justify-content: space-between;
+  align-content: center;
+  align-items: center;
   height: 48px;
-  -webkit-transition: 0.2s all;
   transition: 0.2s all;
 }
 .selectContainer button:disabled {
@@ -1135,25 +990,22 @@ svg.dsmIcons {
 }
 .selectContainer button.active {
   text-decoration: none !important;
-  border: 1px solid rgb(33, 150, 243);
+  border: 1px solid #277bda;
   border-radius: 4px 4px 0px 0px;
   cursor: pointer;
   color: rgb(137, 149, 156);
   z-index: 3;
 }
 .selectContainer button.active svg {
-  -webkit-transform: rotate(180deg);
-          transform: rotate(180deg);
+  transform: rotate(180deg);
 }
 .selectContainer button.filled {
   color: rgb(15, 15, 15);
 }
 .selectContainer button svg {
   width: 12px;
-  -webkit-transition: ease-in-out 0.2s all;
   transition: ease-in-out 0.2s all;
-  -webkit-transform: rotate(0deg);
-          transform: rotate(0deg);
+  transform: rotate(0deg);
 }
 .selectContainer button .selectedItem {
   overflow: hidden;
@@ -1161,17 +1013,15 @@ svg.dsmIcons {
 }
 .selectContainer ul {
   display: none;
-  background-color: rgb(255, 255, 255);
+  background-color: #fff;
   border-radius: 0px 0px 4px 4px;
-  border-top: 1px solid rgb(33, 150, 243);
+  border-top: 1px solid #277bda;
   position: absolute;
   width: 280px;
   z-index: 5;
   overflow: overlay;
-  -webkit-box-shadow: rgba(58, 72, 80, 0.24) 0px 1px 1px 0px, rgba(176, 189, 197, 0.12) 1px 2px 11px -1px;
-          box-shadow: rgba(58, 72, 80, 0.24) 0px 1px 1px 0px, rgba(176, 189, 197, 0.12) 1px 2px 11px -1px;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-shadow: rgba(58, 72, 80, 0.24) 0px 1px 1px 0px, rgba(176, 189, 197, 0.12) 1px 2px 11px -1px;
+  box-sizing: border-box;
   margin: 0px;
   padding: 10px 0px;
   max-height: 309px;
@@ -1224,19 +1074,17 @@ svg.dsmIcons {
   text-align: center;
   font-size: 11px;
   vertical-align: middle;
-  color: rgb(63, 171, 230);
-  background-color: rgb(255, 255, 255);
+  color: #277bda;
+  background-color: #fff;
   border: 1px solid;
   cursor: pointer;
 }
 .dsmTooltip.click .container {
-  -webkit-transition: none;
   transition: none;
 }
 .dsmTooltip .container {
   overflow: visible;
   opacity: 0;
-  -webkit-transition: 0.2s all;
   transition: 0.2s all;
   z-index: 8;
   width: 250px;
@@ -1304,20 +1152,17 @@ svg.dsmIcons {
   z-index: 1;
   width: 16px;
   height: 16px;
-  background-color: rgb(255, 255, 255);
-  -webkit-transform: rotate(45deg);
-          transform: rotate(45deg);
-  -webkit-box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 8px;
-          box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 8px;
+  background-color: #fff;
+  transform: rotate(45deg);
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 8px;
 }
 .dsmTooltip .infoBox {
   position: relative;
-  background-color: rgb(255, 255, 255);
+  background-color: #fff;
   font-size: 14px;
   border-radius: 12px;
   overflow: hidden;
-  -webkit-box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 8px;
-          box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 8px;
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 8px;
 }
 .dsmTooltip .infoBox:before {
   content: "";
@@ -1327,7 +1172,7 @@ svg.dsmIcons {
   left: 0px;
   width: 100%;
   height: 100%;
-  background-color: rgb(255, 255, 255);
+  background-color: #fff;
 }
 .dsmTooltip .infoBox .textArea {
   color: black;
@@ -1337,12 +1182,8 @@ svg.dsmIcons {
 }
 
 .dsmBadge {
-  display: -webkit-inline-box;
-  display: -ms-inline-flexbox;
   display: inline-flex;
-  -webkit-box-align: end;
-      -ms-flex-align: end;
-          align-items: flex-end;
+  align-items: flex-end;
   border-radius: 2px;
   line-height: 12px;
   padding: 4.5px 8px 4.5px 10px;
@@ -1359,7 +1200,7 @@ svg.dsmIcons {
 }
 .dsmBadge.misc {
   background-color: rgb(231, 244, 254);
-  color: rgb(44, 156, 244);
+  color: #277bda;
 }
 .dsmBadge.sellingFast {
   background-color: rgb(255, 241, 224);
@@ -1382,28 +1223,22 @@ svg.dsmIcons {
 }
 
 .dsmShadow {
-  -webkit-box-shadow: 0 1px 0 0 rgba(58, 72, 80, 0.07), 0 2px 11px -1px rgba(176, 189, 197, 0.12);
-          box-shadow: 0 1px 0 0 rgba(58, 72, 80, 0.07), 0 2px 11px -1px rgba(176, 189, 197, 0.12);
+  box-shadow: 0 1px 0 0 rgba(58, 72, 80, 0.07), 0 2px 11px -1px rgba(176, 189, 197, 0.12);
 }
 .dsmShadow.shadow-2 {
-  -webkit-box-shadow: 0 1px 1px 0 rgba(58, 72, 80, 0.07), 0 4px 12px -1px rgba(176, 189, 197, 0.13), 0 1px 4px 1px rgba(137, 149, 156, 0.07);
-          box-shadow: 0 1px 1px 0 rgba(58, 72, 80, 0.07), 0 4px 12px -1px rgba(176, 189, 197, 0.13), 0 1px 4px 1px rgba(137, 149, 156, 0.07);
+  box-shadow: 0 1px 1px 0 rgba(58, 72, 80, 0.07), 0 4px 12px -1px rgba(176, 189, 197, 0.13), 0 1px 4px 1px rgba(137, 149, 156, 0.07);
 }
 .dsmShadow.shadow-3 {
-  -webkit-box-shadow: 0 1px 2px 0 rgba(58, 72, 80, 0.07), 0 6px 13px 0 rgba(176, 189, 197, 0.14), 0 1px 6px 1px rgba(137, 149, 156, 0.09);
-          box-shadow: 0 1px 2px 0 rgba(58, 72, 80, 0.07), 0 6px 13px 0 rgba(176, 189, 197, 0.14), 0 1px 6px 1px rgba(137, 149, 156, 0.09);
+  box-shadow: 0 1px 2px 0 rgba(58, 72, 80, 0.07), 0 6px 13px 0 rgba(176, 189, 197, 0.14), 0 1px 6px 1px rgba(137, 149, 156, 0.09);
 }
 .dsmShadow.shadow-4 {
-  -webkit-box-shadow: 0 1px 3px 0 rgba(58, 72, 80, 0.07), 0 8px 14px 0 rgba(176, 189, 197, 0.15), 0 2px 8px 1px rgba(137, 149, 156, 0.11);
-          box-shadow: 0 1px 3px 0 rgba(58, 72, 80, 0.07), 0 8px 14px 0 rgba(176, 189, 197, 0.15), 0 2px 8px 1px rgba(137, 149, 156, 0.11);
+  box-shadow: 0 1px 3px 0 rgba(58, 72, 80, 0.07), 0 8px 14px 0 rgba(176, 189, 197, 0.15), 0 2px 8px 1px rgba(137, 149, 156, 0.11);
 }
 .dsmShadow.shadow-5 {
-  -webkit-box-shadow: 0 1px 4px 0 rgba(58, 72, 80, 0.07), 0 10px 15px 0 rgba(176, 189, 197, 0.16), 0 4px 10px 1px rgba(137, 149, 156, 0.13);
-          box-shadow: 0 1px 4px 0 rgba(58, 72, 80, 0.07), 0 10px 15px 0 rgba(176, 189, 197, 0.16), 0 4px 10px 1px rgba(137, 149, 156, 0.13);
+  box-shadow: 0 1px 4px 0 rgba(58, 72, 80, 0.07), 0 10px 15px 0 rgba(176, 189, 197, 0.16), 0 4px 10px 1px rgba(137, 149, 156, 0.13);
 }
 .dsmShadow.shadow-6 {
-  -webkit-box-shadow: 0 1px 5px 1px rgba(58, 72, 80, 0.07), 0 12px 16px 0 rgba(176, 189, 197, 0.17), 0 6px 12px 1px rgba(137, 149, 156, 0.15);
-          box-shadow: 0 1px 5px 1px rgba(58, 72, 80, 0.07), 0 12px 16px 0 rgba(176, 189, 197, 0.17), 0 6px 12px 1px rgba(137, 149, 156, 0.15);
+  box-shadow: 0 1px 5px 1px rgba(58, 72, 80, 0.07), 0 12px 16px 0 rgba(176, 189, 197, 0.17), 0 6px 12px 1px rgba(137, 149, 156, 0.15);
 }
 
 @font-face {
@@ -1631,11 +1466,9 @@ svg.dsmLogo * {
   outline: none;
   border-top: 1px solid #E7EBED;
   padding: 20px;
-  -webkit-transition: 0.2s background-color, 0.3s height, 3s max-height;
   transition: 0.2s background-color, 0.3s height, 3s max-height;
   max-height: auto;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
   width: 100%;
   overflow: hidden;
   cursor: pointer;
@@ -1658,7 +1491,6 @@ svg.dsmLogo * {
 }
 .dsmAccordian > .accordianContent {
   display: block;
-  -webkit-transition: 0.6s all;
   transition: 0.6s all;
   opacity: 0;
   overflow: hidden;
@@ -1684,9 +1516,7 @@ svg.dsmLogo * {
   -moz-box-pack: justify;
   -ms-flex-pack: justify;
   -webkit-justify-content: space-between;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  align-items: center;
   letter-spacing: 0;
   line-height: 30px;
 }
@@ -1703,11 +1533,8 @@ svg.dsmLogo * {
   position: absolute;
   right: 0;
   top: 50%;
-  -webkit-transform: translateY(-50%);
-          transform: translateY(-50%);
-  -ms-flex-item-align: start;
-      align-self: flex-start;
-  -webkit-transition: 0.1s all;
+  transform: translateY(-50%);
+  align-self: flex-start;
   transition: 0.1s all;
   text-align: right;
   justify-self: flex-end;
@@ -1715,12 +1542,10 @@ svg.dsmLogo * {
   width: 13px;
 }
 .dsmAccordian summary > .plus * {
-  -webkit-transition: 0.3s all;
   transition: 0.3s all;
   stroke: #B0BDC5 !important;
 }
 .dsmAccordian summary > .plus line:nth-child(2) {
-  -webkit-transition: 0.2s all;
   transition: 0.2s all;
 }
 .dsmAccordian a {
@@ -1738,120 +1563,62 @@ svg.dsmLogo * {
   max-height: 1000px;
 }
 .dsmAccordian[open] summary .plus {
-  -webkit-transform-origin: center center;
-          transform-origin: center center;
-  -webkit-animation: rotateTop 0.3s forwards;
-          animation: rotateTop 0.3s forwards;
+  transform-origin: center center;
+  animation: rotateTop 0.3s forwards;
 }
 .dsmAccordian[open] summary .plus path:nth-child(1) {
-  -webkit-transform-origin: center center;
-          transform-origin: center center;
-  -webkit-animation: rotateArrow 0.3s forwards;
-          animation: rotateArrow 0.3s forwards;
+  transform-origin: center center;
+  animation: rotateArrow 0.3s forwards;
 }
 .dsmAccordian[open] summary .plus path:nth-child(2) {
   opacity: 0;
 }
 .dsmAccordian.closeAccordian {
   max-height: auto;
-  -webkit-transition: 0.2s background-color, 0.3s height, 0.5s max-height;
   transition: 0.2s background-color, 0.3s height, 0.5s max-height;
 }
 .dsmAccordian.accordianClosed summary .plus {
-  -webkit-transform-origin: center center;
-          transform-origin: center center;
-  -webkit-animation: rotateBack 0.3s forwards;
-          animation: rotateBack 0.3s forwards;
+  transform-origin: center center;
+  animation: rotateBack 0.3s forwards;
 }
 .dsmAccordian.accordianClosed summary .plus path:nth-child(1) {
-  -webkit-transform-origin: center center;
-          transform-origin: center center;
-  -webkit-animation: rotateBackArrow 0.3s forwards;
-          animation: rotateBackArrow 0.3s forwards;
+  transform-origin: center center;
+  animation: rotateBackArrow 0.3s forwards;
 }
 .dsmAccordian.accordianClosed summary .plus path:nth-child(2) {
   opacity: 1;
-  -webkit-transition: 0.3s opacity;
   transition: 0.3s opacity;
-}
-@-webkit-keyframes rotateTop {
-  from {
-    -webkit-transform: rotate(0) translateY(-50%);
-            transform: rotate(0) translateY(-50%);
-  }
-  to {
-    -webkit-transform: rotate(-90deg) translateX(50%);
-            transform: rotate(-90deg) translateX(50%);
-  }
 }
 @keyframes rotateTop {
   from {
-    -webkit-transform: rotate(0) translateY(-50%);
-            transform: rotate(0) translateY(-50%);
+    transform: rotate(0) translateY(-50%);
   }
   to {
-    -webkit-transform: rotate(-90deg) translateX(50%);
-            transform: rotate(-90deg) translateX(50%);
-  }
-}
-@-webkit-keyframes rotateBack {
-  from {
-    -webkit-transform: rotate(-90deg) translateX(50%);
-            transform: rotate(-90deg) translateX(50%);
-  }
-  to {
-    -webkit-transform: rotate(0) translateY(-50%);
-            transform: rotate(0) translateY(-50%);
+    transform: rotate(-90deg) translateX(50%);
   }
 }
 @keyframes rotateBack {
   from {
-    -webkit-transform: rotate(-90deg) translateX(50%);
-            transform: rotate(-90deg) translateX(50%);
+    transform: rotate(-90deg) translateX(50%);
   }
   to {
-    -webkit-transform: rotate(0) translateY(-50%);
-            transform: rotate(0) translateY(-50%);
-  }
-}
-@-webkit-keyframes rotateArrow {
-  from {
-    -webkit-transform: rotate(0);
-            transform: rotate(0);
-  }
-  to {
-    -webkit-transform: rotate(-90deg);
-            transform: rotate(-90deg);
+    transform: rotate(0) translateY(-50%);
   }
 }
 @keyframes rotateArrow {
   from {
-    -webkit-transform: rotate(0);
-            transform: rotate(0);
+    transform: rotate(0);
   }
   to {
-    -webkit-transform: rotate(-90deg);
-            transform: rotate(-90deg);
-  }
-}
-@-webkit-keyframes rotateBackArrow {
-  from {
-    -webkit-transform: rotate(-90deg);
-            transform: rotate(-90deg);
-  }
-  to {
-    -webkit-transform: rotate(0);
-            transform: rotate(0);
+    transform: rotate(-90deg);
   }
 }
 @keyframes rotateBackArrow {
   from {
-    -webkit-transform: rotate(-90deg);
-            transform: rotate(-90deg);
+    transform: rotate(-90deg);
   }
   to {
-    -webkit-transform: rotate(0);
-            transform: rotate(0);
+    transform: rotate(0);
   }
 }
 .dsmAccordian.closeAccordian summary {
@@ -1860,27 +1627,11 @@ svg.dsmLogo * {
 .dsmAccordian.closeAccordian summary ~ * {
   opacity: 0;
 }
-@-webkit-keyframes slideDown {
-  from {
-    max-height: 71px;
-  }
-  to {
-    max-height: 1000px;
-  }
-}
 @keyframes slideDown {
   from {
     max-height: 71px;
   }
   to {
-    max-height: 1000px;
-  }
-}
-@-webkit-keyframes slideUp {
-  to {
-    max-height: 71px;
-  }
-  from {
     max-height: 1000px;
   }
 }
@@ -1892,29 +1643,12 @@ svg.dsmLogo * {
     max-height: 1000px;
   }
 }
-@-webkit-keyframes fadeIn {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
 @keyframes fadeIn {
   0% {
     opacity: 0;
   }
   100% {
     opacity: 1;
-  }
-}
-@-webkit-keyframes sweep-reverse {
-  0% {
-    opacity: 1;
-    margin-top: 0px;
-  }
-  100% {
-    opacity: 0;
   }
 }
 @keyframes sweep-reverse {
@@ -1945,25 +1679,15 @@ svg.dsmLogo * {
   stroke: #3A4850 !important;
 }
 .dsmAccordian[open] summary > .plus line:first-child {
-  -webkit-animation: scaleDown 0.1s ease-in-out;
-          animation: scaleDown 0.1s ease-in-out;
+  animation: scaleDown 0.1s ease-in-out;
 }
 .dsmAccordian[open] summary > .plus line:nth-child(2) {
-  -webkit-transform: rotate(-90deg) translateX(-13px);
-          transform: rotate(-90deg) translateX(-13px);
+  transform: rotate(-90deg) translateX(-13px);
 }
 @media (max-width: 768px) {
   .dsmAccordian[open] {
     font-size: 14px;
     line-height: 24px;
-  }
-}
-@-webkit-keyframes scaleDown {
-  from {
-    stroke-width: 1px;
-  }
-  to {
-    stroke-width: 0px;
   }
 }
 @keyframes scaleDown {
@@ -1997,64 +1721,48 @@ svg.dsmLogo * {
 }
 .dsmTrustpilot .swiper-slide {
   border-radius: 4px;
-  background-color: #FFFFFF;
-  -webkit-box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.2);
-          box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.2);
+  background-color: #fff;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.2);
   padding: 18px 30px;
   padding-left: 36px;
-  color: #4D4D4D;
+  color: #4d4d4d;
   font-family: Roboto;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  flex-direction: column;
   font-size: 16px;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
   letter-spacing: 0;
   height: auto;
   line-height: 22px;
 }
 @media (max-width: 768px) {
   .dsmTrustpilot .swiper-slide {
-    border: 1px solid #F1F1F1;
+    border: 1px solid #f1f1f1;
     border-radius: 8px;
     padding: 29px 10.5px;
-    -webkit-box-shadow: 0 1px 0 0 rgba(58, 72, 80, 0.07), 0 2px 11px -1px rgba(176, 189, 197, 0.12);
-            box-shadow: 0 1px 0 0 rgba(58, 72, 80, 0.07), 0 2px 11px -1px rgba(176, 189, 197, 0.12);
+    box-shadow: 0 1px 0 0 rgba(58, 72, 80, 0.07), 0 2px 11px -1px rgba(176, 189, 197, 0.12);
   }
   .dsmTrustpilot .swiper-slide > div {
     margin: 0 60px;
   }
 }
 .dsmTrustpilot .swiperTop {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
   margin-bottom: 25px;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  justify-content: space-between;
 }
 @media (max-width: 768px) {
   .dsmTrustpilot .swiperTop {
     display: block;
-    -webkit-box-ordinal-group: 3;
-        -ms-flex-order: 2;
-            order: 2;
+    order: 2;
     text-align: center;
-    -webkit-box-pack: start;
-        -ms-flex-pack: start;
-            justify-content: flex-start;
+    justify-content: flex-start;
     margin-top: 10px !important;
     margin-bottom: 10px !important;
   }
 }
 .dsmTrustpilot .swiperDate {
-  color: #89959C;
+  color: #89959c;
   font-size: 14px;
   letter-spacing: 0;
   line-height: 16px;
@@ -2066,7 +1774,7 @@ svg.dsmLogo * {
   }
 }
 .dsmTrustpilot .swiperTitle {
-  color: #0F0F0F;
+  color: #0f0f0f;
   font-size: 16px;
   font-weight: bold;
   margin-bottom: 12px;
@@ -2084,7 +1792,7 @@ svg.dsmLogo * {
   }
 }
 .dsmTrustpilot .swiperAuthor {
-  color: #89959C;
+  color: #89959c;
   font-size: 14px;
   letter-spacing: 0;
   line-height: 16px;
@@ -2095,9 +1803,7 @@ svg.dsmLogo * {
 @media (max-width: 768px) {
   .dsmTrustpilot .swiperAuthor {
     text-align: center;
-    -webkit-box-ordinal-group: 4;
-        -ms-flex-order: 3;
-            order: 3;
+    order: 3;
     padding-top: 0;
   }
 }
@@ -2105,8 +1811,7 @@ svg.dsmLogo * {
   z-index: 1;
   top: calc(50% - 10px);
   outline: none;
-  -webkit-transform: translateY(-50%);
-          transform: translateY(-50%);
+  transform: translateY(-50%);
 }
 .dsmTrustpilot .swiperArrows.arrow-left {
   left: -24px;
@@ -2131,15 +1836,13 @@ svg.dsmLogo * {
   margin-bottom: 0;
 }
 .dsmTrustpilot .swiper-button-disabled svg * {
-  stroke: #AAAAAA !important;
+  stroke: #aaaaaa !important;
 }
 .dsmTrustpilot .arrowContainer svg.dsmIcons {
   height: 11px;
   width: 6px;
 }
 .dsmTrustpilot .swiperRating {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
 }
 .dsmTrustpilot .swiperRating svg {
@@ -2150,9 +1853,7 @@ svg.dsmLogo * {
 }
 @media (max-width: 768px) {
   .dsmTrustpilot .swiperRating {
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
+    justify-content: center;
     margin-bottom: 10px !important;
   }
 }
@@ -2176,23 +1877,15 @@ svg.dsmLogo * {
   height: 48px;
   background-color: #fff;
   position: absolute;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-transition: 0.2s all;
+  justify-content: center;
   transition: 0.2s all;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  align-items: center;
   right: 19.5px;
   border-radius: 50%;
-  border: 1px solid #F1F1F1;
-  background-color: #FFFFFF;
-  -webkit-box-shadow: 0 1px 3px 0 rgba(58, 72, 80, 0.07), 0 8px 14px 0 rgba(176, 189, 197, 0.15);
-          box-shadow: 0 1px 3px 0 rgba(58, 72, 80, 0.07), 0 8px 14px 0 rgba(176, 189, 197, 0.15);
+  border: 1px solid #f1f1f1;
+  background-color: #fff;
+  box-shadow: 0 1px 3px 0 rgba(58, 72, 80, 0.07), 0 8px 14px 0 rgba(176, 189, 197, 0.15);
 }
 @media (max-width: 768px) {
   .dsmTrustpilot .arrowContainer {
@@ -2201,7 +1894,7 @@ svg.dsmLogo * {
   }
 }
 .dsmTrustpilot .arrowContainer:hover {
-  background-color: #F7F8F9;
+  background-color: #f7f8f9;
 }
 .dsmTrustpilot .swiper-button-disabled:hover {
   background-color: #fff;
@@ -2210,16 +1903,10 @@ svg.dsmLogo * {
   left: 50%;
   bottom: 0;
   width: 100%;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-transform: translateX(-50%);
-          transform: translateX(-50%);
-  display: -webkit-box;
-  display: -ms-flexbox;
+  justify-content: center;
+  transform: translateX(-50%);
   display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
+  flex-wrap: wrap;
 }
 .dsmTrustpilot .swiper-pagination-bullet {
   height: 9px;
@@ -2227,8 +1914,7 @@ svg.dsmLogo * {
   width: 9px;
   outline: none;
   opacity: 0.3;
-  background-color: #89959C;
-  -webkit-transition: 0.2s all;
+  background-color: #89959c;
   transition: 0.2s all;
 }
 .dsmTrustpilot .swiper-pagination-bullet:hover {
@@ -2243,15 +1929,9 @@ svg.dsmLogo * {
 }
 
 .dsmTrustpilot-Header {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  justify-content: center;
+  align-items: center;
 }
 .dsmTrustpilot-Header > * {
   margin-right: 13px !important;
@@ -2261,10 +1941,7 @@ svg.dsmLogo * {
 }
 @media (max-width: 768px) {
   .dsmTrustpilot-Header {
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
+    flex-direction: column;
   }
   .dsmTrustpilot-Header > * {
     margin-right: 0 !important;
@@ -2282,8 +1959,6 @@ svg.dsmLogo * {
   }
 }
 .dsmTrustpilot-Header .starsContainer {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
 }
 .dsmTrustpilot-Header .starsContainer svg {
@@ -2330,25 +2005,15 @@ svg.dsmLogo * {
 }
 
 .dsmSliderToggle {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
   position: static;
-  width: -webkit-max-content;
   width: -moz-max-content;
   width: max-content;
   height: 36px;
-  background: #F1F1F1;
+  background: #f1f1f1;
   border-radius: 36px;
   position: relative;
   padding: 0px 4px 0px 4px;
@@ -2356,10 +2021,7 @@ svg.dsmLogo * {
 }
 @media (max-width: 768px) {
   .dsmSliderToggle {
-    -webkit-box-pack: unset;
-        -ms-flex-pack: unset;
-            justify-content: unset;
-    width: -webkit-max-content;
+    justify-content: unset;
     width: -moz-max-content;
     width: max-content;
     overflow: hidden;
@@ -2368,9 +2030,8 @@ svg.dsmLogo * {
   }
 }
 .dsmSliderToggle > .dsmSliderToggleClick {
-  background: #FFFFFF;
-  -webkit-box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.0973831);
-          box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.0973831);
+  background: #fff;
+  box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.0973831);
   border-radius: 17px;
 }
 .dsmSliderToggle .dsmSliderToggleBtn {
@@ -2383,9 +2044,8 @@ svg.dsmLogo * {
   font-size: 14px;
   line-height: 16px;
   cursor: pointer;
-  color: #4D4D4D;
+  color: #4d4d4d;
   padding: 6px 20px 6px 20px;
-  -webkit-transition: 0.3s;
   transition: 0.3s;
 }
 .dsmSliderToggle .dsmSliderToggleBtn:hover {
@@ -2396,14 +2056,12 @@ svg.dsmLogo * {
   left: 0;
   bottom: 0;
   height: 4px;
-  -webkit-transition: 0.4s;
   transition: 0.4s;
   height: 5px;
   z-index: 1;
   border-radius: 8px 8px 0 0;
-  background: #FFFFFF;
-  -webkit-box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.0973831);
-          box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.0973831);
+  background: #fff;
+  box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.0973831);
   border-radius: 17px;
   height: 28px;
   top: 4px;
@@ -2414,34 +2072,26 @@ svg.dsmLogo * {
   color: #000000;
   z-index: 2;
   border-radius: 17px;
-  background: #FFFFFF;
-  -webkit-box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.0973831);
-          box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.0973831);
+  background: #fff;
+  box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.0973831);
 }
 
 .dsm-swiper {
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
   width: 100%;
   margin: 0 auto;
   position: relative;
 }
 .dsm-swiper * {
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
 }
 .dsm-swiper.minimised {
-  -webkit-transition: 0.15s max-width;
   transition: 0.15s max-width;
   margin: 0;
 }
 .dsm-swiper .pagination {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  justify-content: center;
   width: 100%;
   padding-top: 16px;
 }
@@ -2455,7 +2105,7 @@ svg.dsmLogo * {
   cursor: pointer;
 }
 .dsm-swiper .pagination .dot.active {
-  background: #3A4850;
+  background: #3a4850;
 }
 .dsm-swiper .pagination .dot:last-child {
   margin-right: 0;
@@ -2464,29 +2114,23 @@ svg.dsmLogo * {
   display: grid;
   grid-auto-flow: column;
   overflow: auto;
-  -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: flex-start;
+  justify-content: flex-start;
   min-height: 260px;
-  cursor: -webkit-grab;
   cursor: grab;
   width: 100%;
-  -webkit-transition: 0.15s width;
   transition: 0.15s width;
 }
 .dsm-swiper .slides::-webkit-scrollbar {
   display: none;
 }
 .dsm-swiper .slide {
-  -webkit-transition: 0.15s width;
   transition: 0.15s width;
-  background: #DBE1E5;
+  background: #dbe1e5;
 }
 .dsm-swiper .progress {
   margin: 0 60px;
   opacity: 0;
   height: 4px;
-  -webkit-transition: 0.3s opacity;
   transition: 0.3s opacity;
   margin-top: 16px;
   background: rgba(58, 72, 80, 0.15);
@@ -2495,18 +2139,15 @@ svg.dsmLogo * {
   position: relative;
 }
 .dsm-swiper .progress .indicator {
-  background: #5B6971;
+  background: #5b6971;
   position: absolute;
   left: 0;
   top: 0;
   height: 100%;
-  -webkit-transform-origin: left;
-          transform-origin: left;
+  transform-origin: left;
   display: block;
   width: 100%;
-  -webkit-transform: scale(0);
-          transform: scale(0);
-  -webkit-transition: 0.3s scale linear;
+  transform: scale(0);
   transition: 0.3s scale linear;
 }
 
@@ -2516,24 +2157,15 @@ svg.dsmLogo * {
   height: 52px;
   position: absolute;
   top: 50%;
-  -webkit-transform: translateY(-50%);
-          transform: translateY(-50%);
-  background: #FFFFFF;
-  border: 1px solid #F1F1F1;
-  display: -webkit-box;
-  display: -ms-flexbox;
+  transform: translateY(-50%);
+  background: #fff;
+  border: 1px solid #f1f1f1;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
   cursor: pointer;
-  -webkit-box-shadow: 0px 1px 2px rgba(58, 72, 80, 0.07), 0px 6px 13px rgba(176, 189, 197, 0.14), 0px 1px 6px rgba(176, 189, 197, 0.09);
-          box-shadow: 0px 1px 2px rgba(58, 72, 80, 0.07), 0px 6px 13px rgba(176, 189, 197, 0.14), 0px 1px 6px rgba(176, 189, 197, 0.09);
+  box-shadow: 0px 1px 2px rgba(58, 72, 80, 0.07), 0px 6px 13px rgba(176, 189, 197, 0.14), 0px 1px 6px rgba(176, 189, 197, 0.09);
   border-radius: 100px;
 }
 .swiper-arrow.left {
@@ -2550,9 +2182,7 @@ svg.dsmLogo * {
   max-width: 1296px;
   font-family: Roboto;
   margin: 0 auto;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  justify-content: space-between;
   grid-template-columns: repeat(3, minmax(auto, 386px));
   row-gap: 20px;
 }
@@ -2595,9 +2225,7 @@ svg.dsmLogo * {
   gap: 5px;
   margin-top: 8px;
   margin-bottom: 12px;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  justify-content: center;
 }
 .dsm-product-grid .colour-chooser .circle {
   width: 20px;
@@ -2612,7 +2240,6 @@ svg.dsmLogo * {
   border: 1px solid rgba(91, 105, 113, 0.2);
 }
 .dsm-product-grid .colour-chooser .circle::after {
-  -webkit-transition: 0.3s all;
   transition: 0.3s all;
   border: 1px solid transparent;
 }
@@ -2636,20 +2263,13 @@ svg.dsmLogo * {
   top: 50%;
   border-radius: 50%;
   left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
 }
 .dsm-product-grid .colour-chooser .circle-plus {
   width: 20px;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  align-items: center;
+  justify-content: center;
   height: 20px;
   position: relative;
   cursor: pointer;
