@@ -2,67 +2,54 @@
 // Color Palette - DSM (Design System Manager)
 // ============================================
 
-// Primary Brand Colors
-// ------------------------------------
-$color-primary: #277bda;
-$color-primary-hover: #246fc4;
-$color-primary-dark: #196ac6;
-$color-primary-dark-hover: #1358a7;
-$color-primary-disabled: #7db0e9;
+:root {
+  // Primary Brand Colors
+  // ------------------------------------
+  --color-primary: #277bda;
+  --color-primary-hover: #246fc4;
+  --color-primary-dark: #196ac6;
+  --color-primary-dark-hover: #1358a7;
 
-// Neutral Colors
-// ------------------------------------
-$color-white: #fff;
-$color-white-hover: rgb(241, 243, 244);
-$color-black: rgb(0, 0, 0);
+  // Neutral Colors
+  // ------------------------------------
+  --color-white: #fff;
+  --color-white-hover: rgb(241, 243, 244);
+  --color-black: rgb(0, 0, 0);
 
-// Grays - Cod Gray (Darkest)
-// ------------------------------------
-$color-cod-gray: rgb(15, 15, 15);
-$color-cod-gray-hover: rgb(45, 45, 45);
-$color-cod-gray-disabled: rgb(137, 137, 137);
+  // Grays - Cod Gray (Darkest)
+  // ------------------------------------
+  --color-cod-gray: rgb(15, 15, 15);
+  --color-cod-gray-hover: rgb(45, 45, 45);
 
-// Grays - Outer Space (Dark)
-// ------------------------------------
-$color-outer-space: rgb(58, 72, 80);
+  // Grays - Outer Space (Dark)
+  // ------------------------------------
+  --color-outer-space: rgb(58, 72, 80);
 
-// Grays - Regent Gray (Medium)
-// ------------------------------------
-$color-regent-gray: rgb(137, 149, 156);
-$color-regent-gray-hover: rgb(58, 72, 80);
-$color-regent-gray-disabled: rgb(137, 149, 156);
+  // Grays - Regent Gray (Medium)
+  // ------------------------------------
+  --color-regent-gray: rgb(137, 149, 156);
+  --color-regent-gray-hover: rgb(58, 72, 80);
 
-// Grays - Tower Gray (Medium-Light)
-// ------------------------------------
-$color-tower-gray: rgb(176, 189, 197);
-$color-tower-gray-hover: rgb(137, 149, 156);
-$color-tower-gray-disabled: rgb(176, 189, 197);
+  // Grays - Tower Gray (Medium-Light)
+  // ------------------------------------
+  --color-tower-gray: rgb(176, 189, 197);
+  --color-tower-gray-hover: rgb(137, 149, 156);
 
-// Grays - Porcelain (Lightest)
-// ------------------------------------
-$color-porcelain: rgb(231, 235, 237);
-$color-porcelain-hover: rgb(225, 225, 225);
-$color-porcelain-disabled: rgb(225, 225, 225);
+  // Grays - Porcelain (Lightest)
+  // ------------------------------------
+  --color-porcelain: rgb(231, 235, 237);
+  --color-porcelain-hover: rgb(225, 225, 225);
 
-// Opacity/Alpha Colors
-// ------------------------------------
-$color-white-overlay: rgba(255, 255, 255, 0.4);
-
-// Gradients
-// ------------------------------------
-$gradient-primary: linear-gradient(
-  90deg,
-  $color-primary-dark 0%,
-  $color-primary 100%
-);
-$gradient-primary-hover: linear-gradient(
-  90deg,
-  $color-primary-dark-hover 0%,
-  $color-primary-dark 100%
-);
-$gradient-primary-disabled: linear-gradient(
-    0deg,
-    rgba(255, 255, 255, 0.4) 0%,
-    rgba(255, 255, 255, 0.4) 100%
-  ),
-  linear-gradient(90deg, $color-primary-dark 0%, $color-primary 100%);
+  // Gradients
+  // ------------------------------------
+  --gradient-primary: linear-gradient(
+    90deg,
+    var(--color-primary-dark) 0%,
+    var(--color-primary) 100%
+  );
+  --gradient-primary-hover: linear-gradient(
+    90deg,
+    var(--color-primary-dark-hover) 0%,
+    var(--color-primary-dark) 100%
+  );
+}

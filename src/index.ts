@@ -58,12 +58,15 @@ export async function loadElements() {
       e.stopImmediatePropagation();
       e.stopPropagation();
       selectButtonClick(e);
-    })
+    }),
   );
 
   document
     .querySelectorAll(".dsmButton")
-    .forEach((e) => (e.innerHTML = `<span>${e.innerHTML}</span>`));
+    .forEach(
+      (e) =>
+        (e.innerHTML = `<span class="text">${e.innerHTML}</span><span class="click-effect"></span>`),
+    );
 
   document.querySelectorAll<HTMLElement>(".selectContainer").forEach((e) => {
     if (e.querySelector("button")) return;

@@ -10,11 +10,11 @@
         height: 0;
 
         &:checked+.slider {
-            background-color: $color-primary;
+            background-color: var(--color-primary);
         }
 
         &:focus+.slider {
-            box-shadow: 0 0 1px $color-primary;
+            box-shadow: 0 0 1px var(--color-primary);
         }
 
         &:checked+.slider:before {

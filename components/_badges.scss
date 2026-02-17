@@ -19,7 +19,7 @@
 
   &.misc {
     background-color: rgb(231, 244, 254);
-    color: $color-primary;
+    color: var(--color-primary);
   }
 
   &.sellingFast {

@@ -1,5 +1,34 @@
+:root {
+  --color-primary: #277bda;
+  --color-primary-hover: #246fc4;
+  --color-primary-dark: #196ac6;
+  --color-primary-dark-hover: #1358a7;
+  --color-white: #fff;
+  --color-white-hover: rgb(241, 243, 244);
+  --color-black: rgb(0, 0, 0);
+  --color-cod-gray: rgb(15, 15, 15);
+  --color-cod-gray-hover: rgb(45, 45, 45);
+  --color-outer-space: rgb(58, 72, 80);
+  --color-regent-gray: rgb(137, 149, 156);
+  --color-regent-gray-hover: rgb(58, 72, 80);
+  --color-tower-gray: rgb(176, 189, 197);
+  --color-tower-gray-hover: rgb(137, 149, 156);
+  --color-porcelain: rgb(231, 235, 237);
+  --color-porcelain-hover: rgb(225, 225, 225);
+  --gradient-primary: linear-gradient(
+    90deg,
+    var(--color-primary-dark) 0%,
+    var(--color-primary) 100%
+  );
+  --gradient-primary-hover: linear-gradient(
+    90deg,
+    var(--color-primary-dark-hover) 0%,
+    var(--color-primary-dark) 100%
+  );
+}
+
 a.dsmButton {
-  color: #fff;
+  color: var(--color-white);
   font-size: 16px;
   text-decoration: none;
 }
@@ -11,7 +40,6 @@ a.dsmButton {
   justify-content: center;
   position: relative;
   min-width: 100px;
-  outline: 0px;
   cursor: pointer;
   font-weight: bold;
   -webkit-user-select: none;
@@ -24,46 +52,118 @@ a.dsmButton {
   text-decoration: none;
   border-radius: 8px;
   border: 2px solid;
-  border-color: #196ac6;
-  color: #fff;
+  border-color: var(--color-primary-dark);
+  color: var(--color-white);
   box-sizing: border-box;
   white-space: nowrap;
-  -webkit-tap-highlight-color: transparent;
-  overflow: hidden;
   height: 40px;
   padding: 6px 17px;
   font-size: 16px;
   text-transform: none;
 }
+@media (hover: hover) {
+  .dsmButton:hover {
+    background: var(--color-primary-hover) !important;
+    border-color: var(--color-primary-hover);
+  }
+  .dsmButton:hover:not(.round) {
+    background: var(--gradient-primary-hover) !important;
+  }
+  .dsmButton:hover.round, .dsmButton:hover:not(.round) {
+    color: var(--color-white);
+  }
+  .dsmButton:hover .text svg*[stroke]:not[stroke=""] {
+    stroke: var(--color-white);
+  }
+  .dsmButton:hover .text svg*[fill]:not[fill=""] {
+    fill: var(--color-white);
+  }
+}
 .dsmButton:not(.round) {
-  background: linear-gradient(90deg, #196ac6 0%, #277bda 100%);
+  background: var(--gradient-primary);
+}
+@media (hover: hover) {
+  .dsmButton.round:hover, .dsmButton.ghost.round:hover {
+    border-color: var(--color-primary-hover);
+    background: var(--color-primary-hover) !important;
+  }
+  .dsmButton.round:hover.porcelain, .dsmButton.ghost.round:hover.porcelain {
+    background: var(--color-porcelain-hover) !important;
+    border-color: var(--color-porcelain-hover);
+    color: var(--color-outer-space);
+  }
+  .dsmButton.round:hover.porcelain .text svg*[stroke]:not[stroke=""], .dsmButton.ghost.round:hover.porcelain .text svg*[stroke]:not[stroke=""] {
+    stroke: var(--color-outer-space);
+  }
+  .dsmButton.round:hover.porcelain .text svg*[fill]:not[fill=""], .dsmButton.ghost.round:hover.porcelain .text svg*[fill]:not[fill=""] {
+    fill: var(--color-outer-space);
+  }
+  .dsmButton.round:hover.regentGray, .dsmButton.round:hover.towerGray, .dsmButton.round:hover.codGray, .dsmButton.ghost.round:hover.regentGray, .dsmButton.ghost.round:hover.towerGray, .dsmButton.ghost.round:hover.codGray {
+    color: var(--color-white);
+  }
+  .dsmButton.round:hover.regentGray, .dsmButton.ghost.round:hover.regentGray {
+    background: var(--color-regent-gray-hover) !important;
+    border-color: var(--color-regent-gray-hover);
+  }
+  .dsmButton.round:hover.towerGray, .dsmButton.ghost.round:hover.towerGray {
+    background: var(--color-tower-gray-hover) !important;
+    border-color: var(--color-tower-gray-hover);
+  }
+  .dsmButton.round:hover.codGray, .dsmButton.ghost.round:hover.codGray {
+    background: var(--color-cod-gray-hover) !important;
+    border-color: var(--color-cod-gray-hover);
+  }
+  .dsmButton.round:hover.white, .dsmButton.ghost.round:hover.white {
+    background: var(--color-white) !important;
+    border-color: var(--color-white);
+    color: var(--color-outer-space);
+  }
 }
 .dsmButton::before {
   content: "";
   position: absolute;
-  background: rgba(255, 255, 255, 0.4);
-  inset: 0;
-  z-index: 1;
+  background: var(--color-white);
+  inset: -2px;
+  z-index: 4;
   opacity: 0;
-  pointer-events: none;
 }
-.dsmButton::after {
+.dsmButton::before,
+.dsmButton .click-effect {
+  border-radius: 8px;
+}
+.dsmButton.round .click-effect {
+  border-radius: 24px;
+}
+.dsmButton .click-effect {
+  width: inherit;
+  height: inherit;
+  position: absolute;
+  inset: -2px;
+  z-index: 5;
+  overflow: hidden;
+}
+.dsmButton .click-effect::after {
   content: "";
   position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(1);
+  transform-origin: center;
   border-radius: 50%;
   opacity: 0;
   width: 120%;
   aspect-ratio: 1/1;
-  transition: all 0.8s;
+  transition: transform 0.8s, opacity 0.8s;
   background: rgba(0, 0, 0, 0.15);
+  z-index: 6;
 }
-.dsmButton:active::after {
-  content: "";
+.dsmButton.codGray .click-effect::after, .dsmButton.regentGray .click-effect::after {
+  background: rgba(250, 250, 250, 0.15);
+}
+.dsmButton:active .click-effect::after {
   opacity: 1;
-  width: 0;
-  height: 0;
+  transform: translate(-50%, -50%) scale(0);
   transition: all 0s;
-  z-index: 0;
 }
 .dsmButton:hover, .dsmButton:focus {
   text-decoration: none;
@@ -74,7 +174,7 @@ a.dsmButton {
   font-size: inherit !important;
   line-height: inherit !important;
 }
-.dsmButton span {
+.dsmButton .text {
   position: relative;
   z-index: 2;
 }
@@ -89,242 +189,126 @@ a.dsmButton {
 .dsmButton:disabled, .dsmButton.disabled {
   cursor: default;
   pointer-events: none;
-  border-color: #7db0e9 !important;
-}
-.dsmButton:disabled > svg path, .dsmButton.disabled > svg path {
-  fill: #7db0e9 !important;
 }
 .dsmButton:disabled::before, .dsmButton.disabled::before {
-  content: "";
-  opacity: 1;
-}
-.dsmButton:disabled.ghost, .dsmButton.disabled.ghost {
-  color: #7db0e9 !important;
+  opacity: 0.4;
 }
 .dsmButton.loading {
   cursor: default;
   pointer-events: none;
+  background: var(--color-primary-hover);
 }
-.dsmButton.loading:not(.round):not(.ghost) {
-  background: linear-gradient(90deg, #1358a7 0%, #196ac6 100%);
+.dsmButton.loading:not(.round) {
+  background: var(--gradient-primary-hover) !important;
 }
 .dsmButton.loading.round {
-  border-color: #246fc4;
+  background: var(--color-primary-hover) !important;
 }
-.dsmButton.loading.round:not(.ghost) {
-  background: #246fc4;
+.dsmButton.loading.round, .dsmButton.loading:not(.round) {
+  border-color: var(--color-primary-hover);
 }
-.dsmButton.loading span {
+.dsmButton.loading.porcelain svg path, .dsmButton.loading.white svg path {
+  stroke: var(--color-outer-space);
+}
+.dsmButton.loading .text {
   display: none;
 }
 .dsmButton.ghost {
   background: transparent !important;
-  color: #277bda;
+  color: var(--color-primary);
 }
 .dsmButton.ghost svg circle {
-  stroke: rgb(0, 0, 0);
+  stroke: var(--color-black);
   stroke-opacity: 0.25;
 }
-@media (hover: hover) {
-  .dsmButton.ghost:hover {
-    color: #1358a7;
-    border-color: #1358a7;
-  }
-  .dsmButton.ghost:hover span svg*[stroke]:not[stroke=""] {
-    stroke: #1358a7;
-  }
-  .dsmButton.ghost:hover span svg*[fill]:not[fill=""] {
-    fill: #1358a7;
-  }
-}
 .dsmButton.ghost svg path {
-  stroke: #196ac6;
-  fill: none;
+  stroke: var(--color-white);
 }
 .dsmButton.ghost.round.porcelain {
-  border-color: rgb(231, 235, 237);
-  color: rgb(231, 235, 237);
-}
-@media (hover: hover) {
-  .dsmButton.ghost.round.porcelain:hover {
-    background: rgb(225, 225, 225);
-    border-color: rgb(225, 225, 225);
-    color: rgb(58, 72, 80);
-  }
-  .dsmButton.ghost.round.porcelain:hover span svg*[stroke]:not[stroke=""] {
-    stroke: rgb(58, 72, 80);
-  }
-  .dsmButton.ghost.round.porcelain:hover span svg*[fill]:not[fill=""] {
-    fill: rgb(58, 72, 80);
-  }
+  border-color: var(--color-porcelain);
+  color: var(--color-porcelain);
 }
 .dsmButton.ghost.round.regentGray {
-  color: rgb(137, 149, 156);
-  border-color: rgb(137, 149, 156);
-}
-@media (hover: hover) {
-  .dsmButton.ghost.round.regentGray:hover {
-    background: rgb(58, 72, 80);
-    border-color: rgb(58, 72, 80);
-    color: #fff;
-  }
-  .dsmButton.ghost.round.regentGray:hover span svg*[stroke]:not[stroke=""] {
-    stroke: #fff;
-  }
-  .dsmButton.ghost.round.regentGray:hover span svg*[fill]:not[fill=""] {
-    fill: #fff;
-  }
+  color: var(--color-regent-gray);
+  border-color: var(--color-regent-gray);
 }
 .dsmButton.ghost.round.towerGray {
-  color: rgb(176, 189, 197);
-  border-color: rgb(176, 189, 197);
-}
-@media (hover: hover) {
-  .dsmButton.ghost.round.towerGray:hover {
-    background: rgb(137, 149, 156);
-    border-color: rgb(137, 149, 156);
-    color: #fff;
-  }
-  .dsmButton.ghost.round.towerGray:hover span svg*[stroke]:not[stroke=""] {
-    stroke: #fff;
-  }
-  .dsmButton.ghost.round.towerGray:hover span svg*[fill]:not[fill=""] {
-    fill: #fff;
-  }
+  color: var(--color-tower-gray);
+  border-color: var(--color-tower-gray);
 }
 .dsmButton.ghost.round.codGray {
-  border-color: rgb(15, 15, 15);
-  color: rgb(15, 15, 15);
-}
-@media (hover: hover) {
-  .dsmButton.ghost.round.codGray:hover {
-    background: rgb(45, 45, 45);
-    border-color: rgb(45, 45, 45);
-    color: #fff;
-  }
-  .dsmButton.ghost.round.codGray:hover span svg*[stroke]:not[stroke=""] {
-    stroke: #fff;
-  }
-  .dsmButton.ghost.round.codGray:hover span svg*[fill]:not[fill=""] {
-    fill: #fff;
-  }
+  border-color: var(--color-cod-gray);
+  color: var(--color-cod-gray);
 }
 .dsmButton.ghost.round.white {
-  color: #fff;
-  border-color: #fff;
-}
-@media (hover: hover) {
-  .dsmButton.ghost.round.white:hover {
-    background: #fff;
-    border-color: #fff;
-    color: rgb(58, 72, 80);
-  }
+  color: var(--color-white);
+  border-color: var(--color-white);
 }
 .dsmButton.round {
-  border-color: #277bda;
-  background: #277bda;
+  border-color: var(--color-primary);
+  background: var(--color-primary);
   border-radius: 24px;
 }
-@media (hover: hover) {
-  .dsmButton.round:hover {
-    border-color: #246fc4;
-    background: #246fc4;
-  }
+.dsmButton.round::before {
+  border-radius: 24px;
 }
 @media (max-width: 768px) {
   .dsmButton.round {
     padding: 11px 20px;
   }
 }
-.dsmButton.round:disabled span {
+.dsmButton.round:disabled .text {
   display: block !important;
 }
 .dsmButton.round.regentGray {
-  color: #fff;
-  background: rgb(137, 149, 156);
-  border-color: rgb(137, 149, 156);
+  color: var(--color-white);
+  background: var(--color-regent-gray);
+  border-color: var(--color-regent-gray);
 }
-@media (hover: hover) {
-  .dsmButton.round.regentGray:hover {
-    background: rgb(58, 72, 80);
-    border-color: rgb(58, 72, 80);
-  }
+.dsmButton.round.regentGray.loading {
+  background: var(--color-regent-gray-hover) !important;
+  border-color: var(--color-regent-gray-hover);
 }
 .dsmButton.round.towerGray {
-  color: #fff;
-  background: rgb(176, 189, 197);
-  border-color: rgb(176, 189, 197);
+  color: var(--color-white);
+  background: var(--color-tower-gray);
+  border-color: var(--color-tower-gray);
 }
-@media (hover: hover) {
-  .dsmButton.round.towerGray:hover {
-    background: rgb(137, 149, 156);
-    border-color: rgb(137, 149, 156);
-  }
+.dsmButton.round.towerGray.loading {
+  background: var(--color-tower-gray-hover) !important;
+  border-color: var(--color-tower-gray-hover);
 }
 .dsmButton.round.codGray {
-  color: #fff;
-  background: rgb(15, 15, 15);
-  border-color: rgb(15, 15, 15);
+  color: var(--color-white);
+  background: var(--color-cod-gray);
+  border-color: var(--color-cod-gray);
 }
-@media (hover: hover) {
-  .dsmButton.round.codGray:hover {
-    background: rgb(45, 45, 45);
-    border-color: rgb(45, 45, 45);
-  }
+.dsmButton.round.codGray.loading {
+  background: var(--color-cod-gray-hover) !important;
+  border-color: var(--color-cod-gray-hover);
+}
+.dsmButton.round.porcelain {
+  color: var(--color-outer-space);
+  background: var(--color-porcelain);
+  border-color: var(--color-porcelain);
+}
+.dsmButton.round.porcelain.loading {
+  background: var(--color-porcelain-hover) !important;
+  border-color: var(--color-porcelain-hover);
 }
 .dsmButton.round.white {
-  color: rgb(58, 72, 80);
-  background: #fff;
-  border-color: #fff;
+  color: var(--color-outer-space);
+  background: var(--color-white);
+  border-color: var(--color-white);
 }
-@media (hover: hover) {
-  .dsmButton.round.white:hover {
-    background: rgb(241, 243, 244);
-    border-color: rgb(241, 243, 244);
-  }
-}
-.dsmButton.round.disabled.porcelain {
-  background: rgb(225, 225, 225);
-}
-.dsmButton.round.disabled.porcelain > svg path {
-  fill: rgb(176, 189, 197) !important;
-}
-.dsmButton.round.disabled.regentGray {
-  background: rgb(58, 72, 80);
-}
-.dsmButton.round.disabled.regentGray > svg path {
-  fill: rgb(137, 149, 156) !important;
-}
-.dsmButton.round.disabled.towerGray {
-  background: rgb(137, 149, 156);
-}
-.dsmButton.round.disabled.towerGray > svg path {
-  fill: rgb(176, 189, 197) !important;
-}
-.dsmButton.round.disabled.codGray {
-  background: rgb(45, 45, 45);
-}
-.dsmButton.round.disabled.codGray > svg path {
-  fill: rgb(137, 137, 137) !important;
-}
-.dsmButton.round.disabled.white {
-  background: rgb(241, 243, 244);
-}
-.dsmButton.round.disabled.white > svg path {
-  fill: rgb(176, 189, 197) !important;
+.dsmButton.round.white.loading {
+  background: var(--color-white) !important;
+  border-color: var(--color-white);
 }
 .dsmButton:not(.round).extralarge {
   height: 70px;
   padding: 0 29px;
   font-size: 22px;
-}
-@media (hover: hover) {
-  .dsmButton:not(.round):hover {
-    border-color: #1358a7;
-  }
-  .dsmButton:not(.round):hover:not(.ghost) {
-    background: linear-gradient(90deg, #1358a7 0%, #196ac6 100%);
-  }
 }
 @media (max-width: 768px) {
   .dsmButton:not(.round) {
@@ -402,6 +386,10 @@ a.dsmButton {
   padding: 0 24px;
   border-radius: 30px;
 }
+.dsmButton.large.round::before,
+.dsmButton.large.round .click-effect {
+  border-radius: 30px;
+}
 .dsmButton.large:not(.round) {
   padding: 19px 20px;
 }
@@ -415,17 +403,6 @@ a.dsmButton {
   }
   .dsmButton.large:not(.round) {
     padding: 17px 20px;
-  }
-}
-.dsmButton.porcelain {
-  color: rgb(58, 72, 80);
-  background: rgb(231, 235, 237);
-  border-color: rgb(231, 235, 237);
-}
-@media (hover: hover) {
-  .dsmButton.porcelain:hover {
-    background: rgb(225, 225, 225);
-    border-color: rgb(225, 225, 225);
   }
 }
 @keyframes indeterminate {
@@ -474,10 +451,10 @@ svg.dsmIcons {
   height: 0;
 }
 .dsmSlider input[type=checkbox]:checked + .slider {
-  background-color: #277bda;
+  background-color: var(--color-primary);
 }
 .dsmSlider input[type=checkbox]:focus + .slider {
-  box-shadow: 0 0 1px #277bda;
+  box-shadow: 0 0 1px var(--color-primary);
 }
 .dsmSlider input[type=checkbox]:checked + .slider:before {
   transform: translateX(16px);
@@ -526,10 +503,10 @@ svg.dsmIcons {
   font-family: Roboto;
   transition: 0.2s border-color;
   font-size: 15px;
-  background: #fff;
+  background: var(--color-white);
 }
 .dsmForm textarea:focus {
-  border-color: #277bda;
+  border-color: var(--color-primary);
 }
 .dsmForm textarea.error {
   color: #000;
@@ -560,23 +537,16 @@ svg.dsmIcons {
   cursor: pointer;
   background: rgb(231, 235, 237);
   border-radius: 16px;
-  border: 5px solid #fff;
+  border: 5px solid var(--color-white);
 }
 .dsmForm textarea::-webkit-scrollbar-track {
   cursor: pointer;
-  background: #fff;
+  background: var(--color-white);
   border-radius: 16px;
 }
 .dsmForm .inputLabel {
   position: relative;
   color: rgb(107, 107, 107);
-}
-.dsmForm .inputLabel input[type=url],
-.dsmForm .inputLabel input[type=text],
-.dsmForm .inputLabel input[type=email],
-.dsmForm .inputLabel input[type=tel],
-.dsmForm .inputLabel input[type=number] {
-  padding-top: 20px;
 }
 .dsmForm .inputLabel input[type=url]::-moz-placeholder, .dsmForm .inputLabel input[type=text]::-moz-placeholder, .dsmForm .inputLabel input[type=email]::-moz-placeholder, .dsmForm .inputLabel input[type=tel]::-moz-placeholder, .dsmForm .inputLabel input[type=number]::-moz-placeholder {
   opacity: 0;
@@ -589,6 +559,13 @@ svg.dsmIcons {
 .dsmForm .inputLabel input[type=number]::placeholder {
   opacity: 0;
   color: rgb(222, 222, 222);
+}
+.dsmForm .inputLabel input[type=url],
+.dsmForm .inputLabel input[type=text],
+.dsmForm .inputLabel input[type=email],
+.dsmForm .inputLabel input[type=tel],
+.dsmForm .inputLabel input[type=number] {
+  padding-top: 20px;
 }
 .dsmForm .inputLabel input[type=url].noLabel,
 .dsmForm .inputLabel input[type=text].noLabel,
@@ -643,6 +620,14 @@ svg.dsmIcons {
   overflow: hidden;
   width: calc(100% - 30px);
 }
+.dsmForm input[type=url]:focus,
+.dsmForm input[type=text]:focus,
+.dsmForm input[type=email]:focus,
+.dsmForm input[type=tel]:focus,
+.dsmForm input[type=number]:focus {
+  color: rgb(0, 0, 0);
+  border-color: var(--color-primary);
+}
 .dsmForm input[type=url],
 .dsmForm input[type=text],
 .dsmForm input[type=email],
@@ -662,14 +647,6 @@ svg.dsmIcons {
           appearance: none;
   outline: none;
 }
-.dsmForm input[type=url]:focus,
-.dsmForm input[type=text]:focus,
-.dsmForm input[type=email]:focus,
-.dsmForm input[type=tel]:focus,
-.dsmForm input[type=number]:focus {
-  color: rgb(0, 0, 0);
-  border-color: #277bda;
-}
 .dsmForm input[type=url].error,
 .dsmForm input[type=text].error,
 .dsmForm input[type=email].error,
@@ -685,7 +662,7 @@ svg.dsmIcons {
 .dsmForm input[type=tel]:disabled,
 .dsmForm input[type=number]:disabled {
   border-color: rgb(222, 222, 222);
-  background: #fff;
+  background: var(--color-white);
   cursor: not-allowed;
 }
 .dsmForm input[type=url]:disabled + label,
@@ -740,13 +717,13 @@ svg.dsmIcons {
   background-color: rgb(222, 222, 222);
 }
 .radioContainer input[type=radio]:checked + .radioStyling {
-  border: 2px solid #277bda;
+  border: 2px solid var(--color-primary);
 }
 .radioContainer input[type=radio]:checked + .radioStyling::before {
-  background-color: #277bda;
+  background-color: var(--color-primary);
 }
 .radioContainer input[type=radio]:checked + .radioStyling.error {
-  background-color: #fff;
+  background-color: var(--color-white);
 }
 .radioContainer:hover .radioStyling {
   border: 1px solid #6b6b6b;
@@ -759,7 +736,7 @@ svg.dsmIcons {
   box-sizing: border-box;
   transition: border-color 0.15s linear 0s;
   width: 12px;
-  background-color: #fff;
+  background-color: var(--color-white);
   height: 12px;
   border: 1px solid #aaaaaa;
 }
@@ -864,8 +841,8 @@ svg.dsmIcons {
   display: block;
 }
 .checkboxContainer input[type=checkbox]:checked ~ .checkbox {
-  border: 1px solid rgb(58, 72, 80);
-  background-color: #fff;
+  border: 1px solid var(--color-outer-space);
+  background-color: var(--color-white);
 }
 .checkboxContainer input[type=checkbox]:disabled + .checkbox:hover {
   border: 1px solid #dedede;
@@ -874,8 +851,8 @@ svg.dsmIcons {
   border: 1px solid #dedede;
 }
 .checkboxContainer input[type=checkbox]:checked + .checkbox.ticked {
-  background-color: #277bda;
-  border-color: #277bda;
+  background-color: var(--color-primary);
+  border-color: var(--color-primary);
   display: flex;
   justify-content: center;
   align-content: center;
@@ -892,7 +869,7 @@ svg.dsmIcons {
   top: 1px;
   height: 8px;
   width: 4px;
-  border: solid #277bda;
+  border: solid var(--color-primary);
   border-width: 0 2px 2px 0;
   transform: rotate(45deg);
 }
@@ -906,14 +883,14 @@ svg.dsmIcons {
   box-sizing: content-box;
   width: 14px;
   transition: 0.2s border-color;
-  background-color: #fff;
+  background-color: var(--color-white);
 }
 .checkboxContainer .checkbox.ticked {
   border-radius: 50%;
 }
 .checkboxContainer .checkbox.ticked svg {
   display: none;
-  stroke: #fff;
+  stroke: var(--color-white);
   height: 10px;
   width: 10px;
 }
@@ -949,7 +926,7 @@ svg.dsmIcons {
   color: rgb(176, 189, 197);
 }
 .selectContainer button {
-  background-color: #fff;
+  background-color: var(--color-white);
   border: 1px solid rgb(216, 216, 216);
   color: rgb(15, 15, 15);
   font-size: inherit;
@@ -990,7 +967,7 @@ svg.dsmIcons {
 }
 .selectContainer button.active {
   text-decoration: none !important;
-  border: 1px solid #277bda;
+  border: 1px solid var(--color-primary);
   border-radius: 4px 4px 0px 0px;
   cursor: pointer;
   color: rgb(137, 149, 156);
@@ -1013,9 +990,9 @@ svg.dsmIcons {
 }
 .selectContainer ul {
   display: none;
-  background-color: #fff;
+  background-color: var(--color-white);
   border-radius: 0px 0px 4px 4px;
-  border-top: 1px solid #277bda;
+  border-top: 1px solid var(--color-primary);
   position: absolute;
   width: 280px;
   z-index: 5;
@@ -1074,8 +1051,8 @@ svg.dsmIcons {
   text-align: center;
   font-size: 11px;
   vertical-align: middle;
-  color: #277bda;
-  background-color: #fff;
+  color: var(--color-primary);
+  background-color: var(--color-white);
   border: 1px solid;
   cursor: pointer;
 }
@@ -1152,13 +1129,13 @@ svg.dsmIcons {
   z-index: 1;
   width: 16px;
   height: 16px;
-  background-color: #fff;
+  background-color: var(--color-white);
   transform: rotate(45deg);
   box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 8px;
 }
 .dsmTooltip .infoBox {
   position: relative;
-  background-color: #fff;
+  background-color: var(--color-white);
   font-size: 14px;
   border-radius: 12px;
   overflow: hidden;
@@ -1172,7 +1149,7 @@ svg.dsmIcons {
   left: 0px;
   width: 100%;
   height: 100%;
-  background-color: #fff;
+  background-color: var(--color-white);
 }
 .dsmTooltip .infoBox .textArea {
   color: black;
@@ -1200,7 +1177,7 @@ svg.dsmIcons {
 }
 .dsmBadge.misc {
   background-color: rgb(231, 244, 254);
-  color: #277bda;
+  color: var(--color-primary);
 }
 .dsmBadge.sellingFast {
   background-color: rgb(255, 241, 224);
@@ -1249,12 +1226,12 @@ svg.dsmIcons {
   font-style: normal;
   font-display: block;
 }
+svg.dsmLogo * {
+  fill: black !important;
+}
 svg.dsmLogo {
   height: 25px;
   width: auto;
-}
-svg.dsmLogo * {
-  fill: black !important;
 }
 
 .dsmLogo {
@@ -1662,11 +1639,6 @@ svg.dsmLogo * {
 }
 .dsmAccordian[open] {
   background-color: rgba(58, 72, 80, 0.04);
-  color: #232B30;
-  font-family: Roboto;
-  font-size: 16px;
-  letter-spacing: 0;
-  line-height: 24px;
 }
 .dsmAccordian[open] > .accordianContent {
   padding-top: 12px;
@@ -1683,6 +1655,13 @@ svg.dsmLogo * {
 }
 .dsmAccordian[open] summary > .plus line:nth-child(2) {
   transform: rotate(-90deg) translateX(-13px);
+}
+.dsmAccordian[open] {
+  color: #232B30;
+  font-family: Roboto;
+  font-size: 16px;
+  letter-spacing: 0;
+  line-height: 24px;
 }
 @media (max-width: 768px) {
   .dsmAccordian[open] {
@@ -1985,13 +1964,6 @@ svg.dsmLogo * {
   display: none;
 }
 @media (max-width: 768px) {
-  .dsmTrustpilot-Header .numberOfReviews {
-    color: #0F0F0F;
-    font-family: Helvetica;
-    font-size: 12px;
-    letter-spacing: 0;
-    line-height: 14px;
-  }
   .dsmTrustpilot-Header .numberOfReviews .desktopText {
     display: none;
   }
@@ -2001,6 +1973,13 @@ svg.dsmLogo * {
   .dsmTrustpilot-Header .numberOfReviews .underlineReviews {
     font-weight: bold;
     text-decoration: underline;
+  }
+  .dsmTrustpilot-Header .numberOfReviews {
+    color: #0F0F0F;
+    font-family: Helvetica;
+    font-size: 12px;
+    letter-spacing: 0;
+    line-height: 14px;
   }
 }
 
