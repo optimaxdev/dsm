@@ -65,7 +65,7 @@ export async function loadElements() {
     .querySelectorAll(".dsmButton")
     .forEach(
       (e) =>
-        (e.innerHTML = `<span class="text">${e.innerHTML}</span><span class="click-effect"></span>`),
+        (e.innerHTML = `<span class="dsmButton-text">${e.innerHTML}</span><span class="dsmButton-click-effect"></span>`),
     );
 
   document.querySelectorAll<HTMLElement>(".selectContainer").forEach((e) => {
